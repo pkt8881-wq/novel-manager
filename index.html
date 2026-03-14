@@ -909,6 +909,162 @@
 
   .gear-deco.reverse { animation-direction: reverse; animation-duration: 20s; }
 
+  /* ==============================
+     AI IMAGE GALLERY SECTION
+     ============================== */
+  #gallery {
+    background: linear-gradient(180deg, #020812 0%, var(--bg) 100%);
+    overflow: hidden;
+  }
+
+  .gallery-intro {
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+
+  .gallery-intro p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-top: 0.5rem;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 200px;
+    gap: 10px;
+  }
+
+  .g-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #001020;
+  }
+
+  .g-item:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+  .g-item:nth-child(2) { grid-column: span 4; grid-row: span 1; }
+  .g-item:nth-child(3) { grid-column: span 3; grid-row: span 1; }
+  .g-item:nth-child(4) { grid-column: span 4; grid-row: span 2; }
+  .g-item:nth-child(5) { grid-column: span 3; grid-row: span 1; }
+  .g-item:nth-child(6) { grid-column: span 5; grid-row: span 1; }
+  .g-item:nth-child(7) { grid-column: span 4; grid-row: span 1; }
+  .g-item:nth-child(8) { grid-column: span 3; grid-row: span 1; }
+  .g-item:nth-child(9) { grid-column: span 5; grid-row: span 1; }
+
+  @media (max-width: 900px) {
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 180px; }
+    .g-item { grid-column: span 1 !important; grid-row: span 1 !important; }
+    .g-item:nth-child(1), .g-item:nth-child(4) { grid-column: span 2 !important; }
+  }
+
+  @media (max-width: 480px) {
+    .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+    .g-item, .g-item:nth-child(1), .g-item:nth-child(4) { grid-column: span 1 !important; }
+  }
+
+  .g-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease, filter 0.4s ease;
+    filter: brightness(0.85) saturate(1.1);
+  }
+
+  .g-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(1.05) saturate(1.3);
+  }
+
+  .g-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0,4,10,0.85) 0%, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .g-item:hover .g-overlay { opacity: 1; }
+
+  .g-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--neon);
+    text-shadow: 0 0 10px var(--neon);
+  }
+
+  .g-desc {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.7);
+    margin-top: 0.2rem;
+  }
+
+  .g-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .g-item:hover::after {
+    border-color: rgba(0,255,204,0.4);
+    box-shadow: inset 0 0 20px rgba(0,255,204,0.08);
+  }
+
+  /* ==============================
+     STATS STRIP
+     ============================== */
+  #stats-strip {
+    background: rgba(0,255,204,0.03);
+    border-top: 1px solid rgba(0,255,204,0.1);
+    border-bottom: 1px solid rgba(0,255,204,0.1);
+    padding: 2.5rem 2rem;
+  }
+
+  .stats-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--neon);
+    text-shadow: 0 0 20px var(--neon);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.45);
+    text-transform: uppercase;
+    margin-top: 0.4rem;
+    display: block;
+  }
+
   /* Custom scrollbar */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: var(--bg); }
@@ -945,7 +1101,7 @@
   <div class="hero-vignette"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">Neural Cave &middot; AI Learning Platform &middot; 2025</div>
+    <div class="hero-badge">Neural Cave &middot; AI Learning Platform &middot; 2026</div>
     <h1 class="hero-title">THE NEURAL CAVE</h1>
     <p class="hero-subtitle">AI 탐험 학습 &mdash; 입문부터 전문가까지</p>
     <a class="hero-scroll-down" href="#about">
@@ -1000,6 +1156,129 @@
   <svg class="gear-deco" style="width:400px;height:400px;right:-100px;top:50%;margin-top:-200px;color:#0088ff" viewBox="0 0 100 100">
     <path fill="currentColor" d="M50,30 L54,18 L60,20 L56,32 Q58,33 60,35 L72,30 L76,35 L64,40 Q65,42 65,44 L78,46 L78,52 L65,54 Q65,56 64,58 L76,63 L72,68 L60,63 Q58,65 56,66 L60,78 L54,80 L50,68 L46,80 L40,78 L44,66 Q42,65 40,63 L28,68 L24,63 L36,58 Q35,56 35,54 L22,52 L22,46 L35,44 Q35,42 36,40 L24,35 L28,30 L40,35 Q42,33 44,32 L40,20 L46,18 Z M50,40 A10,10 0 1,0 50,60 A10,10 0 1,0 50,40 Z"/>
   </svg>
+</section>
+
+<!-- ==============================
+     STATS STRIP
+     ============================== -->
+<div id="stats-strip">
+  <div class="stats-row">
+    <div class="stat-item reveal">
+      <span class="stat-num">5</span>
+      <span class="stat-label">탐험 구역</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.1s">
+      <span class="stat-num">50+</span>
+      <span class="stat-label">학습 주제</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.2s">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">실무 중심</span>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:0.3s">
+      <span class="stat-num">∞</span>
+      <span class="stat-label">가능성</span>
+    </div>
+  </div>
+</div>
+
+<!-- ==============================
+     AI GALLERY SECTION
+     ============================== -->
+<section id="gallery">
+  <div class="section-inner">
+    <div class="gallery-intro reveal">
+      <div class="hero-badge" style="margin-bottom:1rem">AI IMAGE GALLERY &middot; AI가 그린 세상</div>
+      <h2 class="section-title"><span class="accent">AI</span>가 만드는 미래</h2>
+      <div class="section-line"></div>
+      <p>아래 이미지들은 모두 AI 이미지 생성 모델이 만든 작품입니다. Neural Cave에서 이런 AI 도구들의 사용법을 배울 수 있습니다.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="g-item reveal">
+        <img src="https://image.pollinations.ai/prompt/futuristic%20android%20robot%20AI%20assistant%20glowing%20blue%20cyberpunk%20underground%20cave%20laboratory%20cinematic%20dramatic%20lighting?width=800&height=600&seed=201&nologo=true"
+             alt="AI 안드로이드" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">AI 안드로이드</div>
+          <div class="g-desc">미래형 AI 가이드 로봇</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.05s">
+        <img src="https://image.pollinations.ai/prompt/person%20using%20AI%20chatbot%20ChatGPT%20Claude%20holographic%20interface%20neon%20blue%20futuristic%20dark%20room?width=600&height=400&seed=202&nologo=true"
+             alt="AI 챗봇 사용" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">AI 챗봇</div>
+          <div class="g-desc">ChatGPT · Claude 활용</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.1s">
+        <img src="https://image.pollinations.ai/prompt/neural%20network%20brain%20glowing%20purple%20blue%20connections%20nodes%20dark%20abstract%20digital%20art?width=500&height=400&seed=203&nologo=true"
+             alt="신경망" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">신경망</div>
+          <div class="g-desc">딥러닝 아키텍처</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.15s">
+        <img src="https://image.pollinations.ai/prompt/vibe%20coding%20programmer%20AI%20assistant%20Cursor%20IDE%20holographic%20keyboard%20code%20flowing%20cyberpunk%20orange%20neon?width=700&height=600&seed=204&nologo=true"
+             alt="바이브코딩" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">바이브코딩</div>
+          <div class="g-desc">AI와 함께하는 코딩</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.2s">
+        <img src="https://image.pollinations.ai/prompt/AI%20image%20generation%20art%20studio%20robot%20painting%20midjourney%20stable%20diffusion%20colorful%20futuristic%20creative?width=500&height=400&seed=205&nologo=true"
+             alt="AI 이미지 생성" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">AI 이미지 생성</div>
+          <div class="g-desc">Midjourney · Stable Diffusion</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.25s">
+        <img src="https://image.pollinations.ai/prompt/autonomous%20AI%20agent%20robot%20working%20independently%20multiple%20screens%20data%20streams%20cyberpunk%20purple%20neon%20dark?width=800&height=400&seed=206&nologo=true"
+             alt="AI 에이전트" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">AI 에이전트</div>
+          <div class="g-desc">자율 실행 AI 시스템</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.3s">
+        <img src="https://image.pollinations.ai/prompt/RAG%20retrieval%20augmented%20generation%20AI%20knowledge%20base%20glowing%20database%20nodes%20futuristic%20blue%20teal?width=600&height=400&seed=207&nologo=true"
+             alt="RAG 시스템" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">RAG 시스템</div>
+          <div class="g-desc">지식 검색 강화 AI</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.35s">
+        <img src="https://image.pollinations.ai/prompt/AI%20voice%20assistant%20sound%20waves%20holographic%20speaker%20neon%20blue%20audio%20visualization%20dark%20futuristic?width=500&height=400&seed=208&nologo=true"
+             alt="음성 AI" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">음성 AI</div>
+          <div class="g-desc">AI 음성 · 오디오 기술</div>
+        </div>
+      </div>
+
+      <div class="g-item reveal" style="transition-delay:0.4s">
+        <img src="https://image.pollinations.ai/prompt/multiagent%20AI%20system%20multiple%20robots%20collaborating%20network%20connections%20glowing%20futuristic%20underground%20facility?width=800&height=400&seed=209&nologo=true"
+             alt="멀티에이전트" loading="lazy">
+        <div class="g-overlay">
+          <div class="g-label">멀티에이전트</div>
+          <div class="g-desc">여러 AI가 협업하는 시스템</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
 <!-- ==============================
@@ -1327,7 +1606,7 @@
      FOOTER
      ============================== -->
 <footer>
-  <p>THE NEURAL CAVE &nbsp;&middot;&nbsp; <span>AI 탐험 학습 플랫폼</span> &nbsp;&middot;&nbsp; Powered by Claude &nbsp;&middot;&nbsp; 2025</p>
+  <p>THE NEURAL CAVE &nbsp;&middot;&nbsp; <span>AI 탐험 학습 플랫폼</span> &nbsp;&middot;&nbsp; Powered by Claude &nbsp;&middot;&nbsp; 2026</p>
 </footer>
 
 <!-- ==============================
