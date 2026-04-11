@@ -152,23 +152,18 @@ def api_content(nid):
     if not novel:
         return jsonify({"error": "not found"}), 404
 
-    page  = int(request.args.get('page', 1))
-    psize = int(request.args.get('psize', 150))
-
     text  = read_file(novel['파일경로'])
     paras = split_paragraphs(text)
     total = len(paras)
-    start = (page - 1) * psize
-    end   = min(start + psize, total)
 
     return jsonify({
         "title":       novel['제목'],
         "author":      novel['작가'],
-        "paragraphs":  paras[start:end],
-        "page":        page,
+        "paragraphs":  paras,
+        "page":        1,
         "total_para":  total,
-        "total_pages": (total + psize - 1) // psize,
-        "start_idx":   start
+        "total_pages": 1,
+        "start_idx":   0
     })
 
 @app.route('/api/bookmark', methods=['POST'])
@@ -1147,13 +1142,6 @@ function renderText(){
     el.onclick=()=>{stopAll();curPara=i;autoOn=true;playPara(i);}
     wrap.appendChild(el);
   });
-  if(curPage<totalPages){
-    const more=document.createElement('p');
-    more.style.cssText='text-align:center;padding:20px;color:var(--sub);cursor:pointer';
-    more.textContent='▼ 다음 페이지';
-    more.onclick=()=>loadPage(curPage+1);
-    wrap.appendChild(more);
-  }
 }
 
 // ── 잠금 ──
