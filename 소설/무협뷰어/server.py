@@ -40,6 +40,12 @@ def load_novels():
     novels = data.get('무협지', [])
     for i, n in enumerate(novels):
         n['id'] = i + 1
+        # 파일경로를 현재 BASE_DIR 기준으로 재매핑 (폴더 이동 대응)
+        orig = n.get('파일경로', '')
+        fname = os.path.basename(orig)
+        new_path = os.path.join(BASE_DIR, fname)
+        if fname and os.path.exists(new_path):
+            n['파일경로'] = new_path
     return novels
 
 _novels_cache = None
