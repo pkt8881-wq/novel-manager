@@ -40,9 +40,10 @@ def load_novels():
     novels = data.get('무협지', [])
     for i, n in enumerate(novels):
         n['id'] = i + 1
-        # 파일경로를 현재 BASE_DIR 기준으로 재매핑 (폴더 이동 대응)
+        # 파일경로를 현재 BASE_DIR 기준으로 재매핑 (Windows/Android 모두 대응)
         orig = n.get('파일경로', '')
-        fname = os.path.basename(orig)
+        # Windows 경로(\)와 Linux 경로(/) 모두 처리
+        fname = orig.replace('\\', '/').split('/')[-1]
         new_path = os.path.join(BASE_DIR, fname)
         if fname and os.path.exists(new_path):
             n['파일경로'] = new_path
@@ -1175,16 +1176,24 @@ function initUnlockRing(){
 
 // ── 초기화 ──
 (async()=>{
-  await loadPage(1);
-  // 이어읽기 복원
-  const bkRes=await fetch(`/api/bookmark/${NID}`);
-  const bk=await bkRes.json();
-  if(bk.paragraph_idx>0){
-    const pg=bk.page||1;
-    if(pg!==1)await loadPage(pg);
-    curPara=Math.max(0,bk.paragraph_idx-pageStartIdx);
-    jumpToPara(curPara);
-    toast('📍 이어읽기: '+(bk.paragraph_idx+1)+'번째 문단');
+  const dbg=document.getElementById('loading');
+  try{
+    dbg.innerHTML='<div class="spinner"></div>NID='+NID+' 연결 중...';
+    await loadPage(1);
+    try{
+      const bkRes=await fetch(`/api/bookmark/${NID}`);
+      const bk=await bkRes.json();
+      if(bk.paragraph_idx>0){
+        const pg=bk.page||1;
+        if(pg!==1)await loadPage(pg);
+        curPara=Math.max(0,bk.paragraph_idx-pageStartIdx);
+        jumpToPara(curPara);
+        toast('📍 이어읽기: '+(bk.paragraph_idx+1)+'번째 문단');
+      }
+    }catch(e){}
+  }catch(e){
+    dbg.style.display='block';
+    dbg.innerHTML='<p style="color:#f66;padding:20px;font-size:13px">오류: '+e.message+'<br>NID='+NID+'<br>URL='+location.href+'</p>';
   }
 })();
 </script>
