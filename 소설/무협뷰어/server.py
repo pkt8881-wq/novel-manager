@@ -190,76 +190,90 @@ DASHBOARD_HTML = """<!DOCTYPE html>
 <title>⚔️ 무협지 도서관</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Malgun Gothic',sans-serif;background:#0a0a0f;color:#e0d5c5;
-  min-height:100vh;overflow-x:hidden;
-  padding-bottom:env(safe-area-inset-bottom)}
+:root{--acc:#c9a227;--bg:#0a0a0f;--surface:#150f05;--card:#1e1808;--border:#2a2010;--text:#e0d5c5;--sub:#887755}
+[data-skin="sakura"]{--acc:#ff6baf;--bg:#18080f;--surface:#2d1220;--card:#3e1a2e;--border:#5a2545;--text:#fff3f8;--sub:#c090a8}
+[data-skin="rainbow"]{--acc:#9d50ff;--bg:#080812;--surface:#10102a;--card:#16164a;--border:#28286a;--text:#f0f0ff;--sub:#8888cc}
+[data-skin="ocean"]{--acc:#00c8e8;--bg:#010a14;--surface:#041824;--card:#062032;--border:#0a304e;--text:#d8f0ff;--sub:#5090b0}
+[data-skin="library"]{--acc:#d4a030;--bg:#180e06;--surface:#281a0c;--card:#382414;--border:#503a20;--text:#f4e8d0;--sub:#907858}
+[data-skin="forest"]{--acc:#50c850;--bg:#020c04;--surface:#081a0c;--card:#0c2410;--border:#183818;--text:#dcf0e0;--sub:#609060}
+#skinCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0;transition:opacity .6s}
+#skinCanvas.on{opacity:1}
+body{font-family:'Malgun Gothic',sans-serif;background:var(--bg);color:var(--text);
+  min-height:100vh;overflow-x:hidden;padding-bottom:env(safe-area-inset-bottom)}
 .header{
-  background:linear-gradient(135deg,#1a1208,#2a1e0e);
+  background:var(--surface);
   padding:12px 16px;padding-top:calc(12px + env(safe-area-inset-top));
   position:sticky;top:0;z-index:100;
   box-shadow:0 2px 20px rgba(0,0,0,.7);
-  border-bottom:1px solid #c9a22740}
-.header h1{font-size:clamp(18px,5vw,22px);color:#c9a227;margin-bottom:6px;
-  text-shadow:0 0 20px #c9a22760}
-.header .stats{font-size:12px;color:#888;margin-bottom:8px}
+  border-bottom:1px solid var(--border)}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.header h1{font-size:clamp(18px,5vw,22px);color:var(--acc);
+  text-shadow:0 0 20px rgba(201,162,39,.4)}
+.skin-btn{background:none;border:1px solid var(--border);color:var(--acc);
+  padding:4px 10px;border-radius:14px;font-size:12px;cursor:pointer;white-space:nowrap}
+.header .stats{font-size:12px;color:var(--sub);margin-bottom:8px}
 .search-bar{display:flex;gap:8px}
 .search-bar input{
   flex:1;padding:10px 14px;border-radius:25px;
-  border:1px solid #c9a22740;background:#1a1208;color:#e0d5c5;
+  border:1px solid var(--border);background:var(--card);color:var(--text);
   font-size:clamp(14px,4vw,16px);-webkit-appearance:none}
-.search-bar input::placeholder{color:#664}
+.search-bar input::placeholder{color:var(--sub)}
 .filter-row{
   display:flex;gap:8px;padding:10px 14px;
   overflow-x:auto;scrollbar-width:none;
-  background:#0d0d08;border-bottom:1px solid #1a1a10}
+  background:var(--bg);border-bottom:1px solid var(--border)}
 .filter-row::-webkit-scrollbar{display:none}
 .chip{
   padding:7px 14px;border-radius:20px;
-  border:1px solid #333;background:#1a1208;color:#998;
+  border:1px solid var(--border);background:var(--card);color:var(--sub);
   font-size:clamp(12px,3.5vw,14px);cursor:pointer;white-space:nowrap;
   transition:.15s;-webkit-tap-highlight-color:transparent}
-.chip.active{background:#c9a227;color:#000;border-color:#c9a227;font-weight:700}
+.chip.active{background:var(--acc);color:#000;border-color:var(--acc);font-weight:700}
 .chip:active{opacity:.7}
 .sort-row{
   display:flex;gap:6px;padding:8px 14px;
-  background:#0a0a0f;border-bottom:1px solid #1a1a10;
+  background:var(--bg);border-bottom:1px solid var(--border);
   overflow-x:auto;scrollbar-width:none}
 .sort-row::-webkit-scrollbar{display:none}
 .sort-btn{
   padding:6px 12px;border-radius:12px;
-  border:1px solid #333;background:transparent;
-  color:#777;font-size:clamp(11px,3vw,13px);cursor:pointer;white-space:nowrap}
-.sort-btn.active{color:#c9a227;border-color:#c9a227}
-.novel-list{padding:10px 12px}
+  border:1px solid var(--border);background:transparent;
+  color:var(--sub);font-size:clamp(11px,3vw,13px);cursor:pointer;white-space:nowrap}
+.sort-btn.active{color:var(--acc);border-color:var(--acc)}
+.novel-list{padding:10px 12px;position:relative;z-index:2}
 .novel-card{
-  background:#150f05;border-radius:14px;
+  background:var(--card);border-radius:14px;
   padding:13px;margin-bottom:10px;
   display:flex;align-items:flex-start;gap:10px;
   cursor:pointer;transition:.15s;
-  border:1px solid #2a2010;
+  border:1px solid var(--border);
   -webkit-tap-highlight-color:transparent}
-.novel-card:active{transform:scale(.98);background:#1e1808}
-.rank{font-size:clamp(15px,4vw,18px);font-weight:900;color:#c9a227;
+.novel-card:active{transform:scale(.98)}
+.rank{font-size:clamp(15px,4vw,18px);font-weight:900;color:var(--acc);
   width:28px;text-align:center;flex-shrink:0;padding-top:3px}
 .novel-info{flex:1;min-width:0}
 .novel-title{font-size:clamp(14px,4vw,16px);font-weight:600;
-  color:#e8dcc8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.novel-author{font-size:clamp(11px,3vw,13px);color:#c9a227;margin-top:3px}
+  color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.novel-author{font-size:clamp(11px,3vw,13px);color:var(--acc);margin-top:3px}
 .novel-meta{display:flex;gap:6px;margin-top:4px;align-items:center;flex-wrap:wrap}
 .origin-badge{padding:2px 8px;border-radius:10px;font-size:11px;
-  background:#2a1a00;color:#c9a227;border:1px solid #c9a22740}
-.size-badge{font-size:11px;color:#666}
-.loading{text-align:center;padding:40px;color:#444}
+  background:var(--surface);color:var(--acc);border:1px solid var(--border)}
+.size-badge{font-size:11px;color:var(--sub)}
+.loading{text-align:center;padding:40px;color:var(--sub)}
 .fab{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:20px;
-  background:#c9a227;color:#000;border:none;border-radius:50%;
+  background:var(--acc);color:#000;border:none;border-radius:50%;
   width:52px;height:52px;font-size:22px;cursor:pointer;
-  box-shadow:0 4px 20px rgba(201,162,39,.4);z-index:50}
+  box-shadow:0 4px 20px rgba(0,0,0,.4);z-index:50}
 .fab:active{transform:scale(.92)}
 </style>
 </head>
 <body>
+<canvas id="skinCanvas"></canvas>
 <div class="header">
-  <h1>⚔️ 무협지 도서관</h1>
+  <div class="header-top">
+    <h1>⚔️ 무협지 도서관</h1>
+    <button class="skin-btn" id="skinBtn" onclick="cycleSkin()">🌙 다크</button>
+  </div>
   <div class="stats" id="stats">로딩 중...</div>
   <div class="search-bar">
     <input type="search" id="searchInput" placeholder="제목, 작가 검색..." oninput="onSearch()">
@@ -348,6 +362,83 @@ function onSearch(){
 window.addEventListener('scroll',()=>{
   if(window.innerHeight+window.scrollY>=document.body.offsetHeight-300) loadNovels();
 });
+
+// ── 6-테마 스킨 (canvas 애니메이션) ──
+const SKINS=[
+  {id:'dark',label:'🌙 다크'},{id:'sakura',label:'🌸 벚꽃'},
+  {id:'rainbow',label:'🌈 오색찬란'},{id:'ocean',label:'🌊 밤바다'},
+  {id:'library',label:'📚 서재'},{id:'forest',label:'🌿 숲속'},
+];
+let _si=0,_raf=null;
+const _cv=document.getElementById('skinCanvas');
+const _cx=_cv.getContext('2d');
+function _rsz(){_cv.width=innerWidth;_cv.height=innerHeight;}
+window.addEventListener('resize',_rsz);_rsz();
+
+function applySkin(i){
+  const sk=SKINS[i];
+  document.documentElement.setAttribute('data-skin',sk.id==='dark'?'':sk.id);
+  document.getElementById('skinBtn').textContent=sk.label;
+  localStorage.setItem('wh_list_skin',i);
+  if(_raf){cancelAnimationFrame(_raf);_raf=null;}
+  _cv.classList.remove('on');_cx.clearRect(0,0,_cv.width,_cv.height);
+  if(sk.id==='dark')_sDark();
+  else if(sk.id==='sakura')_sSakura();
+  else if(sk.id==='rainbow')_sRainbow();
+  else if(sk.id==='ocean')_sOcean();
+  else if(sk.id==='library')_sLibrary();
+  else if(sk.id==='forest')_sForest();
+}
+function cycleSkin(){_si=(_si+1)%SKINS.length;applySkin(_si);}
+(function(){const s=parseInt(localStorage.getItem('wh_list_skin')||'0');_si=(isNaN(s)?0:s)%6;applySkin(_si);})();
+
+function _sDark(){
+  _cv.classList.add('on');
+  const S=[];for(let i=0;i<90;i++)S.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.4+.4,ph:Math.random()*Math.PI*2,sp:Math.random()*.022+.006,w:Math.random()>.7});
+  let m=null,nm=Date.now()+2500+Math.random()*4000;
+  function f(){_cx.clearRect(0,0,_cv.width,_cv.height);const t=Date.now()*.001;
+    for(const s of S){const a=(Math.sin(t*s.sp*15+s.ph)+1)/2*.55+.1;const g=_cx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*5.5);const c=s.w?'255,230,180':'200,215,255';g.addColorStop(0,'rgba(255,255,255,'+a+')');g.addColorStop(.25,'rgba('+c+','+a*.6+')');g.addColorStop(1,'rgba('+c+',0)');_cx.beginPath();_cx.arc(s.x,s.y,s.r*5.5,0,Math.PI*2);_cx.fillStyle=g;_cx.fill();}
+    if(!m&&Date.now()>=nm)m={x:_cv.width*(.05+Math.random()*.25),y:_cv.height*(.2+Math.random()*.35),vx:2.8+Math.random()*2,vy:1.8+Math.random()*1.5,life:1};
+    if(m){m.x+=m.vx;m.y+=m.vy;m.life-=.013;if(m.life<=0||m.y>_cv.height){m=null;nm=Date.now()+3500+Math.random()*5000;}else{const l=22,tl=_cx.createLinearGradient(m.x,m.y,m.x-m.vx*l,m.y-m.vy*l);tl.addColorStop(0,'rgba(255,255,255,'+m.life*.9+')');tl.addColorStop(1,'rgba(200,220,255,0)');_cx.beginPath();_cx.moveTo(m.x,m.y);_cx.lineTo(m.x-m.vx*l,m.y-m.vy*l);_cx.strokeStyle=tl;_cx.lineWidth=2;_cx.lineCap='round';_cx.stroke();}}
+    _raf=requestAnimationFrame(f);}f();
+}
+function _sSakura(){
+  _cv.classList.add('on');
+  const P=[];for(let i=0;i<38;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight-innerHeight,s:Math.random()*5+3,sp:Math.random()*.8+.25,dr:Math.random()*1.2-.6,rot:Math.random()*Math.PI*2,rs:(Math.random()-.5)*.035,op:Math.random()*.45+.2});
+  function f(){_cx.clearRect(0,0,_cv.width,_cv.height);
+    for(const p of P){_cx.save();_cx.translate(p.x,p.y);_cx.rotate(p.rot);_cx.globalAlpha=p.op;for(let i=0;i<5;i++){_cx.save();_cx.rotate(i*Math.PI*2/5);_cx.beginPath();_cx.ellipse(0,-p.s*.78,p.s*.3,p.s*.54,0,0,Math.PI*2);_cx.fillStyle='#ffb7d5';_cx.fill();_cx.restore();}_cx.beginPath();_cx.arc(0,0,p.s*.2,0,Math.PI*2);_cx.fillStyle='rgba(255,220,80,.9)';_cx.fill();_cx.restore();
+      p.y+=p.sp;p.x+=p.dr+Math.sin(p.y*.015)*.5;p.rot+=p.rs;if(p.y>_cv.height+20){p.y=-20;p.x=Math.random()*_cv.width;}}
+    _raf=requestAnimationFrame(f);}f();
+}
+function _sRainbow(){
+  _cv.classList.add('on');
+  const cols=[[255,107,157],[255,179,71],[255,225,86],[107,255,184],[86,207,255],[196,107,255]];
+  const P=[];for(let i=0;i<75;i++){const c=cols[i%cols.length];P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*2.5+.8,cr:c[0],cg:c[1],cb:c[2],ph:Math.random()*Math.PI*2,sp:Math.random()*.025+.008,dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5});}
+  function f(){_cx.clearRect(0,0,_cv.width,_cv.height);const t=Date.now()*.001;
+    for(const p of P){const a=(Math.sin(t*p.sp*30+p.ph)+1)/2*.32+.05;const g=_cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.5);g.addColorStop(0,'rgba('+p.cr+','+p.cg+','+p.cb+','+a+')');g.addColorStop(1,'rgba('+p.cr+','+p.cg+','+p.cb+',0)');_cx.beginPath();_cx.arc(p.x,p.y,p.r*3.5,0,Math.PI*2);_cx.fillStyle=g;_cx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>_cv.width)p.dx*=-1;if(p.y<0||p.y>_cv.height)p.dy*=-1;}
+    _raf=requestAnimationFrame(f);}f();
+}
+function _sOcean(){
+  _cv.classList.add('on');
+  const P=[];for(let i=0;i<28;i++)P.push({x:Math.random()*innerWidth,y:innerHeight+Math.random()*innerHeight,r:Math.random()*4+2.5,sp:Math.random()*.6+.2,wb:Math.random()*Math.PI*2,op:Math.random()*.28+.12});
+  function f(){_cx.clearRect(0,0,_cv.width,_cv.height);const t=Date.now()*.001;
+    for(const p of P){p.y-=p.sp;p.x+=Math.sin(t*.7+p.wb)*.4;const fade=Math.min(1,(innerHeight-p.y)/innerHeight*4);const a=p.op*Math.max(0,fade);const g=_cx.createRadialGradient(p.x-p.r*.35,p.y-p.r*.35,0,p.x,p.y,p.r);g.addColorStop(0,'rgba(230,248,255,'+(a+.15)+')');g.addColorStop(.55,'rgba(140,210,255,'+a+')');g.addColorStop(1,'rgba(70,160,220,'+(a*.35)+')');_cx.beginPath();_cx.arc(p.x,p.y,p.r,0,Math.PI*2);_cx.fillStyle=g;_cx.fill();if(p.y<-10){p.y=innerHeight+Math.random()*60;p.x=Math.random()*innerWidth;}}
+    _raf=requestAnimationFrame(f);}f();
+}
+function _sLibrary(){
+  _cv.classList.add('on');
+  const P=[];for(let i=0;i<55;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.8+.5,ph:Math.random()*Math.PI*2,sp:Math.random()*.015+.005,dx:(Math.random()-.5)*.3,dy:-(Math.random()*.4+.1)});
+  function f(){_cx.clearRect(0,0,_cv.width,_cv.height);const t=Date.now()*.001;
+    for(const p of P){const a=(Math.sin(t*p.sp*20+p.ph)+1)/2*.4+.1;const g=_cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);g.addColorStop(0,'rgba(255,210,80,'+a+')');g.addColorStop(1,'rgba(200,140,30,0)');_cx.beginPath();_cx.arc(p.x,p.y,p.r*4,0,Math.PI*2);_cx.fillStyle=g;_cx.fill();p.x+=p.dx+Math.sin(t*.5+p.ph)*.2;p.y+=p.dy;if(p.y<-10){p.y=innerHeight+10;p.x=Math.random()*innerWidth;}if(p.x<0)p.x=innerWidth;else if(p.x>innerWidth)p.x=0;}
+    _raf=requestAnimationFrame(f);}f();
+}
+function _sForest(){
+  _cv.classList.add('on');
+  const P=[];for(let i=0;i<30;i++)P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*3+1.5,ph:Math.random()*Math.PI*2,sp:Math.random()*.02+.008,dx:(Math.random()-.5)*.7,dy:(Math.random()-.5)*.7});
+  function f(){_cx.clearRect(0,0,_cv.width,_cv.height);const t=Date.now()*.001;
+    for(const p of P){const a=(Math.sin(t*p.sp*20+p.ph)+1)/2*.48+.05;const g=_cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5);g.addColorStop(0,'rgba(160,255,120,'+a+')');g.addColorStop(1,'rgba(80,200,60,0)');_cx.beginPath();_cx.arc(p.x,p.y,p.r*5,0,Math.PI*2);_cx.fillStyle=g;_cx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<-20)p.x=_cv.width+20;else if(p.x>_cv.width+20)p.x=-20;if(p.y<-20)p.y=_cv.height+20;else if(p.y>_cv.height+20)p.y=-20;}
+    _raf=requestAnimationFrame(f);}f();
+}
 
 loadAuthors(); loadNovels(true);
 </script>
