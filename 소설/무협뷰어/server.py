@@ -993,10 +993,11 @@ function chunkText(text,maxLen=140){
 }
 
 // ── Web Speech 재생 ──
-const synth=window.speechSynthesis;
+const synth=window.speechSynthesis||null;
 let voices=[], curVoice=null;
 
 function loadVoices(){
+  if(!synth){document.getElementById('voiceSel').innerHTML='<option>(TTS 미지원)</option>';return;}
   const all=synth.getVoices();
   voices=all.filter(v=>{const l=(v.lang||'').replace('_','-').toLowerCase();return l==='ko-kr'||l==='ko';});
   if(!voices.length) voices=all.filter(v=>/korea|한국/i.test(v.name));
@@ -1016,7 +1017,7 @@ function loadVoices(){
   else curVoice=voices[0];
 }
 loadVoices();
-if(speechSynthesis.onvoiceschanged!==undefined) speechSynthesis.onvoiceschanged=loadVoices;
+if(synth&&speechSynthesis.onvoiceschanged!==undefined) speechSynthesis.onvoiceschanged=loadVoices;
 
 function onVoiceChange(){
   const idx=parseInt(document.getElementById('voiceSel').value);
@@ -1025,6 +1026,7 @@ function onVoiceChange(){
 }
 
 function playWebSpeech(startIdx){
+  if(!synth){onPlayEnd();return;}
   let idx=startIdx, text='';
   while(idx<paragraphs.length){
     text=cleanTTS(paragraphs[idx]);
@@ -1053,7 +1055,7 @@ function playPara(i){
 
 function stopAll(){
   if(_curUtt){_curUtt.onend=null;_curUtt.onerror=null;_curUtt=null;}
-  synth.cancel();stopSilentLoop();
+  if(synth)synth.cancel();stopSilentLoop();
   isPlaying=false;autoOn=false;
   document.getElementById('playBtn').textContent='▶';
 }
@@ -1113,19 +1115,24 @@ function loadNextPage(){
 
 // ── 페이지 로드 ──
 async function loadPage(pg, cb){
-  const res=await fetch(`/api/novel/${NID}/content?page=${pg}&psize=150`);
-  const data=await res.json();
-  paragraphs=data.paragraphs;
-  totalPages=data.total_pages;
-  totalPara=data.total_para;
-  pageStartIdx=data.start_idx;
-  curPage=pg;
-  renderText();
-  document.getElementById('topTitle').textContent=data.title;
-  document.title='⚔️ '+data.title;
-  document.getElementById('playBtn').disabled=false;
-  bmRefresh();
-  if(cb)cb();
+  try{
+    const res=await fetch(`/api/novel/${NID}/content?page=${pg}&psize=150`);
+    if(!res.ok)throw new Error('HTTP '+res.status);
+    const data=await res.json();
+    paragraphs=data.paragraphs;
+    totalPages=data.total_pages;
+    totalPara=data.total_para;
+    pageStartIdx=data.start_idx;
+    curPage=pg;
+    renderText();
+    document.getElementById('topTitle').textContent=data.title;
+    document.title='⚔️ '+data.title;
+    document.getElementById('playBtn').disabled=false;
+    bmRefresh();
+    if(cb)cb();
+  }catch(e){
+    document.getElementById('loading').innerHTML='<p style="color:red;padding:20px">소설을 불러오지 못했습니다.<br>'+e.message+'</p>';
+  }
 }
 
 function renderText(){
