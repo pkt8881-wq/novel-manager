@@ -12,13 +12,22 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='repla
 import os, re, json
 from flask import Flask, jsonify, request, Response
 
-# 폰 이식: 환경변수 MUHEOP_DIR 또는 server.py 옆 '정리됨' 폴더 자동 탐색
+# 경로 자동 탐색: 환경변수 → server.py 옆 정리됨 → PC경로 → 안드로이드
 _HERE = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.environ.get(
-    'MUHEOP_DIR',
-    r"E:\일반 소설\무협지\정리됨" if os.path.exists(r"E:\일반 소설\무협지\정리됨")
-    else os.path.join(_HERE, "정리됨")
-)
+def _find_base():
+    candidates = [
+        os.environ.get('MUHEOP_DIR', ''),
+        os.path.join(_HERE, '정리됨'),
+        r"E:\일반 소설\무협지\정리됨",
+        '/sdcard/무협/정리됨',
+        '/storage/emulated/0/무협/정리됨',
+        os.path.expanduser('~/무협/정리됨'),
+    ]
+    for p in candidates:
+        if p and os.path.isdir(p) and os.path.exists(os.path.join(p, '목록.json')):
+            return p
+    return candidates[1]  # 기본값
+BASE_DIR = _find_base()
 JSON_PATH  = os.path.join(BASE_DIR, "목록.json")
 PORT       = int(os.environ.get('PORT', 8906))
 
