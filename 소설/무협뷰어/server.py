@@ -34,6 +34,13 @@ def get_novels():
         _novels_cache = load_novels()
     return _novels_cache
 
+@app.route('/api/refresh')
+def api_refresh():
+    global _novels_cache
+    _novels_cache = None
+    novels = get_novels()
+    return jsonify({"ok": True, "total": len(novels)})
+
 # ─── 파일 읽기 ───
 def read_file(fpath):
     try:
@@ -356,12 +363,19 @@ READER_HTML = """<!DOCTYPE html>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{--bg:#0a0a0f;--surface:#150f05;--card:#1e1808;--accent:#c9a227;
   --text:#e8dcc8;--sub:#887755;--border:#2a2010;--read:#f0e8d8;--read-bg:#12100a}
-[data-skin="light"]{--bg:#f5f0e8;--surface:#fff8ee;--card:#fffaf3;--accent:#8b4513;
-  --text:#2a1a0a;--sub:#887766;--border:#d4c4a0;--read:#2a1a0a;--read-bg:#fffdf8}
-[data-skin="night"]{--bg:#000005;--surface:#05050f;--card:#080818;--accent:#4488ff;
-  --text:#c0d0ff;--sub:#446688;--border:#101030;--read:#d0e0ff;--read-bg:#030310}
-[data-skin="green"]{--bg:#020c04;--surface:#081a0a;--card:#0c2410;--accent:#50c850;
-  --text:#d8f0dc;--sub:#508050;--border:#183818;--read:#e8f8e8;--read-bg:#050e07}
+#skinCanvas{position:fixed;top:0;left:0;width:100%;height:100%;
+  pointer-events:none;z-index:5;opacity:0;transition:opacity .6s}
+#skinCanvas.on{opacity:1}
+[data-skin="sakura"]{--bg:#18080f;--surface:#2d1220;--card:#3e1a2e;--accent:#ff6baf;
+  --text:#fff3f8;--sub:#c090a8;--border:#5a2545;--read:#fff8fc;--read-bg:#23101c}
+[data-skin="rainbow"]{--bg:#080812;--surface:#10102a;--card:#16164a;--accent:#9d50ff;
+  --text:#f0f0ff;--sub:#8888cc;--border:#28286a;--read:#f8f8ff;--read-bg:#0c0c28}
+[data-skin="ocean"]{--bg:#010a14;--surface:#041824;--card:#062032;--accent:#00c8e8;
+  --text:#d8f0ff;--sub:#5090b0;--border:#0a304e;--read:#e8f8ff;--read-bg:#030e1c}
+[data-skin="library"]{--bg:#180e06;--surface:#281a0c;--card:#382414;--accent:#d4a030;
+  --text:#f4e8d0;--sub:#907858;--border:#503a20;--read:#fef9f0;--read-bg:#1e1408}
+[data-skin="forest"]{--bg:#020c04;--surface:#081a0c;--card:#0c2410;--accent:#50c850;
+  --text:#dcf0e0;--sub:#609060;--border:#183818;--read:#f0f8f0;--read-bg:#050e07}
 html{overflow-x:hidden;scroll-padding-top:56px;scroll-padding-bottom:200px}
 body{min-height:100%;overflow-x:hidden;background:var(--bg);color:var(--text);
   font-family:'Malgun Gothic',serif;
@@ -429,6 +443,7 @@ body{min-height:100%;overflow-x:hidden;background:var(--bg);color:var(--text);
 </style>
 </head>
 <body>
+<canvas id="skinCanvas"></canvas>
 <div id="topBar">
   <button class="back-btn" onclick="history.back()">◀ 목록</button>
   <div class="novel-title" id="topTitle">무협지 읽기</div>
@@ -485,8 +500,6 @@ body{min-height:100%;overflow-x:hidden;background:var(--bg);color:var(--text);
 <script>
 const NID   = parseInt(location.pathname.split('/').pop());
 const BM_KEY= 'wh_bm__' + NID;
-const SKINS = ['dark','light','night','green'];
-let skinIdx = 0;
 
 let paragraphs=[], curPara=0, isPlaying=false, autoOn=false;
 let totalPara=0, totalPages=1, curPage=1, pageStartIdx=0;
@@ -499,20 +512,246 @@ function toast(msg,ms=2200){
   clearTimeout(t._t);t._t=setTimeout(()=>t.style.opacity='0',ms);
 }
 
-// ── 테마 ──
-function cycleSkin(){
-  skinIdx=(skinIdx+1)%SKINS.length;
-  const s=SKINS[skinIdx];
-  document.body.setAttribute('data-skin', s==='dark'?'':s);
-  localStorage.setItem('wh_skin', skinIdx);
-  const labels=['🌙 다크','☀️ 라이트','🌃 나이트','🌿 그린'];
-  document.getElementById('skinBtn').textContent=labels[skinIdx];
+// ── 6-테마 스킨 시스템 (canvas 애니메이션) ──
+const SKINS=[
+  {id:'dark',   label:'🌙 다크'},
+  {id:'sakura', label:'🌸 벚꽃'},
+  {id:'rainbow',label:'🌈 오색찬란'},
+  {id:'ocean',  label:'🌊 밤바다'},
+  {id:'library',label:'📚 서재'},
+  {id:'forest', label:'🌿 숲속'},
+];
+let _skinIdx=0, _skinRaf=null;
+const _cv=document.getElementById('skinCanvas');
+const _cx=_cv.getContext('2d');
+function _cvResize(){_cv.width=innerWidth;_cv.height=innerHeight;}
+window.addEventListener('resize',_cvResize);_cvResize();
+
+function applySkin(idx){
+  const sk=SKINS[idx];
+  document.documentElement.setAttribute('data-skin',sk.id==='dark'?'':sk.id);
+  document.getElementById('skinBtn').textContent=sk.label;
+  localStorage.setItem('wh_skin',idx);
+  if(_skinRaf){cancelAnimationFrame(_skinRaf);_skinRaf=null;}
+  _cv.classList.remove('on');
+  _cx.clearRect(0,0,_cv.width,_cv.height);
+  if(sk.id==='dark')         _startDark();
+  else if(sk.id==='sakura')  _startSakura();
+  else if(sk.id==='rainbow') _startRainbow();
+  else if(sk.id==='ocean')   _startOcean();
+  else if(sk.id==='library') _startLibrary();
+  else if(sk.id==='forest')  _startForest();
 }
-(()=>{
-  skinIdx=parseInt(localStorage.getItem('wh_skin')||'0');
-  const s=SKINS[skinIdx];
-  if(s!=='dark') document.body.setAttribute('data-skin',s);
+function cycleSkin(){
+  _skinIdx=(_skinIdx+1)%SKINS.length;
+  applySkin(_skinIdx);
+  toast(SKINS[_skinIdx].label);
+}
+(function(){
+  const saved=parseInt(localStorage.getItem('wh_skin')||'0');
+  _skinIdx=(isNaN(saved)?0:saved)%SKINS.length;
+  applySkin(_skinIdx);
 })();
+
+// 🌙 다크 — 발광 별빛 + 별똥별
+function _startDark(){
+  _cv.classList.add('on');
+  const stars=[];
+  for(let i=0;i<90;i++) stars.push({
+    x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+    r:Math.random()*1.4+.4,ph:Math.random()*Math.PI*2,
+    sp:Math.random()*.022+.006,warm:Math.random()>.7
+  });
+  let meteor=null,nextM=Date.now()+2500+Math.random()*4000;
+  function frame(){
+    _cx.clearRect(0,0,_cv.width,_cv.height);
+    const t=Date.now()*.001;
+    for(const s of stars){
+      const a=(Math.sin(t*s.sp*15+s.ph)+1)/2*.55+.1;
+      const glowR=s.r*5.5;
+      const gr=_cx.createRadialGradient(s.x,s.y,0,s.x,s.y,glowR);
+      const col=s.warm?'255,230,180':'200,215,255';
+      gr.addColorStop(0,'rgba(255,255,255,'+a+')');
+      gr.addColorStop(.25,'rgba('+col+','+a*.6+')');
+      gr.addColorStop(1,'rgba('+col+',0)');
+      _cx.beginPath();_cx.arc(s.x,s.y,glowR,0,Math.PI*2);
+      _cx.fillStyle=gr;_cx.fill();
+    }
+    if(!meteor&&Date.now()>=nextM){
+      meteor={x:_cv.width*(.05+Math.random()*.25),y:_cv.height*(.2+Math.random()*.35),
+        vx:2.8+Math.random()*2,vy:1.8+Math.random()*1.5,life:1};
+    }
+    if(meteor){
+      meteor.x+=meteor.vx;meteor.y+=meteor.vy;meteor.life-=.013;
+      if(meteor.life<=0||meteor.y>_cv.height){
+        meteor=null;nextM=Date.now()+3500+Math.random()*5000;
+      } else {
+        const len=22;
+        const tl=_cx.createLinearGradient(meteor.x,meteor.y,meteor.x-meteor.vx*len,meteor.y-meteor.vy*len);
+        tl.addColorStop(0,'rgba(255,255,255,'+meteor.life*.9+')');
+        tl.addColorStop(.5,'rgba(200,220,255,'+meteor.life*.4+')');
+        tl.addColorStop(1,'rgba(200,220,255,0)');
+        _cx.beginPath();_cx.moveTo(meteor.x,meteor.y);
+        _cx.lineTo(meteor.x-meteor.vx*len,meteor.y-meteor.vy*len);
+        _cx.strokeStyle=tl;_cx.lineWidth=2;_cx.lineCap='round';_cx.stroke();
+        _cx.beginPath();_cx.arc(meteor.x,meteor.y,2.2,0,Math.PI*2);
+        _cx.fillStyle='rgba(255,255,255,'+meteor.life+')';_cx.fill();
+      }
+    }
+    _skinRaf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+// 🌸 벚꽃 — 5장 꽃잎
+function _startSakura(){
+  _cv.classList.add('on');
+  const P=[];
+  for(let i=0;i<38;i++) P.push({
+    x:Math.random()*innerWidth,y:Math.random()*innerHeight-innerHeight,
+    s:Math.random()*5+3,sp:Math.random()*.8+0.25,
+    dr:Math.random()*1.2-0.6,rot:Math.random()*Math.PI*2,
+    rs:(Math.random()-.5)*0.035,op:Math.random()*.45+.2
+  });
+  function drawFlower(p){
+    _cx.save();_cx.translate(p.x,p.y);_cx.rotate(p.rot);_cx.globalAlpha=p.op;
+    for(let i=0;i<5;i++){
+      _cx.save();_cx.rotate(i*Math.PI*2/5);
+      _cx.beginPath();_cx.ellipse(0,-p.s*.78,p.s*.3,p.s*.54,0,0,Math.PI*2);
+      _cx.fillStyle='#ffb7d5';_cx.fill();_cx.restore();
+    }
+    _cx.beginPath();_cx.arc(0,0,p.s*.2,0,Math.PI*2);
+    _cx.fillStyle='rgba(255,220,80,.9)';_cx.fill();_cx.restore();
+  }
+  function frame(){
+    _cx.clearRect(0,0,_cv.width,_cv.height);
+    for(const p of P){
+      drawFlower(p);
+      p.y+=p.sp;p.x+=p.dr+Math.sin(p.y*.015)*.5;p.rot+=p.rs;
+      if(p.y>_cv.height+20){p.y=-20;p.x=Math.random()*_cv.width;}
+    }
+    _skinRaf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+// 🌈 오색찬란 반짝이
+function _startRainbow(){
+  _cv.classList.add('on');
+  const cols=[[255,107,157],[255,179,71],[255,225,86],[107,255,184],[86,207,255],[196,107,255],[255,107,107]];
+  const P=[];
+  for(let i=0;i<75;i++){
+    const c=cols[i%cols.length];
+    P.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+      r:Math.random()*2.5+.8,cr:c[0],cg:c[1],cb:c[2],
+      ph:Math.random()*Math.PI*2,sp:Math.random()*.025+.008,
+      dx:(Math.random()-.5)*.5,dy:(Math.random()-.5)*.5});
+  }
+  function frame(){
+    _cx.clearRect(0,0,_cv.width,_cv.height);
+    const t=Date.now()*.001;
+    for(const p of P){
+      const a=(Math.sin(t*p.sp*30+p.ph)+1)/2*.32+.05;
+      const gr=_cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*3.5);
+      gr.addColorStop(0,'rgba('+p.cr+','+p.cg+','+p.cb+','+a+')');
+      gr.addColorStop(1,'rgba('+p.cr+','+p.cg+','+p.cb+',0)');
+      _cx.beginPath();_cx.arc(p.x,p.y,p.r*3.5,0,Math.PI*2);
+      _cx.fillStyle=gr;_cx.fill();
+      p.x+=p.dx;p.y+=p.dy;
+      if(p.x<0||p.x>_cv.width)p.dx*=-1;
+      if(p.y<0||p.y>_cv.height)p.dy*=-1;
+    }
+    _skinRaf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+// 🌊 밤바다 — 물방울 아래→위
+function _startOcean(){
+  _cv.classList.add('on');
+  const P=[];
+  for(let i=0;i<28;i++) P.push({
+    x:Math.random()*innerWidth,y:innerHeight+Math.random()*innerHeight,
+    r:Math.random()*4+2.5,sp:Math.random()*.6+0.2,
+    wb:Math.random()*Math.PI*2,op:Math.random()*.28+.12
+  });
+  function frame(){
+    _cx.clearRect(0,0,_cv.width,_cv.height);
+    const t=Date.now()*.001;
+    for(const p of P){
+      p.y-=p.sp;p.x+=Math.sin(t*.7+p.wb)*.4;
+      const fade=Math.min(1,(innerHeight-p.y)/innerHeight*4);
+      const a=p.op*Math.max(0,fade);
+      const gr=_cx.createRadialGradient(p.x-p.r*.35,p.y-p.r*.35,0,p.x,p.y,p.r);
+      gr.addColorStop(0,'rgba(230,248,255,'+(a+.15)+')');
+      gr.addColorStop(.55,'rgba(140,210,255,'+a+')');
+      gr.addColorStop(1,'rgba(70,160,220,'+(a*.35)+')');
+      _cx.beginPath();_cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      _cx.fillStyle=gr;_cx.fill();
+      if(p.y<-10){p.y=innerHeight+Math.random()*60;p.x=Math.random()*innerWidth;}
+    }
+    _skinRaf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+// 📚 서재 — 금빛 먼지
+function _startLibrary(){
+  _cv.classList.add('on');
+  const P=[];
+  for(let i=0;i<55;i++) P.push({
+    x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+    r:Math.random()*1.8+.5,ph:Math.random()*Math.PI*2,
+    sp:Math.random()*.015+.005,
+    dx:(Math.random()-.5)*.3,dy:-(Math.random()*.4+.1)
+  });
+  function frame(){
+    _cx.clearRect(0,0,_cv.width,_cv.height);
+    const t=Date.now()*.001;
+    for(const p of P){
+      const a=(Math.sin(t*p.sp*20+p.ph)+1)/2*.4+.1;
+      const gr=_cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+      gr.addColorStop(0,'rgba(255,210,80,'+a+')');
+      gr.addColorStop(1,'rgba(200,140,30,0)');
+      _cx.beginPath();_cx.arc(p.x,p.y,p.r*4,0,Math.PI*2);
+      _cx.fillStyle=gr;_cx.fill();
+      p.x+=p.dx+Math.sin(t*.5+p.ph)*.2;p.y+=p.dy;
+      if(p.y<-10){p.y=innerHeight+10;p.x=Math.random()*innerWidth;}
+      if(p.x<0)p.x=innerWidth;else if(p.x>innerWidth)p.x=0;
+    }
+    _skinRaf=requestAnimationFrame(frame);
+  }
+  frame();
+}
+
+// 🌿 숲속 반딧불
+function _startForest(){
+  _cv.classList.add('on');
+  const P=[];
+  for(let i=0;i<30;i++) P.push({
+    x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+    r:Math.random()*3+1.5,ph:Math.random()*Math.PI*2,
+    sp:Math.random()*.02+.008,
+    dx:(Math.random()-.5)*.7,dy:(Math.random()-.5)*.7
+  });
+  function frame(){
+    _cx.clearRect(0,0,_cv.width,_cv.height);
+    const t=Date.now()*.001;
+    for(const p of P){
+      const a=(Math.sin(t*p.sp*20+p.ph)+1)/2*.48+.05;
+      const gr=_cx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*5);
+      gr.addColorStop(0,'rgba(160,255,120,'+a+')');
+      gr.addColorStop(1,'rgba(80,200,60,0)');
+      _cx.beginPath();_cx.arc(p.x,p.y,p.r*5,0,Math.PI*2);
+      _cx.fillStyle=gr;_cx.fill();
+      p.x+=p.dx;p.y+=p.dy;
+      if(p.x<-20)p.x=_cv.width+20;else if(p.x>_cv.width+20)p.x=-20;
+      if(p.y<-20)p.y=_cv.height+20;else if(p.y>_cv.height+20)p.y=-20;
+    }
+    _skinRaf=requestAnimationFrame(frame);
+  }
+  frame();
+}
 
 // ── 폰트 크기 ──
 function onFontChange(){
@@ -799,6 +1038,22 @@ def index():
 @app.route('/read/<int:nid>')
 def reader(nid):
     return Response(READER_HTML, mimetype='text/html; charset=utf-8')
+
+@app.route('/read_raw')
+def read_raw():
+    """소설읽기.html 호환 - 파일 원본 바이트 반환"""
+    fpath = request.args.get('f', '').strip()
+    if not fpath:
+        return Response('path required', status=400)
+    try:
+        with open(fpath, 'rb') as f:
+            raw = f.read()
+        return Response(raw, mimetype='application/octet-stream',
+                        headers={'Content-Disposition': 'inline'})
+    except FileNotFoundError:
+        return Response('not found', status=404)
+    except Exception as e:
+        return Response(str(e), status=500)
 
 if __name__ == '__main__':
     print(f"무협지 뷰어 시작: http://localhost:{PORT}")
