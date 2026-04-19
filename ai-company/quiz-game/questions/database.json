@@ -1,0 +1,65 @@
+[
+  {
+    "id": "db_001",
+    "question": "SQLite의 가장 큰 특징은?",
+    "choices": ["클라우드 기반 분산 DB", "파일 하나(.db)에 모든 데이터를 저장하는 서버리스 경량 DB", "실시간 스트리밍 특화", "NoSQL 전용"],
+    "answer": 1,
+    "explanation": "SQLite는 별도 서버 없이 .db 파일 하나로 동작합니다. 파이썬 표준 라이브러리(sqlite3)에 내장되어 있어 설치 없이 바로 사용 가능합니다. 소형 앱, 모바일 앱, 프로토타입에 최적입니다.",
+    "tag": "SQLite",
+    "image_prompt": "single SQLite database file containing all data, minimalist serverless concept, file icon glowing"
+  },
+  {
+    "id": "db_002",
+    "question": "SQL `PRIMARY KEY`의 특징으로 올바른 것은?",
+    "choices": ["NULL 허용, 중복 허용", "NULL 불가, 중복 불가, 테이블당 1개만 허용", "NULL 불가, 중복 허용", "NULL 허용, 중복 불가"],
+    "answer": 1,
+    "explanation": "PRIMARY KEY는 테이블의 각 행을 고유하게 식별합니다. NULL이 불가하고 중복이 없으며 테이블당 하나만 설정할 수 있습니다. 보통 id INTEGER PRIMARY KEY AUTOINCREMENT로 자동 증가 ID를 씁니다.",
+    "tag": "SQL 기초",
+    "image_prompt": "primary key uniquely identifying database rows, golden key with unique identifier, dark tech"
+  },
+  {
+    "id": "db_003",
+    "question": "SQL `INNER JOIN`의 결과는?",
+    "choices": ["왼쪽 테이블 전체 행", "두 테이블에서 조건을 만족하는 행만 반환", "두 테이블 합집합 전체", "오른쪽 테이블 전체 행"],
+    "answer": 1,
+    "explanation": "INNER JOIN은 교집합입니다. users JOIN orders ON users.id = orders.user_id 하면 주문이 없는 사용자는 결과에 나타나지 않습니다. 주문이 없는 사용자도 보려면 LEFT JOIN을 씁니다.",
+    "tag": "SQL 중급",
+    "image_prompt": "Venn diagram INNER JOIN intersection highlighted, two database tables overlapping, clean diagram"
+  },
+  {
+    "id": "db_004",
+    "question": "데이터베이스 인덱스(INDEX)의 트레이드오프는?",
+    "choices": ["읽기 느려지고 쓰기 빨라짐", "읽기(SELECT)는 빨라지지만 쓰기(INSERT/UPDATE)는 느려짐", "저장 공간 감소", "보안 향상"],
+    "answer": 1,
+    "explanation": "인덱스는 책의 목차와 같습니다. 검색은 빨라지지만 데이터 변경 시 인덱스도 함께 업데이트해야 해서 쓰기가 느려집니다. 자주 검색하는 컬럼(WHERE절에 쓰는 컬럼)에 적절히 추가하는 것이 핵심입니다.",
+    "tag": "DB 성능",
+    "image_prompt": "database index vs full scan speed comparison, book index vs reading all pages, visualization"
+  },
+  {
+    "id": "db_005",
+    "question": "ORM(Object-Relational Mapping)의 역할은?",
+    "choices": ["SQL을 시각화하는 도구", "객체(코드)와 DB 테이블을 자동 매핑해 SQL 없이 DB를 조작", "데이터 암호화", "자동 백업"],
+    "answer": 1,
+    "explanation": "SQLAlchemy, Django ORM 등을 쓰면 user = User(name='Kim')처럼 파이썬 객체로 DB를 조작합니다. SQL을 직접 쓰지 않아도 되지만 복잡한 쿼리는 N+1 문제 등이 생길 수 있어 SQL도 알아야 합니다.",
+    "tag": "ORM",
+    "image_prompt": "ORM mapping Python objects to database tables, bridge between code and SQL, clean architecture"
+  },
+  {
+    "id": "db_006",
+    "question": "`N+1 문제`란?",
+    "choices": ["11개의 쿼리 오류", "ORM 사용 시 연관 데이터 조회에서 쿼리가 N개 추가 발생하는 성능 문제", "NULL이 N+1개 발생", "11번 HTTP 오류"],
+    "answer": 1,
+    "explanation": "게시글 10개를 조회(1번) 후 각 게시글의 작성자를 개별 조회(10번) = 총 11번 쿼리. 해결책은 JOIN을 사용하거나 ORM의 eager loading(SQLAlchemy: joinedload, Django: select_related)을 씁니다.",
+    "tag": "DB 성능",
+    "image_prompt": "N+1 query problem waterfall diagram, 1 query spawning N additional queries, performance warning"
+  },
+  {
+    "id": "db_007",
+    "question": "SQLite에서 데이터를 영구 저장하려면 반드시 해야 하는 것은?",
+    "choices": ["connection.save()", "connection.commit()", "cursor.flush()", "db.sync()"],
+    "answer": 1,
+    "explanation": "SQLite(그리고 대부분의 SQL DB)는 트랜잭션 기반입니다. INSERT/UPDATE/DELETE 후 commit()을 호출해야 변경사항이 파일에 영구 저장됩니다. commit() 없이 연결을 닫으면 변경사항이 사라집니다.",
+    "tag": "SQLite",
+    "image_prompt": "database commit saving data permanently, save button locking data to disk, dark tech visualization"
+  }
+]

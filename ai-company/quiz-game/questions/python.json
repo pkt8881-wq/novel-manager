@@ -1,0 +1,74 @@
+[
+  {
+    "id": "py_001",
+    "question": "Python의 GIL(Global Interpreter Lock)이란?",
+    "choices": ["그래픽 인터페이스 레이어", "한 번에 하나의 스레드만 Python 바이트코드 실행 허용", "GPU 가속 인터페이스", "전역 입력 잠금"],
+    "answer": 1,
+    "explanation": "GIL 때문에 멀티스레드로 CPU 연산을 해도 실제로는 병렬 실행이 안 됩니다. CPU 집약 작업엔 multiprocessing, I/O 집약 작업엔 threading이나 asyncio를 씁니다.",
+    "tag": "Python 기초",
+    "image_prompt": "single thread lock on multi-thread Python snake, bottleneck visualization, dark tech"
+  },
+  {
+    "id": "py_002",
+    "question": "`@dataclass` 데코레이터가 자동으로 생성해주는 메서드는?",
+    "choices": ["__str__ 만", "__init__, __repr__, __eq__", "__hash__ 만", "__call__ 만"],
+    "answer": 1,
+    "explanation": "@dataclass는 필드 정의만으로 __init__(생성자), __repr__(출력), __eq__(비교)를 자동 생성합니다. Python 3.7+에서 사용 가능하며 반복적인 보일러플레이트 코드를 크게 줄여줍니다.",
+    "tag": "Python 기초",
+    "image_prompt": "Python dataclass auto-generating code methods, code factory robot, clean blue background"
+  },
+  {
+    "id": "py_003",
+    "question": "list comprehension과 generator expression의 가장 큰 차이는?",
+    "choices": ["문법 차이만 있고 성능은 동일", "리스트는 즉시 전체 생성, 제너레이터는 필요할 때 하나씩 생성(지연 평가)", "제너레이터가 항상 더 빠름", "리스트만 for문에 사용 가능"],
+    "answer": 1,
+    "explanation": "[x for x in range(1000000)]은 즉시 100만 개를 메모리에 올립니다. (x for x in range(1000000))는 호출 시마다 하나씩 생성해 메모리를 거의 쓰지 않습니다. 큰 데이터는 제너레이터가 필수입니다.",
+    "tag": "Python 중급",
+    "image_prompt": "memory comparison list vs generator, lazy evaluation conveyor belt, dark tech visualization"
+  },
+  {
+    "id": "py_004",
+    "question": "`async def`로 만든 코루틴 함수를 실행하는 올바른 방법은?",
+    "choices": ["직접 호출 func()", "asyncio.run(func())", "threading.Thread(target=func).start()", "subprocess.run(func)"],
+    "answer": 1,
+    "explanation": "async def 함수는 호출해도 실행되지 않고 코루틴 객체를 반환합니다. 실행하려면 asyncio.run() 또는 await 키워드가 필요합니다. FastAPI 같은 비동기 프레임워크는 이 구조를 자동으로 처리합니다.",
+    "tag": "Python 중급",
+    "image_prompt": "async event loop with coroutines flowing, asyncio visualization, green flowing circuits"
+  },
+  {
+    "id": "py_005",
+    "question": "Python `*args`와 `**kwargs`의 차이는?",
+    "choices": ["기능 차이 없음", "*args는 위치 인자를 튜플로, **kwargs는 키워드 인자를 딕셔너리로 수집", "*args는 리스트, **kwargs는 세트", "순서만 다름"],
+    "answer": 1,
+    "explanation": "def func(*args, **kwargs): print(args, kwargs) → func(1,2, name='Kim') 호출 시 args=(1,2), kwargs={'name':'Kim'}. 가변 인자를 받는 함수 설계에 핵심입니다.",
+    "tag": "Python 기초",
+    "image_prompt": "function arguments flowing into tuple and dictionary boxes, Python code visualization"
+  },
+  {
+    "id": "py_006",
+    "question": "`with open(file) as f:` 구문(컨텍스트 매니저)의 핵심 장점은?",
+    "choices": ["더 빠른 파일 읽기 속도", "예외가 발생해도 파일이 자동으로 닫힘 (리소스 누수 방지)", "대용량 파일 전용", "이진 파일만 처리 가능"],
+    "answer": 1,
+    "explanation": "with 문은 __enter__와 __exit__ 메서드를 활용합니다. 예외가 발생해도 __exit__가 반드시 호출되어 파일, DB 연결, 네트워크 소켓 등을 안전하게 닫습니다.",
+    "tag": "Python 기초",
+    "image_prompt": "file automatically closing with safety lock, context manager concept, clean minimal design"
+  },
+  {
+    "id": "py_007",
+    "question": "Python에서 `f-string`이 도입된 버전과 장점은?",
+    "choices": ["Python 2.7, 빠른 속도", "Python 3.6, 변수 직접 삽입 + 표현식 평가 가능", "Python 3.10, 타입 힌트 포함", "Python 3.0, 문자열 포맷"],
+    "answer": 1,
+    "explanation": "f'{name}님 {age}세'처럼 변수와 표현식을 직접 삽입합니다. .format()이나 %보다 가독성이 높고 속도도 빠릅니다. f'{2+2}'→'4', f'{obj.method()}'도 가능합니다.",
+    "tag": "Python 기초",
+    "image_prompt": "f-string interpolation with variables flowing into string template, Python 3.6 logo, bright"
+  },
+  {
+    "id": "py_008",
+    "question": "`pathlib.Path`를 `os.path` 대신 쓰는 이유는?",
+    "choices": ["더 빠른 I/O 속도", "객체지향적 API + 플랫폼 독립적 경로 처리", "자동 파일 생성", "암호화 지원"],
+    "answer": 1,
+    "explanation": "Path('/home/user') / 'docs' / 'file.txt' 처럼 / 연산자로 경로를 합칩니다. Path.exists(), .read_text(), .glob() 등 메서드가 직관적이고, Windows/Linux 경로 구분자 차이를 자동 처리합니다.",
+    "tag": "Python 중급",
+    "image_prompt": "pathlib object-oriented file path navigation, directory tree with glowing nodes, clean design"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "llm_001",
+    "question": "`ollama run llama3` 실행 후 API는 어디에서 자동 제공되나?",
+    "choices": ["localhost:8080", "localhost:11434", "localhost:3000", "localhost:5000"],
+    "answer": 1,
+    "explanation": "Ollama는 모델 실행 시 localhost:11434에 OpenAI 호환 REST API를 자동으로 제공합니다. curl http://localhost:11434/api/generate 또는 OpenAI SDK의 base_url만 바꿔서 바로 연동 가능합니다.",
+    "tag": "Ollama",
+    "image_prompt": "Ollama local server running on port 11434, localhost API endpoint glowing, home server concept"
+  },
+  {
+    "id": "llm_002",
+    "question": "GGUF 파일명에서 'Q4_K_M'의 의미는?",
+    "choices": ["4GB 크기, K서버, M모델", "4비트 양자화, K-means 방식, Medium(균형 최적화)", "4코어 최적화, K버전, Multi-GPU", "Quarter 4, King, Master"],
+    "answer": 1,
+    "explanation": "Q4=4비트 양자화(기본 16비트 대비 메모리 1/4), K=K-means 클러스터링 방식(정확도 향상), M=Medium(속도와 품질 균형). Q8_0은 8비트(더 정확), Q2_K는 2비트(더 가벼움).",
+    "tag": "GGUF",
+    "image_prompt": "GGUF quantization levels Q2 Q4 Q8 comparison, bit precision meter, memory vs quality tradeoff"
+  },
+  {
+    "id": "llm_003",
+    "question": "로컬 LLM의 'context window' 크기가 중요한 이유는?",
+    "choices": ["화면 창 크기를 결정", "한 번에 처리 가능한 최대 토큰 수 → 긴 문서 처리 능력 결정", "로컬 캐시 크기", "GPU VRAM 크기"],
+    "answer": 1,
+    "explanation": "context window가 4K면 약 3,000 영어 단어(한국어 약 1,500자)를 한 번에 처리합니다. 128K context는 긴 소설이나 코드베이스 전체를 넣을 수 있습니다. 큰 context는 VRAM을 더 사용합니다.",
+    "tag": "LLM 기초",
+    "image_prompt": "context window size visualization with tokens flowing in, large vs small window comparison, blue neon"
+  },
+  {
+    "id": "llm_004",
+    "question": "Ollama와 LM Studio의 가장 큰 차이는?",
+    "choices": ["지원 모델 수 차이", "Ollama는 CLI/API 중심(개발자), LM Studio는 GUI 기반(일반 사용자)", "가격 차이", "속도 차이"],
+    "answer": 1,
+    "explanation": "LM Studio는 모델 다운로드·실행·채팅을 GUI로 쉽게 할 수 있어 입문용으로 좋습니다. Ollama는 CLI와 API가 강력해 코드로 연동하거나 서버로 활용할 때 씁니다. 둘 다 무료 오픈소스입니다.",
+    "tag": "로컬LLM 도구",
+    "image_prompt": "LM Studio GUI vs Ollama CLI terminal comparison, split screen interface design"
+  },
+  {
+    "id": "llm_005",
+    "question": "모델을 4비트로 양자화할 때 발생하는 트레이드오프는?",
+    "choices": ["속도가 느려짐", "메모리/VRAM 사용이 줄지만 정확도(품질)가 약간 감소", "메모리가 늘어남", "파일 크기가 늘어남"],
+    "answer": 1,
+    "explanation": "70B 모델은 원본(FP16)이 140GB이지만 Q4로 양자화하면 약 40GB로 줄어듭니다. RTX 5090(32GB VRAM)에서 실행 가능한 크기가 됩니다. 대화 품질은 약간 낮아지지만 실용상 차이가 크지 않습니다.",
+    "tag": "양자화",
+    "image_prompt": "model quantization compression from 140GB to 40GB, quality vs size tradeoff bar chart, technical"
+  },
+  {
+    "id": "llm_006",
+    "question": "`llama.cpp`의 핵심 역할은?",
+    "choices": ["LLM 학습(Training) 프레임워크", "C++로 구현된 LLM 추론 엔진 — CPU만으로도 실행 가능", "클라우드 LLM 배포 도구", "LLM 파인튜닝 도구"],
+    "answer": 1,
+    "explanation": "llama.cpp는 Georgi Gerganov가 만든 C++ 추론 엔진으로 PyTorch 없이 LLM을 실행합니다. CUDA, Metal, CPU 모두 지원하며 Ollama·LM Studio가 내부적으로 llama.cpp를 사용합니다. GGUF 포맷의 기원이기도 합니다.",
+    "tag": "llama.cpp",
+    "image_prompt": "llama.cpp C++ engine running LLM on bare CPU, lean efficient engine room, technical dark style"
+  },
+  {
+    "id": "llm_007",
+    "question": "로컬에서 OpenAI SDK 코드를 Ollama로 연동하려면?",
+    "choices": ["SDK를 새로 설치", "base_url='http://localhost:11434/v1'로만 변경하면 됨", "별도 변환 코드 필요", "Ollama 전용 SDK 사용"],
+    "answer": 1,
+    "explanation": "Ollama가 OpenAI 호환 API를 제공하기 때문에 openai.OpenAI(base_url='http://localhost:11434/v1', api_key='ollama')로 클라이언트를 만들면 기존 OpenAI 코드를 그대로 씁니다. api_key는 아무 값이나 넣어도 됩니다.",
+    "tag": "Ollama",
+    "image_prompt": "OpenAI SDK connecting to local Ollama server by changing one URL, minimal code change visualization"
+  }
+]

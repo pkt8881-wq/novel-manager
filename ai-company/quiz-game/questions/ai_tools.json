@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ait_001",
+    "question": "Claude Code에서 `/compact` 명령의 기능은?",
+    "choices": ["채팅 기록 전체 삭제", "대화 컨텍스트를 요약 압축해 토큰 절약", "서버를 재시작", "새 세션을 시작"],
+    "answer": 1,
+    "explanation": "/compact는 긴 대화를 요약해 컨텍스트를 유지하면서 토큰을 절약합니다. /clear와 달리 기록을 지우지 않고 압축하기 때문에 긴 작업 세션에서 필수적으로 씁니다.",
+    "tag": "Claude Code",
+    "image_prompt": "AI assistant compressing conversation history, digital compression visualization, neon blue"
+  },
+  {
+    "id": "ait_002",
+    "question": "Claude Code의 'hooks' 기능이란?",
+    "choices": ["AI가 자동으로 코드를 수정하는 기능", "특정 이벤트 발생 시 셸 명령을 자동 실행", "웹훅(Webhook)과 연동하는 기능", "코드에 후킹(hooking) 포인트를 삽입"],
+    "answer": 1,
+    "explanation": "hooks는 settings.json에 정의하며 PreToolUse, PostToolUse, Stop 같은 이벤트에 셸 명령을 자동 실행합니다. 예: 파일 저장 후 자동 lint, 세션 종료 후 알림 전송.",
+    "tag": "Claude Code",
+    "image_prompt": "automated pipeline with event triggers and shell commands, tech flowchart dark background"
+  },
+  {
+    "id": "ait_003",
+    "question": "Claude Code에서 CLAUDE.md 파일의 역할은?",
+    "choices": ["오류 로그 저장", "프로젝트별 AI 지침 및 규칙 정의", "API 키 저장", "모델 설정 파일"],
+    "answer": 1,
+    "explanation": "CLAUDE.md는 Claude Code가 세션 시작 시 자동으로 읽는 지침 파일입니다. 팀 구성, 코딩 컨벤션, 작업 방식, 금지 행동 등을 여기에 정의하면 매 대화마다 설명할 필요가 없습니다.",
+    "tag": "Claude Code",
+    "image_prompt": "instruction manual glowing on dark tech desk, AI reading rulebook, digital blueprint style"
+  },
+  {
+    "id": "ait_004",
+    "question": "MCP(Model Context Protocol)를 처음 만든 회사는?",
+    "choices": ["OpenAI", "Google", "Anthropic", "Meta"],
+    "answer": 2,
+    "explanation": "MCP는 2024년 Anthropic이 공개한 오픈 표준 프로토콜입니다. LLM과 외부 도구·데이터를 연결하는 통일된 방식을 제공하며, 현재 수천 개의 MCP 서버가 오픈소스로 공개됐습니다.",
+    "tag": "MCP",
+    "image_prompt": "universal connector protocol linking AI brain to multiple tools and databases, glowing network"
+  },
+  {
+    "id": "ait_005",
+    "question": "Claude Code에서 `--dangerously-skip-permissions` 플래그의 용도는?",
+    "choices": ["보안 취약점을 스캔", "권한 확인 없이 자동 실행 (CI/자동화 환경용)", "관리자 모드로 실행", "디버그 모드 활성화"],
+    "answer": 1,
+    "explanation": "이 플래그는 모든 권한 프롬프트를 건너뜁니다. GitHub Actions, 자동화 스크립트 등 신뢰된 환경에서만 사용해야 하며, 일반 사용 환경에서는 위험합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "automated CI pipeline running without stops, fast conveyor belt with code packages, dark tech"
+  },
+  {
+    "id": "ait_006",
+    "question": "Cursor IDE에서 'Agent 모드'의 핵심 기능은?",
+    "choices": ["빠른 자동완성", "여러 파일을 동시에 자율적으로 생성·수정", "음성 입력 지원", "Git 자동 커밋"],
+    "answer": 1,
+    "explanation": "Cursor의 Agent 모드(구 Composer)는 자연어 지시만으로 여러 파일을 분석·생성·수정합니다. Chat은 코드 설명/질문, Agent는 실제 다중 파일 작업에 씁니다.",
+    "tag": "Cursor",
+    "image_prompt": "AI cursor editing multiple files simultaneously, code flying between panels, neon workspace"
+  },
+  {
+    "id": "ait_007",
+    "question": "2026년 현재 Anthropic의 Claude 최신 모델 시리즈는?",
+    "choices": ["Claude 3.5 시리즈", "Claude 4.x (Opus 4.7 / Sonnet 4.6 / Haiku 4.5)", "Claude 5.0 시리즈", "Claude Pro"],
+    "answer": 1,
+    "explanation": "2026년 현재 Claude 4.x 시리즈가 최신입니다. Opus 4.7(최고 성능), Sonnet 4.6(균형), Haiku 4.5(빠른 처리)로 용도에 따라 선택합니다. Claude Code 기본 모델은 Sonnet 4.6입니다.",
+    "tag": "Claude",
+    "image_prompt": "three AI model tiers: powerful brain, balanced processor, fast chip, comparison chart neon"
+  },
+  {
+    "id": "ait_008",
+    "question": "Claude Code에서 서브에이전트(Agent 도구)를 사용하는 이유는?",
+    "choices": ["더 예쁜 출력을 위해", "독립적인 작업을 병렬 처리해 시간 절약", "인터넷 검색을 위해", "파일 압축을 위해"],
+    "answer": 1,
+    "explanation": "Agent 도구는 복잡한 작업을 독립적인 서브에이전트에 위임합니다. 예: 탐색 에이전트와 구현 에이전트를 동시에 실행. 컨텍스트 창도 분리되어 메인 세션이 깔끔하게 유지됩니다.",
+    "tag": "Claude Code",
+    "image_prompt": "multiple AI agents working in parallel on different tasks, orchestration hub, futuristic"
+  }
+]

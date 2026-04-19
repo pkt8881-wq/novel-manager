@@ -5,321 +5,259 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>🧠 AI 퀴즈게임</title>
 <style>
-  :root {
-    --bg: #0a0e1a;
-    --card: #111827;
-    --card2: #1a2236;
-    --border: #1e3a5f;
-    --accent: #00d4ff;
-    --accent2: #7c3aed;
-    --green: #10b981;
-    --red: #ef4444;
-    --yellow: #f59e0b;
-    --text: #e2e8f0;
-    --muted: #64748b;
-  }
+:root {
+  --bg: #080d18;
+  --card: #0f1724;
+  --card2: #161f30;
+  --border: #1a3050;
+  --accent: #00d4ff;
+  --accent2: #7c3aed;
+  --green: #10b981;
+  --red: #ef4444;
+  --yellow: #f59e0b;
+  --orange: #f97316;
+  --text: #e2e8f0;
+  --muted: #546880;
+}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
+#bg-canvas { position: fixed; inset: 0; z-index: 0; opacity: .35; }
 
-  /* ─── 배경 파티클 ─── */
-  #bg-canvas { position: fixed; inset: 0; z-index: 0; opacity: .4; }
+.app {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+}
 
-  /* ─── 메인 래퍼 ─── */
-  .app { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 20px; }
+/* ── 헤더 ── */
+header { text-align: center; padding: 28px 0 18px; }
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -1px;
+}
+header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
 
-  /* ─── 헤더 ─── */
-  header {
-    text-align: center;
-    padding: 30px 0 20px;
-  }
-  header h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -1px;
-  }
-  header p { color: var(--muted); margin-top: 6px; font-size: .95rem; }
+/* ── 점수바 ── */
+.score-bar {
+  display: flex;
+  justify-content: space-around;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.score-item { text-align: center; min-width: 60px; }
+.score-item .val { font-size: 1.4rem; font-weight: 800; color: var(--accent); }
+.score-item .val.streak { color: var(--yellow); }
+.score-item .lbl { font-size: .72rem; color: var(--muted); margin-top: 2px; }
 
-  /* ─── 점수바 ─── */
-  .score-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 12px 20px;
-    margin-bottom: 24px;
-  }
-  .score-item { text-align: center; }
-  .score-item .val { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
-  .score-item .lbl { font-size: .75rem; color: var(--muted); }
-  .streak { color: var(--yellow) !important; }
+/* ── 장르 그리드 ── */
+.genre-section { margin-bottom: 20px; }
+.genre-section h2 { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
 
-  /* ─── 장르 선택 ─── */
-  .genre-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin-bottom: 28px;
-  }
-  .genre-btn {
-    background: var(--card);
-    border: 2px solid var(--border);
-    border-radius: 16px;
-    padding: 20px 14px;
-    cursor: pointer;
-    text-align: center;
-    transition: all .2s;
-    color: var(--text);
-  }
-  .genre-btn:hover { border-color: var(--accent); transform: translateY(-3px); }
-  .genre-btn.active { border-color: var(--accent); background: #0d1f35; }
-  .genre-btn .icon { font-size: 2.2rem; display: block; margin-bottom: 8px; }
-  .genre-btn .name { font-weight: 700; font-size: 1rem; }
-  .genre-btn .cnt { font-size: .78rem; color: var(--muted); margin-top: 4px; }
+.genre-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.genre-btn {
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 8px 12px;
+  cursor: pointer;
+  text-align: center;
+  transition: all .18s;
+  color: var(--text);
+  position: relative;
+}
+.genre-btn:hover { border-color: var(--accent); transform: translateY(-2px); background: #0b1625; }
+.genre-btn.active { border-color: var(--accent); background: #091a2e; box-shadow: 0 0 16px rgba(0,212,255,.15); }
+.genre-btn .icon { font-size: 1.8rem; display: block; margin-bottom: 6px; }
+.genre-btn .name { font-weight: 700; font-size: .82rem; display: block; }
+.genre-btn .cnt {
+  font-size: .7rem; color: var(--muted); margin-top: 4px;
+  background: var(--card2); border-radius: 20px; padding: 2px 8px; display: inline-block;
+}
+.genre-btn.active .cnt { background: rgba(0,212,255,.1); color: var(--accent); }
 
-  /* ─── 문제 카드 ─── */
-  .quiz-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 20px;
-    display: none;
-    animation: slideUp .35s ease;
-  }
-  .quiz-card.show { display: block; }
+/* ── 시작 버튼 ── */
+.start-wrap { margin-bottom: 10px; }
+.start-btn {
+  display: none;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none;
+  border-radius: 14px;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: .5px;
+  transition: opacity .2s, transform .1s;
+}
+.start-btn.show { display: block; }
+.start-btn:hover { opacity: .9; transform: scale(1.01); }
 
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+/* ── 문제 카드 ── */
+.quiz-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 26px 24px;
+  display: none;
+  animation: slideUp .3s ease;
+}
+.quiz-card.show { display: block; }
 
-  .q-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-  }
-  .q-tag {
-    background: #1e3a5f;
-    color: var(--accent);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: .8rem;
-    font-weight: 600;
-  }
-  .q-num { color: var(--muted); font-size: .85rem; }
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
-  /* 진행바 */
-  .progress-bar {
-    height: 4px;
-    background: #1e3a5f;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    border-radius: 4px;
-    transition: width .4s ease;
-  }
+.progress-bar { height: 3px; background: var(--border); border-radius: 4px; margin-bottom: 18px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width .4s ease; }
 
-  .q-text {
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.6;
-    margin-bottom: 24px;
-    color: #f1f5f9;
-  }
+.q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.q-tag { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.25); padding: 4px 12px; border-radius: 20px; font-size: .78rem; font-weight: 700; }
+.q-num { color: var(--muted); font-size: .82rem; }
 
-  /* ─── 선택지 ─── */
-  .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.q-text { font-size: 1.2rem; font-weight: 700; line-height: 1.6; margin-bottom: 22px; color: #f0f6ff; }
 
-  .choice-btn {
-    background: var(--card2);
-    border: 2px solid var(--border);
-    border-radius: 14px;
-    padding: 16px 18px;
-    cursor: pointer;
-    color: var(--text);
-    font-size: .95rem;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: all .2s;
-    line-height: 1.4;
-  }
-  .choice-btn:hover:not(:disabled) {
-    border-color: var(--accent);
-    background: #0d1f35;
-    transform: scale(1.02);
-  }
-  .choice-btn .idx {
-    min-width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: .85rem;
-    flex-shrink: 0;
-  }
-  .choice-btn.correct {
-    border-color: var(--green);
-    background: #052e16;
-    animation: pulse-green .4s ease;
-  }
-  .choice-btn.wrong {
-    border-color: var(--red);
-    background: #2d0f0f;
-  }
-  .choice-btn.correct .idx { background: var(--green); color: #000; }
-  .choice-btn.wrong .idx { background: var(--red); }
+/* ── 선택지 ── */
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.choice-btn {
+  background: var(--card2);
+  border: 2px solid var(--border);
+  border-radius: 13px;
+  padding: 15px 16px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: .92rem;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  transition: all .18s;
+  line-height: 1.45;
+}
+.choice-btn:hover:not(:disabled) { border-color: var(--accent); background: #0b1d35; transform: scale(1.015); }
+.choice-btn .idx {
+  min-width: 26px; height: 26px; border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .8rem; flex-shrink: 0; margin-top: 1px;
+}
+.choice-btn.correct { border-color: var(--green); background: #041e12; }
+.choice-btn.correct .idx { background: var(--green); color: #000; }
+.choice-btn.wrong { border-color: var(--red); background: #200a0a; }
+.choice-btn.wrong .idx { background: var(--red); }
+.choice-btn:disabled { cursor: default; }
 
-  @keyframes pulse-green {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.04); }
-    100% { transform: scale(1); }
-  }
+/* ── 해설 ── */
+.explain-panel {
+  display: none;
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  animation: slideUp .25s ease;
+}
+.explain-panel.show { display: block; }
+.explain-header { padding: 13px 18px; font-weight: 700; font-size: .92rem; display: flex; align-items: center; gap: 8px; }
+.explain-header.ok  { background: #041e12; color: var(--green); border-bottom: 1px solid #064d25; }
+.explain-header.ng  { background: #200a0a; color: var(--red);   border-bottom: 1px solid #5c1515; }
+.explain-body { background: var(--card2); padding: 18px; line-height: 1.8; font-size: .92rem; color: #b8c8dc; }
+.explain-img { width: 100%; max-height: 180px; object-fit: cover; border-top: 1px solid var(--border); display: none; }
+.explain-img.show { display: block; }
 
-  /* ─── 해설 패널 ─── */
-  .explain-panel {
-    display: none;
-    margin-top: 20px;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    animation: slideUp .3s ease;
-  }
-  .explain-panel.show { display: block; }
+/* ── 다음 버튼 ── */
+.next-btn {
+  display: none;
+  width: 100%;
+  margin-top: 14px;
+  padding: 14px;
+  background: linear-gradient(135deg, #0ea5e9, var(--accent2));
+  border: none;
+  border-radius: 13px;
+  color: #fff;
+  font-size: .98rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.next-btn.show { display: block; }
+.next-btn:hover { opacity: .88; }
 
-  .explain-header {
-    padding: 14px 20px;
-    font-weight: 700;
-    font-size: .95rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .explain-header.correct-hdr { background: #052e16; color: var(--green); border-bottom: 1px solid #065f46; }
-  .explain-header.wrong-hdr   { background: #2d0f0f; color: var(--red);   border-bottom: 1px solid #7f1d1d; }
+/* ── 결과 화면 ── */
+.result-screen {
+  display: none;
+  text-align: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 24px;
+  animation: slideUp .35s ease;
+}
+.result-screen.show { display: block; }
+.result-emoji { font-size: 3.5rem; margin-bottom: 14px; }
+.result-score { font-size: 2.8rem; font-weight: 900; color: var(--accent); margin-bottom: 6px; }
+.result-msg { color: var(--muted); margin-bottom: 26px; font-size: 1rem; }
+.result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 26px; }
+.result-stat { background: var(--card2); border-radius: 13px; padding: 14px 10px; }
+.result-stat .sv { font-size: 1.5rem; font-weight: 800; }
+.result-stat .sl { font-size: .76rem; color: var(--muted); margin-top: 4px; }
+.btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.replay-btn {
+  padding: 13px 32px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none; border-radius: 13px;
+  color: #fff; font-size: .95rem; font-weight: 700;
+  cursor: pointer; transition: opacity .2s;
+}
+.replay-btn:hover { opacity: .88; }
+.replay-btn.outline { background: var(--card2); border: 2px solid var(--border); color: var(--text); }
 
-  .explain-body {
-    background: var(--card2);
-    padding: 20px;
-    line-height: 1.75;
-    font-size: .95rem;
-    color: #cbd5e1;
-  }
+/* ── 토스트 ── */
+#toast {
+  position: fixed; bottom: 28px; left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  background: var(--card); border: 1px solid var(--border);
+  padding: 11px 22px; border-radius: 40px;
+  font-size: .88rem; font-weight: 700;
+  transition: transform .28s ease;
+  z-index: 999; white-space: nowrap;
+}
+#toast.show { transform: translateX(-50%) translateY(0); }
 
-  .explain-image {
-    width: 100%;
-    max-height: 200px;
-    object-fit: cover;
-    border-top: 1px solid var(--border);
-    display: none;
-  }
-  .explain-image.show { display: block; }
-
-  /* ─── 다음 버튼 ─── */
-  .next-btn {
-    display: none;
-    width: 100%;
-    margin-top: 16px;
-    padding: 15px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border: none;
-    border-radius: 14px;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: opacity .2s, transform .1s;
-  }
-  .next-btn:hover { opacity: .9; transform: scale(1.01); }
-  .next-btn.show { display: block; }
-
-  /* ─── 결과 화면 ─── */
-  .result-screen {
-    display: none;
-    text-align: center;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 40px 28px;
-    animation: slideUp .4s ease;
-  }
-  .result-screen.show { display: block; }
-
-  .result-emoji { font-size: 4rem; margin-bottom: 16px; }
-  .result-score { font-size: 3rem; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
-  .result-msg { font-size: 1.1rem; color: var(--muted); margin-bottom: 28px; }
-  .result-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 28px;
-  }
-  .result-stat {
-    background: var(--card2);
-    border-radius: 14px;
-    padding: 16px;
-  }
-  .result-stat .sv { font-size: 1.6rem; font-weight: 700; }
-  .result-stat .sl { font-size: .8rem; color: var(--muted); margin-top: 4px; }
-
-  .replay-btn {
-    padding: 14px 40px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border: none;
-    border-radius: 14px;
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    margin: 6px;
-  }
-
-  /* ─── 토스트 ─── */
-  #toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%) translateY(100px);
-    background: var(--card);
-    border: 1px solid var(--border);
-    padding: 12px 24px;
-    border-radius: 40px;
-    font-size: .9rem;
-    font-weight: 600;
-    transition: transform .3s;
-    z-index: 999;
-  }
-  #toast.show { transform: translateX(-50%) translateY(0); }
-
-  /* ─── 반응형 ─── */
-  @media (max-width: 600px) {
-    header h1 { font-size: 1.8rem; }
-    .choices { grid-template-columns: 1fr; }
-    .genre-grid { grid-template-columns: 1fr; }
-    .result-grid { grid-template-columns: 1fr; }
-  }
+/* ── 반응형 ── */
+@media (max-width: 640px) {
+  header h1 { font-size: 1.7rem; }
+  .genre-grid { grid-template-columns: repeat(2, 1fr); }
+  .choices { grid-template-columns: 1fr; }
+  .result-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 360px) {
+  .genre-grid { grid-template-columns: repeat(2, 1fr); }
+}
 </style>
 </head>
 <body>
@@ -329,342 +267,284 @@
 <div class="app">
   <header>
     <h1>🧠 AI 퀴즈게임</h1>
-    <p>역사 · 상식 · AI/코딩 — 배우면서 즐기는 4지선다 퀴즈</p>
+    <p>Claude Code · Python · 서버 · DB · 에이전트 · 로컬LLM · 역사 · 상식</p>
   </header>
 
   <!-- 점수바 -->
   <div class="score-bar">
-    <div class="score-item">
-      <div class="val" id="sc-score">0</div>
-      <div class="lbl">점수</div>
-    </div>
-    <div class="score-item">
-      <div class="val streak" id="sc-streak">🔥 0</div>
-      <div class="lbl">연속정답</div>
-    </div>
-    <div class="score-item">
-      <div class="val" id="sc-correct">0</div>
-      <div class="lbl">정답</div>
-    </div>
-    <div class="score-item">
-      <div class="val" id="sc-total">0</div>
-      <div class="lbl">푼 문제</div>
-    </div>
-    <div class="score-item">
-      <div class="val" id="sc-acc">-</div>
-      <div class="lbl">정답률</div>
-    </div>
+    <div class="score-item"><div class="val" id="sc-score">0</div><div class="lbl">점수</div></div>
+    <div class="score-item"><div class="val streak" id="sc-streak">🔥 0</div><div class="lbl">연속</div></div>
+    <div class="score-item"><div class="val" id="sc-correct">0</div><div class="lbl">정답</div></div>
+    <div class="score-item"><div class="val" id="sc-total">0</div><div class="lbl">문제</div></div>
+    <div class="score-item"><div class="val" id="sc-acc">-</div><div class="lbl">정답률</div></div>
   </div>
 
   <!-- 장르 선택 -->
-  <div class="genre-grid" id="genre-area">
-    <button class="genre-btn active" data-genre="ai" onclick="selectGenre(this)">
-      <span class="icon">🤖</span>
-      <span class="name">AI / 코딩</span>
-      <span class="cnt" id="cnt-ai">로딩중...</span>
-    </button>
-    <button class="genre-btn" data-genre="history" onclick="selectGenre(this)">
-      <span class="icon">📜</span>
-      <span class="name">역사</span>
-      <span class="cnt" id="cnt-history">로딩중...</span>
-    </button>
-    <button class="genre-btn" data-genre="common" onclick="selectGenre(this)">
-      <span class="icon">🌍</span>
-      <span class="name">상식</span>
-      <span class="cnt" id="cnt-common">로딩중...</span>
-    </button>
+  <div class="genre-section" id="genre-section">
+    <h2>장르 선택</h2>
+    <div class="genre-grid" id="genre-grid">
+      <!-- JS로 동적 생성 -->
+    </div>
   </div>
 
   <!-- 시작 버튼 -->
-  <button class="next-btn show" id="start-btn" onclick="startQuiz()" style="margin-bottom:20px;">
-    ▶ 퀴즈 시작!
-  </button>
+  <div class="start-wrap">
+    <button class="start-btn show" id="start-btn" onclick="startQuiz()">▶ 퀴즈 시작!</button>
+  </div>
 
   <!-- 문제 카드 -->
   <div class="quiz-card" id="quiz-card">
-    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
     <div class="q-meta">
-      <span class="q-tag" id="q-tag">AI</span>
-      <span class="q-num" id="q-num">1 / 5</span>
+      <span class="q-tag" id="q-tag">-</span>
+      <span class="q-num" id="q-num">1 / 10</span>
     </div>
-    <div class="q-text" id="q-text">문제 로딩 중...</div>
+    <div class="q-text" id="q-text">로딩 중...</div>
     <div class="choices" id="choices"></div>
 
-    <!-- 해설 -->
     <div class="explain-panel" id="explain-panel">
-      <div class="explain-header" id="explain-header">✅ 정답입니다!</div>
+      <div class="explain-header" id="explain-header"></div>
       <div class="explain-body" id="explain-body"></div>
-      <img class="explain-image" id="explain-img" src="" alt="관련 이미지">
+      <img class="explain-img" id="explain-img" src="" alt="">
     </div>
 
     <button class="next-btn" id="next-btn" onclick="nextQuestion()">다음 문제 →</button>
   </div>
 
-  <!-- 결과 화면 -->
+  <!-- 결과 -->
   <div class="result-screen" id="result-screen">
     <div class="result-emoji" id="result-emoji">🎉</div>
     <div class="result-score" id="result-score">0점</div>
     <div class="result-msg" id="result-msg"></div>
     <div class="result-grid">
-      <div class="result-stat">
-        <div class="sv" id="rs-correct" style="color:var(--green)">0</div>
-        <div class="sl">정답</div>
-      </div>
-      <div class="result-stat">
-        <div class="sv" id="rs-wrong" style="color:var(--red)">0</div>
-        <div class="sl">오답</div>
-      </div>
-      <div class="result-stat">
-        <div class="sv" id="rs-acc" style="color:var(--accent)">0%</div>
-        <div class="sl">정답률</div>
-      </div>
+      <div class="result-stat"><div class="sv" id="rs-correct" style="color:var(--green)">0</div><div class="sl">정답</div></div>
+      <div class="result-stat"><div class="sv" id="rs-wrong" style="color:var(--red)">0</div><div class="sl">오답</div></div>
+      <div class="result-stat"><div class="sv" id="rs-acc" style="color:var(--accent)">0%</div><div class="sl">정답률</div></div>
     </div>
-    <button class="replay-btn" onclick="replayQuiz()">🔄 다시 풀기</button>
-    <button class="replay-btn" onclick="location.reload()" style="background:var(--card2);border:2px solid var(--border);">🏠 처음으로</button>
+    <div class="btn-row">
+      <button class="replay-btn" onclick="replayQuiz()">🔄 다시 풀기</button>
+      <button class="replay-btn outline" onclick="goHome()">🏠 처음으로</button>
+    </div>
   </div>
 </div>
 
 <div id="toast"></div>
 
 <script>
-// ─── 배경 파티클 ───────────────────────────────────────
+// ── 파티클 배경 ──────────────────────────────
 const canvas = document.getElementById('bg-canvas');
 const ctx = canvas.getContext('2d');
-let particles = [];
-
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+let pts = [];
+function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
+function initPts() {
+  pts = Array.from({length:55}, () => ({
+    x: Math.random()*canvas.width, y: Math.random()*canvas.height,
+    vx: (Math.random()-.5)*.35, vy: (Math.random()-.5)*.35,
+    r: Math.random()*1.8+.4, a: Math.random()*.45+.15
+  }));
 }
-
-function initParticles() {
-  particles = [];
-  for (let i = 0; i < 60; i++) {
-    particles.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      vx: (Math.random() - .5) * .4,
-      vy: (Math.random() - .5) * .4,
-      r: Math.random() * 2 + .5,
-      a: Math.random() * .5 + .2
-    });
-  }
-}
-
-function drawParticles() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  particles.forEach(p => {
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  pts.forEach(p => {
     p.x += p.vx; p.y += p.vy;
-    if (p.x < 0) p.x = canvas.width;
-    if (p.x > canvas.width) p.x = 0;
-    if (p.y < 0) p.y = canvas.height;
-    if (p.y > canvas.height) p.y = 0;
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(0, 212, 255, ${p.a})`;
-    ctx.fill();
+    if(p.x<0) p.x=canvas.width; if(p.x>canvas.width) p.x=0;
+    if(p.y<0) p.y=canvas.height; if(p.y>canvas.height) p.y=0;
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(0,212,255,${p.a})`; ctx.fill();
   });
-  requestAnimationFrame(drawParticles);
+  requestAnimationFrame(draw);
+}
+window.addEventListener('resize',()=>{resize();initPts();});
+resize(); initPts(); draw();
+
+// ── 상태 ──────────────────────────────
+let allQ = {};       // { genre: [...] }
+let genres = {};     // { genre: {label, icon, count} }
+let curGenre = 'ai_tools';
+let sessionQ = [], qIdx = 0, score = 0, streak = 0, correctCnt = 0;
+const MAX_Q = 10;
+
+// ── 초기화 ──────────────────────────────
+async function init() {
+  const res = await fetch('/api/genres');
+  genres = await res.json();
+  renderGenreGrid();
+  // 첫 번째 장르 선택
+  const firstKey = Object.keys(genres)[0];
+  if (firstKey) selectGenre(firstKey);
 }
 
-window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
-resizeCanvas(); initParticles(); drawParticles();
-
-// ─── 게임 상태 ───────────────────────────────────────
-let allQuestions = {};
-let currentGenre = 'ai';
-let sessionQ = [];
-let qIndex = 0;
-let score = 0;
-let streak = 0;
-let correctCount = 0;
-const QUESTIONS_PER_SESSION = 10;
-
-// ─── 초기 로드 ───────────────────────────────────────
-async function loadQuestions() {
-  const genres = ['ai', 'history', 'common'];
-  for (const g of genres) {
-    try {
-      const r = await fetch(`/api/questions/${g}`);
-      allQuestions[g] = await r.json();
-      document.getElementById(`cnt-${g}`).textContent = `${allQuestions[g].length}문제`;
-    } catch {
-      allQuestions[g] = [];
-      document.getElementById(`cnt-${g}`).textContent = '준비중';
-    }
-  }
+function renderGenreGrid() {
+  const grid = document.getElementById('genre-grid');
+  grid.innerHTML = '';
+  Object.entries(genres).forEach(([key, g]) => {
+    const btn = document.createElement('button');
+    btn.className = 'genre-btn' + (key === curGenre ? ' active' : '');
+    btn.id = `gbtn-${key}`;
+    btn.setAttribute('data-genre', key);
+    btn.innerHTML = `
+      <span class="icon">${g.icon}</span>
+      <span class="name">${g.label}</span>
+      <span class="cnt">${g.count}문제</span>`;
+    btn.onclick = () => selectGenre(key);
+    grid.appendChild(btn);
+  });
 }
 
-function selectGenre(btn) {
-  document.querySelectorAll('.genre-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  currentGenre = btn.dataset.genre;
+function selectGenre(key) {
+  curGenre = key;
+  document.querySelectorAll('.genre-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.genre === key);
+  });
+}
+
+// ── 문제 로드 ──────────────────────────────
+async function loadGenreQ(genre) {
+  if (allQ[genre]) return allQ[genre];
+  const r = await fetch(`/api/questions/${genre}`);
+  allQ[genre] = await r.json();
+  return allQ[genre];
 }
 
 function shuffle(arr) {
   const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
   return a;
 }
 
-// ─── 퀴즈 시작 ───────────────────────────────────────
-function startQuiz() {
-  const pool = allQuestions[currentGenre] || [];
-  if (pool.length === 0) { showToast('❌ 문제가 없습니다'); return; }
-
-  sessionQ = shuffle(pool).slice(0, Math.min(QUESTIONS_PER_SESSION, pool.length));
-  qIndex = 0; score = 0; streak = 0; correctCount = 0;
-
+// ── 퀴즈 시작 ──────────────────────────────
+async function startQuiz() {
+  const pool = await loadGenreQ(curGenre);
+  if (!pool.length) { toast('❌ 문제가 없습니다'); return; }
+  sessionQ = shuffle(pool).slice(0, Math.min(MAX_Q, pool.length));
+  qIdx = 0; score = 0; streak = 0; correctCnt = 0;
   document.getElementById('start-btn').classList.remove('show');
-  document.getElementById('genre-area').style.opacity = '.4';
-  document.getElementById('genre-area').style.pointerEvents = 'none';
+  document.getElementById('genre-section').style.opacity = '.35';
+  document.getElementById('genre-section').style.pointerEvents = 'none';
   document.getElementById('result-screen').classList.remove('show');
-  showQuestion();
+  updateScoreBar();
+  showQ();
 }
 
-function showQuestion() {
+function showQ() {
   const card = document.getElementById('quiz-card');
-  card.classList.remove('show');
-  void card.offsetWidth; // reflow for re-animation
-  card.classList.add('show');
+  card.classList.remove('show'); void card.offsetWidth; card.classList.add('show');
 
-  const q = sessionQ[qIndex];
-  document.getElementById('q-tag').textContent = q.tag || currentGenre.toUpperCase();
-  document.getElementById('q-num').textContent = `${qIndex + 1} / ${sessionQ.length}`;
+  const q = sessionQ[qIdx];
+  document.getElementById('q-tag').textContent = q.tag || curGenre;
+  document.getElementById('q-num').textContent = `${qIdx+1} / ${sessionQ.length}`;
   document.getElementById('q-text').textContent = q.question;
-  document.getElementById('progress-fill').style.width = `${(qIndex / sessionQ.length) * 100}%`;
-
-  // 선택지
-  const choicesEl = document.getElementById('choices');
-  choicesEl.innerHTML = '';
-  const labels = ['①', '②', '③', '④'];
-  q.choices.forEach((c, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'choice-btn';
-    btn.innerHTML = `<span class="idx">${labels[i]}</span><span>${c}</span>`;
-    btn.onclick = () => selectAnswer(i, q.answer, q.explanation, q);
-    choicesEl.appendChild(btn);
-  });
-
+  document.getElementById('progress-fill').style.width = `${(qIdx/sessionQ.length)*100}%`;
   document.getElementById('explain-panel').classList.remove('show');
   document.getElementById('next-btn').classList.remove('show');
   document.getElementById('explain-img').classList.remove('show');
-  document.getElementById('explain-img').src = '';
+
+  const labels = ['①','②','③','④'];
+  const el = document.getElementById('choices');
+  el.innerHTML = '';
+  q.choices.forEach((c,i) => {
+    const b = document.createElement('button');
+    b.className = 'choice-btn';
+    b.innerHTML = `<span class="idx">${labels[i]}</span><span>${c}</span>`;
+    b.onclick = () => pick(i, q);
+    el.appendChild(b);
+  });
 }
 
-// ─── 답 선택 ───────────────────────────────────────
-function selectAnswer(chosen, correct, explanation, q) {
-  const btns = document.querySelectorAll('.choice-btn');
-  btns.forEach(b => b.disabled = true);
+// ── 답 선택 ──────────────────────────────
+function pick(chosen, q) {
+  document.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
+  const ok = chosen === q.answer;
 
-  const isCorrect = chosen === correct;
+  document.querySelectorAll('.choice-btn')[q.answer].classList.add('correct');
+  if(!ok) document.querySelectorAll('.choice-btn')[chosen].classList.add('wrong');
 
-  btns[correct].classList.add('correct');
-  if (!isCorrect) btns[chosen].classList.add('wrong');
-
-  // 점수 계산
-  if (isCorrect) {
-    streak++;
-    correctCount++;
-    const bonus = streak > 1 ? (streak - 1) * 20 : 0;
-    const gained = 100 + bonus;
-    score += gained;
-    if (streak > 1) showToast(`🔥 연속 ${streak}! +${gained}점`);
-    else showToast(`✅ 정답! +100점`);
+  if(ok) {
+    streak++; correctCnt++;
+    const bonus = streak > 1 ? (streak-1)*20 : 0;
+    score += 100 + bonus;
+    toast(streak > 1 ? `🔥 연속 ${streak}! +${100+bonus}점` : '✅ 정답! +100점');
   } else {
     streak = 0;
-    showToast('❌ 오답... 해설을 확인하세요');
+    toast('❌ 오답... 해설을 확인하세요');
   }
-
   updateScoreBar();
-
-  // 해설 패널
-  const panel = document.getElementById('explain-panel');
-  const hdr = document.getElementById('explain-header');
-  const body = document.getElementById('explain-body');
-
-  panel.classList.add('show');
-  if (isCorrect) {
-    hdr.className = 'explain-header correct-hdr';
-    hdr.textContent = '✅ 정답입니다!';
-  } else {
-    hdr.className = 'explain-header wrong-hdr';
-    hdr.textContent = `❌ 오답 — 정답: ${q.choices[correct]}`;
-  }
-  body.textContent = explanation;
-
-  // 이미지 요청
-  if (q.image_prompt) {
-    fetch(`/api/image?prompt=${encodeURIComponent(q.image_prompt)}`)
-      .then(r => r.json())
-      .then(data => {
-        if (data.url) {
-          const img = document.getElementById('explain-img');
-          img.src = data.url;
-          img.classList.add('show');
-        }
-      }).catch(() => {});
-  }
-
+  showExplain(ok, q);
   document.getElementById('next-btn').classList.add('show');
-  qIndex++;
+  qIdx++;
 }
 
-// ─── 다음 문제 / 종료 ───────────────────────────────────────
-function nextQuestion() {
-  if (qIndex >= sessionQ.length) {
-    showResult();
-  } else {
-    showQuestion();
+function showExplain(ok, q) {
+  const hdr = document.getElementById('explain-header');
+  const body = document.getElementById('explain-body');
+  hdr.className = 'explain-header ' + (ok ? 'ok' : 'ng');
+  hdr.textContent = ok ? '✅ 정답입니다!' : `❌ 오답 — 정답: ${q.choices[q.answer]}`;
+  body.textContent = q.explanation;
+  document.getElementById('explain-panel').classList.add('show');
+
+  if(q.image_prompt) {
+    fetch(`/api/image?prompt=${encodeURIComponent(q.image_prompt)}`)
+      .then(r=>r.json()).then(d => {
+        if(d.url) {
+          const img = document.getElementById('explain-img');
+          img.src = d.url; img.classList.add('show');
+        }
+      }).catch(()=>{});
   }
+}
+
+// ── 다음 / 결과 ──────────────────────────────
+function nextQuestion() {
+  if(qIdx >= sessionQ.length) showResult();
+  else showQ();
 }
 
 function showResult() {
   document.getElementById('quiz-card').classList.remove('show');
-  const acc = Math.round((correctCount / sessionQ.length) * 100);
-  const emojis = acc >= 80 ? '🏆' : acc >= 60 ? '😊' : acc >= 40 ? '🤔' : '💪';
-  const msgs = acc >= 80 ? '훌륭해요! 완전 고수!' : acc >= 60 ? '잘 하셨어요!' : acc >= 40 ? '절반은 맞췄어요!' : '다시 도전해봐요!';
-
-  document.getElementById('result-emoji').textContent = emojis;
+  const acc = Math.round((correctCnt/sessionQ.length)*100);
+  const [em, msg] = acc>=80 ? ['🏆','완전 고수! 훌륭해요!'] : acc>=60 ? ['😊','잘 하셨어요!'] : acc>=40 ? ['🤔','절반은 맞췄어요!'] : ['💪','다시 도전해봐요!'];
+  document.getElementById('result-emoji').textContent = em;
   document.getElementById('result-score').textContent = `${score.toLocaleString()}점`;
-  document.getElementById('result-msg').textContent = msgs;
-  document.getElementById('rs-correct').textContent = correctCount;
-  document.getElementById('rs-wrong').textContent = sessionQ.length - correctCount;
+  document.getElementById('result-msg').textContent = msg;
+  document.getElementById('rs-correct').textContent = correctCnt;
+  document.getElementById('rs-wrong').textContent = sessionQ.length - correctCnt;
   document.getElementById('rs-acc').textContent = `${acc}%`;
   document.getElementById('result-screen').classList.add('show');
 }
 
 function replayQuiz() {
   document.getElementById('result-screen').classList.remove('show');
-  document.getElementById('genre-area').style.opacity = '';
-  document.getElementById('genre-area').style.pointerEvents = '';
+  startQuiz();
+}
+
+function goHome() {
+  document.getElementById('result-screen').classList.remove('show');
+  document.getElementById('quiz-card').classList.remove('show');
+  document.getElementById('genre-section').style.opacity = '';
+  document.getElementById('genre-section').style.pointerEvents = '';
   document.getElementById('start-btn').classList.add('show');
+  score=0; streak=0; correctCnt=0; qIdx=0;
   updateScoreBar();
 }
 
-// ─── 점수바 업데이트 ───────────────────────────────────────
+// ── 점수바 ──────────────────────────────
 function updateScoreBar() {
   document.getElementById('sc-score').textContent = score.toLocaleString();
   document.getElementById('sc-streak').textContent = `🔥 ${streak}`;
-  document.getElementById('sc-correct').textContent = correctCount;
-  document.getElementById('sc-total').textContent = qIndex;
-  const acc = qIndex > 0 ? Math.round((correctCount / qIndex) * 100) + '%' : '-';
-  document.getElementById('sc-acc').textContent = acc;
+  document.getElementById('sc-correct').textContent = correctCnt;
+  document.getElementById('sc-total').textContent = qIdx;
+  document.getElementById('sc-acc').textContent = qIdx>0 ? Math.round(correctCnt/qIdx*100)+'%' : '-';
 }
 
-// ─── 토스트 ───────────────────────────────────────
-function showToast(msg) {
+// ── 토스트 ──────────────────────────────
+function toast(msg) {
   const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._tid);
+  t._tid = setTimeout(()=>t.classList.remove('show'), 2000);
 }
 
-// ─── 초기화 ───────────────────────────────────────
-loadQuestions();
+init();
 </script>
 </body>
 </html>

@@ -1,0 +1,65 @@
+[
+  {
+    "id": "srv_001",
+    "question": "FastAPI가 Flask보다 빠른 주요 이유는?",
+    "choices": ["더 좋은 서버 하드웨어", "async/await 기반 비동기 처리 + Starlette 위에 구축", "Rust로 작성됨", "CDN 내장"],
+    "answer": 1,
+    "explanation": "FastAPI는 Starlette(ASGI 프레임워크) 위에 구축되어 비동기 I/O를 기본 지원합니다. 또한 Pydantic으로 입출력 자동 검증, Swagger UI 자동 생성이 되어 현재 파이썬 API 서버의 표준이 됐습니다.",
+    "tag": "FastAPI",
+    "image_prompt": "FastAPI rocket vs Flask flask speed comparison, async lightning bolts, dark tech background"
+  },
+  {
+    "id": "srv_002",
+    "question": "REST API에서 PUT과 PATCH의 차이는?",
+    "choices": ["기능 차이 없음", "PUT은 리소스 전체 교체, PATCH는 일부만 수정", "PUT은 생성, PATCH는 삭제", "속도 차이만 있음"],
+    "answer": 1,
+    "explanation": "PUT /users/1에 {name:'Kim', age:30}을 보내면 기존 필드 전체가 교체됩니다. PATCH /users/1에 {age:31}만 보내면 age만 수정되고 나머지는 유지됩니다. 부분 업데이트는 항상 PATCH를 씁니다.",
+    "tag": "REST API",
+    "image_prompt": "REST API methods comparison PUT full replace vs PATCH partial update, clean diagram dark"
+  },
+  {
+    "id": "srv_003",
+    "question": "CORS(교차 출처 리소스 공유) 에러가 발생하는 이유는?",
+    "choices": ["서버가 꺼져 있어서", "브라우저 보안 정책으로 다른 출처(도메인/포트)의 응답을 차단", "HTTPS를 쓰지 않아서", "API 키가 없어서"],
+    "answer": 1,
+    "explanation": "브라우저는 보안상 localhost:3000에서 localhost:8000으로 요청 시 CORS 헤더가 없으면 차단합니다. 서버에서 Access-Control-Allow-Origin 헤더를 반환하면 해결됩니다. Flask-CORS, FastAPI CORSMiddleware로 간단히 설정 가능합니다.",
+    "tag": "서버 기초",
+    "image_prompt": "CORS browser security wall blocking cross-origin requests, locked door between two servers"
+  },
+  {
+    "id": "srv_004",
+    "question": "Flask에서 `Blueprint`를 사용하는 이유는?",
+    "choices": ["더 빠른 라우팅 처리", "라우트를 모듈별로 분리해 대규모 앱 구조화", "데이터베이스 자동 연결", "파일 업로드 전용 기능"],
+    "answer": 1,
+    "explanation": "Blueprint로 auth, api, admin 등 라우트를 별도 파일로 분리하고 app.register_blueprint()로 등록합니다. 팀 협업과 유지보수에 필수적인 Flask 구조화 패턴입니다.",
+    "tag": "Flask",
+    "image_prompt": "Flask Blueprint modular architecture, separate route modules connecting to main app, blueprint diagram"
+  },
+  {
+    "id": "srv_005",
+    "question": "HTTP 상태코드 422의 의미는?",
+    "choices": ["서버 내부 오류 (500)", "Unprocessable Entity - 형식은 맞지만 내용 처리 불가", "인증 실패 (401)", "리소스 없음 (404)"],
+    "answer": 1,
+    "explanation": "FastAPI/Pydantic에서 요청 데이터가 스키마 검증에 실패하면 422를 반환합니다. 예: 숫자 필드에 문자열 전송. 개발 시 자주 마주치는 상태코드이며 응답 body에 어떤 필드가 왜 틀렸는지 상세히 나옵니다.",
+    "tag": "HTTP",
+    "image_prompt": "HTTP 422 error code with validation failure details, form validation red marks, dark screen"
+  },
+  {
+    "id": "srv_006",
+    "question": "`uvicorn`과 `gunicorn`의 차이는?",
+    "choices": ["uvicorn은 ASGI(비동기), gunicorn은 WSGI(동기)", "기능 차이 없음", "uvicorn은 유료", "운영체제가 다름"],
+    "answer": 0,
+    "explanation": "Flask는 WSGI라 gunicorn으로 배포합니다. FastAPI는 ASGI라 uvicorn을 씁니다. 실무에서는 gunicorn --worker-class uvicorn.workers.UvicornWorker 조합으로 FastAPI를 멀티프로세스로 운영하는 게 표준입니다.",
+    "tag": "서버 배포",
+    "image_prompt": "ASGI vs WSGI server comparison, async green vs sync blue architecture diagram"
+  },
+  {
+    "id": "srv_007",
+    "question": "JWT(JSON Web Token)의 구조는?",
+    "choices": ["Header.Body", "Header.Payload.Signature", "ID.Password.Token", "User.Role.Expire"],
+    "answer": 1,
+    "explanation": "JWT는 Header(알고리즘).Payload(데이터).Signature(서명) 3파트를 점(.)으로 연결합니다. 서버에 세션을 저장하지 않아도 되는 Stateless 인증 방식으로, API 서버 인증 표준이 됐습니다.",
+    "tag": "인증",
+    "image_prompt": "JWT token structure three parts connected by dots, header payload signature visualization"
+  }
+]
