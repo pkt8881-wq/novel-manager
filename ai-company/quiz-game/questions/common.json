@@ -2,7 +2,12 @@
   {
     "id": "cmn_001",
     "question": "빛의 속도는 진공에서 초속 약 얼마인가?",
-    "choices": ["30만 km/s", "3만 km/s", "300만 km/s", "3천 km/s"],
+    "choices": [
+      "30만 km/s",
+      "3만 km/s",
+      "300만 km/s",
+      "3천 km/s"
+    ],
     "answer": 0,
     "explanation": "빛의 속도는 약 299,792,458 m/s ≈ 30만 km/s입니다. 아인슈타인의 특수상대성이론에서 우주의 절대 속도 상한선으로, 어떤 물질도 이 속도를 넘을 수 없습니다.",
     "tag": "과학",
@@ -11,7 +16,12 @@
   {
     "id": "cmn_002",
     "question": "DNA의 이중나선 구조를 발견한 과학자 쌍은?",
-    "choices": ["아인슈타인·보어", "왓슨·크릭", "퀴리·퀴리", "뉴턴·라이프니츠"],
+    "choices": [
+      "아인슈타인·보어",
+      "왓슨·크릭",
+      "퀴리·퀴리",
+      "뉴턴·라이프니츠"
+    ],
     "answer": 1,
     "explanation": "1953년 제임스 왓슨과 프랜시스 크릭이 DNA 이중나선 구조를 발표했습니다. 로잘린드 프랭클린의 X선 회절 사진이 결정적 단서가 됐으나 당시 공을 인정받지 못했습니다.",
     "tag": "과학",
@@ -20,10 +30,883 @@
   {
     "id": "cmn_003",
     "question": "현재 세계에서 가장 많은 사람이 사용하는 언어는?",
-    "choices": ["영어", "스페인어", "힌디어", "중국어(만다린)"],
+    "choices": [
+      "영어",
+      "스페인어",
+      "힌디어",
+      "중국어(만다린)"
+    ],
     "answer": 3,
     "explanation": "중국어(만다린)는 약 9억 2천만 명의 원어민 사용자를 보유해 세계 1위입니다. 다만 영어는 제2언어 사용자를 포함하면 총 사용자 수에서 1위가 됩니다.",
     "tag": "상식",
     "image_prompt": "world map with language distribution, glowing population centers, flat design infographic style"
+  },
+  {
+    "id": "com_004",
+    "question": "원소주기율표에서 반응성이 매우 크며, 물과 격렬하게 반응하는 1족 알칼리 금속에 해당하지 않는 원소는?",
+    "choices": [
+      "리튬(Li)",
+      "나트륨(Na)",
+      "마그네슘(Mg)",
+      "칼륨(K)"
+    ],
+    "answer": 2,
+    "explanation": "마그네슘은 2족 알칼리 토금속에 속합니다. 1족 원소들은 최외각 전자가 하나여서 매우 빠르게 반응하며, 이는 배터리나 화학 공정의 기초가 됩니다. 실무적으로 재료의 부식성과 반응성을 이해하는 데 필수적입니다.",
+    "tag": "과학_화학",
+    "image_prompt": "A detailed periodic table highlighting the first group of alkali metals with glowing neon effects, scientific laboratory background."
+  },
+  {
+    "id": "com_005",
+    "question": "뉴턴의 제2법칙(가속도의 법칙)에 따르면, 물체에 가해지는 힘(F)과 가속도(a), 질량(m)의 관계식으로 옳은 것은?",
+    "choices": [
+      "F = m / a",
+      "F = ma",
+      "F = m + a",
+      "F = v * t"
+    ],
+    "answer": 1,
+    "explanation": "힘은 질량과 가속도의 곱과 같습니다. 이는 기계 설비의 하중 계산이나 통신 장비 설치 시 물리적 충격을 계산하는 기본 원리가 됩니다. 힘이 일정할 때 질량이 클수록 가속도는 줄어듭니다.",
+    "tag": "과학_물리",
+    "image_prompt": "A 3D render of a metal sphere being pushed by an invisible force, showing vector arrows for Force and Acceleration."
+  },
+  {
+    "id": "com_006",
+    "question": "에너지 보존 법칙(열역학 제1법칙)의 핵심 내용으로 가장 적절한 것은?",
+    "choices": [
+      "에너지는 시간이 지나면 소멸한다.",
+      "에너지는 오직 열 형태로만 존재한다.",
+      "에너지는 형태가 변할 뿐 총량은 일정하게 유지된다.",
+      "마찰이 있는 곳에서는 에너지가 생성된다."
+    ],
+    "answer": 2,
+    "explanation": "에너지는 생성되거나 소멸되지 않고 다른 형태로 전환될 뿐입니다. 전력 인프라 유지보수 시 전기 에너지가 열 에너지로 손실되는 현상을 이해하는 기초가 됩니다. 효율적인 에너지 관리가 실무의 핵심입니다.",
+    "tag": "과학_물리",
+    "image_prompt": "A conceptual diagram showing energy transforming from electricity to heat and light, glowing circuit lines."
+  },
+  {
+    "id": "com_007",
+    "question": "세포 내에서 DNA의 유전 정보를 RNA로 복사하는 과정을 무엇이라고 하는가?",
+    "choices": [
+      "번역(Translation)",
+      "전사(Transcription)",
+      "복제(Replication)",
+      "변이(Mutation)"
+    ],
+    "answer": 1,
+    "explanation": "전사는 핵 속의 DNA 정보를 mRNA로 옮기는 과정입니다. 이후 이 mRNA가 리보솜으로 이동하여 단백질을 만드는 '번역' 과정이 이어집니다. 이는 생명공학 데이터 분석의 가장 기초적인 메커니즘입니다.",
+    "tag": "과학_생물",
+    "image_prompt": "Microscopic view of DNA double helix unfolding and a single strand of mRNA being formed, cinematic lighting."
+  },
+  {
+    "id": "com_008",
+    "question": "세포 내 소기관 중 '에너지 발전소' 역할을 하며 ATP를 생산하는 곳은 어디인가?",
+    "choices": [
+      "리보솜",
+      "골지체",
+      "미토콘드리아",
+      "리소좀"
+    ],
+    "answer": 2,
+    "explanation": "미토콘드리아는 세포 호흡을 통해 에너지를 생성합니다. 우리 몸의 에너지 대사를 이해하는 핵심 기관이며, 기능 저하 시 만성 피로 등 건강 문제와 직결됩니다. 생물학적 시스템의 전원 공급 장치라고 볼 수 있습니다.",
+    "tag": "과학_생물",
+    "image_prompt": "A highly detailed 3D model of a mitochondrion with inner membrane folds, glowing orange energy particles."
+  },
+  {
+    "id": "com_009",
+    "question": "집합론에서 두 집합 A와 B의 교집합(A ∩ B)의 정의로 옳은 것은?",
+    "choices": [
+      "A 또는 B에 속하는 모든 원소의 집합",
+      "A에는 속하지만 B에는 속하지 않는 원소의 집합",
+      "A와 B 모두에 공통으로 속하는 원소의 집합",
+      "A와 B 어느 쪽에도 속하지 않는 원소의 집합"
+    ],
+    "answer": 2,
+    "explanation": "교집합은 두 조건을 동시에 만족하는 데이터 추출 시 사용됩니다. DB 쿼리의 INNER JOIN과 동일한 논리 구조를 가지며, 효율적인 데이터 필터링을 위해 반드시 이해해야 하는 개념입니다.",
+    "tag": "수학_집합",
+    "image_prompt": "Two overlapping translucent circles (Venn diagram) with the intersection area glowing brightly."
+  },
+  {
+    "id": "com_010",
+    "question": "평균과 표준편차가 일정할 때, 정규분포 곡선에서 평균을 중심으로 ±1표준편차 범위 내에 포함될 확률은 약 얼마인가?",
+    "choices": [
+      "약 50%",
+      "약 68%",
+      "약 95%",
+      "약 99%"
+    ],
+    "answer": 1,
+    "explanation": "정규분포에서 ±1σ 범위는 약 68.2%의 데이터를 포함합니다. 이는 품질 관리(Six Sigma)나 네트워크 트래픽의 이상치(Outlier)를 판별하는 통계적 기준이 됩니다.",
+    "tag": "수학_통계",
+    "image_prompt": "A clean, professional Gaussian distribution curve with the central 68% area shaded in blue."
+  },
+  {
+    "id": "com_011",
+    "question": "독립시행의 확률에서 각 시행의 결과가 다음 시행에 영향을 주지 않을 때, n번 시행 중 k번 성공할 확률을 구하는 분포는?",
+    "choices": [
+      "포아송 분포",
+      "정규 분포",
+      "이항 분포",
+      "t-분포"
+    ],
+    "answer": 2,
+    "explanation": "이항분포는 '성공'과 '실패' 두 가지 결과만 있는 독립시행에서 사용됩니다. 시스템 장애 발생 확률이나 패킷 손실률 계산 등 IT 인프라의 신뢰도 분석에 자주 활용되는 모델입니다.",
+    "tag": "수학_확률",
+    "image_prompt": "A sequence of coin flips showing heads and tails, transitioning into a binomial distribution bar chart."
+  },
+  {
+    "id": "com_012",
+    "question": "중앙은행이 기준금리를 인상했을 때 일반적으로 나타나는 경제적 현상으로 옳은 것은?",
+    "choices": [
+      "시중 통화량 증가 및 물가 상승",
+      "기업의 투자 확대 및 소비 증가",
+      "대출 금리 상승 및 소비 위축",
+      "환율 하락 및 수출 급증"
+    ],
+    "answer": 2,
+    "explanation": "금리가 오르면 대출 비용이 증가하여 기업 투자가 줄고 가계 소비가 위축됩니다. 이는 보통 과열된 경기를 진정시키고 물가를 잡기 위한 통화 정책의 일환으로 시행됩니다.",
+    "tag": "경제_금융",
+    "image_prompt": "A conceptual image of a balance scale with a 'Interest Rate' weight going up and a 'Consumption' weight going down."
+  },
+  {
+    "id": "com_013",
+    "question": "국내 총생산(GDP)의 정의로 가장 적절한 것은?",
+    "choices": [
+      "한 나라 국민이 해외에서 벌어들인 소득의 합",
+      "일정 기간 동안 한 나라 영토 내에서 생산된 최종 재화와 서비스의 시장가치 합",
+      "국가가 보유한 외환 보유고의 총액",
+      "주식 시장의 전체 시가총액"
+    ],
+    "answer": 1,
+    "explanation": "GDP는 '영토' 기준의 생산 지표입니다. 국가의 경제 규모와 성장률을 측정하는 가장 대표적인 지표이며, 이를 통해 국가 간 경제력을 비교하고 정책 방향을 설정합니다.",
+    "tag": "경제_지표",
+    "image_prompt": "A 3D bar graph showing a country's economic growth over years with a globe in the background."
+  },
+  {
+    "id": "com_014",
+    "question": "열대 우림 기후(Af)의 특징으로 옳지 않은 것은?",
+    "choices": [
+      "연중 고온 다습하다.",
+      "계절별 강수량 차이가 거의 없다.",
+      "상록활엽수가 울창한 밀림을 이룬다.",
+      "겨울철에 매우 건조하고 추운 날씨가 나타난다."
+    ],
+    "answer": 3,
+    "explanation": "열대 우림 기후는 연중 고온 다습하여 겨울이 없으며 강수량이 일정합니다. 지리적 특성은 해당 지역의 산업 구조와 자원 분포에 영향을 미치며 글로벌 물류 경로 이해에도 중요합니다.",
+    "tag": "지리_기후",
+    "image_prompt": "A lush, vibrant tropical rainforest with dense canopy and sunlight filtering through leaves."
+  },
+  {
+    "id": "com_015",
+    "question": "다음 중 지형적 특징과 도시의 연결이 잘못된 것은?",
+    "choices": [
+      "뉴욕 - 항구 도시 및 금융 중심지",
+      "카이로 - 나일강 유역의 고대 문명 도시",
+      "도쿄 - 환태평양 조산대의 해안 도시",
+      "런던 - 안데스 산맥의 고원 도시"
+    ],
+    "answer": 3,
+    "explanation": "런던은 영국 템스강 유역에 위치한 평원/구릉지 도시이며, 안데스 산맥은 남미에 위치합니다. 주요 도시의 지형적 특성을 아는 것은 글로벌 네트워크 인프라 설계 및 데이터 센터 입지 선정 시 고려사항이 됩니다.",
+    "tag": "지리_도시",
+    "image_prompt": "A collage of world city skylines (New York, Cairo, Tokyo, London) with a vintage map background."
+  },
+  {
+    "id": "cmn_016",
+    "question": "양자역학에서 입자의 상태를 수학적으로 나타내는 함수는 무엇인가요?",
+    "choices": [
+      "파동함수",
+      "밀도함수",
+      "확률분포함수",
+      "에너지준위함수"
+    ],
+    "answer": 0,
+    "explanation": "양자역학에서 입자의 상태는 파동함수(Wave function, ψ)로 기술되며, 이 함수의 절댓값 제곱은 입자가 특정 위치에서 발견될 확률 밀도를 나타냅니다.",
+    "tag": "양자역학",
+    "image_prompt": "A glowing 3D mathematical wave function graph on a dark futuristic background, neon blue lines."
+  },
+  {
+    "id": "cmn_017",
+    "question": "하이젠베르크의 불확정성 원리에 따르면 동시에 정확하게 측정할 수 없는 두 물리량은 무엇인가요?",
+    "choices": [
+      "질량과 에너지",
+      "위치와 운동량",
+      "전하량과 스핀",
+      "시간과 온도"
+    ],
+    "answer": 1,
+    "explanation": "불확정성 원리는 입자의 위치와 운동량을 동시에 무한히 정확하게 측정하는 것이 불가능함을 의미합니다. 하나를 정확히 알수록 다른 하나의 불확실성은 커집니다.",
+    "tag": "불확정성 원리",
+    "image_prompt": "Abstract representation of a particle as a blurry cloud, showing the trade-off between position and momentum."
+  },
+  {
+    "id": "cmn_018",
+    "question": "슈뢰딩거의 고양이 역설이 설명하고자 하는 양자역학적 개념은 무엇인가요?",
+    "choices": [
+      "양자 얽힘",
+      "양자 터널링",
+      "중첩 상태",
+      "파동-입자 이중성"
+    ],
+    "answer": 2,
+    "explanation": "슈뢰딩거의 고양이는 관측하기 전까지 고양이가 '살아있는 상태'와 '죽어있는 상태'가 동시에 존재하는 중첩(Superposition) 개념을 비판적으로 보여주기 위한 사고실험입니다.",
+    "tag": "슈뢰딩거 고양이",
+    "image_prompt": "A surreal image of a cat that is both transparent and solid, inside a metallic box with quantum symbols."
+  },
+  {
+    "id": "cmn_019",
+    "question": "빛이 입자와 파동의 성질을 모두 가지고 있다는 원리는 무엇인가요?",
+    "choices": [
+      "상보성 원리",
+      "배타 원리",
+      "불확정성 원리",
+      "등가 원리"
+    ],
+    "answer": 0,
+    "explanation": "닐스 보어의 상보성 원리에 따르면 빛이나 전자 같은 양자 객체는 관측 방법에 따라 입자성 또는 파동성의 한 가지 모습만 나타내며, 두 성질은 서로 보완적입니다.",
+    "tag": "양자역학",
+    "image_prompt": "A beam of light splitting into a wave pattern on one side and discrete particles on the other."
+  },
+  {
+    "id": "cmn_020",
+    "question": "전자가 에너지 준위 사이를 이동할 때 연속적이지 않고 불연속적으로 도약하는 현상을 무엇이라 하나요?",
+    "choices": [
+      "양자 얽힘",
+      "양자 도약(Quantum Leap)",
+      "터널 효과",
+      "광전 효과"
+    ],
+    "answer": 1,
+    "explanation": "양자 도약은 전자가 한 에너지 상태에서 다른 상태로 중간 단계 없이 즉각적으로 이동하는 현상을 말합니다.",
+    "tag": "양자역학",
+    "image_prompt": "An electron jumping between two distinct energy shells of an atom, glowing spark effect."
+  },
+  {
+    "id": "cmn_021",
+    "question": "불확정성 원리에서 위치의 불확정성(Δx)과 운동량의 불확정성(Δp)의 곱은 어떤 값보다 크거나 같아야 하나요?",
+    "choices": [
+      "0",
+      "플랑크 상수 (h)",
+      "h/4π",
+      "빛의 속도 (c)"
+    ],
+    "answer": 2,
+    "explanation": "하이젠베르크의 불확정성 원리 식은 ΔxΔp ≥ h/4π (또는 ħ/2)로 표현되며, 이는 자연의 근본적인 한계를 나타냅니다.",
+    "tag": "불확정성 원리",
+    "image_prompt": "Mathematical formula ΔxΔp ≥ h/4π written in glowing gold letters on a chalkboard."
+  },
+  {
+    "id": "cmn_022",
+    "question": "슈뢰딩거의 고양이 실험에서 '관측'이 일어나는 순간 어떤 현상이 발생하나요?",
+    "choices": [
+      "파동함수의 붕괴",
+      "에너지의 증폭",
+      "양자 터널링 발생",
+      "시간의 역전"
+    ],
+    "answer": 0,
+    "explanation": "중첩 상태에 있던 파동함수가 관측이라는 행위를 통해 하나의 확정된 상태로 결정되는 것을 '파동함수의 붕괴(Wave function collapse)'라고 합니다.",
+    "tag": "슈뢰딩거 고양이",
+    "image_prompt": "A wave pattern suddenly collapsing into a single sharp point upon being looked at by an eye."
+  },
+  {
+    "id": "cmn_023",
+    "question": "입자가 고전적으로는 통과할 수 없는 에너지 장벽을 확률적으로 통과하는 현상은 무엇인가요?",
+    "choices": [
+      "양자 얽힘",
+      "광전 효과",
+      "양자 터널링",
+      "제만 효과"
+    ],
+    "answer": 2,
+    "explanation": "양자 터널링(Quantum Tunneling)은 입자가 파동성을 가져 장벽 너머로 존재할 확률이 있기 때문에 발생하는 현상으로, 반도체 소자나 핵융합의 핵심 원리입니다.",
+    "tag": "양자역학",
+    "image_prompt": "A small particle passing through a solid wall like a ghost, leaving a trail of light."
+  },
+  {
+    "id": "cmn_024",
+    "question": "두 입자가 아무리 멀리 떨어져 있어도 한 입자의 상태가 결정되면 즉시 다른 입자의 상태가 결정되는 현상은?",
+    "choices": [
+      "양자 중첩",
+      "양자 얽힘(Entanglement)",
+      "불확정성",
+      "결어긋남"
+    ],
+    "answer": 1,
+    "explanation": "양자 얽힘은 두 입자가 강한 상관관계를 가져, 거리와 상관없이 한쪽의 상태가 측정되는 순간 다른 쪽의 상태가 즉각적으로 결정되는 현상입니다.",
+    "tag": "양자역학",
+    "image_prompt": "Two glowing particles connected by a shimmering thread of light across a vast galaxy."
+  },
+  {
+    "id": "cmn_025",
+    "question": "다음 중 양자역학의 기본 가설과 가장 거리가 먼 것은 무엇인가요?",
+    "choices": [
+      "에너지는 양자화되어 있다.",
+      "입자의 상태는 확률적으로 존재한다.",
+      "모든 물리량은 동시에 정확히 측정 가능하다.",
+      "관측이 결과에 영향을 준다."
+    ],
+    "answer": 2,
+    "explanation": "불확정성 원리에 의해 위치와 운동량 같은 상보적 물리량은 동시에 정확하게 측정할 수 없습니다. 따라서 '모두 정확히 측정 가능하다'는 설명은 틀린 것입니다.",
+    "tag": "양자역학",
+    "image_prompt": "A contrast between a precise clock (classical) and a blurry, shifting cloud of probability (quantum)."
+  },
+  {
+    "id": "cmn_026",
+    "question": "다음 중 산화 반응에 해당하는 것은 무엇입니까?",
+    "choices": [
+      "전자를 얻는 것",
+      "산소를 잃는 것",
+      "수소를 얻는 것",
+      "전자를 잃는 것"
+    ],
+    "answer": 3,
+    "explanation": "산화(Oxidation)는 물질이 전자를 잃거나, 산소를 얻거나, 수소를 잃는 반응을 말합니다.",
+    "tag": "산화환원",
+    "image_prompt": "A conceptual diagram showing an electron moving away from an atom, labeled 'Oxidation' in a clean scientific style."
+  },
+  {
+    "id": "cmn_027",
+    "question": "pH가 3인 용액과 pH가 5인 용액의 수소 이온 농도 차이는 몇 배입니까?",
+    "choices": [
+      "2배",
+      "10배",
+      "100배",
+      "1000배"
+    ],
+    "answer": 2,
+    "explanation": "pH는 로그 스케일이므로 pH가 1 차이 날 때마다 수소 이온 농도는 10배 차이가 납니다. 따라서 5-3=2이므로 10의 2제곱인 100배 차이가 납니다.",
+    "tag": "pH",
+    "image_prompt": "A pH scale showing colors from red to purple with markers at pH 3 and pH 5."
+  },
+  {
+    "id": "cmn_028",
+    "question": "촉매에 대한 설명으로 옳은 것은 무엇입니까?",
+    "choices": [
+      "반응 엔탈피를 변화시킨다",
+      "화학 평형 상태를 이동시킨다",
+      "활성화 에너지를 낮추어 반응 속도를 빠르게 한다",
+      "반응 후 촉매의 질량은 감소한다"
+    ],
+    "answer": 2,
+    "explanation": "촉매는 반응 경로를 변경하여 활성화 에너지를 낮춤으로써 반응 속도를 조절하며, 반응 전후에 자신은 변하지 않습니다.",
+    "tag": "촉매",
+    "image_prompt": "An energy profile diagram showing two paths: one with a high peak and another lower peak labeled 'with catalyst'."
+  },
+  {
+    "id": "cmn_029",
+    "question": "탄소 원자 3개가 단일 결합으로 연결된 포화 탄화수소의 IUPAC 명칭은 무엇입니까?",
+    "choices": [
+      "에탄 (Ethane)",
+      "프로판 (Propane)",
+      "부탄 (Butane)",
+      "메탄 (Methane)"
+    ],
+    "answer": 1,
+    "explanation": "탄소 3개(prop-)와 단일 결합 포화 탄화수소 접미사(-ane)가 합쳐져 프로판이 됩니다.",
+    "tag": "유기화합물 명명",
+    "image_prompt": "Chemical structure of propane (CH3-CH2-CH3) with clear bonds."
+  },
+  {
+    "id": "cmn_030",
+    "question": "다음 중 강산에 해당하는 물질은 무엇입니까?",
+    "choices": [
+      "아세트산 (CH3COOH)",
+      "암모니아 (NH3)",
+      "염산 (HCl)",
+      "물 (H2O)"
+    ],
+    "answer": 2,
+    "explanation": "염산(HCl)은 수용액에서 거의 완전히 이온화되는 강산입니다. 아세트산은 약산이며 암모니아는 약염기입니다.",
+    "tag": "pH",
+    "image_prompt": "A bottle of hydrochloric acid in a laboratory setting with a warning label."
+  },
+  {
+    "id": "cmn_031",
+    "question": "환원제(Reducing agent)의 정의로 옳은 것은?",
+    "choices": [
+      "자신은 산화되면서 다른 물질을 환원시키는 물질",
+      "자신은 환원되면서 다른 물질을 산화시키는 물질",
+      "전자를 얻어 양전하를 띠게 하는 물질",
+      "반응 속도를 늦추는 물질"
+    ],
+    "answer": 0,
+    "explanation": "환원제는 상대방을 환원시키고 자신은 전자를 잃어 산화되는 물질을 말합니다.",
+    "tag": "산화환원",
+    "image_prompt": "A chemical equation showing an electron transfer from a reducing agent to another substance."
+  },
+  {
+    "id": "cmn_032",
+    "question": "유기 화합물에서 '-ol'로 끝나는 명칭을 가진 작용기는 무엇입니까?",
+    "choices": [
+      "카르복실기",
+      "알데하이드기",
+      "히드록시기 (알코올)",
+      "케톤기"
+    ],
+    "answer": 2,
+    "explanation": "알코올류 화합물은 히드록시기(-OH)를 포함하며 IUPAC 명명법에서 접미사 '-ol'을 사용합니다.",
+    "tag": "유기화합물 명명",
+    "image_prompt": "The chemical structure of ethanol highlighting the -OH group."
+  },
+  {
+    "id": "cmn_033",
+    "question": "정촉매가 반응 속도에 미치는 영향은 무엇입니까?",
+    "choices": [
+      "활성화 에너지를 높인다",
+      "반응 속도를 느리게 한다",
+      "역반응의 속도만 빠르게 한다",
+      "활성화 에너지를 낮춰 반응 속도를 빠르게 한다"
+    ],
+    "answer": 3,
+    "explanation": "정촉매는 활성화 에너지를 낮추어 정반응과 역반응 모두의 속도를 증가시킵니다.",
+    "tag": "촉매",
+    "image_prompt": "A molecular model showing a catalyst surface facilitating the reaction of two molecules."
+  },
+  {
+    "id": "cmn_034",
+    "question": "다음 중 산화수가 0인 물질은 무엇입니까?",
+    "choices": [
+      "Na+",
+      "Cl-",
+      "O2",
+      "H2O"
+    ],
+    "answer": 2,
+    "explanation": "단원소 물질(예: O2, H2, Fe)의 산화수는 항상 0입니다.",
+    "tag": "산화환원",
+    "image_prompt": "A diagram of an oxygen molecule (O=O) with 'Oxidation State = 0' written next to it."
+  },
+  {
+    "id": "cmn_035",
+    "question": "탄소 2개로 이루어진 알켄(Alkene, 이중결합 포함)의 명칭은 무엇입니까?",
+    "choices": [
+      "에텐 (Ethene)",
+      "에탄 (Ethane)",
+      "프로펜 (Propene)",
+      "메텐 (Methene)"
+    ],
+    "answer": 0,
+    "explanation": "탄소 2개(eth-)와 이중결합을 가진 불포화 탄화수소 접미사(-ene)가 합쳐져 에텐(에틸렌)이 됩니다.",
+    "tag": "유기화합물 명명",
+    "image_prompt": "Chemical structure of ethene (CH2=CH2) showing the double bond."
+  },
+  {
+    "id": "cmn_036",
+    "question": "찰스 다윈이 제안한 '자연선택'의 핵심 원리로 가장 적절한 것은?",
+    "choices": [
+      "개체가 살아생전 획득한 형질은 자손에게 유전된다.",
+      "환경에 유리한 형질을 가진 개체가 생존 및 번식 가능성이 높다.",
+      "돌연변이는 항상 생물에게 해로운 영향을 미친다.",
+      "모든 생물은 동일한 속도로 진화한다."
+    ],
+    "answer": 1,
+    "explanation": "자연선택은 주어진 환경에서 생존과 번식에 유리한 형질을 가진 개체가 더 많은 자손을 남김으로써 그 형질이 세대를 거쳐 확산되는 과정입니다.",
+    "tag": "자연선택",
+    "image_prompt": "A diagram showing finches with different beak shapes adapted to various food sources in the Galapagos Islands, scientific illustration style."
+  },
+  {
+    "id": "cmn_037",
+    "question": "유전자 돌연변이가 일어나는 가장 근본적인 원인은 무엇인가?",
+    "choices": [
+      "개체의 의도적인 노력",
+      "환경에 적응하려는 생물의 본능",
+      "DNA 복제 과정에서의 오류 또는 외부 요인",
+      "영양 부족으로 인한 세포 파괴"
+    ],
+    "answer": 2,
+    "explanation": "돌연변이는 DNA가 복제되는 과정에서 발생하는 무작위적인 오류나 방사선, 화학 물질과 같은 외부 요인에 의해 염기 서열이 변하면서 발생합니다.",
+    "tag": "유전자 돌연변이",
+    "image_prompt": "A 3D render of a DNA double helix with one section glowing in a different color to represent a mutation point."
+  },
+  {
+    "id": "cmn_038",
+    "question": "다음 중 '상동 기관'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "기능은 같지만 기원이 다른 기관",
+      "겉모습은 비슷하지만 내부 구조가 완전히 다른 기관",
+      "기원은 같으나 환경에 따라 기능이 달라진 기관",
+      "특정 환경에서 우연히 비슷하게 진화한 기관"
+    ],
+    "answer": 2,
+    "explanation": "상동 기관(Homologous organs)은 발생 기원이 같아 기본 구조는 비슷하지만, 서로 다른 환경에 적응하며 기능이 분화된 기관을 말합니다. (예: 사람의 팔과 고래의 가슴지느러미)",
+    "tag": "진화론",
+    "image_prompt": "Comparison of the skeletal structure of a human arm, a bat wing, and a whale flipper, anatomical drawing."
+  },
+  {
+    "id": "cmn_039",
+    "question": "항생제 내성 세균의 출현을 자연선택의 관점에서 설명할 때 가장 적절한 과정은?",
+    "choices": [
+      "세균이 항생제에 대항하기 위해 스스로 유전자를 변형시켰다.",
+      "항생제가 세균의 DNA를 강제로 바꾸어 내성을 만들었다.",
+      "내성 유전자를 가진 일부 세균이 살아남아 증식하였다.",
+      "항생제를 많이 사용하면 모든 세균이 동일하게 진화한다."
+    ],
+    "answer": 2,
+    "explanation": "이미 존재하던 돌연변이 중 항생제에 내성이 있는 개체가 항생제라는 환경 압력 속에서 살아남아 번식함으로써 집단 전체의 내성 비율이 높아지는 것입니다.",
+    "tag": "자연선택",
+    "image_prompt": "Microscopic view of bacteria, with a few gold-colored resistant bacteria surviving among dead grey bacteria after antibiotic treatment."
+  },
+  {
+    "id": "cmn_040",
+    "question": "유전자 돌연변이 중 '침묵 돌연변이(Silent Mutation)'의 특징은 무엇인가?",
+    "choices": [
+      "단백질의 구조가 완전히 파괴된다.",
+      "염기 서열은 변했지만 생성되는 아미노산은 동일하다.",
+      "염기가 하나 추가되어 읽기 틀이 바뀐다.",
+      "유전자 전체가 소실된다."
+    ],
+    "answer": 1,
+    "explanation": "침묵 돌연변이는 DNA 염기 서열에 변화가 생겼음에도 불구하고, 코돈의 중복성 때문에 결과적으로 동일한 아미노산을 지정하여 단백질 구조에 영향을 주지 않는 경우입니다.",
+    "tag": "유전자 돌연변이",
+    "image_prompt": "A conceptual diagram showing two different DNA codons resulting in the same amino acid molecule."
+  },
+  {
+    "id": "cmn_041",
+    "question": "라마르크의 '용불용설'이 현대 진화론에서 부정된 결정적인 이유는 무엇인가?",
+    "choices": [
+      "생물이 변하지 않는다는 사실이 밝혀졌기 때문",
+      "획득 형질은 유전되지 않기 때문",
+      "돌연변이가 일어나지 않기 때문",
+      "자연선택이 너무 느리기 때문"
+    ],
+    "answer": 1,
+    "explanation": "라마르크는 살아생전 사용한 기관이 발달하고 그것이 유전된다고 주장했으나, 체세포의 변화(획득 형질)는 생식세포를 통해 자손에게 전달되지 않습니다.",
+    "tag": "진화론",
+    "image_prompt": "Illustration of a giraffe stretching its neck vs. genetic inheritance, contrasting Lamarckism and Darwinism."
+  },
+  {
+    "id": "cmn_042",
+    "question": "다음 중 '수렴 진화(Convergent Evolution)'의 사례로 가장 적절한 것은?",
+    "choices": [
+      "사람과 침팬지의 유사성",
+      "고래의 지느러미와 박쥐의 날개",
+      "상어(어류)와 돌고래(포유류)의 유선형 몸 구조",
+      "강아지와 늑대의 외형 차이"
+    ],
+    "answer": 2,
+    "explanation": "수렴 진화는 계통적으로 멀리 떨어진 생물들이 유사한 환경에 적응하면서 비슷한 외형이나 기능을 갖게 되는 현상입니다.",
+    "tag": "진화론",
+    "image_prompt": "Side-by-side comparison of a shark and a dolphin showing their similar streamlined body shapes."
+  },
+  {
+    "id": "cmn_043",
+    "question": "유전자 돌연변이 중 '틀 이동 돌연변이(Frameshift Mutation)'가 위험한 이유는 무엇인가?",
+    "choices": [
+      "단백질 합성이 완전히 중단되기 때문",
+      "염기 하나만 바뀌어 영향이 미미하기 때문",
+      "읽기 틀이 바뀌어 이후의 모든 아미노산 서열이 변하기 때문",
+      "DNA 복제 속도가 너무 빨라지기 때문"
+    ],
+    "answer": 2,
+    "explanation": "염기의 삽입이나 결실로 인해 코돈의 읽기 틀(Reading frame)이 밀리게 되면, 돌연변이 지점 이후의 모든 아미노산이 바뀌어 완전히 다른 단백질이 생성되거나 기능이 상실됩니다.",
+    "tag": "유전자 돌연변이",
+    "image_prompt": "A sequence of letters (codons) being shifted by one letter, showing how the grouping changes completely."
+  },
+  {
+    "id": "cmn_044",
+    "question": "집단 유전학에서 '유전자 부동(Genetic Drift)'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "환경 적응을 통해 특정 형질이 선택되는 과정이다.",
+      "우연한 사건으로 인해 집단의 대립유전자 빈도가 변하는 현상이다.",
+      "서로 다른 종 사이의 교배로 유전자가 섞이는 것이다.",
+      "돌연변이가 일어나 유전적 다양성이 증가하는 것이다."
+    ],
+    "answer": 1,
+    "explanation": "유전자 부동은 자연선택과 달리 '우연'에 의해 특정 유전자의 빈도가 변하는 현상으로, 특히 개체 수가 적은 소규모 집단에서 강하게 나타납니다.",
+    "tag": "진화론",
+    "image_prompt": "A small group of colorful beetles being separated from a large population by a natural disaster, showing random survival."
+  },
+  {
+    "id": "cmn_045",
+    "question": "현대 진화 생물학의 관점에서 '진화'의 정의로 가장 적절한 것은?",
+    "choices": [
+      "개체가 더 복잡하고 고등한 형태로 변하는 것",
+      "환경에 맞춰 개체가 스스로 몸을 변화시키는 것",
+      "집단 내에서 세대를 거쳐 대립유전자 빈도가 변화하는 것",
+      "멸종 위기 종이 새로운 환경에 적응하여 살아남는 것"
+    ],
+    "answer": 2,
+    "explanation": "현대 생물학에서 진화는 개체 수준이 아닌 '집단' 수준에서 정의되며, 세대를 거쳐 유전자 풀(Gene pool)의 구성 비율이 변하는 과정을 의미합니다.",
+    "tag": "진화론",
+    "image_prompt": "A conceptual image of a population of organisms changing colors over several generations in a timeline."
+  },
+  {
+    "id": "cmn_046",
+    "question": "판 구조론에 따르면, 두 판이 서로 멀어지는 경계에서 주로 발생하는 지형은 무엇인가요?",
+    "choices": [
+      "해구",
+      "습곡 산맥",
+      "해령",
+      "호상 열도"
+    ],
+    "answer": 2,
+    "explanation": "발산형 경계에서는 맨틀 대류의 상승으로 인해 판이 서로 멀어지며, 이때 마그마가 상승하여 새로운 해양 지각이 형성되는 해령이 만들어집니다.",
+    "tag": "판구조론",
+    "image_prompt": "A cross-section diagram of a mid-ocean ridge showing magma rising and plates moving apart."
+  },
+  {
+    "id": "cmn_047",
+    "question": "지진의 규모를 측정할 때, 지진으로 인해 방출된 전체 에너지의 양을 나타내는 척도는 무엇인가요?",
+    "choices": [
+      "진도",
+      "규모",
+      "진앙",
+      "초동"
+    ],
+    "answer": 1,
+    "explanation": "규모(Magnitude)는 지진 발생 시 방출된 절대적인 에너지의 양을 수치로 나타낸 것이며, 진도는 특정 지역에서 느껴지는 흔들림의 정도를 말합니다.",
+    "tag": "지진",
+    "image_prompt": "A seismograph recording a seismic wave with a scale showing magnitude numbers."
+  },
+  {
+    "id": "cmn_048",
+    "question": "화산 활동으로 인해 분출된 물질 중, 유리질 성분이 많고 매우 가벼워 공중에 높이 떠오르는 물질은 무엇인가요?",
+    "choices": [
+      "용암",
+      "화산재",
+      "부석",
+      "화산탄"
+    ],
+    "answer": 2,
+    "explanation": "부석(Pumice)은 마그마가 급격히 냉각될 때 가스가 빠져나가면서 수많은 구멍이 생긴 가벼운 암석으로, 물에 뜰 정도로 밀도가 낮습니다.",
+    "tag": "화산",
+    "image_prompt": "A close-up photo of a porous, light-colored pumice stone."
+  },
+  {
+    "id": "cmn_049",
+    "question": "대기권의 층 중에서 기온이 고도에 따라 상승하며, 오존층이 존재하여 자외선을 흡수하는 층은 어디인가요?",
+    "choices": [
+      "대류권",
+      "성층권",
+      "중간권",
+      "열권"
+    ],
+    "answer": 1,
+    "explanation": "성층권에는 오존층이 분포하고 있어 태양의 유해 자외선을 흡수하며, 이 과정에서 열이 발생하여 고도가 높아질수록 기온이 상승합니다.",
+    "tag": "대기권",
+    "image_prompt": "A diagram of the Earth's atmosphere layers highlighting the stratosphere and ozone layer."
+  },
+  {
+    "id": "cmn_050",
+    "question": "판의 섭입대(수렴형 경계)에서 대륙판과 해양판이 충돌할 때 주로 형성되는 지형은 무엇인가요?",
+    "choices": [
+      "해령",
+      "변환 단층",
+      "해구",
+      "열곡대"
+    ],
+    "answer": 2,
+    "explanation": "밀도가 더 큰 해양판이 대륙판 아래로 파고드는 섭입 과정에서 깊은 골짜기 형태의 해구가 형성됩니다.",
+    "tag": "판구조론",
+    "image_prompt": "A diagram showing an oceanic plate subducting under a continental plate, forming a deep ocean trench."
+  },
+  {
+    "id": "cmn_051",
+    "question": "지진파 중 S파의 특징으로 옳은 것은 무엇인가요?",
+    "choices": [
+      "속도가 P파보다 빠르다",
+      "액체 상태인 외핵을 통과할 수 있다",
+      "종파의 성질을 가진다",
+      "횡파이며 고체 매질에서만 전달된다"
+    ],
+    "answer": 3,
+    "explanation": "S파(Secondary wave)는 횡파로, 고체 상태의 물질만 통과할 수 있으며 액체인 외핵을 통과하지 못하는 특성이 있습니다.",
+    "tag": "지진",
+    "image_prompt": "An illustration of S-waves moving in a transverse motion through the Earth's crust."
+  },
+  {
+    "id": "cmn_052",
+    "question": "점성이 낮아 잘 흘러내리며, 완만한 경사의 방패 모양 화산을 만드는 용암의 종류는 무엇인가요?",
+    "choices": [
+      "현무암질 용암",
+      "안산암질 용암",
+      "유문암질 용암",
+      "흑요석"
+    ],
+    "answer": 0,
+    "explanation": "현무암질 용암은 온도가 높고 점성이 낮아 멀리까지 흘러가며, 이로 인해 경사가 완만한 순상 화산을 형성합니다.",
+    "tag": "화산",
+    "image_prompt": "A wide, gently sloping shield volcano with flowing basaltic lava."
+  },
+  {
+    "id": "cmn_053",
+    "question": "대기권의 가장 아래층으로, 기상 현상이 일어나며 고도가 높아질수록 기온이 낮아지는 층은 어디인가요?",
+    "choices": [
+      "성층권",
+      "중간권",
+      "열권",
+      "대류권"
+    ],
+    "answer": 3,
+    "explanation": "대류권은 지표면에서 방출되는 열에 의해 가열되며, 수증기가 존재하여 구름, 비, 눈과 같은 기상 현상이 활발하게 일어납니다.",
+    "tag": "대기권",
+    "image_prompt": "A scene showing clouds and rain in the troposphere with a temperature gradient arrow pointing down."
+  },
+  {
+    "id": "cmn_054",
+    "question": "두 판이 서로 어긋나게 미끄러지며 이동하는 경계로, 화산 활동은 거의 없지만 지진은 빈번하게 발생하는 곳은?",
+    "choices": [
+      "발산형 경계",
+      "수렴형 경계",
+      "보존형 경계",
+      "섭입형 경계"
+    ],
+    "answer": 2,
+    "explanation": "보존형 경계(변환 단층 경계)는 판이 생성되거나 소멸되지 않고 서로 수평으로 어긋나 이동하므로 마그마의 상승이 없어 화산 활동이 거의 없습니다.",
+    "tag": "판구조론",
+    "image_prompt": "A top-down view of a transform fault like the San Andreas Fault with arrows showing opposite directions."
+  },
+  {
+    "id": "cmn_055",
+    "question": "대기권의 층 중 기온이 가장 급격하게 낮아져 대기권 전체에서 최저 기온이 나타나는 층은 어디인가요?",
+    "choices": [
+      "대류권",
+      "성층권",
+      "중간권",
+      "열권"
+    ],
+    "answer": 2,
+    "explanation": "중간권은 고도가 높아질수록 기온이 계속 하강하여 상부 경계에서 대기권 중 가장 낮은 온도를 기록합니다.",
+    "tag": "대기권",
+    "image_prompt": "A diagram of the atmosphere showing a sharp temperature drop in the mesosphere."
+  },
+  {
+    "id": "cmn_056",
+    "question": "블랙홀의 경계면으로, 한 번 들어가면 빛조차 빠져나올 수 없는 지점을 무엇이라고 하는가?",
+    "choices": [
+      "특이점",
+      "사건의 지평선",
+      "강착원반",
+      "슈바르츠실트 반지름"
+    ],
+    "answer": 1,
+    "explanation": "사건의 지평선(Event Horizon)은 블랙홀의 외부 경계로, 이 지점을 넘어서면 탈출 속도가 빛의 속도보다 빨라져 아무것도 빠져나올 수 없습니다.",
+    "tag": "블랙홀",
+    "image_prompt": "A cinematic visualization of a black hole's event horizon with glowing accretion disk and warped spacetime."
+  },
+  {
+    "id": "cmn_057",
+    "question": "아인슈타인의 일반 상대성 이론에서 예측되었으며, 거대 질량 천체의 가속 운동으로 인해 발생하는 시공간의 물결은?",
+    "choices": [
+      "전자기파",
+      "중력 렌즈",
+      "중력파",
+      "우주 배경 복사"
+    ],
+    "answer": 2,
+    "explanation": "중력파(Gravitational Waves)는 거대한 질량을 가진 물체가 가속될 때 시공간의 뒤틀림이 파동의 형태로 퍼져나가는 현상입니다.",
+    "tag": "중력파",
+    "image_prompt": "Abstract representation of spacetime ripples like waves on a pond, caused by two colliding black holes."
+  },
+  {
+    "id": "cmn_058",
+    "question": "허블 우주 망원경이 관측하는 주요 파장 영역 중 하나로, 지구 대기에 의해 흡수되어 지상에서는 관측이 어려운 영역은?",
+    "choices": [
+      "가시광선",
+      "자외선",
+      "적외선",
+      "X선"
+    ],
+    "answer": 1,
+    "explanation": "허블 망원경은 가시광선뿐만 아니라 자외선(UV) 영역을 관측할 수 있어, 지구 대기가 차단하는 고에너지 천체 현상을 연구할 수 있습니다.",
+    "tag": "허블망원경",
+    "image_prompt": "The Hubble Space Telescope orbiting Earth against a backdrop of a colorful nebula."
+  },
+  {
+    "id": "cmn_059",
+    "question": "블랙홀의 중심에 위치하며, 밀도가 무한대이고 부피가 0인 지점을 무엇이라 하는가?",
+    "choices": [
+      "특이점",
+      "화이트홀",
+      "웜홀",
+      "중성자별"
+    ],
+    "answer": 0,
+    "explanation": "특이점(Singularity)은 일반 상대성 이론에 따라 모든 질량이 한 점으로 모여 밀도가 무한대가 되는 블랙홀의 중심점을 말합니다.",
+    "tag": "블랙홀",
+    "image_prompt": "A conceptual art of a singularity at the center of a black hole, showing extreme light bending."
+  },
+  {
+    "id": "cmn_060",
+    "question": "2015년 LIGO(라이고) 관측소에서 최초로 검출한 중력파의 원인이 된 사건은?",
+    "choices": [
+      "초신성 폭발",
+      "중성자별 충돌",
+      "두 블랙홀의 병합",
+      "태양의 흑점 활동"
+    ],
+    "answer": 2,
+    "explanation": "LIGO는 약 13억 년 전 두 개의 블랙홀이 서로 공전하다가 하나로 합쳐지면서 발생한 중력파를 최초로 직접 검출했습니다.",
+    "tag": "중력파",
+    "image_prompt": "Two massive black holes spiraling toward each other just before merging, creating intense gravitational waves."
+  },
+  {
+    "id": "cmn_061",
+    "question": "허블 망원경의 관측 데이터를 통해 밝혀진 우주의 가장 중요한 특성은?",
+    "choices": [
+      "우주는 정지해 있다",
+      "우주는 수축하고 있다",
+      "우주는 가속 팽창하고 있다",
+      "우주는 구형이다"
+    ],
+    "answer": 2,
+    "explanation": "허블 망원경의 초신성 관측 등을 통해 우주가 단순히 팽창하는 것이 아니라 점점 더 빠르게 '가속 팽창'하고 있음이 밝혀졌습니다.",
+    "tag": "허블망원경",
+    "image_prompt": "A wide shot of the expanding universe with distant galaxies moving away from each other."
+  },
+  {
+    "id": "cmn_062",
+    "question": "블랙홀 주변에서 가스가 회전하며 빨려 들어갈 때, 마찰로 인해 고온이 되어 빛을 내는 원반 구조는?",
+    "choices": [
+      "사건의 지평선",
+      "강착원반",
+      "광자구",
+      "에르고 영역"
+    ],
+    "answer": 1,
+    "explanation": "강착원반(Accretion Disk)은 블랙홀로 물질이 끌려 들어갈 때 형성되는 회전 원반으로, 매우 높은 온도에서 강한 X선과 가시광선을 방출합니다.",
+    "tag": "블랙홀",
+    "image_prompt": "A glowing, swirling disk of hot gas and dust orbiting a dark central black hole."
+  },
+  {
+    "id": "cmn_063",
+    "question": "중력파를 검출하기 위해 사용하는 '레이저 간섭계'의 기본 원리는 무엇인가?",
+    "choices": [
+      "빛의 굴절 이용",
+      "빛의 회절 이용",
+      "빛의 간섭 현상 이용",
+      "빛의 전반사 이용"
+    ],
+    "answer": 2,
+    "explanation": "LIGO와 같은 검출기는 L자형 진공 터널에 레이저를 쏘아 중력파로 인해 발생하는 미세한 거리 변화(간섭)를 측정합니다.",
+    "tag": "중력파",
+    "image_prompt": "A schematic diagram of a giant L-shaped laser interferometer with mirrors and beams."
+  },
+  {
+    "id": "cmn_064",
+    "question": "허블 망원경이 촬영한 '허블 딥 필드(Hubble Deep Field)' 사진의 의의는?",
+    "choices": [
+      "태양계 행성들의 정밀 지도 작성",
+      "우주 초기 아주 먼 곳의 은하들을 발견",
+      "블랙홀 내부 모습 최초 촬영",
+      "외계 생명체의 거주지 확인"
+    ],
+    "answer": 1,
+    "explanation": "허블 딥 필드는 아무것도 없어 보이는 빈 하늘을 장시간 노출로 촬영하여 수천 개의 아주 먼 초기 은하들을 발견한 역사적인 사진입니다.",
+    "tag": "허블망원경",
+    "image_prompt": "A deep space image filled with thousands of tiny, colorful distant galaxies against a black void."
+  },
+  {
+    "id": "cmn_065",
+    "question": "질량이 매우 큰 별이 수명을 다해 중력 붕괴를 일으킬 때 형성될 수 있는 최종 천체가 아닌 것은?",
+    "choices": [
+      "백색왜성",
+      "중성자별",
+      "블랙홀",
+      "모두 정답"
+    ],
+    "answer": 0,
+    "explanation": "백색왜성은 태양과 비슷한 질량의 별이 진화한 결과이며, 매우 큰 질량을 가진 별은 중성자별이나 블랙홀로 진화합니다.",
+    "tag": "블랙홀",
+    "image_prompt": "A comparison of a white dwarf, a neutron star, and a black hole in terms of size and density."
   }
 ]

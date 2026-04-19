@@ -2,7 +2,12 @@
   {
     "id": "db_001",
     "question": "SQLite의 가장 큰 특징은?",
-    "choices": ["클라우드 기반 분산 DB", "파일 하나(.db)에 모든 데이터를 저장하는 서버리스 경량 DB", "실시간 스트리밍 특화", "NoSQL 전용"],
+    "choices": [
+      "클라우드 기반 분산 DB",
+      "파일 하나(.db)에 모든 데이터를 저장하는 서버리스 경량 DB",
+      "실시간 스트리밍 특화",
+      "NoSQL 전용"
+    ],
     "answer": 1,
     "explanation": "SQLite는 별도 서버 없이 .db 파일 하나로 동작합니다. 파이썬 표준 라이브러리(sqlite3)에 내장되어 있어 설치 없이 바로 사용 가능합니다. 소형 앱, 모바일 앱, 프로토타입에 최적입니다.",
     "tag": "SQLite",
@@ -11,7 +16,12 @@
   {
     "id": "db_002",
     "question": "SQL `PRIMARY KEY`의 특징으로 올바른 것은?",
-    "choices": ["NULL 허용, 중복 허용", "NULL 불가, 중복 불가, 테이블당 1개만 허용", "NULL 불가, 중복 허용", "NULL 허용, 중복 불가"],
+    "choices": [
+      "NULL 허용, 중복 허용",
+      "NULL 불가, 중복 불가, 테이블당 1개만 허용",
+      "NULL 불가, 중복 허용",
+      "NULL 허용, 중복 불가"
+    ],
     "answer": 1,
     "explanation": "PRIMARY KEY는 테이블의 각 행을 고유하게 식별합니다. NULL이 불가하고 중복이 없으며 테이블당 하나만 설정할 수 있습니다. 보통 id INTEGER PRIMARY KEY AUTOINCREMENT로 자동 증가 ID를 씁니다.",
     "tag": "SQL 기초",
@@ -20,7 +30,12 @@
   {
     "id": "db_003",
     "question": "SQL `INNER JOIN`의 결과는?",
-    "choices": ["왼쪽 테이블 전체 행", "두 테이블에서 조건을 만족하는 행만 반환", "두 테이블 합집합 전체", "오른쪽 테이블 전체 행"],
+    "choices": [
+      "왼쪽 테이블 전체 행",
+      "두 테이블에서 조건을 만족하는 행만 반환",
+      "두 테이블 합집합 전체",
+      "오른쪽 테이블 전체 행"
+    ],
     "answer": 1,
     "explanation": "INNER JOIN은 교집합입니다. users JOIN orders ON users.id = orders.user_id 하면 주문이 없는 사용자는 결과에 나타나지 않습니다. 주문이 없는 사용자도 보려면 LEFT JOIN을 씁니다.",
     "tag": "SQL 중급",
@@ -29,7 +44,12 @@
   {
     "id": "db_004",
     "question": "데이터베이스 인덱스(INDEX)의 트레이드오프는?",
-    "choices": ["읽기 느려지고 쓰기 빨라짐", "읽기(SELECT)는 빨라지지만 쓰기(INSERT/UPDATE)는 느려짐", "저장 공간 감소", "보안 향상"],
+    "choices": [
+      "읽기 느려지고 쓰기 빨라짐",
+      "읽기(SELECT)는 빨라지지만 쓰기(INSERT/UPDATE)는 느려짐",
+      "저장 공간 감소",
+      "보안 향상"
+    ],
     "answer": 1,
     "explanation": "인덱스는 책의 목차와 같습니다. 검색은 빨라지지만 데이터 변경 시 인덱스도 함께 업데이트해야 해서 쓰기가 느려집니다. 자주 검색하는 컬럼(WHERE절에 쓰는 컬럼)에 적절히 추가하는 것이 핵심입니다.",
     "tag": "DB 성능",
@@ -38,7 +58,12 @@
   {
     "id": "db_005",
     "question": "ORM(Object-Relational Mapping)의 역할은?",
-    "choices": ["SQL을 시각화하는 도구", "객체(코드)와 DB 테이블을 자동 매핑해 SQL 없이 DB를 조작", "데이터 암호화", "자동 백업"],
+    "choices": [
+      "SQL을 시각화하는 도구",
+      "객체(코드)와 DB 테이블을 자동 매핑해 SQL 없이 DB를 조작",
+      "데이터 암호화",
+      "자동 백업"
+    ],
     "answer": 1,
     "explanation": "SQLAlchemy, Django ORM 등을 쓰면 user = User(name='Kim')처럼 파이썬 객체로 DB를 조작합니다. SQL을 직접 쓰지 않아도 되지만 복잡한 쿼리는 N+1 문제 등이 생길 수 있어 SQL도 알아야 합니다.",
     "tag": "ORM",
@@ -47,7 +72,12 @@
   {
     "id": "db_006",
     "question": "`N+1 문제`란?",
-    "choices": ["11개의 쿼리 오류", "ORM 사용 시 연관 데이터 조회에서 쿼리가 N개 추가 발생하는 성능 문제", "NULL이 N+1개 발생", "11번 HTTP 오류"],
+    "choices": [
+      "11개의 쿼리 오류",
+      "ORM 사용 시 연관 데이터 조회에서 쿼리가 N개 추가 발생하는 성능 문제",
+      "NULL이 N+1개 발생",
+      "11번 HTTP 오류"
+    ],
     "answer": 1,
     "explanation": "게시글 10개를 조회(1번) 후 각 게시글의 작성자를 개별 조회(10번) = 총 11번 쿼리. 해결책은 JOIN을 사용하거나 ORM의 eager loading(SQLAlchemy: joinedload, Django: select_related)을 씁니다.",
     "tag": "DB 성능",
@@ -56,10 +86,1163 @@
   {
     "id": "db_007",
     "question": "SQLite에서 데이터를 영구 저장하려면 반드시 해야 하는 것은?",
-    "choices": ["connection.save()", "connection.commit()", "cursor.flush()", "db.sync()"],
+    "choices": [
+      "connection.save()",
+      "connection.commit()",
+      "cursor.flush()",
+      "db.sync()"
+    ],
     "answer": 1,
     "explanation": "SQLite(그리고 대부분의 SQL DB)는 트랜잭션 기반입니다. INSERT/UPDATE/DELETE 후 commit()을 호출해야 변경사항이 파일에 영구 저장됩니다. commit() 없이 연결을 닫으면 변경사항이 사라집니다.",
     "tag": "SQLite",
     "image_prompt": "database commit saving data permanently, save button locking data to disk, dark tech visualization"
+  },
+  {
+    "id": "dat_008",
+    "question": "SQLite의 WAL(Write-Ahead Logging) 모드에 대한 설명으로 가장 적절한 것은?",
+    "choices": [
+      "쓰기 작업 시 데이터베이스 전체를 잠가 읽기 작업을 완전히 차단한다.",
+      "읽기와 쓰기 작업이 서로를 방해하지 않고 동시에 수행될 수 있게 한다.",
+      "VACUUM 명령어를 실행해야만 변경 사항이 디스크에 반영된다.",
+      "메모리 내에서만 작동하며 전원이 꺼지면 모든 데이터가 소실된다."
+    ],
+    "answer": 1,
+    "explanation": "WAL 모드는 읽기 작업과 쓰기 작업을 분리하여 동시성을 높입니다.\n현장 서비스 운영 시 DB 잠김(Database is locked) 오류를 줄이는 핵심 설정입니다.\n로그 파일에 먼저 기록한 후 나중에 메인 DB로 병합하는 방식입니다.",
+    "tag": "SQLite WAL",
+    "image_prompt": "A conceptual diagram showing a database file and a separate write-ahead log file with arrows indicating simultaneous read and write operations, professional technical style."
+  },
+  {
+    "id": "dat_009",
+    "question": "SQLite에서 VACUUM 명령어가 수행하는 주요 역할은 무엇인가요?",
+    "choices": [
+      "데이터베이스의 인덱스를 모두 삭제하여 검색 속도를 높인다.",
+      "WAL 로그 파일을 강제로 생성하여 쓰기 성능을 최적화한다.",
+      "삭제된 데이터로 인해 생긴 빈 공간을 정리하고 파일 크기를 줄인다.",
+      "테이블의 스키마를 자동으로 분석하여 정규화를 수행한다."
+    ],
+    "answer": 2,
+    "explanation": "데이터 삭제 후에도 SQLite 파일 크기는 자동으로 줄어들지 않습니다.\nVACUUM은 데이터베이스 파일을 재구성하여 물리적 용량을 최적화합니다.\n대량의 데이터를 삭제한 후 디스크 공간 확보를 위해 필수적으로 사용됩니다.",
+    "tag": "SQLite VACUUM",
+    "image_prompt": "A visual metaphor of a vacuum cleaner cleaning up fragmented blocks in a digital database storage, 3D isometric style."
+  },
+  {
+    "id": "dat_010",
+    "question": "SQLAlchemy에서 Engine과 Session의 관계에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "Engine은 트랜잭션을 관리하고, Session은 DB 연결 설정을 담당한다.",
+      "Session은 물리적인 DB 연결을 생성하며, Engine은 쿼리를 실행하는 단위다.",
+      "Engine은 DB와의 실제 연결 통로(Connection Pool)를 제공하고, Session은 논리적인 작업 단위(Unit of Work)를 관리한다.",
+      "두 객체는 동일한 역할을 하며 사용자의 취향에 따라 선택해서 사용한다."
+    ],
+    "answer": 2,
+    "explanation": "Engine은 DB 드라이버와 연결 풀을 관리하는 저수준 인터페이스입니다.\nSession은 비즈니스 로직 단위로 객체의 상태를 추적하고 트랜잭션을 제어합니다.\n실무에서는 Engine 하나에 여러 Session을 생성하여 사용합니다.",
+    "tag": "SQLAlchemy Basic",
+    "image_prompt": "A technical architecture diagram showing 'Engine' as a bridge to the Database and 'Session' as a workspace above it, clean flat design."
+  },
+  {
+    "id": "dat_011",
+    "question": "SQLAlchemy의 declarative_base()가 제공하는 주요 기능은 무엇인가요?",
+    "choices": [
+      "데이터베이스의 모든 데이터를 자동으로 백업한다.",
+      "Python 클래스와 DB 테이블 매핑을 위한 기본 클래스를 생성한다.",
+      "SQL 쿼리를 자동으로 최적화하여 실행 속도를 높인다.",
+      "여러 개의 데이터베이스를 하나의 세션으로 통합 관리한다."
+    ],
+    "answer": 1,
+    "explanation": "declarative_base는 ORM 모델 정의를 위한 기반 클래스를 만듭니다.\n이를 상속받은 클래스는 테이블 이름, 컬럼 정의 등을 통해 DB 스키마와 연결됩니다.\n현대적인 SQLAlchemy 코드 작성의 표준 방식입니다.",
+    "tag": "SQLAlchemy declarative_base",
+    "image_prompt": "A blueprint showing a Python class transforming into a SQL table structure, technical schematic style."
+  },
+  {
+    "id": "dat_012",
+    "question": "SQLAlchemy relationship의 lazy loading(기본값) 방식에서 발생할 수 있는 문제는?",
+    "choices": [
+      "초기 쿼리 실행 시간이 너무 오래 걸린다.",
+      "메모리에 너무 많은 데이터가 한꺼번에 로드되어 오버플로우가 발생한다.",
+      "연관된 데이터를 참조할 때마다 추가 쿼리가 발생하는 N+1 문제가 나타난다.",
+      "데이터베이스 연결이 즉시 끊어져 세션 오류가 발생한다."
+    ],
+    "answer": 2,
+    "explanation": "lazy loading은 실제 데이터에 접근하는 시점에 쿼리를 날립니다.\n목록을 가져온 후 각 항목의 연관 데이터를 조회하면 루프 횟수만큼 쿼리가 추가 실행됩니다.\n이는 성능 저하의 주범이 되는 N+1 문제입니다.",
+    "tag": "SQLAlchemy Relationship",
+    "image_prompt": "A sequence diagram showing one main query followed by many small repetitive queries, highlighting the inefficiency."
+  },
+  {
+    "id": "dat_013",
+    "question": "N+1 문제를 해결하기 위해 'JOIN'을 사용하여 한 번의 쿼리로 연관 데이터를 가져오는 옵션은?",
+    "choices": [
+      "selectinload()",
+      "joinedload()",
+      "subqueryload()",
+      "lazyload()"
+    ],
+    "answer": 1,
+    "explanation": "joinedload는 SQL JOIN 문을 사용하여 메인 엔티티와 연관 엔티티를 한 번에 가져옵니다.\n단일 객체나 소량의 데이터를 조회할 때 매우 효율적입니다.\nEager Loading의 대표적인 방식 중 하나입니다.",
+    "tag": "SQLAlchemy joinedload",
+    "image_prompt": "Two database tables merging into one result set via a JOIN operation, professional data flow diagram."
+  },
+  {
+    "id": "dat_014",
+    "question": "selectinload()가 joinedload()와 차별화되는 특징은 무엇인가요?",
+    "choices": [
+      "JOIN 문을 사용하여 쿼리 횟수를 무조건 1회로 줄인다.",
+      "데이터를 가져오지 않고 프록시 객체만 생성한다.",
+      "IN 절을 사용하여 연관 데이터를 별도의 쿼리로 효율적으로 가져온다.",
+      "가장 느린 로딩 방식이며 메모리를 가장 많이 사용한다."
+    ],
+    "answer": 2,
+    "explanation": "selectinload는 메인 쿼리 후 ID 목록을 추출해 'WHERE id IN (...)' 쿼리를 한 번 더 날립니다.\n1:N 관계에서 JOIN으로 인한 데이터 중복(Cartesian Product) 문제를 방지할 수 있습니다.\n컬렉션 데이터를 로드할 때 joinedload보다 권장되는 경우가 많습니다.",
+    "tag": "SQLAlchemy selectinload",
+    "image_prompt": "A diagram showing a primary query and then a second query using an 'IN' clause to fetch related items, clean technical style."
+  },
+  {
+    "id": "dat_015",
+    "question": "Alembic 마이그레이션 도구의 주된 목적은 무엇인가요?",
+    "choices": [
+      "SQL 쿼리의 실행 속도를 모니터링하고 최적화한다.",
+      "DB 스키마 변경 사항을 버전별로 관리하여 추적 및 반영한다.",
+      "데이터베이스 서버의 하드웨어 성능을 분석한다.",
+      "Python 코드를 SQL 문으로 자동 번역하여 출력한다."
+    ],
+    "answer": 1,
+    "explanation": "Alembic은 SQLAlchemy 모델 변경 사항을 DB 스키마에 반영하는 버전 관리 도구입니다.\n`revision` 파일을 통해 어떤 변경이 있었는지 기록하고 `upgrade`/`downgrade`가 가능합니다.\n협업 시 팀원 간의 DB 상태를 동일하게 맞추는 데 필수적입니다.",
+    "tag": "Alembic",
+    "image_prompt": "A timeline showing different versions of a database schema evolving over time, version control concept."
+  },
+  {
+    "id": "dat_016",
+    "question": "SQL의 WITH 구문(Common Table Expression, CTE)에 대한 설명으로 틀린 것은?",
+    "choices": [
+      "임시 결과 집합을 정의하여 쿼리 내에서 재사용할 수 있게 한다.",
+      "가독성을 높여 복잡한 서브쿼리를 구조화할 수 있다.",
+      "물리적인 테이블을 디스크에 생성하여 영구적으로 저장한다.",
+      "재귀적 CTE(Recursive CTE)를 통해 계층 구조 데이터를 조회할 수 있다."
+    ],
+    "answer": 2,
+    "explanation": "CTE는 쿼리 실행 동안만 존재하는 임시 결과 집합이며 물리적 테이블이 아닙니다.\n복잡한 서브쿼리를 상단에 정의함으로써 쿼리의 가독성을 비약적으로 높여줍니다.\n조직도나 카테고리 같은 트리 구조 조회 시 재귀 CTE가 매우 유용합니다.",
+    "tag": "SQL WITH (CTE)",
+    "image_prompt": "A complex SQL query being broken down into a clean 'WITH' block and a final SELECT statement, code editor style."
+  },
+  {
+    "id": "dat_017",
+    "question": "SQLite에서 'EXPLAIN QUERY PLAN' 명령어를 사용하는 이유는 무엇인가요?",
+    "choices": [
+      "쿼리의 문법 오류를 자동으로 수정하기 위해",
+      "DB 서버의 CPU 및 메모리 사용량을 측정하기 위해",
+      "인덱스 사용 여부 등 SQLite가 쿼리를 어떻게 실행할지 계획을 확인하기 위해",
+      "데이터베이스 파일의 물리적 손상 여부를 검사하기 위해"
+    ],
+    "answer": 2,
+    "explanation": "실행 계획을 통해 'SCAN TABLE'(전체 스캔)인지 'SEARCH TABLE'(인덱스 검색)인지 알 수 있습니다.\n성능 저하가 발생할 때 인덱스가 제대로 작동하는지 확인하는 가장 빠른 방법입니다.\n실무에서 쿼리 튜닝의 시작점이라고 할 수 있습니다.",
+    "tag": "EXPLAIN QUERY PLAN",
+    "image_prompt": "A magnifying glass inspecting a SQL query and revealing an execution path with index markers, technical analysis style."
+  },
+  {
+    "id": "dat_018",
+    "question": "SQLAlchemy에서 Eager Loading을 설정하지 않았을 때, 루프 내에서 연관 객체에 접근하면 발생하는 현상은?",
+    "choices": [
+      "프로그램이 즉시 크래시(Crash)된다.",
+      "데이터베이스 연결이 자동으로 끊긴다.",
+      "매 반복마다 새로운 SELECT 쿼리가 실행되어 성능이 급격히 떨어진다.",
+      "캐시된 데이터를 사용하여 쿼리 없이 빠르게 조회된다."
+    ],
+    "answer": 2,
+    "explanation": "이것이 전형적인 N+1 문제입니다. (1번의 메인 쿼리 + N개의 연관 데이터 쿼리)\n데이터가 많아질수록 네트워크 왕복 시간이 증가하여 서비스 응답 속도가 느려집니다.\n이를 방지하기 위해 joinedload나 selectinload를 사용해야 합니다.",
+    "tag": "N+1 Problem",
+    "image_prompt": "A visual representation of a 'Waterfall' effect where one request triggers dozens of subsequent database requests."
+  },
+  {
+    "id": "dat_019",
+    "question": "다음 중 SQLAlchemy Session의 역할이 아닌 것은?",
+    "choices": [
+      "객체의 변경 사항을 추적(Dirty checking)한다.",
+      "트랜잭션을 시작하고 커밋(commit)하거나 롤백(rollback)한다.",
+      "DB 서버의 물리적인 하드웨어 디스크 공간을 직접 할당한다.",
+      "데이터베이스 연결 객체(Connection)를 통해 쿼리를 전달한다."
+    ],
+    "answer": 2,
+    "explanation": "Session은 논리적인 작업 단위이며, 물리적 디스크 관리는 DB 엔진의 역할입니다.\nSession은 'Unit of Work' 패턴을 구현하여 변경된 객체들을 한 번에 반영합니다.\n트랜잭션의 원자성을 보장하는 핵심 인터페이스입니다.",
+    "tag": "SQLAlchemy Session",
+    "image_prompt": "A conceptual image of a 'Session' acting as a staging area or a clipboard before committing changes to a database."
+  },
+  {
+    "id": "db_020",
+    "question": "다음 중 SQLite의 가장 큰 특징으로 옳은 것은 무엇입니까?",
+    "choices": [
+      "클라이언트-서버 구조를 가진다",
+      "별도의 서버 프로세스 없이 파일 기반으로 동작한다",
+      "대규모 분산 데이터베이스에 최적화되어 있다",
+      "복잡한 사용자 권한 관리를 기본적으로 제공한다"
+    ],
+    "answer": 1,
+    "explanation": "SQLite는 서버리스(Serverless) 엔진으로, 데이터베이스 전체가 하나의 디스크 파일로 저장되어 별도의 설치나 설정 없이 사용할 수 있습니다.",
+    "tag": "SQLite",
+    "image_prompt": "A simple database icon represented as a single file on a hard drive, minimalist flat design."
+  },
+  {
+    "id": "db_021",
+    "question": "복잡한 쿼리 실행 계획 최적화와 고급 데이터 타입(JSONB, 배열 등) 지원이 가장 강력한 DB는?",
+    "choices": [
+      "SQLite",
+      "MySQL",
+      "PostgreSQL",
+      "MariaDB"
+    ],
+    "answer": 2,
+    "explanation": "PostgreSQL은 객체-관계형 데이터베이스(ORDBMS)로, 매우 복잡한 쿼리 최적화와 다양한 확장 데이터 타입을 지원하여 엔터프라이즈급 기능에 강점이 있습니다.",
+    "tag": "PostgreSQL",
+    "image_prompt": "A complex architectural blueprint of a database system with various interconnected data types, professional technical style."
+  },
+  {
+    "id": "db_022",
+    "question": "웹 서비스의 읽기 성능이 매우 중요하고, 설정이 간편하며 널리 사용되는 범용 DB를 찾는다면?",
+    "choices": [
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "Redis"
+    ],
+    "answer": 1,
+    "explanation": "MySQL은 단순함과 빠른 읽기 속도로 유명하며, 전 세계적으로 가장 많이 사용되는 오픈소스 RDBMS 중 하나입니다.",
+    "tag": "MySQL",
+    "image_prompt": "A fast-moving data stream entering a dolphin icon (MySQL logo style), representing high speed and efficiency."
+  },
+  {
+    "id": "db_023",
+    "question": "모바일 앱의 로컬 저장소나 임베디드 시스템에 가장 적합한 DB는?",
+    "choices": [
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "Oracle"
+    ],
+    "answer": 2,
+    "explanation": "SQLite는 가볍고 설정이 필요 없으며 리소스 소모가 적어 모바일 앱이나 IoT 기기의 로컬 저장소로 최적입니다.",
+    "tag": "SQLite",
+    "image_prompt": "A smartphone and a small embedded chip connected to a tiny database icon, clean vector art."
+  },
+  {
+    "id": "db_024",
+    "question": "데이터 무결성과 표준 SQL 준수를 가장 중요하게 생각하는 프로젝트에 추천하는 DB는?",
+    "choices": [
+      "SQLite",
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB"
+    ],
+    "answer": 2,
+    "explanation": "PostgreSQL은 SQL 표준을 매우 엄격하게 준수하며, 데이터 무결성과 신뢰성을 최우선으로 설계되었습니다.",
+    "tag": "PostgreSQL",
+    "image_prompt": "A golden seal of quality placed on a database table, symbolizing strict standards and integrity."
+  },
+  {
+    "id": "db_025",
+    "question": "다음 중 '동시 쓰기' 작업이 매우 빈번한 대규모 서비스에서 SQLite를 사용하기 어려운 이유는?",
+    "choices": [
+      "데이터 타입이 너무 적어서",
+      "파일 잠금(File Locking) 방식으로 인해 쓰기 병목이 발생해서",
+      "SQL 문법을 지원하지 않아서",
+      "메모리 사용량이 너무 많아서"
+    ],
+    "answer": 1,
+    "explanation": "SQLite는 쓰기 작업 시 데이터베이스 파일 전체에 락을 거는 경우가 많아, 다수의 사용자가 동시에 데이터를 수정하는 환경에는 부적합합니다.",
+    "tag": "SQLite",
+    "image_prompt": "A traffic jam of data packets trying to enter a single narrow door, representing write locking."
+  },
+  {
+    "id": "db_026",
+    "question": "MySQL과 PostgreSQL의 차이점에 대한 설명 중 틀린 것은?",
+    "choices": [
+      "MySQL은 일반적으로 읽기 성능에 강점이 있다",
+      "PostgreSQL은 복잡한 조인(Join) 쿼리 처리에 더 능숙하다",
+      "MySQL은 SQLite보다 설정이 훨씬 간단하다",
+      "PostgreSQL은 사용자 정의 함수 및 확장성이 뛰어나다"
+    ],
+    "answer": 2,
+    "explanation": "SQLite는 설치가 필요 없는 파일 기반이므로 MySQL보다 설정이 훨씬 간단합니다.",
+    "tag": "비교",
+    "image_prompt": "A balance scale comparing a dolphin (MySQL) and an elephant (PostgreSQL), technical infographic style."
+  },
+  {
+    "id": "db_027",
+    "question": "지리 정보 시스템(GIS) 데이터를 처리하기 위해 PostGIS 같은 강력한 확장 기능을 제공하는 DB는?",
+    "choices": [
+      "MySQL",
+      "SQLite",
+      "PostgreSQL",
+      "MariaDB"
+    ],
+    "answer": 2,
+    "explanation": "PostgreSQL은 PostGIS라는 매우 강력한 공간 데이터베이스 확장 기능을 통해 정교한 지리 정보 처리가 가능합니다.",
+    "tag": "PostgreSQL",
+    "image_prompt": "A digital world map with database coordinates and polygons overlaid, high-tech GIS visualization."
+  },
+  {
+    "id": "db_028",
+    "question": "다음 시나리오에서 가장 적절한 DB 선택은? [시나리오: 개인용 메모 앱의 로컬 저장소 구현]",
+    "choices": [
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "Oracle"
+    ],
+    "answer": 2,
+    "explanation": "개인용 앱의 로컬 저장은 서버 구축이 필요 없고 가벼운 SQLite가 가장 효율적입니다.",
+    "tag": "시나리오",
+    "image_prompt": "A simple notepad app interface with a small database icon tucked underneath it."
+  },
+  {
+    "id": "db_029",
+    "question": "다음 시나리오에서 가장 적절한 DB 선택은? [시나리오: 복잡한 분석 쿼리가 많고 데이터 정밀도가 중요한 금융 시스템]",
+    "choices": [
+      "SQLite",
+      "MySQL",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "answer": 2,
+    "explanation": "금융 시스템처럼 데이터 무결성이 절대적이고 복잡한 분석이 필요한 경우 PostgreSQL이 가장 신뢰할 수 있는 선택입니다.",
+    "tag": "시나리오",
+    "image_prompt": "A professional financial dashboard with complex charts and a secure database lock icon."
+  },
+  {
+    "id": "db_030",
+    "question": "CTE(Common Table Expression)의 주요 특징으로 가장 적절한 것은 무엇입니까?",
+    "choices": [
+      "물리적으로 디스크에 저장되는 임시 테이블이다.",
+      "쿼리 내에서 일시적으로 정의되어 가독성을 높이고 재사용이 가능하다.",
+      "인덱스를 생성하여 조회 성능을 영구적으로 향상시킨다.",
+      "데이터베이스 서버를 재시작해야만 삭제된다."
+    ],
+    "answer": 1,
+    "explanation": "CTE는 WITH 절을 사용하여 정의하며, 해당 쿼리 실행 동안에만 유효한 임시 결과 집합으로 가독성을 높이고 복잡한 쿼리를 구조화하는 데 사용됩니다.",
+    "tag": "CTE",
+    "image_prompt": "A conceptual diagram showing a temporary data block being fed into a main SQL query, clean flat design, blue and white theme."
+  },
+  {
+    "id": "db_031",
+    "question": "윈도우 함수(Window Function)와 일반 집계 함수(Aggregate Function)의 가장 큰 차이점은 무엇입니까?",
+    "choices": [
+      "윈도우 함수는 WHERE 절에서만 사용할 수 있다.",
+      "집계 함수는 행의 수를 줄이지 않지만, 윈도우 함수는 항상 줄인다.",
+      "윈도우 함수는 결과 집합의 행 수를 유지하면서 계산을 수행한다.",
+      "집계 함수는 GROUP BY 없이 사용할 수 없다."
+    ],
+    "answer": 2,
+    "explanation": "일반 집계 함수(SUM, AVG 등)는 GROUP BY와 함께 사용되어 행을 그룹화하고 수를 줄이지만, 윈도우 함수는 OVER 절을 통해 개별 행의 정체성을 유지하며 계산 결과를 추가합니다.",
+    "tag": "Window Function",
+    "image_prompt": "Comparison chart showing a grouped table vs a detailed table with an added calculation column, professional infographic style."
+  },
+  {
+    "id": "db_032",
+    "question": "RANK() 함수와 DENSE_RANK() 함수의 차이점에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "RANK()는 중복 순위가 있어도 다음 순위를 건너뛰지 않는다.",
+      "DENSE_RANK()는 중복 순위가 있을 때 다음 순위를 건너뛴다.",
+      "RANK()는 중복 순위 발생 시 다음 순위를 건너뛰며, DENSE_RANK()는 연속된 순위를 부여한다.",
+      "두 함수는 완전히 동일하게 작동한다."
+    ],
+    "answer": 2,
+    "explanation": "RANK()는 공동 1위가 2명일 때 다음 순위를 3위로 매기지만, DENSE_RANK()는 공동 1위가 여러 명이라도 다음 순위를 2위로 매깁니다.",
+    "tag": "RANK",
+    "image_prompt": "A leaderboard showing two people at rank 1 and the next person at rank 3 vs rank 2, side-by-side comparison."
+  },
+  {
+    "id": "db_033",
+    "question": "윈도우 함수에서 PARTITION BY 절의 역할은 무엇입니까?",
+    "choices": [
+      "전체 데이터를 하나의 그룹으로 합친다.",
+      "데이터를 특정 기준에 따라 그룹으로 나누어 윈도우 함수를 개별적으로 적용한다.",
+      "결과 집합을 오름차순으로 정렬한다.",
+      "중복된 행을 제거하여 유일한 값만 남긴다."
+    ],
+    "answer": 1,
+    "explanation": "PARTITION BY는 데이터를 논리적인 그룹(파티션)으로 나누어, 각 파티션 내에서 독립적으로 순위나 합계 등의 계산이 이루어지게 합니다.",
+    "tag": "PARTITION BY",
+    "image_prompt": "A large dataset being split into smaller colored boxes based on a category, conceptual data processing illustration."
+  },
+  {
+    "id": "db_034",
+    "question": "재귀적 CTE(Recursive CTE)를 구현하기 위해 반드시 필요한 구문은 무엇입니까?",
+    "choices": [
+      "GROUP BY 절",
+      "UNION ALL 또는 UNION 절",
+      "HAVING 절",
+      "DISTINCT 키워드"
+    ],
+    "answer": 1,
+    "explanation": "재귀적 CTE는 초기 쿼리(Anchor member)와 재귀 쿼리(Recursive member)를 UNION ALL 또는 UNION으로 결합하여 반복적으로 실행되는 구조를 가집니다.",
+    "tag": "CTE",
+    "image_prompt": "A recursive loop diagram showing a seed value expanding into a tree structure, technical schematic."
+  },
+  {
+    "id": "db_035",
+    "question": "ROW_NUMBER() 함수에 대한 설명으로 틀린 것은?",
+    "choices": [
+      "중복된 값이 있어도 항상 고유한 일련번호를 부여한다.",
+      "PARTITION BY와 함께 사용하여 그룹별 순번을 매길 수 있다.",
+      "값의 크기가 같으면 동일한 순위를 부여한다.",
+      "ORDER BY 절이 필수적으로 동반되어야 한다."
+    ],
+    "answer": 2,
+    "explanation": "ROW_NUMBER()는 값의 중복 여부와 상관없이 무조건 1부터 시작하여 고유한 번호를 부여합니다. 동일 순위를 부여하는 것은 RANK()나 DENSE_RANK()입니다.",
+    "tag": "RANK",
+    "image_prompt": "A list of items with unique numbers 1, 2, 3, 4 assigned regardless of their values, clean UI design."
+  },
+  {
+    "id": "db_036",
+    "question": "다음 중 윈도우 함수 내에서 '현재 행부터 이전 2행까지'의 범위를 지정하는 올바른 구문은?",
+    "choices": [
+      "ROWS BETWEEN 2 PRECEDING AND CURRENT ROW",
+      "ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING",
+      "RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW",
+      "PARTITION BY 2 PRECEDING"
+    ],
+    "answer": 0,
+    "explanation": "ROWS BETWEEN [시작] AND [끝] 구문을 사용하며, '2 PRECEDING'은 현재 행 기준 이전 2행을 의미합니다.",
+    "tag": "Window Function",
+    "image_prompt": "A sliding window highlighting a small section of a data table, focus on the current row and two rows above."
+  },
+  {
+    "id": "db_037",
+    "question": "LAG() 함수와 LEAD() 함수의 주된 용도는 무엇입니까?",
+    "choices": [
+      "데이터의 합계를 구하기 위해",
+      "현재 행을 기준으로 이전 행 또는 다음 행의 값에 접근하기 위해",
+      "테이블 간의 조인 성능을 높이기 위해",
+      "특정 조건에 맞는 데이터를 필터링하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "LAG()는 현재 행보다 앞에 있는(이전) 행의 값을 가져오고, LEAD()는 뒤에 있는(다음) 행의 값을 가져와 전일 대비 증감 등을 계산할 때 유용합니다.",
+    "tag": "Window Function",
+    "image_prompt": "Arrows pointing from one row to the previous and next rows in a spreadsheet, data flow visualization."
+  },
+  {
+    "id": "db_038",
+    "question": "NTILE(4) 함수를 사용했을 때 결과로 나타나는 현상은 무엇입니까?",
+    "choices": [
+      "상위 4개의 행만 출력한다.",
+      "데이터를 4개의 그룹으로 균등하게 나누어 그룹 번호를 부여한다.",
+      "값에 4를 곱하여 출력한다.",
+      "중복된 값을 4번 반복해서 보여준다."
+    ],
+    "answer": 1,
+    "explanation": "NTILE(n) 함수는 전체 결과 집합을 n개의 버킷으로 나누어 각 행이 어느 그룹에 속하는지 번호(1~n)를 매깁니다. (예: 사분위수 계산)",
+    "tag": "Window Function",
+    "image_prompt": "A long list of data divided into four equal colored segments, 1 to 4 labels."
+  },
+  {
+    "id": "db_039",
+    "question": "CTE를 사용할 때의 성능적 이점이나 특징으로 가장 적절한 것은?",
+    "choices": [
+      "항상 서브쿼리보다 실행 속도가 빠르다.",
+      "복잡한 서브쿼리를 단순화하여 쿼리의 유지보수성을 높인다.",
+      "데이터베이스에 물리적으로 저장되어 I/O를 줄인다.",
+      "인덱스를 자동으로 생성하여 검색 속도를 높인다."
+    ],
+    "answer": 1,
+    "explanation": "CTE는 성능 향상보다는 주로 가독성과 구조적 단순화를 위해 사용됩니다. 논리적으로 서브쿼리와 유사하게 작동하며 유지보수성을 크게 개선합니다.",
+    "tag": "CTE",
+    "image_prompt": "A messy spiderweb of subqueries transforming into a clean, organized flow chart, conceptual art."
+  },
+  {
+    "id": "db_040",
+    "question": "SQLAlchemy 2.0에서 데이터를 조회하기 위해 사용하는 표준 함수는 무엇입니까?",
+    "choices": [
+      "query()",
+      "select()",
+      "fetch()",
+      "get_all()"
+    ],
+    "answer": 1,
+    "explanation": "SQLAlchemy 2.0에서는 기존의 session.query() 방식 대신 select() 함수를 사용하여 SQL 문을 생성하고 이를 execute()로 실행하는 방식을 권장합니다.",
+    "tag": "select",
+    "image_prompt": "A digital illustration of a magnifying glass focusing on a database table, futuristic blue interface."
+  },
+  {
+    "id": "db_041",
+    "question": "execute() 메서드를 통해 반환된 Result 객체에서 모델 인스턴스들의 리스트만 간단히 추출하고 싶을 때 사용하는 메서드는?",
+    "choices": [
+      "all()",
+      "first()",
+      "scalars()",
+      "one()"
+    ],
+    "answer": 2,
+    "explanation": "execute()는 기본적으로 행(Row) 튜플의 집합을 반환합니다. scalars()를 호출하면 각 행의 첫 번째 요소(보통 모델 객체)만 추출하여 편리하게 사용할 수 있습니다.",
+    "tag": "scalars",
+    "image_prompt": "A filter icon separating complex data rows into single clean objects, 3D render."
+  },
+  {
+    "id": "db_042",
+    "question": "AsyncSession을 사용하여 쿼리를 실행할 때 올바른 문법은 무엇입니까?",
+    "choices": [
+      "session.execute(stmt)",
+      "await session.execute(stmt)",
+      "async session.execute(stmt)",
+      "session.await_execute(stmt)"
+    ],
+    "answer": 1,
+    "explanation": "AsyncSession의 execute()는 코루틴이므로 반드시 await 키워드를 사용하여 비동기적으로 호출해야 합니다.",
+    "tag": "async_session",
+    "image_prompt": "A glowing clock and a loading symbol representing asynchronous processing in code."
+  },
+  {
+    "id": "db_043",
+    "question": "select(User).where(User.id == 1) 문장에서 where()의 역할은 무엇입니까?",
+    "choices": [
+      "데이터 정렬",
+      "결과 개수 제한",
+      "조건 필터링",
+      "테이블 조인"
+    ],
+    "answer": 2,
+    "explanation": "where() 메서드는 SQL의 WHERE 절과 동일하게 특정 조건에 맞는 레코드만 필터링하는 역할을 합니다.",
+    "tag": "select",
+    "image_prompt": "A funnel filtering gold coins from a pile of silver coins, conceptual art."
+  },
+  {
+    "id": "db_044",
+    "question": "scalars().all()을 호출했을 때 반환되는 값의 타입은 무엇입니까?",
+    "choices": [
+      "단일 객체",
+      "튜플(Tuple)",
+      "리스트(List)",
+      "딕셔너리(Dictionary)"
+    ],
+    "answer": 2,
+    "explanation": "scalars()로 추출된 결과에 .all()을 붙이면 조회된 모든 객체가 Python 리스트 형태로 반환됩니다.",
+    "tag": "scalars",
+    "image_prompt": "A neat list of user profile icons arranged vertically on a screen."
+  },
+  {
+    "id": "db_045",
+    "question": "AsyncSession에서 트랜잭션을 안전하게 처리하기 위해 가장 권장되는 방식은?",
+    "choices": [
+      "session.commit() 직접 호출",
+      "async with session.begin(): 블록 사용",
+      "try-except 후 manual rollback",
+      "자동 커밋 모드 활성화"
+    ],
+    "answer": 1,
+    "explanation": "async with session.begin(): 을 사용하면 블록 내에서 예외 발생 시 자동으로 롤백되고, 성공 시 자동으로 커밋되어 안전합니다.",
+    "tag": "async_session",
+    "image_prompt": "A secure shield protecting a database transaction flow, neon lines."
+  },
+  {
+    "id": "db_046",
+    "question": "select() 함수에 여러 모델을 인자로 전달하여 조인 쿼리를 작성할 때, 결과값은 기본적으로 어떻게 반환됩니까?",
+    "choices": [
+      "첫 번째 모델만 반환",
+      "두 모델이 합쳐진 단일 객체로 반환",
+      "각 행이 튜플 형태로 반환",
+      "JSON 문자열로 반환"
+    ],
+    "answer": 2,
+    "explanation": "여러 엔티티를 select하면 execute()의 결과는 각 행마다 (User, Address)와 같은 튜플 형태로 반환됩니다.",
+    "tag": "execute",
+    "image_prompt": "Two puzzle pieces connecting to form a complete data record."
+  },
+  {
+    "id": "db_047",
+    "question": "SQLAlchemy 2.0 스타일에서 단일 레코드를 가져오기 위해 가장 적절한 조합은?",
+    "choices": [
+      "select().all()",
+      "execute().scalars().first()",
+      "execute().scalars().all()",
+      "select().where().list()"
+    ],
+    "answer": 1,
+    "explanation": "scalars()로 객체화한 후 first()를 호출하면 첫 번째 결과 하나만 가져오거나 없으면 None을 반환합니다.",
+    "tag": "scalars",
+    "image_prompt": "A single bright star highlighted among many dim stars."
+  },
+  {
+    "id": "db_048",
+    "question": "async session 환경에서 select() 문을 생성하는 단계는 비동기(await) 작업입니까?",
+    "choices": [
+      "예, await를 붙여야 합니다.",
+      "아니오, select()는 단순히 쿼리 객체를 생성하는 동기 함수입니다.",
+      "세션 설정에 따라 다릅니다.",
+      "DB 연결 후에만 가능합니다."
+    ],
+    "answer": 1,
+    "explanation": "select()는 SQL 문을 정의하는 '선언적' 단계일 뿐이며, 실제 DB와 통신하는 execute() 단계에서만 await가 필요합니다.",
+    "tag": "select",
+    "image_prompt": "A blueprint of a building being drawn on paper before actual construction."
+  },
+  {
+    "id": "db_049",
+    "question": "execute(stmt) 결과에서 scalars()를 사용하지 않고 직접 .all()을 호출하면 어떤 결과가 나옵니까?",
+    "choices": [
+      "모델 객체의 리스트",
+      "Row 객체들의 리스트 (튜플 형태)",
+      "에러 발생",
+      "None"
+    ],
+    "answer": 1,
+    "explanation": "scalars()를 거치지 않으면 SQLAlchemy의 Row 객체(튜플과 유사)들이 담긴 리스트가 반환됩니다.",
+    "tag": "execute",
+    "image_prompt": "A spreadsheet view showing multiple columns of data in a row."
+  },
+  {
+    "id": "db_050",
+    "question": "제1정규형(1NF)을 만족하기 위한 조건으로 가장 적절한 것은?",
+    "choices": [
+      "모든 도메인이 원자값(Atomic Value)이어야 한다.",
+      "부분 함수적 종속성을 제거해야 한다.",
+      "이행적 함수적 종속성을 제거해야 한다.",
+      "결정자가 후보키가 아니어야 한다."
+    ],
+    "answer": 0,
+    "explanation": "제1정규형은 관계의 모든 도메인이 원자값으로 구성되어야 함을 의미합니다. 즉, 하나의 컬럼에 여러 개의 값이 들어가는 다중값 속성을 제거해야 합니다.",
+    "tag": "1NF",
+    "image_prompt": "A diagram showing a table with multiple values in one cell being split into separate rows to achieve atomicity."
+  },
+  {
+    "id": "db_051",
+    "question": "제2정규형(2NF)의 핵심 목표는 무엇인가?",
+    "choices": [
+      "원자값 확보",
+      "부분 함수적 종속성 제거",
+      "이행적 함수적 종속성 제거",
+      "다치 종속성 제거"
+    ],
+    "answer": 1,
+    "explanation": "제2정규형은 제1정규형을 만족하면서, 기본키가 복합키일 때 기본키의 일부분에만 종속되는 '부분 함수적 종속'을 제거하여 완전 함수적 종속 상태로 만드는 것입니다.",
+    "tag": "2NF",
+    "image_prompt": "A conceptual illustration of a composite key splitting into two separate tables to remove partial dependency."
+  },
+  {
+    "id": "db_052",
+    "question": "제3정규형(3NF)에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "기본키가 아닌 속성 간의 종속성이 없어야 한다.",
+      "모든 속성이 기본키에 부분적으로 종속되어야 한다.",
+      "중복 데이터를 허용하여 조회 성능을 높이는 단계이다.",
+      "테이블을 하나로 합쳐 조인 횟수를 줄이는 과정이다."
+    ],
+    "answer": 0,
+    "explanation": "제3정규형은 제2정규형을 만족하면서, 기본키가 아닌 속성 간의 종속성인 '이행적 함수적 종속'을 제거하는 단계입니다.",
+    "tag": "3NF",
+    "image_prompt": "A flowchart showing A -> B and B -> C relationship being broken into two separate tables (A->B, B->C)."
+  },
+  {
+    "id": "db_053",
+    "question": "다음 중 '이행적 함수적 종속'의 정의로 옳은 것은?",
+    "choices": [
+      "기본키의 일부에만 종속되는 경우",
+      "하나의 속성이 여러 개의 값을 가지는 경우",
+      "A -> B이고 B -> C일 때, A -> C가 성립하는 경우",
+      "결정자가 후보키가 아닌 경우"
+    ],
+    "answer": 2,
+    "explanation": "이행적 함수적 종속이란 기본키(A)가 속성(B)을 결정하고, 그 속성(B)이 다시 다른 속성(C)을 결정하여 결과적으로 A가 C를 결정하게 되는 관계를 말합니다.",
+    "tag": "3NF",
+    "image_prompt": "A logical chain diagram showing a transitive relationship between three variables."
+  },
+  {
+    "id": "db_054",
+    "question": "역정규화(Denormalization)를 수행하는 주된 이유는 무엇인가?",
+    "choices": [
+      "데이터 무결성을 강화하기 위해",
+      "저장 공간을 최대한 절약하기 위해",
+      "조회 성능 향상 및 시스템 응답 속도 개선을 위해",
+      "함수적 종속성을 완전히 제거하기 위해"
+    ],
+    "answer": 2,
+    "explanation": "역정규화는 정규화로 인해 과도하게 분리된 테이블들을 다시 합치거나 중복 데이터를 추가하여, 조인(Join) 횟수를 줄이고 읽기 성능을 높이기 위해 수행합니다.",
+    "tag": "역정규화",
+    "image_prompt": "A comparison image showing a complex multi-join query vs a simple single table query."
+  },
+  {
+    "id": "db_055",
+    "question": "역정규화의 단점으로 가장 적절한 것은?",
+    "choices": [
+      "조회 속도가 느려진다.",
+      "데이터 무결성 유지가 어려워지고 이상 현상이 발생할 수 있다.",
+      "테이블 수가 너무 많아져 관리가 힘들다.",
+      "인덱스 생성 효율이 떨어진다."
+    ],
+    "answer": 1,
+    "explanation": "역정규화는 의도적으로 중복 데이터를 허용하므로, 데이터 수정 시 모든 중복 데이터를 함께 변경해야 하며 이 과정에서 데이터 불일치(이상 현상)가 발생할 가능성이 높습니다.",
+    "tag": "역정규화",
+    "image_prompt": "A warning sign icon next to a database table with inconsistent duplicate data."
+  },
+  {
+    "id": "db_056",
+    "question": "다음 중 정규화 과정의 순서가 올바른 것은?",
+    "choices": [
+      "1NF -> 3NF -> 2NF",
+      "1NF -> 2NF -> 3NF",
+      "2NF -> 1NF -> 3NF",
+      "3NF -> 2NF -> 1NF"
+    ],
+    "answer": 1,
+    "explanation": "정규화는 단계적으로 진행됩니다. 먼저 원자값을 확보(1NF)하고, 부분 함수적 종속을 제거(2NF)한 뒤, 이행적 함수적 종속을 제거(3NF)하는 순서로 이루어집니다.",
+    "tag": "정규화",
+    "image_prompt": "A staircase diagram showing the progression from 1NF to 2NF to 3NF."
+  },
+  {
+    "id": "db_057",
+    "question": "기본키가 단일 속성(Single Attribute)인 테이블이 제1정규형을 만족한다면, 자동으로 제2정규형도 만족하는가?",
+    "choices": [
+      "예, 부분 함수적 종속이 발생할 수 없으므로 항상 만족한다.",
+      "아니오, 여전히 원자값 확인이 필요하다.",
+      "아니오, 이행적 종속을 먼저 제거해야 한다.",
+      "알 수 없다."
+    ],
+    "answer": 0,
+    "explanation": "부분 함수적 종속은 기본키가 '복합키'일 때만 발생합니다. 따라서 기본키가 단일 속성이라면 부분적으로 종속될 가능성이 없으므로 자동으로 제2정규형을 만족하게 됩니다.",
+    "tag": "2NF",
+    "image_prompt": "A simple table with a single primary key highlighted, indicating no partial dependency."
+  },
+  {
+    "id": "db_058",
+    "question": "역정규화 기법 중 '중복 컬럼 추가'에 해당하는 사례는?",
+    "choices": [
+      "테이블을 더 작은 단위로 쪼개기",
+      "조인 성능 향상을 위해 다른 테이블의 속성을 현재 테이블에 복제하기",
+      "모든 기본키를 제거하고 서로게이트 키 도입하기",
+      "데이터 타입을 변경하여 저장 공간 최적화하기"
+    ],
+    "answer": 1,
+    "explanation": "중복 컬럼 추가는 자주 함께 조회되는 데이터를 다른 테이블에서 가져오지 않고 미리 복사해 두어 조인 비용을 줄이는 역정규화 기법입니다.",
+    "tag": "역정규화",
+    "image_prompt": "An arrow moving a column from Table B to Table A, creating a duplicate."
+  },
+  {
+    "id": "db_059",
+    "question": "정규화를 통해 해결하고자 하는 '이상 현상(Anomaly)'이 아닌 것은?",
+    "choices": [
+      "삽입 이상 (Insertion Anomaly)",
+      "삭제 이상 (Deletion Anomaly)",
+      "갱신 이상 (Update Anomaly)",
+      "조회 이상 (Selection Anomaly)"
+    ],
+    "answer": 3,
+    "explanation": "정규화는 삽입, 삭제, 갱신 시 발생하는 데이터 불일치 및 무결성 파괴 현상(이상 현상)을 해결하기 위한 과정입니다. '조회 이상'이라는 용어는 표준적인 이상 현상에 포함되지 않습니다.",
+    "tag": "정규화",
+    "image_prompt": "A conceptual image showing three broken puzzle pieces labeled Insertion, Deletion, and Update."
+  },
+  {
+    "id": "db_060",
+    "question": "트랜잭션의 ACID 특성 중, 트랜잭션이 완전히 성공하거나 완전히 실패해야 함을 보장하는 원칙은 무엇인가요?",
+    "choices": [
+      "원자성(Atomicity)",
+      "일관성(Consistency)",
+      "격리성(Isolation)",
+      "지속성(Durability)"
+    ],
+    "answer": 0,
+    "explanation": "원자성은 트랜잭션 내의 모든 작업이 모두 반영되거나, 하나라도 실패하면 전체가 취소되어 데이터베이스를 이전 상태로 되돌리는 특성입니다.",
+    "tag": "ACID",
+    "image_prompt": "A conceptual illustration of an 'all or nothing' switch, representing database atomicity."
+  },
+  {
+    "id": "db_061",
+    "question": "트랜잭션의 ACID 특성 중, 트랜잭션 완료 후 시스템 장애가 발생해도 결과가 영구적으로 반영되어야 함을 의미하는 것은?",
+    "choices": [
+      "원자성(Atomicity)",
+      "일관성(Consistency)",
+      "격리성(Isolation)",
+      "지속성(Durability)"
+    ],
+    "answer": 3,
+    "explanation": "지속성은 성공적으로 완료된 트랜잭션의 결과가 시스템 오류나 전원 차단 등의 장애가 발생하더라도 영구적으로 저장됨을 보장하는 특성입니다.",
+    "tag": "ACID",
+    "image_prompt": "A hard drive with a shield icon, symbolizing permanent data storage and durability."
+  },
+  {
+    "id": "db_062",
+    "question": "트랜잭션의 ACID 특성 중, 트랜잭션 실행 전후의 데이터베이스 상태가 미리 정의된 제약 조건(무결성 제약 등)을 만족해야 하는 원칙은?",
+    "choices": [
+      "원자성(Atomicity)",
+      "일관성(Consistency)",
+      "격리성(Isolation)",
+      "지속성(Durability)"
+    ],
+    "answer": 1,
+    "explanation": "일관성은 트랜잭션이 완료된 후 데이터베이스가 논리적으로 올바른 상태를 유지하며, 모든 제약 조건이 충족되어야 함을 의미합니다.",
+    "tag": "ACID",
+    "image_prompt": "A balance scale weighing data blocks to represent database consistency."
+  },
+  {
+    "id": "db_063",
+    "question": "트랜잭션의 ACID 특성 중, 동시에 실행되는 여러 트랜잭션이 서로 영향을 주지 않고 독립적으로 수행되어야 함을 의미하는 것은?",
+    "choices": [
+      "원자성(Atomicity)",
+      "일관성(Consistency)",
+      "격리성(Isolation)",
+      "지속성(Durability)"
+    ],
+    "answer": 2,
+    "explanation": "격리성은 여러 트랜잭션이 동시에 실행될 때, 각 트랜잭션의 중간 단계가 다른 트랜잭션에 보이지 않도록 분리하는 특성입니다.",
+    "tag": "ACID",
+    "image_prompt": "Two separate glass bubbles containing different data processes to represent isolation."
+  },
+  {
+    "id": "db_064",
+    "question": "격리 수준 중 'READ COMMITTED'에서 방지할 수 없는 현상은 무엇인가요?",
+    "choices": [
+      "Dirty Read",
+      "Non-Repeatable Read",
+      "Phantom Read",
+      "둘 다 방지 불가"
+    ],
+    "answer": 1,
+    "explanation": "READ COMMITTED는 커밋된 데이터만 읽으므로 Dirty Read는 방지하지만, 한 트랜잭션 내에서 같은 데이터를 두 번 읽었을 때 값이 달라지는 Non-Repeatable Read는 발생할 수 있습니다.",
+    "tag": "Isolation Level",
+    "image_prompt": "A diagram showing a data value changing between two read operations in one transaction."
+  },
+  {
+    "id": "db_065",
+    "question": "READ COMMITTED 격리 수준의 주요 특징으로 옳은 것은 무엇인가요?",
+    "choices": [
+      "커밋되지 않은 데이터도 읽을 수 있다.",
+      "트랜잭션 시작 시점의 스냅샷만 읽는다.",
+      "다른 트랜잭션이 커밋한 변경 사항을 즉시 반영하여 읽는다.",
+      "모든 동시성 문제를 완벽하게 해결한다."
+    ],
+    "answer": 2,
+    "explanation": "READ COMMITTED는 다른 트랜잭션이 데이터를 수정하고 '커밋'한 후에만 그 내용을 읽을 수 있게 하여 Dirty Read를 방지합니다.",
+    "tag": "Isolation Level",
+    "image_prompt": "A lock icon opening only after a 'Commit' checkmark appears."
+  },
+  {
+    "id": "db_066",
+    "question": "가장 높은 격리 수준인 'SERIALIZABLE'에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "성능이 가장 빠르다.",
+      "Dirty Read만 방지한다.",
+      "트랜잭션을 순차적으로 실행한 것과 동일한 결과를 보장한다.",
+      "Phantom Read는 허용하지만 Non-Repeatable Read는 방지한다."
+    ],
+    "answer": 2,
+    "explanation": "SERIALIZABLE은 가장 엄격한 격리 수준으로, 트랜잭션들이 마치 하나씩 순서대로 실행되는 것처럼 동작하게 하여 모든 동시성 문제를 해결합니다.",
+    "tag": "Isolation Level",
+    "image_prompt": "A single-file line of people waiting to enter a door, representing sequential execution."
+  },
+  {
+    "id": "db_067",
+    "question": "SERIALIZABLE 격리 수준에서 발생하는 주요 단점은 무엇인가요?",
+    "choices": [
+      "데이터 무결성이 깨진다.",
+      "Dirty Read가 빈번하게 발생한다.",
+      "동시성 제어로 인해 성능 저하 및 데드락 가능성이 높아진다.",
+      "커밋되지 않은 데이터를 읽게 된다."
+    ],
+    "answer": 2,
+    "explanation": "SERIALIZABLE은 데이터 일관성을 완벽히 보장하지만, 과도한 잠금(Locking)으로 인해 처리량이 감소하고 트랜잭션 간 충돌로 인한 데드락 발생 확률이 높아집니다.",
+    "tag": "Isolation Level",
+    "image_prompt": "A traffic jam of data packets with red warning signs."
+  },
+  {
+    "id": "db_068",
+    "question": "한 트랜잭션 내에서 동일한 쿼리를 두 번 실행했을 때, 그 사이에 다른 트랜잭션이 데이터를 삽입/삭제하여 결과 집합의 행 수가 달라지는 현상은?",
+    "choices": [
+      "Dirty Read",
+      "Non-Repeatable Read",
+      "Phantom Read",
+      "Lost Update"
+    ],
+    "answer": 2,
+    "explanation": "Phantom Read는 데이터의 '값'이 변하는 것이 아니라, 조건에 맞는 '행의 개수'가 변경되어 마치 유령(Phantom)처럼 새로운 행이 나타나거나 사라지는 현상입니다.",
+    "tag": "Isolation Level",
+    "image_prompt": "A ghost-like data row appearing in a database table."
+  },
+  {
+    "id": "db_069",
+    "question": "다음 중 격리 수준과 방지 가능한 현성의 연결이 잘못된 것은?",
+    "choices": [
+      "READ UNCOMMITTED - 없음",
+      "READ COMMITTED - Dirty Read 방지",
+      "REPEATABLE READ - Non-Repeatable Read 방지",
+      "SERIALIZABLE - Dirty Read만 방지"
+    ],
+    "answer": 3,
+    "explanation": "SERIALIZABLE은 Dirty Read뿐만 아니라 Non-Repeatable Read와 Phantom Read까지 모두 방지하는 가장 강력한 수준입니다.",
+    "tag": "Isolation Level",
+    "image_prompt": "A comparison table of isolation levels and their protections."
+  },
+  {
+    "id": "db_070",
+    "question": "Alembic에서 새로운 마이그레이션 파일을 생성하기 위해 사용하는 명령어는 무엇입니까?",
+    "choices": [
+      "alembic upgrade",
+      "alembic revision",
+      "alembic downgrade",
+      "alembic init"
+    ],
+    "answer": 1,
+    "explanation": "alembic revision 명령어는 데이터베이스 스키마 변경 사항을 기록할 새로운 리비전 파일을 생성합니다.",
+    "tag": "revision",
+    "image_prompt": "A digital blueprint of a database schema being updated with a new version stamp."
+  },
+  {
+    "id": "db_071",
+    "question": "alembic revision 명령어에 '-autogenerate' 옵션을 사용했을 때의 주요 특징은 무엇입니까?",
+    "choices": [
+      "데이터베이스를 자동으로 삭제한다",
+      "SQL 쿼리를 직접 작성해야 한다",
+      "SQLAlchemy 모델과 DB 상태를 비교해 변경 사항을 자동 생성한다",
+      "서버를 자동으로 재시작한다"
+    ],
+    "answer": 2,
+    "explanation": "-autogenerate 옵션은 현재의 SQLAlchemy 모델 정의와 실제 데이터베이스 스키마를 비교하여 차이점을 자동으로 감지하고 리비전 파일에 반영합니다.",
+    "tag": "revision",
+    "image_prompt": "A robot comparing two different database diagrams and highlighting the differences."
+  },
+  {
+    "id": "db_072",
+    "question": "데이터베이스 스키마를 최신 버전으로 업데이트하기 위해 사용하는 명령어는 무엇입니까?",
+    "choices": [
+      "alembic upgrade head",
+      "alembic downgrade head",
+      "alembic revision head",
+      "alembic current"
+    ],
+    "answer": 0,
+    "explanation": "alembic upgrade head 명령어는 데이터베이스를 가장 최신 리비전(head) 상태로 업데이트합니다.",
+    "tag": "upgrade",
+    "image_prompt": "An upward arrow pointing to a gold trophy representing the latest version of a database."
+  },
+  {
+    "id": "db_073",
+    "question": "특정 리비전 버전으로 데이터베이스를 되돌리고 싶을 때 사용하는 명령어는 무엇입니까?",
+    "choices": [
+      "alembic upgrade",
+      "alembic revision",
+      "alembic downgrade",
+      "alembic status"
+    ],
+    "answer": 2,
+    "explanation": "alembic downgrade 명령어는 데이터베이스 스키마를 이전 버전으로 되돌리는(롤백) 역할을 합니다.",
+    "tag": "downgrade",
+    "image_prompt": "A rewind button on a vintage cassette tape symbolizing database rollback."
+  },
+  {
+    "id": "db_074",
+    "question": "리비전 파일 내에서 'upgrade()' 함수가 담당하는 역할은 무엇입니까?",
+    "choices": [
+      "데이터베이스 연결 설정",
+      "이전 버전으로 되돌리는 로직 정의",
+      "새로운 스키마 변경 사항을 적용하는 로직 정의",
+      "모델 클래스 생성"
+    ],
+    "answer": 2,
+    "explanation": "upgrade() 함수는 해당 리비전이 적용될 때 실행될 SQL 작업(테이블 생성, 컬럼 추가 등)을 정의합니다.",
+    "tag": "upgrade",
+    "image_prompt": "A construction worker adding a new floor to a building representing database expansion."
+  },
+  {
+    "id": "db_075",
+    "question": "리비전 파일 내에서 'downgrade()' 함수가 담당하는 역할은 무엇입니까?",
+    "choices": [
+      "최신 버전으로 업데이트",
+      "upgrade()에서 수행한 변경 사항을 취소하는 로직 정의",
+      "데이터베이스 인덱스 최적화",
+      "사용자 권한 설정"
+    ],
+    "answer": 1,
+    "explanation": "downgrade() 함수는 upgrade()를 통해 적용된 변경 사항을 다시 원래 상태로 되돌리는 작업을 정의합니다.",
+    "tag": "downgrade",
+    "image_prompt": "An eraser removing a line from a technical drawing of a database."
+  },
+  {
+    "id": "db_076",
+    "question": "alembic downgrade -1 명령어의 의미는 무엇입니까?",
+    "choices": [
+      "모든 데이터를 삭제한다",
+      "가장 첫 번째 리비전으로 돌아간다",
+      "바로 직전의 리비전 버전으로 한 단계 되돌린다",
+      "리비전 파일을 하나 삭제한다"
+    ],
+    "answer": 2,
+    "explanation": "-1 옵션은 현재 상태에서 바로 이전 단계(relative revision)로 스키마를 롤백함을 의미합니다.",
+    "tag": "downgrade",
+    "image_prompt": "A person taking one step backward on a staircase of version numbers."
+  },
+  {
+    "id": "db_077",
+    "question": "Alembic이 현재 데이터베이스의 버전을 추적하기 위해 자동으로 생성하는 테이블의 이름은 무엇입니까?",
+    "choices": [
+      "alembic_version",
+      "migration_history",
+      "db_revision",
+      "schema_log"
+    ],
+    "answer": 0,
+    "explanation": "Alembic은 'alembic_version'이라는 테이블을 생성하여 현재 DB가 어떤 리비전 ID에 머물러 있는지 저장합니다.",
+    "tag": "revision",
+    "image_prompt": "A small table in a database containing a single unique alphanumeric version string."
+  },
+  {
+    "id": "db_078",
+    "question": "다음 중 Alembic 마이그레이션 작업 순서로 가장 적절한 것은 무엇입니까?",
+    "choices": [
+      "upgrade -> revision -> downgrade",
+      "revision -> upgrade -> (필요시) downgrade",
+      "downgrade -> revision -> upgrade",
+      "init -> upgrade -> revision"
+    ],
+    "answer": 1,
+    "explanation": "일반적으로 변경 사항을 정의하는 리비전 파일을 먼저 생성(revision)하고, 이를 DB에 적용(upgrade)하며, 문제가 있을 시 되돌립니다(downgrade).",
+    "tag": "workflow",
+    "image_prompt": "A flow chart showing the sequence: Revision File -> Upgrade Arrow -> Downgrade Arrow."
+  },
+  {
+    "id": "db_079",
+    "question": "alembic revision --message 'add_user_table' 명령어에서 --message 옵션의 용도는 무엇입니까?",
+    "choices": [
+      "SQL 쿼리를 직접 입력한다",
+      "리비전 파일에 식별 가능한 설명(주석)을 추가한다",
+      "데이터베이스 서버에 메시지를 전송한다",
+      "마이그레이션 속도를 높인다"
+    ],
+    "answer": 1,
+    "explanation": "--message (또는 -m) 옵션은 생성되는 리비전 파일의 이름이나 내용에 설명을 붙여 나중에 어떤 변경이었는지 쉽게 알 수 있게 합니다.",
+    "tag": "revision",
+    "image_prompt": "A sticky note attached to a code file with the text 'add_user_table' written on it."
+  },
+  {
+    "id": "db_080",
+    "question": "Redis의 String 자료구조에 대한 설명으로 가장 적절하지 않은 것은?",
+    "choices": [
+      "가장 기본적인 자료구조이며 바이너리 및 텍스트 데이터를 저장한다.",
+      "최대 512MB까지의 데이터를 하나의 키에 저장할 수 있다.",
+      "하나의 키에 여러 개의 필드-값 쌍을 저장하는 구조이다.",
+      "SET, GET 명령어를 통해 값을 저장하고 조회한다."
+    ],
+    "answer": 2,
+    "explanation": "하나의 키에 여러 개의 필드-값 쌍을 저장하는 것은 Hash 자료구조의 특징입니다. String은 단일 값만 저장합니다.",
+    "tag": "String",
+    "image_prompt": "A simple key-value pair diagram showing a single string value connected to a key, minimalist flat design."
+  },
+  {
+    "id": "db_081",
+    "question": "Redis Hash 자료구조를 사용하기에 가장 적합한 사례는 무엇인가요?",
+    "choices": [
+      "최신 뉴스 기사 10개를 순서대로 보여주는 기능",
+      "사용자의 이름, 이메일, 나이 등 프로필 정보 저장",
+      "중복을 제거한 고유 방문자 수 카운팅",
+      "실시간 랭킹 시스템 구현"
+    ],
+    "answer": 1,
+    "explanation": "Hash는 필드-값 쌍으로 이루어져 있어 객체 형태의 데이터(예: 사용자 프로필)를 효율적으로 저장하고 관리하는 데 최적입니다.",
+    "tag": "Hash",
+    "image_prompt": "A digital filing cabinet where each drawer represents a key and contains multiple labeled folders as fields."
+  },
+  {
+    "id": "db_082",
+    "question": "Redis List 자료구조의 특징으로 옳은 것은 무엇인가요?",
+    "choices": [
+      "데이터가 정렬된 상태로 저장되며 중복을 허용하지 않는다.",
+      "Linked List 기반으로 구현되어 양 끝단에서의 삽입/삭제가 매우 빠르다.",
+      "모든 요소에 대해 O(1) 시간 복잡도로 접근이 가능하다.",
+      "값의 범위(Range)를 지정하여 데이터를 조회할 수 없다."
+    ],
+    "answer": 1,
+    "explanation": "Redis List는 Linked List로 구현되어 LPUSH, RPUSH, LPOP, RPOP 등의 명령어를 통해 양 끝에서 빠르게 데이터를 처리할 수 있습니다.",
+    "tag": "List",
+    "image_prompt": "A chain of connected blocks representing a linked list with arrows pointing to the head and tail."
+  },
+  {
+    "id": "db_083",
+    "question": "Redis Set 자료구조의 주요 특징은 무엇인가요?",
+    "choices": [
+      "데이터의 삽입 순서가 엄격하게 유지된다.",
+      "중복된 값을 허용하며 인덱스로 접근한다.",
+      "중복을 허용하지 않는 고유한 문자열의 집합이다.",
+      "값에 따라 자동으로 정렬되어 저장된다."
+    ],
+    "answer": 2,
+    "explanation": "Set은 중복을 허용하지 않는 Unordered Collection입니다. 동일한 값을 여러 번 추가해도 하나만 저장됩니다.",
+    "tag": "Set",
+    "image_prompt": "A circle containing unique colorful spheres with no duplicates, clean vector style."
+  },
+  {
+    "id": "db_084",
+    "question": "Sorted Set(ZSet)에서 요소의 정렬 기준이 되는 것은 무엇인가요?",
+    "choices": [
+      "데이터가 입력된 시간 순서",
+      "알파벳 사전순",
+      "사용자가 지정한 Score(점수)",
+      "데이터의 크기"
+    ],
+    "answer": 2,
+    "explanation": "Sorted Set은 각 요소에 대해 'score'라는 숫자를 부여하며, 이 score를 기준으로 오름차순 또는 내림차순으로 정렬됩니다.",
+    "tag": "Sorted Set",
+    "image_prompt": "A leaderboard showing usernames and their corresponding numeric scores in descending order."
+  },
+  {
+    "id": "db_085",
+    "question": "다음 중 Redis List에서 큐(Queue)를 구현하기 위해 사용하는 명령어 조합은?",
+    "choices": [
+      "LPUSH -> LPOP",
+      "RPUSH -> LPOP",
+      "SADD -> SMEMBERS",
+      "ZADD -> ZRANGE"
+    ],
+    "answer": 1,
+    "explanation": "한쪽 끝(Right)으로 넣고 반대쪽 끝(Left)에서 빼는 RPUSH와 LPOP 조합을 통해 FIFO(First-In-First-Out) 큐를 구현할 수 있습니다.",
+    "tag": "List",
+    "image_prompt": "A conveyor belt moving boxes from one side to the other, representing a queue process."
+  },
+  {
+    "id": "db_086",
+    "question": "두 개의 Set 사이에서 공통된 요소만 추출하고 싶을 때 사용하는 명령어는?",
+    "choices": [
+      "SUNION",
+      "SDIFF",
+      "SINTER",
+      "SMEMBERS"
+    ],
+    "answer": 2,
+    "explanation": "SINTER(Set Intersection) 명령어는 두 개 이상의 집합에서 교집합(공통 요소)을 찾아 반환합니다.",
+    "tag": "Set",
+    "image_prompt": "A Venn diagram showing the overlapping area of two circles highlighted in a bright color."
+  },
+  {
+    "id": "db_087",
+    "question": "Sorted Set에서 특정 점수 범위 내의 멤버를 가져오는 명령어는 무엇인가요?",
+    "choices": [
+      "ZRANGE",
+      "ZREM",
+      "ZSCORE",
+      "ZCARD"
+    ],
+    "answer": 0,
+    "explanation": "ZRANGE(또는 ZRANGEBYSCORE) 명령어를 사용하여 특정 인덱스 범위나 점수 범위의 멤버를 조회할 수 있습니다.",
+    "tag": "Sorted Set",
+    "image_prompt": "A magnifying glass focusing on a specific segment of a sorted vertical list."
+  },
+  {
+    "id": "db_088",
+    "question": "Redis Hash에서 특정 필드의 값을 변경하거나 추가할 때 사용하는 명령어는?",
+    "choices": [
+      "HGET",
+      "HSET",
+      "HLEN",
+      "HDEL"
+    ],
+    "answer": 1,
+    "explanation": "HSET 명령어를 사용하여 Hash 내의 특정 필드에 값을 설정하거나 기존 값을 업데이트합니다.",
+    "tag": "Hash",
+    "image_prompt": "A hand updating a value in a digital table cell, futuristic UI design."
+  },
+  {
+    "id": "db_089",
+    "question": "String 자료구조에서 특정 키의 값을 1 증가시키고 싶을 때 사용하는 명령어는?",
+    "choices": [
+      "SET",
+      "GET",
+      "INCR",
+      "APPEND"
+    ],
+    "answer": 2,
+    "explanation": "INCR 명령어를 사용하면 해당 키의 정수 값을 원자적으로(atomically) 1 증가시킵니다.",
+    "tag": "String",
+    "image_prompt": "A digital counter rapidly increasing from 99 to 100 with a glowing effect."
   }
 ]

@@ -2,7 +2,12 @@
   {
     "id": "ait_001",
     "question": "Claude Code에서 `/compact` 명령의 기능은?",
-    "choices": ["채팅 기록 전체 삭제", "대화 컨텍스트를 요약 압축해 토큰 절약", "서버를 재시작", "새 세션을 시작"],
+    "choices": [
+      "채팅 기록 전체 삭제",
+      "대화 컨텍스트를 요약 압축해 토큰 절약",
+      "서버를 재시작",
+      "새 세션을 시작"
+    ],
     "answer": 1,
     "explanation": "/compact는 긴 대화를 요약해 컨텍스트를 유지하면서 토큰을 절약합니다. /clear와 달리 기록을 지우지 않고 압축하기 때문에 긴 작업 세션에서 필수적으로 씁니다.",
     "tag": "Claude Code",
@@ -11,7 +16,12 @@
   {
     "id": "ait_002",
     "question": "Claude Code의 'hooks' 기능이란?",
-    "choices": ["AI가 자동으로 코드를 수정하는 기능", "특정 이벤트 발생 시 셸 명령을 자동 실행", "웹훅(Webhook)과 연동하는 기능", "코드에 후킹(hooking) 포인트를 삽입"],
+    "choices": [
+      "AI가 자동으로 코드를 수정하는 기능",
+      "특정 이벤트 발생 시 셸 명령을 자동 실행",
+      "웹훅(Webhook)과 연동하는 기능",
+      "코드에 후킹(hooking) 포인트를 삽입"
+    ],
     "answer": 1,
     "explanation": "hooks는 settings.json에 정의하며 PreToolUse, PostToolUse, Stop 같은 이벤트에 셸 명령을 자동 실행합니다. 예: 파일 저장 후 자동 lint, 세션 종료 후 알림 전송.",
     "tag": "Claude Code",
@@ -20,7 +30,12 @@
   {
     "id": "ait_003",
     "question": "Claude Code에서 CLAUDE.md 파일의 역할은?",
-    "choices": ["오류 로그 저장", "프로젝트별 AI 지침 및 규칙 정의", "API 키 저장", "모델 설정 파일"],
+    "choices": [
+      "오류 로그 저장",
+      "프로젝트별 AI 지침 및 규칙 정의",
+      "API 키 저장",
+      "모델 설정 파일"
+    ],
     "answer": 1,
     "explanation": "CLAUDE.md는 Claude Code가 세션 시작 시 자동으로 읽는 지침 파일입니다. 팀 구성, 코딩 컨벤션, 작업 방식, 금지 행동 등을 여기에 정의하면 매 대화마다 설명할 필요가 없습니다.",
     "tag": "Claude Code",
@@ -29,7 +44,12 @@
   {
     "id": "ait_004",
     "question": "MCP(Model Context Protocol)를 처음 만든 회사는?",
-    "choices": ["OpenAI", "Google", "Anthropic", "Meta"],
+    "choices": [
+      "OpenAI",
+      "Google",
+      "Anthropic",
+      "Meta"
+    ],
     "answer": 2,
     "explanation": "MCP는 2024년 Anthropic이 공개한 오픈 표준 프로토콜입니다. LLM과 외부 도구·데이터를 연결하는 통일된 방식을 제공하며, 현재 수천 개의 MCP 서버가 오픈소스로 공개됐습니다.",
     "tag": "MCP",
@@ -38,7 +58,12 @@
   {
     "id": "ait_005",
     "question": "Claude Code에서 `--dangerously-skip-permissions` 플래그의 용도는?",
-    "choices": ["보안 취약점을 스캔", "권한 확인 없이 자동 실행 (CI/자동화 환경용)", "관리자 모드로 실행", "디버그 모드 활성화"],
+    "choices": [
+      "보안 취약점을 스캔",
+      "권한 확인 없이 자동 실행 (CI/자동화 환경용)",
+      "관리자 모드로 실행",
+      "디버그 모드 활성화"
+    ],
     "answer": 1,
     "explanation": "이 플래그는 모든 권한 프롬프트를 건너뜁니다. GitHub Actions, 자동화 스크립트 등 신뢰된 환경에서만 사용해야 하며, 일반 사용 환경에서는 위험합니다.",
     "tag": "Claude Code",
@@ -47,7 +72,12 @@
   {
     "id": "ait_006",
     "question": "Cursor IDE에서 'Agent 모드'의 핵심 기능은?",
-    "choices": ["빠른 자동완성", "여러 파일을 동시에 자율적으로 생성·수정", "음성 입력 지원", "Git 자동 커밋"],
+    "choices": [
+      "빠른 자동완성",
+      "여러 파일을 동시에 자율적으로 생성·수정",
+      "음성 입력 지원",
+      "Git 자동 커밋"
+    ],
     "answer": 1,
     "explanation": "Cursor의 Agent 모드(구 Composer)는 자연어 지시만으로 여러 파일을 분석·생성·수정합니다. Chat은 코드 설명/질문, Agent는 실제 다중 파일 작업에 씁니다.",
     "tag": "Cursor",
@@ -56,7 +86,12 @@
   {
     "id": "ait_007",
     "question": "2026년 현재 Anthropic의 Claude 최신 모델 시리즈는?",
-    "choices": ["Claude 3.5 시리즈", "Claude 4.x (Opus 4.7 / Sonnet 4.6 / Haiku 4.5)", "Claude 5.0 시리즈", "Claude Pro"],
+    "choices": [
+      "Claude 3.5 시리즈",
+      "Claude 4.x (Opus 4.7 / Sonnet 4.6 / Haiku 4.5)",
+      "Claude 5.0 시리즈",
+      "Claude Pro"
+    ],
     "answer": 1,
     "explanation": "2026년 현재 Claude 4.x 시리즈가 최신입니다. Opus 4.7(최고 성능), Sonnet 4.6(균형), Haiku 4.5(빠른 처리)로 용도에 따라 선택합니다. Claude Code 기본 모델은 Sonnet 4.6입니다.",
     "tag": "Claude",
@@ -65,10 +100,1497 @@
   {
     "id": "ait_008",
     "question": "Claude Code에서 서브에이전트(Agent 도구)를 사용하는 이유는?",
-    "choices": ["더 예쁜 출력을 위해", "독립적인 작업을 병렬 처리해 시간 절약", "인터넷 검색을 위해", "파일 압축을 위해"],
+    "choices": [
+      "더 예쁜 출력을 위해",
+      "독립적인 작업을 병렬 처리해 시간 절약",
+      "인터넷 검색을 위해",
+      "파일 압축을 위해"
+    ],
     "answer": 1,
     "explanation": "Agent 도구는 복잡한 작업을 독립적인 서브에이전트에 위임합니다. 예: 탐색 에이전트와 구현 에이전트를 동시에 실행. 컨텍스트 창도 분리되어 메인 세션이 깔끔하게 유지됩니다.",
     "tag": "Claude Code",
     "image_prompt": "multiple AI agents working in parallel on different tasks, orchestration hub, futuristic"
+  },
+  {
+    "id": "ai__009",
+    "question": "Claude Code에서 프로젝트의 코딩 스타일, 빌드 방법, 테스트 실행 명령어 등 프로젝트 고유의 지침을 저장하여 AI가 항상 참고하게 만드는 파일은 무엇인가요?",
+    "choices": [
+      ".claude_config",
+      "CLAUDE.md",
+      ".cursorrules",
+      "claude_instructions.txt"
+    ],
+    "answer": 1,
+    "explanation": "CLAUDE.md는 Claude Code가 프로젝트의 컨텍스트를 빠르게 파악하기 위해 사용하는 가이드 파일입니다.\n실무에서는 여기에 빌드 명령어(npm run build 등)나 특정 네이밍 규칙을 적어두어 AI가 매번 묻지 않고 정확하게 작업하게 합니다.\n이는 팀원 간의 일관된 코딩 스타일 유지와 자동화 효율을 극대화하는 핵심 요소입니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A digital document file named CLAUDE.md glowing with a soft blue light, surrounded by floating code snippets and gear icons, futuristic software engineering style."
+  },
+  {
+    "id": "ai__010",
+    "question": "Claude Code의 슬래시 명령어 중, 현재 세션의 컨텍스트를 초기화하거나 대화를 새로 시작하고 싶을 때 사용하는 명령어는 무엇인가요?",
+    "choices": [
+      "/reset",
+      "/clear",
+      "/compact",
+      "/restart"
+    ],
+    "answer": 1,
+    "explanation": "/clear 명령어는 이전 대화 기록이 너무 많아져 토큰 소모가 심하거나, 주제를 완전히 바꾸고 싶을 때 사용합니다.\n실무에서는 컨텍스트 창(Context Window) 관리를 통해 AI의 환각 현상을 줄이고 응답 속도를 높이기 위해 주기적으로 사용합니다.\n불필요한 이전 맥락이 현재 작업에 방해가 될 때 매우 유용합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A futuristic terminal screen showing a '/clear' command being typed, with old text fading away and a clean slate appearing, cybernetic aesthetic."
+  },
+  {
+    "id": "ai__011",
+    "question": "MCP(Model Context Protocol)의 핵심 목적과 가장 거리가 먼 것은 무엇인가요?",
+    "choices": [
+      "AI 모델이 외부 데이터 소스에 표준화된 방식으로 접근하게 함",
+      "로컬 파일 시스템이나 API를 AI가 직접 제어할 수 있는 인터페이스 제공",
+      "LLM 자체의 파라미터 수를 늘려 추론 능력을 근본적으로 향상시킴",
+      "다양한 도구(Tool)들을 하나의 프로토콜로 통합하여 교체 가능하게 함"
+    ],
+    "answer": 2,
+    "explanation": "MCP는 모델의 내부 파라미터를 수정하는 것이 아니라, 외부 세계(데이터, 도구)와 연결하는 '표준 인터페이스'를 제공하는 프로토콜입니다.\n실무적으로 MCP 서버를 구축하면 데이터베이스 조회나 특정 API 호출을 AI가 표준화된 방식으로 수행할 수 있습니다.\n이를 통해 모델을 바꾸더라도 동일한 MCP 서버를 통해 외부 기능을 계속 사용할 수 있는 확장성을 가집니다.",
+    "tag": "MCP",
+    "image_prompt": "A complex network diagram showing a central AI brain connected to various data silos and APIs via standardized glowing plugs, technical blueprint style."
+  },
+  {
+    "id": "ai__012",
+    "question": "Claude Code에서 특정 작업(예: 테스트 실행 후 오류 수정)을 자동화하기 위해 설정하는 'hooks'의 역할로 가장 적절한 것은?",
+    "choices": [
+      "코드 작성 속도를 높이기 위한 자동 완성 기능",
+      "특정 이벤트 발생 시 자동으로 실행될 스크립트나 명령어를 정의",
+      "외부 API 호출 시 인증 토큰을 자동으로 갱신하는 기능",
+      "AI 모델의 온도를 조절하여 창의성을 제어하는 설정"
+    ],
+    "answer": 1,
+    "explanation": "Hooks는 특정 트리거(예: 파일 변경, 커밋 전)가 발생했을 때 AI가 수행해야 할 동작을 미리 정의해두는 것입니다.\n실무에서는 '코드 수정 후 반드시 npm test를 실행하라'는 식의 hook을 설정하여 품질 관리를 자동화합니다.\n이는 개발자가 일일이 명령어를 입력하지 않아도 AI가 스스로 검증 단계를 거치게 만들어 휴먼 에러를 줄입니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A digital chain link connecting a code editor to a terminal window, with a green checkmark appearing automatically, high-tech automation concept."
+  },
+  {
+    "id": "ai__013",
+    "question": "Cursor나 Windsurf 같은 AI IDE에서 '서브에이전트(Sub-agent)' 혹은 '에이전틱 워크플로우'의 가장 큰 특징은 무엇인가요?",
+    "choices": [
+      "단순히 텍스트를 생성하는 것을 넘어 스스로 계획을 세우고 도구를 실행하며 결과를 검증함",
+      "사용자의 타이핑 속도에 맞춰 실시간으로 코드를 제안함",
+      "인터넷 연결 없이 로컬에서만 작동하여 보안성을 높임",
+      "여러 명의 사용자가 동시에 같은 파일을 수정할 수 있게 함"
+    ],
+    "answer": 0,
+    "explanation": "서브에이전트는 '계획 -> 실행 -> 관찰 -> 수정'의 루프를 스스로 수행하는 능력을 갖추고 있습니다.\n실무에서는 \"로그인 기능을 구현해줘\"라고 요청하면 에이전트가 파일 생성, 라이브러리 설치, 테스트 코드 작성 및 실행을 스스로 단계별로 진행합니다.\n단순한 코드 완성을 넘어 '문제 해결'의 주체가 된다는 점이 기존 Copilot과의 가장 큰 차이점입니다.",
+    "tag": "AI IDE",
+    "image_prompt": "A central AI avatar delegating tasks to smaller, specialized robotic drones that are coding and testing in parallel, futuristic workspace."
+  },
+  {
+    "id": "ai__014",
+    "question": "Claude Code의 권한 설정(Permissions)과 관련하여, 'Allow' 모드와 'Ask' 모드의 차이점으로 옳은 것은?",
+    "choices": [
+      "Allow는 읽기 전용이며, Ask는 쓰기가 가능하다",
+      "Allow는 모든 명령어를 AI가 묻지 않고 실행하며, Ask는 위험한 명령어 실행 전 사용자 승인을 요구한다",
+      "Allow는 클라우드 서버에서 실행하고, Ask는 로컬 PC에서 실행한다",
+      "Allow는 유료 사용자만 가능하고, Ask는 무료 사용자용 설정이다"
+    ],
+    "answer": 1,
+    "explanation": "권한 설정은 AI가 시스템 명령어를 실행할 때의 제어 수준을 결정합니다.\n실무에서는 초기 설정 시 'Ask' 모드를 사용하여 AI가 `rm -rf` 같은 위험한 명령어를 내리는지 감시하고, 신뢰가 쌓이면 특정 경로에 대해 'Allow'를 설정합니다.\n보안이 중요한 기업 환경에서는 엄격한 권한 관리가 필수적입니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A digital shield with a toggle switch between 'Automatic' and 'Manual Approval', glowing security icons around it, cyber security theme."
+  },
+  {
+    "id": "ai__015",
+    "question": "GitHub Copilot의 'Chat' 기능과 Cursor의 'Composer(Ctrl+I)' 기능의 결정적인 차이점은 무엇인가요?",
+    "choices": [
+      "Copilot Chat은 유료이고 Composer는 무료이다",
+      "Copilot Chat은 주로 질문 답변 중심이며, Composer는 여러 파일에 걸친 코드 생성 및 직접 수정을 동시에 수행한다",
+      "Composer는 오직 Python 언어만 지원하며 Copilot은 모든 언어를 지원한다",
+      "Copilot Chat은 로컬 LLM을 사용하고 Composer는 클라우드 LLM만 사용한다"
+    ],
+    "answer": 1,
+    "explanation": "Copilot Chat이 주로 '방법'을 알려주는 가이드 역할이라면, Cursor의 Composer는 실제 '구현'을 대행하는 에이전트에 가깝습니다.\n실무에서 Composer를 사용하면 \"A 파일의 함수를 B 파일에 맞게 수정하고 C 파일을 새로 만들어줘\"라는 요청을 한 번에 처리할 수 있습니다.\n이는 단순 채팅보다 개발 생산성을 비약적으로 높여주는 멀티 파일 편집 능력 때문입니다.",
+    "tag": "AI IDE",
+    "image_prompt": "A split screen showing a simple chat window on one side and a complex multi-file code orchestration interface on the other, productivity comparison."
+  },
+  {
+    "id": "ai__016",
+    "question": "Claude Code에서 `/compact` 명령어의 주된 목적은 무엇인가요?",
+    "choices": [
+      "코드 파일의 용량을 압축하여 저장 공간을 확보함",
+      "대화 기록을 요약하여 컨텍스트 윈도우를 최적화하고 토큰 소모를 줄임",
+      "작성된 코드를 Minify 하여 배포 가능한 상태로 만듦",
+      "여러 개의 파일을 하나의 파일로 합쳐서 보여줌"
+    ],
+    "answer": 1,
+    "explanation": "/compact는 긴 대화 맥락 중 핵심 내용만 남기고 요약하여 AI의 기억 장치(Context)를 효율적으로 관리하는 기능입니다.\n실무에서 대화가 길어지면 AI가 이전 내용을 잊거나 응답 속도가 느려지는데, 이때 /compact를 사용해 성능을 회복합니다.\n이는 API 비용 절감과 모델의 집중도 향상이라는 두 가지 이점을 제공합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A large pile of digital papers being compressed into a small, glowing diamond-shaped crystal, data optimization concept."
+  },
+  {
+    "id": "ai__017",
+    "question": "Cursor IDE에서 프로젝트 전체의 코딩 스타일, 라이브러리 사용 규칙, 아키텍처 가이드라인을 AI에게 강제하기 위해 사용하는 설정 파일은 무엇인가요?",
+    "choices": [
+      ".cursorrules",
+      ".gitignore",
+      "cursor.config.json",
+      "settings.json"
+    ],
+    "answer": 0,
+    "explanation": ".cursorrules 파일은 Cursor IDE가 코드를 생성하거나 수정할 때 항상 참고하는 프로젝트 전용 지침서입니다.\n실무에서는 팀 내 컨벤션(예: '함수형 컴포넌트 사용', 'Tailwind CSS 우선 적용')을 정의하여 AI가 일관된 코드를 작성하게 만드는 데 필수적입니다.\n이 파일이 없으면 AI는 일반적인 학습 데이터에 의존하므로 프로젝트마다 스타일이 달라질 수 있습니다.",
+    "tag": "Cursor",
+    "image_prompt": "A digital configuration file icon with a glowing cursor symbol, futuristic coding environment background, high tech, 4k"
+  },
+  {
+    "id": "ai__018",
+    "question": "최근 AI IDE에서 강조되는 'Agent 모드'의 핵심적인 특징으로 가장 적절한 것은 무엇인가요?",
+    "choices": [
+      "단순히 코드 한 줄을 자동 완성하는 기능",
+      "사용자의 승인 하에 파일 생성, 터미널 명령 실행, 브라우징 등을 스스로 수행하는 능력",
+      "코드의 문법 오류를 실시간으로 찾아주는 린팅(Linting) 기능",
+      "여러 명의 개발자가 동시에 같은 파일을 수정하는 협업 기능"
+    ],
+    "answer": 1,
+    "explanation": "Agent 모드는 단순한 채팅을 넘어 '실행력'을 가진 상태를 의미합니다.\nAI가 스스로 필요한 파일을 찾고, 터미널에서 테스트를 실행하며, 오류가 나면 다시 수정하는 루프(Loop)를 수행하여 복잡한 태스크를 완수합니다.\n이는 개발자가 일일이 코드를 복사-붙여넣기 하던 방식에서 '목표 설정' 방식으로 패러다임을 전환시킵니다.",
+    "tag": "Agent",
+    "image_prompt": "An AI robot hand operating a computer terminal, multiple windows opening automatically, cybernetic interface, cinematic lighting"
+  },
+  {
+    "id": "ai__019",
+    "question": "MCP(Model Context Protocol)의 주요 목적은 무엇인가요?",
+    "choices": [
+      "AI 모델의 학습 속도를 높이기 위한 데이터 압축 프로토콜",
+      "LLM이 외부 데이터 소스나 도구(DB, API, 로컬 파일 등)에 표준화된 방식으로 접근하게 하는 인터페이스",
+      "코드의 실행 속도를 최적화하는 컴파일러 프로토콜",
+      "여러 대의 GPU를 연결하여 추론 속도를 높이는 분산 처리 기술"
+    ],
+    "answer": 1,
+    "explanation": "MCP는 AI 모델이 다양한 외부 도구와 데이터에 쉽게 연결될 수 있도록 하는 개방형 표준입니다.\n이를 통해 개발자는 매번 새로운 플러그인을 만들 필요 없이, MCP 서버 하나로 여러 AI 도구(Cursor, Claude Desktop 등)에서 동일한 데이터 소스를 사용할 수 있습니다.\n실무적으로는 DB 스키마를 직접 읽거나 사내 API 문서를 실시간으로 참조하는 기능을 구현할 때 핵심이 됩니다.",
+    "tag": "MCP",
+    "image_prompt": "A complex network of glowing nodes connecting a central AI brain to various data icons like databases and cloud servers, blueprint style"
+  },
+  {
+    "id": "ai__020",
+    "question": "Cursor에서 '@' 심볼을 사용하여 Context를 제공하는 기능 중, 특정 문서(URL)의 내용을 AI에게 학습시키지 않고 즉시 참조하게 하는 방법은?",
+    "choices": [
+      "@Code",
+      "@Files",
+      "@Docs",
+      "@Web"
+    ],
+    "answer": 2,
+    "explanation": "@Docs 기능을 사용하면 외부 라이브러리의 공식 문서 URL을 인덱싱하여 AI가 최신 API 사양을 바탕으로 코드를 작성하게 할 수 있습니다.\nAI의 학습 데이터는 과거 시점에 머물러 있어 최신 버전의 라이브러리 함수를 잘못 제안하는 경우가 많은데, 이를 해결하는 가장 실용적인 방법입니다.\n실무에서는 빠르게 업데이트되는 프레임워크(Next.js 등)를 사용할 때 필수적으로 활용됩니다.",
+    "tag": "Cursor",
+    "image_prompt": "A digital library with glowing books and a search bar showing '@Docs', holographic interface, deep blue background"
+  },
+  {
+    "id": "ai__021",
+    "question": "Claude Code와 같은 CLI 기반 AI 도구가 기존 IDE 내장 AI보다 가질 수 있는 상대적 강점은 무엇인가요?",
+    "choices": [
+      "GUI가 제공되어 시각적으로 더 편리하다",
+      "터미널 환경과 밀접하게 결합되어 쉘 명령 실행 및 파일 시스템 제어가 매우 빠르고 직접적이다",
+      "인터넷 연결 없이 오프라인에서만 작동한다",
+      "코드 자동 완성 속도가 무조건 더 빠르다"
+    ],
+    "answer": 1,
+    "explanation": "Claude Code는 터미널(CLI) 기반으로 동작하므로 `git commit`, `npm test`, `docker build` 등의 명령어를 AI가 직접 실행하고 그 결과를 즉시 분석할 수 있습니다.\nIDE를 거치지 않고 쉘 환경에서 바로 작업하므로 인프라 설정이나 배포 스크립트 수정 등 시스템 레벨의 작업에 매우 효율적입니다.\n개발자는 채팅창과 터미널을 오갈 필요 없이 하나의 흐름으로 개발-테스트-수정 사이클을 돌릴 수 있습니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A sleek command line interface terminal with a glowing AI logo, code streaming fast, dark mode, matrix style accents"
+  },
+  {
+    "id": "ai__022",
+    "question": "Windsurf IDE가 강조하는 'Flow' 개념의 핵심은 무엇인가요?",
+    "choices": [
+      "코드를 작성할 때 오타를 자동으로 수정해주는 흐름",
+      "AI와 개발자가 맥락을 공유하며 끊김 없이 상호작용하는 통합된 작업 경험",
+      "데이터가 서버에서 클라이언트로 전송되는 네트워크 흐름",
+      "함수 호출 순서를 최적화하여 실행 속도를 높이는 워크플로우"
+    ],
+    "answer": 1,
+    "explanation": "Windsurf의 Flow는 AI가 단순히 요청에 답하는 것이 아니라, 현재 개발자가 무엇을 하려는지 맥락(Context)을 실시간으로 추적하며 능동적으로 개입하는 경험을 의미합니다.\n사용자가 파일을 열거나 코드를 수정하면 AI가 그 의도를 파악해 다음 단계를 제안하거나 필요한 수정을 미리 준비합니다.\n이는 '질문-답변'의 단절된 구조를 '공동 작업'의 연속적인 흐름으로 바꾸는 것을 목표로 합니다.",
+    "tag": "Windsurf",
+    "image_prompt": "Two glowing streams of light (one representing human, one AI) merging into a single powerful river of code, abstract digital art"
+  },
+  {
+    "id": "ai__023",
+    "question": "GitHub Copilot의 'Copilot Workspace' 기능이 지향하는 개발 방식은?",
+    "choices": [
+      "단순한 코드 자동 완성(Autocomplete)",
+      "자연어 이슈(Issue)로부터 계획을 세우고, 코드를 구현하며, PR까지 생성하는 엔드-투-엔드 워크플로우",
+      "코드의 보안 취약점을 찾아주는 정적 분석 도구",
+      "팀원 간의 채팅을 도와주는 메신저 기능"
+    ],
+    "answer": 1,
+    "explanation": "Copilot Workspace는 '이슈 해결'이라는 목표를 중심으로 작동합니다. 이슈 내용을 읽고 -> 구현 계획(Plan)을 세우고 -> 실제 코드로 변경하고 -> 검증하는 전체 과정을 AI가 주도합니다.\n개발자는 AI가 세운 계획을 검토하고 수정하며, 최종 결과물을 승인하는 '리뷰어'의 역할로 이동하게 됩니다.\n이는 개별 함수 작성을 넘어 기능 단위(Feature level)의 개발 자동화를 지향합니다.",
+    "tag": "GitHub Copilot",
+    "image_prompt": "A Kanban board transforming into code blocks, a bridge connecting a GitHub issue to a pull request, futuristic UI"
+  },
+  {
+    "id": "ai__024",
+    "question": "Cursor에서 'Composer' 모드(Ctrl+I)를 사용할 때의 가장 큰 특징은 무엇인가요?",
+    "choices": [
+      "한 번에 하나의 파일만 수정할 수 있다",
+      "여러 파일에 걸친 광범위한 변경 사항을 동시에 생성하고 적용할 수 있다",
+      "코드의 실행 시간을 측정하는 프로파일링 도구이다",
+      "외부 API 호출 횟수를 제한하여 비용을 절감한다"
+    ],
+    "answer": 1,
+    "explanation": "Composer는 단일 파일 수정이 아니라 '프로젝트 전체'를 대상으로 하는 멀티 파일 편집 모드입니다.\n예를 들어 '로그인 기능을 추가해줘'라고 요청하면 AI가 `auth.ts`, `Login.tsx`, `api.py` 등 관련된 모든 파일을 동시에 생성하거나 수정합니다.\n실무에서는 새로운 기능을 추가하거나 대규모 리팩토링을 진행할 때 작업 시간을 획기적으로 단축시킵니다.",
+    "tag": "Cursor",
+    "image_prompt": "A conductor leading an orchestra of floating code files, harmonious arrangement, glowing musical notes made of binary"
+  },
+  {
+    "id": "ai__025",
+    "question": "MCP(Model Context Protocol)의 핵심 목적과 가장 거리가 먼 것은 무엇입니까?",
+    "choices": [
+      "LLM이 외부 데이터 소스에 표준화된 방식으로 접근하게 함",
+      "다양한 AI 클라이언트와 서버 간의 인터페이스를 통합함",
+      "특정 LLM 모델의 파라미터를 직접 수정하여 성능을 최적화함",
+      "로컬 파일, DB, API 등을 AI가 인식할 수 있는 컨텍스트로 제공함"
+    ],
+    "answer": 2,
+    "explanation": "MCP는 데이터와 도구의 '연결 표준'이지 모델 자체의 가중치나 파라미터를 수정하는 튜닝 프로토콜이 아닙니다. 실무에서는 MCP 서버를 통해 DB나 API를 연결하여 AI가 최신 데이터를 읽게 하는 방식으로 활용합니다.",
+    "tag": "MCP",
+    "image_prompt": "A conceptual diagram showing a central hub connecting various data sources like databases and APIs to an AI brain, futuristic digital network style."
+  },
+  {
+    "id": "ai__026",
+    "question": "MCP 서버에서 'Resource'의 역할로 가장 적절한 설명은 무엇입니까?",
+    "choices": [
+      "AI가 실행할 수 있는 가변적인 함수나 액션",
+      "AI가 읽을 수 있도록 제공되는 정적 또는 동적 데이터 세트",
+      "사용자가 입력하는 프롬프트의 템플릿 구조",
+      "서버와 클라이언트 간의 인증을 처리하는 보안 토큰"
+    ],
+    "answer": 1,
+    "explanation": "Resource는 AI가 참고할 수 있는 '읽기 전용' 데이터(로그 파일, DB 레코드 등)를 의미합니다. 실무에서는 API 문서나 특정 설정 파일을 Resource로 등록하여 AI가 정확한 배경 지식을 갖게 합니다.",
+    "tag": "MCP_Resource",
+    "image_prompt": "A digital library icon with glowing data streams flowing into a neural network, high-tech interface."
+  },
+  {
+    "id": "ai__027",
+    "question": "MCP의 'Tool'과 'Resource'의 결정적인 차이점은 무엇입니까?",
+    "choices": [
+      "Tool은 읽기 전용이며, Resource는 쓰기가 가능하다",
+      "Tool은 클라이언트에서 정의하고, Resource는 서버에서 정의한다",
+      "Tool은 AI가 상태를 변경하거나 동작을 수행하는 '함수'이며, Resource는 '데이터'이다",
+      "Tool은 텍스트 데이터만 처리하며, Resource는 바이너리 파일만 처리한다"
+    ],
+    "answer": 2,
+    "explanation": "Resource는 AI가 읽는 정보(Read)이고, Tool은 AI가 실행하는 동작(Execute/Write)입니다. 예를 들어 '파일 내용 읽기'는 Resource에 가깝고, '파일 수정하기'나 'API 호출하기'는 Tool의 영역입니다.",
+    "tag": "MCP_Concept",
+    "image_prompt": "A split screen showing a book (Resource) on one side and a wrench/gear (Tool) on the other, connected by digital circuits."
+  },
+  {
+    "id": "ai__028",
+    "question": "MCP 서버에서 'Prompt' 템플릿을 제공하는 이유는 무엇입니까?",
+    "choices": [
+      "LLM의 토큰 사용량을 강제로 제한하기 위해",
+      "사용자가 복잡한 요청을 쉽게 할 수 있도록 최적화된 가이드를 제공하기 위해",
+      "서버의 응답 속도를 높이기 위한 캐싱 메커니즘으로 활용하기 위해",
+      "클라이언트의 UI 디자인을 서버에서 제어하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "MCP Prompt는 특정 작업에 최적화된 프롬프트 구조를 서버가 미리 정의해 제공하는 것입니다. 실무에서는 '코드 리뷰 요청'이나 '로그 분석 요청' 같은 반복적인 패턴을 템플릿화하여 일관된 결과를 얻습니다.",
+    "tag": "MCP_Prompt",
+    "image_prompt": "A glowing blueprint of a text prompt being inserted into an AI interface, architectural style."
+  },
+  {
+    "id": "ai__029",
+    "question": "Claude Code와 Cursor의 가장 큰 차이점 중 하나는 무엇입니까?",
+    "choices": [
+      "Cursor는 터미널 기반이며, Claude Code는 GUI IDE이다",
+      "Claude Code는 CLI(명령줄 인터페이스) 중심의 에이전트이며, Cursor는 VS Code 기반의 IDE이다",
+      "Cursor는 MCP를 지원하지 않지만, Claude Code는 지원한다",
+      "Claude Code는 로컬 모델만 사용하며, Cursor는 클라우드 모델만 사용한다"
+    ],
+    "answer": 1,
+    "explanation": "Claude Code는 터미널에서 직접 실행되며 파일 수정, 테스트 실행 등을 수행하는 에이전트 성격이 강하고, Cursor는 IDE 환경 내에서 AI 기능을 통합하여 제공합니다. 실무에서는 빠른 자동화 작업 시 Claude Code를, 정밀한 코딩 시 Cursor를 혼용합니다.",
+    "tag": "AI_Tools",
+    "image_prompt": "A comparison view: a dark terminal window with code on the left and a modern IDE interface on the right."
+  },
+  {
+    "id": "ai__030",
+    "question": "Windsurf IDE가 강조하는 'Flow' 기능의 핵심은 무엇입니까?",
+    "choices": [
+      "코드 작성 속도를 높이기 위한 단순 자동 완성",
+      "AI가 컨텍스트를 유지하며 계획 수립부터 실행까지 연속적으로 수행하는 능력",
+      "여러 명의 개발자가 동시에 같은 파일을 수정하는 실시간 협업",
+      "클라우드 서버 없이 로컬에서만 작동하는 오프라인 모드"
+    ],
+    "answer": 1,
+    "explanation": "Windsurf의 Flow는 AI가 단순히 코드를 짜주는 것을 넘어, 현재 상태를 파악하고 다음 단계를 계획하며 실행하는 '에이전틱(Agentic)'한 워크플로우를 의미합니다. 이는 개발자의 개입을 최소화하면서 목표를 달성하게 합니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A flowing river of binary code transforming into a structured software architecture, cinematic lighting."
+  },
+  {
+    "id": "ai__031",
+    "question": "GitHub Copilot의 'Copilot Extensions'가 MCP와 유사한 지점은 무엇입니까?",
+    "choices": [
+      "둘 다 로컬 LLM을 구동하는 엔진 역할을 한다",
+      "외부 서비스(API, 도구)를 AI 채팅 인터페이스에 통합하여 기능을 확장한다",
+      "코드의 문법 오류를 실시간으로 수정하는 정적 분석 도구이다",
+      "사용자의 타이핑 습관을 학습하여 자동 완성 성능을 높인다"
+    ],
+    "answer": 1,
+    "explanation": "두 기술 모두 AI가 기본적으로 알지 못하는 외부 데이터나 기능을 '확장(Extension/Server)' 형태로 연결한다는 점에서 유사합니다. 이를 통해 AI는 실시간 티켓 시스템이나 사내 DB에 접근할 수 있게 됩니다.",
+    "tag": "Copilot_MCP",
+    "image_prompt": "A puzzle piece fitting into a larger AI brain, representing an extension or plugin."
+  },
+  {
+    "id": "ai__032",
+    "question": "실무에서 MCP 서버를 구축할 때 가장 권장되는 보안 접근 방식은 무엇입니까?",
+    "choices": [
+      "모든 Resource에 대해 읽기/쓰기 권한을 완전히 개방한다",
+      "AI가 요청하는 모든 명령을 검토 없이 즉시 실행하도록 설정한다",
+      "Tool 실행 전 사용자 승인 단계를 두거나, 최소 권한 원칙(Least Privilege)을 적용한다",
+      "보안을 위해 MCP 서버를 외부 네트워크와 완전히 차단하고 로컬 파일만 사용한다"
+    ],
+    "answer": 2,
+    "explanation": "AI 에이전트가 Tool을 통해 파일을 삭제하거나 API를 호출할 수 있으므로, 중요한 작업 전에는 반드시 사용자 승인을 받는 'Human-in-the-loop' 구조가 필수적입니다. 이는 예기치 못한 시스템 파괴를 막는 실무 핵심 보안책입니다.",
+    "tag": "MCP_Security",
+    "image_prompt": "A digital shield protecting a server, with a human finger pressing an 'Approve' button."
+  },
+  {
+    "id": "ai__033",
+    "question": "다음 중 MCP 서버의 구현 언어로 가장 널리 사용되며 SDK가 잘 지원되는 조합은?",
+    "choices": [
+      "TypeScript/JavaScript 및 Python",
+      "C++ 및 Assembly",
+      "PHP 및 Ruby",
+      "Swift 및 Kotlin"
+    ],
+    "answer": 0,
+    "explanation": "MCP는 현재 TypeScript와 Python SDK를 통해 가장 활발하게 개발되고 있습니다. 대부분의 오픈소스 MCP 서버들이 이 두 언어로 작성되어 있어, 실무 구축 시 라이브러리 지원이 가장 강력합니다.",
+    "tag": "MCP_Dev",
+    "image_prompt": "Logos of Python and TypeScript floating around a central server icon, neon glow."
+  },
+  {
+    "id": "ai__034",
+    "question": "Cursor의 '.cursorrules' 파일의 주된 용도는 무엇입니까?",
+    "choices": [
+      "프로젝트의 빌드 설정을 정의하여 컴파일 속도를 높임",
+      "AI에게 프로젝트 전반에 걸쳐 지켜야 할 코딩 스타일, 규칙, 컨텍스트를 지시함",
+      "Git 커밋 메시지의 형식을 강제하는 훅(Hook) 설정 파일임",
+      "사용하지 않는 라이브러리를 자동으로 삭제하는 정리 규칙 정의"
+    ],
+    "answer": 1,
+    "explanation": ".cursorrules는 AI가 해당 프로젝트에서 어떻게 행동해야 하는지 정의하는 '프로젝트 전용 지침서'입니다. 예를 들어 '모든 함수에는 JSDoc를 달아줘'라고 설정하면 AI가 일관되게 적용합니다.",
+    "tag": "Cursor",
+    "image_prompt": "A document with a golden seal, acting as a rulebook for an AI coder."
+  },
+  {
+    "id": "ai__035",
+    "question": "MCP 서버가 'Resource'를 제공할 때 사용하는 URI 스킴(Scheme)의 예시로 적절한 것은?",
+    "choices": [
+      "http://localhost:8080/data",
+      "postgres://user:pass@host/db",
+      "mcp://database/customers/123",
+      "ftp://fileserver/logs"
+    ],
+    "answer": 2,
+    "explanation": "MCP는 고유의 URI 체계를 사용하여 Resource를 식별합니다. `mcp://`와 같은 커스텀 스킴을 통해 AI가 어떤 서버의 어떤 데이터에 접근해야 하는지 명확히 구분하여 요청합니다.",
+    "tag": "MCP_Resource",
+    "image_prompt": "A digital address bar showing a custom URI, connecting to a glowing data node."
+  },
+  {
+    "id": "ai__036",
+    "question": "Claude Code가 터미널 환경에서 제공하는 가장 강력한 이점은 무엇입니까?",
+    "choices": [
+      "화려한 GUI를 통해 코드 구조를 시각화함",
+      "쉘 명령어를 직접 실행하여 테스트, 빌드, 린트 결과를 즉시 확인하고 수정함",
+      "인터넷 연결 없이 모든 모델을 로컬에서 구동함",
+      "마우스 드래그 앤 드롭으로 파일을 쉽게 이동시킴"
+    ],
+    "answer": 1,
+    "explanation": "Claude Code는 CLI 기반이므로 `npm test`나 `git commit` 같은 명령어를 AI가 직접 실행하고 그 결과(에러 메시지 등)를 다시 입력값으로 받아 스스로 수정하는 루프를 형성할 수 있습니다.",
+    "tag": "Claude_Code",
+    "image_prompt": "A terminal window where a robot hand is typing commands, with green success messages appearing."
+  },
+  {
+    "id": "ai__037",
+    "question": "MCP 서버에서 'Tool'을 정의할 때 반드시 포함되어야 하는 정보는 무엇입니까?",
+    "choices": [
+      "도구의 실행 시간 제한(Timeout) 설정",
+      "도구가 사용하는 메모리 할당량",
+      "도구의 이름과 입력 파라미터에 대한 상세한 설명(Description)",
+      "도구를 실행할 서버의 물리적 IP 주소"
+    ],
+    "answer": 2,
+    "explanation": "LLM은 '설명'을 보고 어떤 도구를 사용할지 결정합니다. 따라서 Tool의 이름과 각 파라미터가 무엇을 의미하는지 상세히 적어야 AI가 정확한 인자를 넣어 호출할 수 있습니다.",
+    "tag": "MCP_Tool",
+    "image_prompt": "A detailed manual page for a digital tool, with highlighted descriptions and parameters."
+  },
+  {
+    "id": "ai__038",
+    "question": "다음 중 AI 코딩 도구의 '컨텍스트 윈도우(Context Window)' 관리 전략으로 틀린 것은?",
+    "choices": [
+      "필요한 파일만 선택적으로 첨부하여 토큰 소모를 줄인다",
+      "MCP Resource를 통해 필요한 시점에만 데이터를 동적으로 가져온다",
+      "성능 향상을 위해 프로젝트의 모든 파일을 항상 프롬프트에 포함시킨다",
+      "중요한 규칙은 .cursorrules나 시스템 프롬프트에 고정한다"
+    ],
+    "answer": 2,
+    "explanation": "모든 파일을 넣으면 토큰 제한(Context Limit)에 걸리거나 AI가 혼란을 느껴 'Lost in the Middle' 현상이 발생합니다. 필요한 정보만 효율적으로 제공하는 것이 실무의 핵심입니다.",
+    "tag": "AI_Context",
+    "image_prompt": "A funnel filtering a massive amount of data into a small, concentrated beam of light."
+  },
+  {
+    "id": "ai__039",
+    "question": "MCP(Model Context Protocol)가 궁극적으로 지향하는 생태계의 모습은 무엇입니까?",
+    "choices": [
+      "단 하나의 거대 LLM이 모든 데이터를 독점하는 구조",
+      "클라이언트-서버 표준화를 통해 어떤 AI 도구에서도 동일한 데이터 소스를 쉽게 연결하는 환경",
+      "모든 소프트웨어를 AI가 자동으로 작성하여 인간 개발자를 대체하는 세상",
+      "인터넷 없이 로컬 PC 내에서만 작동하는 폐쇄형 AI 네트워크"
+    ],
+    "answer": 1,
+    "explanation": "MCP는 'USB'처럼 표준 인터페이스를 만드는 것입니다. 한 번 MCP 서버를 만들어두면 Cursor, Claude Code, Windsurf 등 어떤 MCP 지원 클라이언트에서도 동일하게 사용할 수 있게 됩니다.",
+    "tag": "MCP_Vision",
+    "image_prompt": "A universal plug connecting various AI logos to a shared cloud of data, symbolizing standardization."
+  },
+  {
+    "id": "ai__040",
+    "question": "최근 AI 코딩 도구들의 트렌드인 '에이전틱 워크플로우(Agentic Workflow)' 관점에서 Windsurf의 Cascade가 제공하는 핵심 차별점은 무엇인가요?",
+    "choices": [
+      "단순한 코드 자동 완성 기능의 강화",
+      "IDE와 터미널, 파일 시스템을 직접 제어하며 스스로 계획하고 실행하는 능력",
+      "클라우드 기반의 협업 편집 기능 제공",
+      "다양한 프로그래밍 언어에 대한 문법 하이라이팅 최적화"
+    ],
+    "answer": 1,
+    "explanation": "Cascade는 단순한 채팅 인터페이스를 넘어 IDE의 컨텍스트를 완전히 이해하고 터미널 명령 실행, 파일 수정 등을 스스로 수행하는 에이전트 기능을 제공합니다. 실무에서는 개발자가 일일이 파일을 열어 수정할 필요 없이 '특정 버그를 고쳐줘'라고 요청하면 AI가 분석부터 적용까지 완료하는 흐름으로 작업 시간을 획기적으로 단축시킵니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A futuristic AI agent controlling a complex software development environment with floating code windows and terminal screens, cinematic lighting, high tech."
+  },
+  {
+    "id": "ai__041",
+    "question": "MCP(Model Context Protocol)의 도입이 AI 코딩 도구 생태계에 가져온 가장 큰 변화는 무엇입니까?",
+    "choices": [
+      "LLM의 추론 속도를 비약적으로 향상시킴",
+      "코드 작성 시 오타를 자동으로 수정하는 기능 추가",
+      "AI 모델이 외부 데이터 소스 및 툴과 연결되는 표준화된 인터페이스 제공",
+      "특정 IDE에 종속되지 않는 독자적인 프로그래밍 언어 생성"
+    ],
+    "answer": 2,
+    "explanation": "MCP는 AI 모델이 로컬 파일, 데이터베이스, API 등 외부 컨텍스트에 접근하는 방식을 표준화한 프로토콜입니다. 이를 통해 개발자는 한 번의 서버 구현으로 Cursor나 Claude Code 등 다양한 MCP 지원 도구에서 동일한 외부 데이터를 활용할 수 있게 되어 확장성이 극대화되었습니다.",
+    "tag": "MCP",
+    "image_prompt": "A conceptual diagram of a central AI brain connected to various data sources like databases, files, and APIs via standardized glowing conduits."
+  },
+  {
+    "id": "ai__042",
+    "question": "터미널 기반의 AI 페어 프로그래밍 도구인 Aider의 가장 강력한 실무적 특징은 무엇인가요?",
+    "choices": [
+      "GUI 기반의 화려한 코드 시각화",
+      "Git 저장소와의 긴밀한 통합을 통한 자동 커밋 및 변경 사항 관리",
+      "웹 브라우저 내에서의 직접적인 코드 실행 환경 제공",
+      "클라우드 전용 IDE 환경 구축"
+    ],
+    "answer": 1,
+    "explanation": "Aider는 터미널에서 작동하며 AI가 수정한 내용을 자동으로 Git 커밋 메시지와 함께 기록하는 기능을 갖추고 있습니다. 이는 실무에서 변경 이력을 정확히 추적하고, AI의 수정 사항을 빠르게 롤백하거나 리뷰할 수 있게 하여 버전 관리 효율성을 극대화합니다.",
+    "tag": "Aider",
+    "image_prompt": "A professional terminal window showing a git commit history with AI-generated messages, dark mode, cybernetic aesthetic."
+  },
+  {
+    "id": "ai__043",
+    "question": "Continue.dev와 같은 오픈소스 AI 코딩 어시스턴트의 가장 큰 장점은 무엇입니까?",
+    "choices": [
+      "설치 없이 웹에서 바로 사용 가능하다는 점",
+      "특정 기업의 유료 모델만 강제적으로 사용해야 한다는 점",
+      "로컬 LLM(Ollama 등)과의 연동을 통해 데이터 보안과 모델 선택권을 확보할 수 있다는 점",
+      "코드 작성 속도가 상용 도구보다 무조건 빠르다는 점"
+    ],
+    "answer": 2,
+    "explanation": "Continue.dev는 오픈소스 프레임워크로서 사용자가 원하는 LLM(로컬 또는 API)을 자유롭게 설정할 수 있게 합니다. 특히 보안이 중요한 기업 환경에서 RTX 5090과 같은 고성능 PC에 로컬 모델을 띄워 외부 유출 없이 코딩 보조를 받을 수 있다는 점이 핵심입니다.",
+    "tag": "Continue.dev",
+    "image_prompt": "A secure shield icon protecting a local server connected to a code editor, representing data privacy and local LLM."
+  },
+  {
+    "id": "ai__044",
+    "question": "Claude Code가 기존의 채팅 기반 AI 인터페이스와 비교하여 개발자에게 주는 실질적인 이점은 무엇인가요?",
+    "choices": [
+      "더 예쁜 UI 디자인 제공",
+      "웹 브라우저를 통한 코드 공유 기능",
+      "CLI 환경에서 직접 파일 읽기/쓰기 및 셸 명령 실행을 통해 워크플로우 단절 제거",
+      "이미지 생성 기능을 통한 UI 설계 자동화"
+    ],
+    "answer": 2,
+    "explanation": "Claude Code는 CLI(Command Line Interface) 도구로서 개발자가 IDE와 터미널 사이를 오가며 복사-붙여넣기를 반복하는 수고를 없애줍니다. AI가 직접 파일을 수정하고 테스트 명령을 실행한 뒤 결과를 확인하여 스스로 교정하는 루프를 형성하므로 개발 생산성이 비약적으로 상승합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A developer's terminal screen where an AI is autonomously writing code and running tests, neon green text on black background."
+  },
+  {
+    "id": "ai__045",
+    "question": "GitHub Copilot의 'Copilot Workspace' 기능이 지향하는 개발 방식은 무엇입니까?",
+    "choices": [
+      "단순한 코드 한 줄 추천 (Autocomplete)",
+      "이슈(Issue) 단계부터 계획 수립, 구현, 테스트까지 이어지는 엔드-투-엔드 워크플로우",
+      "코드의 문법 오류를 찾아주는 린팅 기능 강화",
+      "다양한 언어의 라이브러리 문서 자동 생성"
+    ],
+    "answer": 1,
+    "explanation": "Copilot Workspace는 단순한 코드 완성을 넘어 GitHub 이슈에서 시작해 구현 계획을 세우고 이를 실제 코드로 변환하는 전체 프로세스를 관리합니다. 이는 '코딩' 자체보다 '문제 해결 과정'에 집중하게 하여 아키텍처 설계와 검토 중심의 개발 환경을 제공합니다.",
+    "tag": "GitHub Copilot",
+    "image_prompt": "A workflow diagram starting from a GitHub issue icon, moving to a plan, and ending with a pull request, connected by AI sparks."
+  },
+  {
+    "id": "ai__046",
+    "question": "Cursor IDE가 VS Code 기반임에도 불구하고 많은 개발자들이 이동하는 결정적인 이유는 무엇인가요?",
+    "choices": [
+      "완전히 새로운 프로그래밍 언어를 지원하기 때문에",
+      "VS Code보다 설치 용량이 훨씬 작기 때문에",
+      "코드베이스 전체를 인덱싱하여 프로젝트 전반의 맥락을 이해한 답변을 제공하기 때문에",
+      "마우스 클릭 없이 키보드로만 조작 가능하기 때문에"
+    ],
+    "answer": 2,
+    "explanation": "Cursor는 단순 플러그인이 아니라 IDE 레벨에서 코드베이스 전체를 임베딩(Indexing)하여 관리합니다. 이를 통해 '이 프로젝트에서 인증 로직이 어떻게 구현되어 있어?' 같은 질문에 대해 정확한 파일 위치와 맥락을 파악해 답변하므로 대규모 프로젝트 유지보수에 매우 유리합니다.",
+    "tag": "Cursor",
+    "image_prompt": "A magnifying glass scanning a huge forest of code files, highlighting connected nodes of logic."
+  },
+  {
+    "id": "ai__047",
+    "question": "Windsurf의 'Cascade'와 GitHub Copilot의 일반적인 채팅 기능의 가장 큰 차이점은 무엇입니까?",
+    "choices": [
+      "채팅창의 색상이 다르다",
+      "Cascade는 읽기 전용이며, Copilot은 쓰기가 가능하다",
+      "Cascade는 실행 가능한 액션(Action)을 통해 파일 수정 및 터미널 제어를 직접 수행한다",
+      "Copilot은 로컬 모델만 사용하고 Cascade는 클라우드 모델만 사용한다"
+    ],
+    "answer": 2,
+    "explanation": "일반적인 AI 채팅은 코드를 '제안'하고 사용자가 이를 복사해 적용해야 하지만, Cascade는 에이전트로서 직접 파일을 수정하고 명령어를 실행하는 '액션' 능력을 갖추고 있습니다. 이는 개발자의 개입을 최소화하고 결과물을 빠르게 도출하는 실무적 효율성을 제공합니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A robot hand directly typing into a code editor and clicking a terminal run button simultaneously."
+  },
+  {
+    "id": "ai__048",
+    "question": "MCP 서버를 직접 구축하여 AI 도구에 연결했을 때 얻을 수 있는 실무적 이점은 무엇인가요?",
+    "choices": [
+      "인터넷 연결 없이도 모든 LLM을 사용할 수 있다",
+      "사내 DB나 API 등 폐쇄적인 내부 데이터에 AI가 안전하게 접근하여 답변하게 할 수 있다",
+      "컴퓨터의 CPU 속도를 강제로 높일 수 있다",
+      "코드 작성 시 자동으로 오타를 수정하는 폰트를 제공한다"
+    ],
+    "answer": 1,
+    "explanation": "MCP 서버를 구축하면 AI 모델이 표준화된 방식으로 내부 API나 DB에 쿼리를 날려 실시간 데이터를 가져올 수 있습니다. 예를 들어 '현재 운영 서버의 에러 로그 분석해줘'라고 요청하면 MCP 서버가 로그 파일을 읽어 AI에게 전달함으로써 정확한 장애 대응이 가능해집니다.",
+    "tag": "MCP",
+    "image_prompt": "A bridge connecting a glowing AI brain to a secure corporate database server, digital security locks around the bridge."
+  },
+  {
+    "id": "ai__049",
+    "question": "Aider를 사용할 때 'Architect mode'와 'Code mode'의 구분은 어떤 실무적 의미가 있습니까?",
+    "choices": [
+      "언어 설정을 영어와 한국어로 바꾸는 기능이다",
+      "설계 단계(구조 논의)와 실제 구현 단계(코드 수정)를 분리하여 토큰 소모를 최적화하고 정확도를 높인다",
+      "유료 결제 사용자와 무료 사용자를 구분하는 모드이다",
+      "Windows 환경과 Linux 환경을 전환하는 설정이다"
+    ],
+    "answer": 1,
+    "explanation": "Architect mode는 전체적인 구조와 설계를 논의하며 큰 그림을 그리는 단계이고, Code mode는 결정된 설계를 바탕으로 실제 파일을 수정하는 단계입니다. 이를 분리함으로써 불필요한 코드 수정을 방지하고, 설계 의도를 명확히 한 뒤 구현에 들어가므로 대규모 리팩토링 시 오류를 줄일 수 있습니다.",
+    "tag": "Aider",
+    "image_prompt": "A split screen showing a blueprint of a building on one side and actual bricks being laid on the other."
+  },
+  {
+    "id": "ai__050",
+    "question": "Continue.dev에서 'Context Providers' (예: @codebase, @docs) 기능의 역할은 무엇입니까?",
+    "choices": [
+      "코드의 실행 속도를 높여주는 컴파일러 역할",
+      "AI에게 질문할 때 참조해야 할 특정 파일이나 문서 범위를 명시적으로 지정하는 역할",
+      "다양한 프로그래밍 언어를 자동으로 번역해주는 역할",
+      "사용자의 타이핑 습관을 분석하여 추천 단어를 보여주는 역할"
+    ],
+    "answer": 1,
+    "explanation": "Context Providers는 AI가 방대한 코드 중 어떤 부분에 집중해야 할지 알려주는 가이드 역할을 합니다. @codebase를 통해 프로젝트 전체 맥락을, @docs를 통해 특정 라이브러리 공식 문서를 참조하게 함으로써 환각(Hallucination)을 줄이고 정확한 API 사용법을 제안받을 수 있습니다.",
+    "tag": "Continue.dev",
+    "image_prompt": "A spotlight shining on specific pages of a technical manual and specific lines of code in a dark room."
+  },
+  {
+    "id": "ai__051",
+    "question": "Claude Code를 사용하여 레거시 프로젝트의 버그를 수정할 때 가장 효율적인 접근 방식은 무엇입니까?",
+    "choices": [
+      "모든 파일을 한 번에 읽어달라고 요청한다",
+      "CLI에서 관련 파일들을 분석하게 하고, 테스트 코드를 실행시켜 오류를 확인하며 점진적으로 수정한다",
+      "AI가 작성한 코드를 그대로 믿고 바로 메인 브랜치에 푸시한다",
+      "웹 채팅창에 모든 코드를 복사해서 붙여넣는다"
+    ],
+    "answer": 1,
+    "explanation": "Claude Code는 터미널 제어 능력이 있으므로 '분석 -> 테스트 실행 -> 수정 -> 재테스트'의 루프를 스스로 돌 수 있습니다. 실무에서는 AI에게 먼저 테스트 케이스를 작성하게 하고, 실패하는 지점을 찾아 수정하게 하는 방식이 가장 안전하고 빠릅니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A circular arrow representing a loop of 'Analyze -> Test -> Fix', with a terminal window in the center."
+  },
+  {
+    "id": "ai__052",
+    "question": "다음 중 AI 코딩 도구의 'Context Window' 제한 문제를 해결하기 위한 전략으로 적절하지 않은 것은?",
+    "choices": [
+      "필요한 파일만 선택적으로 컨텍스트에 추가한다",
+      "MCP를 통해 필요한 데이터만 쿼리해서 가져온다",
+      "프로젝트의 모든 소스 코드를 하나의 거대한 텍스트 파일로 합쳐서 입력한다",
+      "RAG(Retrieval-Augmented Generation) 기반의 인덱싱 기능을 활용한다"
+    ],
+    "answer": 2,
+    "explanation": "모든 코드를 하나의 파일로 합치면 컨텍스트 윈도우 제한을 초과하여 앞부분 내용을 잊어버리거나 비용이 폭증하며 성능이 저하됩니다. 대신 Cursor의 인덱싱이나 Continue의 @codebase처럼 필요한 부분만 검색해서 넣어주는 RAG 방식이 실무적인 정답입니다.",
+    "tag": "AI General",
+    "image_prompt": "A funnel filtering a massive amount of data into a small, concentrated beam of light entering an AI brain."
+  },
+  {
+    "id": "ai__053",
+    "question": "Windsurf의 'Flow' 개념이 개발자 경험(DX)에 주는 가장 큰 영향은 무엇입니까?",
+    "choices": [
+      "코드 작성 시 타이핑 속도를 물리적으로 빠르게 해준다",
+      "생각의 흐름대로 AI와 상호작용하며 계획-실행-검증이 끊김 없이 이어지는 통합 환경을 제공한다",
+      "인터넷 연결 없이도 모든 기능을 사용할 수 있게 한다",
+      "다양한 폰트와 테마를 자동으로 추천해준다"
+    ],
+    "answer": 1,
+    "explanation": "Flow는 개발자가 '아이디어'를 내면 AI가 이를 '계획'하고 '실행'하며 '검증'하는 과정이 하나의 흐름으로 이어지는 것을 의미합니다. 도구 간의 전환(Context Switching)을 최소화하여 몰입 상태(Flow state)를 유지하게 함으로써 생산성을 극대화합니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A smooth, glowing river of data flowing through a code editor, connecting different stages of development."
+  },
+  {
+    "id": "ai__054",
+    "question": "GitHub Copilot과 Cursor/Windsurf 같은 'AI-Native IDE'의 근본적인 차이점은 무엇입니까?",
+    "choices": [
+      "Copilot은 유료이고 나머지는 무료이다",
+      "Copilot은 플러그인 형태로 기존 IDE에 기능을 추가하는 방식이며, AI-Native IDE는 설계 단계부터 AI 최적화를 위해 IDE 자체를 구축한 방식이다",
+      "AI-Native IDE는 코딩을 전혀 하지 않아도 된다는 점이다",
+      "Copilot은 오직 Python만 지원한다는 점이다"
+    ],
+    "answer": 1,
+    "explanation": "Copilot은 VS Code 등의 확장 프로그램으로 시작하여 기능을 추가하는 형태지만, Cursor나 Windsurf는 AI가 코드베이스 전체를 인덱싱하고 파일 시스템을 직접 제어할 수 있도록 IDE의 핵심 엔진부터 최적화했습니다. 이 차이가 '단순 추천'과 '에이전틱한 수행'의 성능 차이를 만듭니다.",
+    "tag": "AI General",
+    "image_prompt": "A comparison image: a puzzle piece being added to a box (plugin) vs a futuristic, integrated machine built from the ground up (native)."
+  },
+  {
+    "id": "ai__055",
+    "question": "MCP(Model Context Protocol)의 핵심 목적과 실무적 이점으로 가장 적절한 것은 무엇입니까?",
+    "choices": [
+      "LLM이 외부 데이터 소스 및 도구와 표준화된 방식으로 연결되어 컨텍스트를 확장하는 것",
+      "코드 작성 속도를 높이기 위해 GPU 가속 기능을 최적화하는 프로토콜",
+      "여러 명의 개발자가 동시에 같은 코드를 수정할 수 있게 하는 협업 프로토콜",
+      "AI 모델의 파라미터 수를 줄여 로컬 환경에서 빠르게 실행하게 하는 압축 기술"
+    ],
+    "answer": 0,
+    "explanation": "MCP는 AI 모델이 데이터베이스, 파일 시스템, API 등 외부 도구에 표준화된 방식으로 접근할 수 있게 해주는 프로토콜입니다. 이를 통해 개발자는 매번 새로운 커넥터를 만들 필요 없이 다양한 데이터 소스를 LLM의 컨텍스트로 제공할 수 있어 실무 효율성이 극대화됩니다.",
+    "tag": "MCP",
+    "image_prompt": "A futuristic digital bridge connecting a glowing AI brain to various data icons like databases, folders, and cloud APIs, cinematic lighting, high tech, 8k"
+  },
+  {
+    "id": "ai__056",
+    "question": "Cursor IDE에서 '@' 심볼을 사용하여 컨텍스트를 지정하는 'Symbol-based Context' 활용법 중 가장 효율적인 방법은?",
+    "choices": [
+      "모든 파일을 @Files로 추가하여 AI가 전체 프로젝트를 읽게 한다",
+      "필요한 특정 파일, 폴더, 혹은 코드 심볼만 선택적으로 지정하여 토큰 낭비를 줄이고 정확도를 높인다",
+      "질문할 때마다 @Web을 사용하여 항상 최신 인터넷 정보를 검색하게 한다",
+      "시스템 프롬프트에 모든 경로를 적어두고 @ 기호는 사용하지 않는다"
+    ],
+    "answer": 1,
+    "explanation": "무분별한 전체 파일 추가는 컨텍스트 윈도우를 빠르게 소모시키고 AI가 불필요한 정보에 집중하게 만들어 답변의 정확도를 떨어뜨립니다. 실무에서는 @Files나 @Code로 꼭 필요한 부분만 지정하는 것이 비용 절감과 정밀한 코드 생성의 핵심입니다.",
+    "tag": "Cursor",
+    "image_prompt": "A close-up of a code editor screen showing an '@' symbol highlighting specific files in a floating menu, neon blue accents, professional software interface"
+  },
+  {
+    "id": "ai__057",
+    "question": "Claude Code와 같은 CLI 기반 AI 에이전트를 사용할 때, '에이전틱 워크플로우(Agentic Workflow)'의 특징으로 옳은 것은?",
+    "choices": [
+      "사용자가 입력한 프롬프트에 대해 단 한 번의 응답만 생성하고 종료한다",
+      "코드 수정 후 테스트 실행, 오류 확인, 재수정 과정을 스스로 반복하며 목표를 달성한다",
+      "단순히 텍스트 기반의 코드 추천 기능만을 제공하며 파일 수정 권한은 없다",
+      "인터넷 연결 없이 로컬 모델로만 작동하여 보안성을 높이는 방식이다"
+    ],
+    "answer": 1,
+    "explanation": "에이전틱 워크플로우는 AI가 단순히 답을 주는 것을 넘어 '계획 -> 실행 -> 검증 -> 수정'의 루프를 스스로 수행하는 것입니다. Claude Code는 터미널에서 직접 명령어를 실행하고 결과를 확인하며 코드를 완성하므로 개발자의 개입을 최소화합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A circular flow diagram showing 'Plan', 'Execute', 'Verify', and 'Refine' steps with a robot icon in the center, clean flat design, corporate style"
+  },
+  {
+    "id": "ai__058",
+    "question": "효과적인 시스템 프롬프트(System Prompt) 작성을 위한 전략 중 실무적으로 가장 권장되는 방식은?",
+    "choices": [
+      "최대한 짧고 간결하게 '너는 코딩 전문가야'라고만 작성한다",
+      "AI가 해야 할 역할, 준수해야 할 코딩 컨벤션, 금지 사항을 구체적인 제약 조건으로 명시한다",
+      "모든 가능한 시나리오를 나열하여 프롬프트 길이를 최대한 늘린다",
+      "시스템 프롬프트보다는 매 질문마다 상세한 지시사항을 적는 것이 더 정확하다"
+    ],
+    "answer": 1,
+    "explanation": "시스템 프롬프트는 AI의 '페르소나'와 '행동 강령'을 결정합니다. 예를 들어 '함수 작성 시 반드시 JSDoc를 포함하고, 에러 핸들링은 try-catch 문을 사용하라'는 식의 구체적인 제약 조건을 설정해야 일관된 품질의 코드를 얻을 수 있습니다.",
+    "tag": "프롬프트 엔지니어링",
+    "image_prompt": "A digital blueprint of a robot's mind with structured text blocks and rules, architectural drawing style, technical blue background"
+  },
+  {
+    "id": "ai__059",
+    "question": "Windsurf IDE의 'Flow' 기능이 기존 AI 코딩 도구와 차별화되는 핵심 포인트는 무엇입니까?",
+    "choices": [
+      "단순히 코드 자동 완성 속도가 더 빠르다는 점",
+      "IDE 전체의 컨텍스트를 실시간으로 인식하며 사용자의 의도와 코드 상태를 동기화하는 심리스한 경험",
+      "클라우드 서버 없이 100% 오프라인에서만 작동한다는 점",
+      "이미지 생성 AI가 내장되어 UI 디자인을 자동으로 해준다는 점"
+    ],
+    "answer": 1,
+    "explanation": "Windsurf의 Flow는 단순한 채팅창 기반의 상호작용을 넘어, IDE의 상태와 AI의 인지가 실시간으로 연결되는 경험을 제공합니다. 이는 사용자가 코드를 수정하는 흐름(Flow)을 끊지 않고 AI가 적절한 시점에 개입하고 제안할 수 있게 합니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A seamless stream of glowing data flowing through a code editor, representing a continuous 'flow' state, futuristic and fluid motion"
+  },
+  {
+    "id": "ai__060",
+    "question": "GitHub Copilot의 'Chat' 기능을 사용할 때, 더 정확한 코드 수정 제안을 받기 위한 프롬프트 기법으로 적절하지 않은 것은?",
+    "choices": [
+      "수정하려는 코드 영역을 드래그하여 선택한 후 질문한다",
+      "'이 함수를 성능 최적화 관점에서 리팩토링해줘'라고 구체적인 목표를 제시한다",
+      "현재 프로젝트의 전체 구조를 설명하지 않고 '여기서 에러 나는 부분 고쳐줘'라고만 입력한다",
+      "원하는 결과물의 예시(Few-shot)를 프롬프트에 포함시킨다"
+    ],
+    "answer": 2,
+    "explanation": "AI는 맥락이 부족할 때 추측을 하게 되며 이는 환각(Hallucination)으로 이어집니다. 특히 복잡한 프로젝트에서는 에러가 발생하는 지점뿐만 아니라 관련된 모듈이나 데이터 흐름을 함께 알려주어야 정확한 해결책을 제시할 수 있습니다.",
+    "tag": "GitHub Copilot",
+    "image_prompt": "A split screen showing a vague prompt vs a detailed prompt with highlighted code, comparison infographic style"
+  },
+  {
+    "id": "ai__061",
+    "question": "AI 코딩 도구에서 'Context Window'의 한계를 극복하기 위한 실무적인 전략으로 가장 적절한 것은?",
+    "choices": [
+      "최신 모델로 업데이트하여 무조건 더 큰 윈도우를 가진 모델을 사용한다",
+      "불필요한 파일을 삭제하여 프로젝트 크기를 줄인다",
+      "RAG(Retrieval-Augmented Generation) 기반의 도구를 사용하여 필요한 정보만 동적으로 추출해 제공한다",
+      "모든 코드를 하나의 파일에 몰아넣어 AI가 한 번에 읽게 한다"
+    ],
+    "answer": 2,
+    "explanation": "컨텍스트 윈도우는 물리적 한계가 있으며, 너무 많은 정보를 넣으면 'Lost in the Middle' 현상으로 중간 내용을 망각합니다. RAG 방식(Cursor의 인덱싱 등)은 수만 개의 파일 중 현재 작업과 관련 있는 부분만 찾아내어 AI에게 전달하므로 효율적입니다.",
+    "tag": "프롬프트 엔지니어링",
+    "image_prompt": "A library with a robot librarian quickly picking only the necessary books from thousands of shelves, conceptual art"
+  },
+  {
+    "id": "ai__062",
+    "question": "Claude Code를 통해 대규모 리팩토링을 진행할 때 발생할 수 있는 위험 요소와 그 해결책으로 옳은 것은?",
+    "choices": [
+      "위험: AI가 파일을 너무 빨리 수정함 / 해결: 인터넷 속도를 제한한다",
+      "위험: 의도치 않은 광범위한 코드 변경 / 해결: Git 커밋을 세분화하고 변경 사항을 단계적으로 검토(Review)한다",
+      "위험: CPU 점유율 상승 / 해결: PC의 램 용량을 늘린다",
+      "위험: API 비용 발생 / 해결: 무료 모델로만 작업한다"
+    ],
+    "answer": 1,
+    "explanation": "에이전트 기반 도구는 스스로 여러 파일을 수정할 수 있어 편리하지만, 한 번의 명령으로 프로젝트 전체를 망가뜨릴 위험이 있습니다. 따라서 작은 단위로 작업을 요청하고, Git diff를 통해 변경 사항을 꼼꼼히 확인하는 프로세스가 필수적입니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A developer reviewing a git diff screen with green and red lines, a robot assistant standing by, professional workspace"
+  },
+  {
+    "id": "ai__063",
+    "question": "다음 중 'Chain-of-Thought(생각의 사슬)' 프롬프팅을 코딩에 적용했을 때의 이점으로 가장 적절한 것은?",
+    "choices": [
+      "코드 생성 속도가 비약적으로 빨라진다",
+      "AI가 정답을 내놓기 전 논리적 추론 과정을 단계별로 거치게 하여 복잡한 로직의 오류를 줄인다",
+      "더 적은 양의 토큰을 사용하여 비용을 절감할 수 있다",
+      "컴파일 에러를 자동으로 수정하는 기능을 활성화한다"
+    ],
+    "answer": 1,
+    "explanation": "CoT는 AI에게 '단계별로 생각하라'고 지시하는 기법입니다. 복잡한 알고리즘 구현 시 바로 코드를 짜게 하는 것보다 '먼저 요구사항을 분석하고, 데이터 구조를 설계한 뒤, 단계별 로직을 작성해줘'라고 요청하면 논리적 결함이 훨씬 적은 코드가 생성됩니다.",
+    "tag": "프롬프트 엔지니어링",
+    "image_prompt": "A sequence of glowing light bulbs connected by a line, leading to a perfect piece of code, conceptual logic flow"
+  },
+  {
+    "id": "ai__064",
+    "question": "Cursor의 '.cursorrules' 파일의 역할로 가장 적절한 설명은 무엇입니까?",
+    "choices": [
+      "IDE의 테마와 폰트 설정을 저장하는 설정 파일",
+      "프로젝트 전역에 적용될 AI 행동 지침과 코딩 표준을 정의하여 일관성을 유지하는 파일",
+      "외부 API 키를 안전하게 보관하는 환경 변수 파일",
+      "컴파일 시 제외할 파일을 지정하는 .gitignore와 같은 역할의 파일"
+    ],
+    "answer": 1,
+    "explanation": ".cursorrules는 해당 프로젝트에서 AI가 항상 기억해야 할 규칙(예: '모든 API 응답은 {success, data} 형태로 반환하라')을 적어두는 곳입니다. 이를 통해 매번 프롬프트에 같은 지시를 반복할 필요 없이 팀 전체의 코딩 컨벤션을 강제할 수 있습니다.",
+    "tag": "Cursor",
+    "image_prompt": "A golden rule book icon placed next to a code folder, glowing aura, digital art style"
+  },
+  {
+    "id": "ai__065",
+    "question": "MCP 서버를 직접 구축하여 사용할 때 얻을 수 있는 실무적 이점은?",
+    "choices": [
+      "LLM의 학습 데이터를 직접 수정할 수 있다",
+      "사내 폐쇄망 데이터베이스나 특정 사내 API를 AI가 안전하게 조회하고 활용하게 할 수 있다",
+      "GPU 없이도 LLM을 로컬에서 구동할 수 있게 한다",
+      "코드 작성 시 오타를 자동으로 교정하는 기능을 추가한다"
+    ],
+    "answer": 1,
+    "explanation": "MCP 서버를 구축하면 AI 모델이 접근할 수 없는 기업 내부 데이터나 특수 도구를 표준 인터페이스로 연결할 수 있습니다. 예를 들어 사내 Jira 티켓 시스템을 MCP로 연결하면 '현재 할당된 티켓 내용을 바탕으로 코드를 수정해줘'라는 요청이 가능해집니다.",
+    "tag": "MCP",
+    "image_prompt": "A secure vault opening to a digital interface, connecting a robot to private corporate data servers, cyber security theme"
+  },
+  {
+    "id": "ai__066",
+    "question": "AI 코딩 도구 활용 시 'Hallucination(환각)' 현상을 최소화하기 위한 가장 효과적인 방법은?",
+    "choices": [
+      "최대한 많은 양의 라이브러리를 한꺼번에 설치한다",
+      "AI에게 '절대 틀리지 마'라고 강하게 명령한다",
+      "공식 문서의 일부를 복사하여 컨텍스트로 제공하거나, 실제 실행 결과(로그)를 피드백으로 준다",
+      "질문을 영어로 번역해서 입력한다"
+    ],
+    "answer": 2,
+    "explanation": "AI는 학습 데이터에 없는 최신 라이브러리나 복잡한 내부 로직에 대해 거짓 정보를 생성할 수 있습니다. 이때 가장 확실한 방법은 '근거(Grounding)'를 제공하는 것입니다. 공식 문서나 실제 에러 로그를 제공하면 AI는 추측 대신 주어진 사실에 기반해 답변합니다.",
+    "tag": "프롬프트 엔지니어링",
+    "image_prompt": "A robot comparing a blurry image with a clear high-definition document, 'Fact Check' stamp on the screen"
+  },
+  {
+    "id": "ai__067",
+    "question": "Windsurf의 'Context Awareness'가 개발 생산성에 주는 영향으로 가장 적절한 것은?",
+    "choices": [
+      "타이핑 속도를 물리적으로 빠르게 만들어준다",
+      "현재 열려 있는 파일뿐만 아니라 프로젝트 전체의 의존성 그래프를 이해하여 더 정확한 수정 제안을 한다",
+      "코드 작성 중 자동으로 커피를 주문해주는 기능을 제공한다",
+      "모든 코드를 자동으로 클라우드에 백업하여 버전 관리를 대신한다"
+    ],
+    "answer": 1,
+    "explanation": "단순한 파일 단위 인식을 넘어 프로젝트 전체의 구조와 연결 관계(Context)를 이해하면, A 파일을 수정했을 때 B 파일에서 발생할 사이드 이펙트를 AI가 미리 경고하거나 함께 수정 제안을 할 수 있어 디버깅 시간이 획기적으로 줄어듭니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A complex web of interconnected code nodes glowing in a dark space, with one node being highlighted and affecting others"
+  },
+  {
+    "id": "ai__068",
+    "question": "GitHub Copilot의 'Slash Commands' (예: /fix, /explain) 사용 시의 장점은?",
+    "choices": [
+      "명령어 입력 시 API 비용이 무료가 된다",
+      "AI에게 반복적인 지시사항을 길게 쓸 필요 없이 정형화된 작업(수정, 설명 등)을 빠르게 요청할 수 있다",
+      "컴퓨터의 운영체제 명령어를 직접 실행하여 파일을 삭제할 수 있다",
+      "인터넷 연결 없이도 작동하게 하는 오프라인 모드를 활성화한다"
+    ],
+    "answer": 1,
+    "explanation": "/fix나 /explain 같은 슬래시 명령어는 내부적으로 최적화된 시스템 프롬프트를 포함하고 있습니다. 사용자가 '이 코드의 버그를 찾아서 고쳐줘'라고 길게 쓰는 대신 /fix 하나로 의도를 명확히 전달하여 일관된 결과물을 빠르게 얻을 수 있습니다.",
+    "tag": "GitHub Copilot",
+    "image_prompt": "A futuristic command line interface with a '/' symbol sparking and transforming into various action icons like a wrench and a lightbulb"
+  },
+  {
+    "id": "ai__069",
+    "question": "AI 에이전트(Claude Code 등)에게 복잡한 기능을 구현하도록 요청할 때, 가장 권장되는 프롬프트 구조는?",
+    "choices": [
+      "\"최대한 멋지게 만들어줘\"라고 짧게 요청한다",
+      "\"기능 정의 -> 제약 사항 -> 단계별 구현 계획 요청 -> 검토 후 실행\"의 순서로 진행한다",
+      "한 번의 프롬프트에 모든 요구사항을 10페이지 분량으로 적어 보낸다",
+      "AI가 알아서 할 때까지 기다렸다가 결과물이 나오면 수정 요청을 한다"
+    ],
+    "answer": 1,
+    "explanation": "복잡한 작업일수록 '분할 정복(Divide and Conquer)' 전략이 필요합니다. 먼저 AI에게 구현 계획(Plan)을 세우게 하고, 사용자가 그 계획을 승인한 뒤 단계별로 실행하게 함으로써 대규모 코드 변경 시 발생할 수 있는 리스크를 줄이고 정확도를 높일 수 있습니다.",
+    "tag": "프롬프트 엔지니어링",
+    "image_prompt": "A staircase leading up to a trophy, with each step labeled 'Define', 'Plan', 'Execute', 'Review', clean 3D isometric style"
+  },
+  {
+    "id": "ai__070",
+    "question": "Claude Code에서 프로젝트의 코딩 스타일, 빌드 방법, 테스트 실행 명령어 등 프로젝트 고유의 가이드라인을 AI에게 지속적으로 인지시키기 위해 사용하는 파일은 무엇인가요?",
+    "choices": [
+      ".claude_config",
+      "CLAUDE.md",
+      ".cursorrules",
+      "claude_instructions.txt"
+    ],
+    "answer": 1,
+    "explanation": "CLAUDE.md 파일은 Claude Code가 프로젝트에 진입할 때 가장 먼저 참조하는 가이드 문서입니다. 여기에 빌드 명령어, 테스트 실행법, 명명 규칙 등을 적어두면 매번 프롬프트로 설명할 필요 없이 일관된 코딩 스타일을 유지할 수 있어 실무 효율성이 극대화됩니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A digital document icon labeled 'CLAUDE.md' glowing with a blue aura, surrounded by floating code snippets and gear icons on a dark tech background."
+  },
+  {
+    "id": "ai__071",
+    "question": "Claude Code의 슬래시 명령어 중, 현재 세션의 컨텍스트를 초기화하거나 이전 대화 내용을 지우고 새롭게 시작하고 싶을 때 사용하는 명령어는 무엇인가요?",
+    "choices": [
+      "/clear",
+      "/reset",
+      "/compact",
+      "/forget"
+    ],
+    "answer": 1,
+    "explanation": "/reset 명령어는 현재까지의 대화 맥락(Context)을 초기화하여 AI가 이전 작업에 얽매이지 않고 새로운 작업을 수행하게 합니다. 토큰 소모를 줄이고, 서로 다른 성격의 작업을 전환할 때 필수적으로 사용되는 실무 패턴입니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A futuristic 'Reset' button being pressed by a robotic finger, with digital data streams dissolving into white light."
+  },
+  {
+    "id": "ai__072",
+    "question": "MCP(Model Context Protocol)의 핵심 목적과 가장 거리가 먼 것은 무엇인가요?",
+    "choices": [
+      "AI 모델이 외부 데이터 소스에 표준화된 방식으로 접근하게 함",
+      "로컬 파일 시스템이나 API와의 연결 인터페이스 제공",
+      "LLM 자체의 파라미터 수를 늘려 추론 능력을 향상시킴",
+      "다양한 도구(Tool)를 통해 AI가 실시간 정보를 가져오게 함"
+    ],
+    "answer": 2,
+    "explanation": "MCP는 모델의 내부 파라미터를 수정하는 것이 아니라, 외부 데이터와 도구를 연결하는 '표준 프로토콜'입니다. 이를 통해 Claude 같은 모델이 로컬 DB, GitHub API, Slack 등 다양한 환경과 표준화된 방식으로 상호작용할 수 있게 합니다.",
+    "tag": "MCP",
+    "image_prompt": "A complex network diagram showing a central AI brain connected to various external icons like databases, cloud folders, and APIs via standardized glowing pipes."
+  },
+  {
+    "id": "ai__073",
+    "question": "Claude Code에서 특정 작업(예: 테스트 실행 후 오류 수정)을 자동화하기 위해 설정하는 'hooks'의 역할로 옳은 것은 무엇인가요?",
+    "choices": [
+      "코드 작성 속도를 높이는 자동 완성 기능",
+      "특정 이벤트 발생 시 자동으로 실행될 스크립트 정의",
+      "외부 API 호출 시 인증 토큰을 관리하는 보안 계층",
+      "AI 모델의 온도를 조절하여 창의성을 제어하는 설정"
+    ],
+    "answer": 1,
+    "explanation": "Hooks는 특정 작업 전후에 자동으로 실행되는 명령어를 정의합니다. 예를 들어 '코드 수정 후 자동으로 npm test를 실행'하도록 설정하면, AI가 수정한 코드가 실제로 작동하는지 즉시 검증할 수 있어 휴먼 에러를 획기적으로 줄여줍니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A digital chain link connecting a code editor to a terminal window showing 'Test Passed' in green text."
+  },
+  {
+    "id": "ai__074",
+    "question": "Cursor IDE의 'Composer' 모드와 일반 채팅(Chat) 모드의 가장 큰 차이점은 무엇인가요?",
+    "choices": [
+      "Composer는 질문에 답만 하지만, Chat은 코드를 수정한다",
+      "Composer는 여러 파일에 걸친 동시 수정 및 생성이 가능하다",
+      "Chat은 로컬 LLM만 사용하고 Composer는 클라우드 LLM만 사용한다",
+      "Composer는 읽기 전용이며 Chat은 쓰기 권한을 가진다"
+    ],
+    "answer": 1,
+    "explanation": "Composer(Ctrl+I)는 단순한 질의응답을 넘어 프로젝트 전체 구조를 파악하고 여러 파일을 동시에 생성하거나 수정하는 '에이전트'적 성격이 강합니다. 실무에서는 대규모 리팩토링이나 신규 기능 구현 시 Composer를 주로 사용합니다.",
+    "tag": "Cursor",
+    "image_prompt": "A split screen showing a simple chat bubble on one side and a complex multi-file architecture being built automatically on the other."
+  },
+  {
+    "id": "ai__075",
+    "question": "Claude Code의 '서브에이전트(Sub-agents)' 개념에 대한 설명으로 가장 적절한 것은?",
+    "choices": [
+      "사용자의 입력을 대신 받아주는 단순 매크로 프로그램",
+      "복잡한 작업을 분할하여 독립적으로 수행하는 보조 AI 인스턴스",
+      "메인 모델의 성능을 낮춰 비용을 절감하는 저사양 모드",
+      "네트워크 연결이 끊겼을 때 작동하는 오프라인 모드"
+    ],
+    "answer": 1,
+    "explanation": "서브에이전트는 메인 에이전트가 복잡한 과제를 받았을 때, 이를 작은 단위로 나누어 별도의 인스턴스에게 할당하는 방식입니다. 예를 들어 '문서 작성'과 '코드 구현'을 동시에 진행할 때 각각의 서브에이전트가 병렬로 작업하여 효율을 높입니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A large central AI entity delegating tasks to smaller, specialized holographic AI clones."
+  },
+  {
+    "id": "ai__076",
+    "question": "Windsurf IDE에서 강조하는 'Flow' 기능의 핵심은 무엇인가요?",
+    "choices": [
+      "코드 작성 시 오타를 자동으로 교정해주는 기능",
+      "사용자의 의도와 컨텍스트를 실시간으로 추적하여 끊김 없는 개발 경험 제공",
+      "Git 커밋 메시지를 자동으로 생성해주는 워크플로우",
+      "IDE의 테마와 색상을 자동으로 변경하는 시각적 흐름"
+    ],
+    "answer": 1,
+    "explanation": "Windsurf의 Flow는 AI가 단순히 요청에 답하는 것이 아니라, 개발자의 현재 작업 맥락을 깊게 이해하고 다음 단계를 예측하여 제안하는 심리스한 통합 환경을 의미합니다. 이는 컨텍스트 스위칭 비용을 최소화하는 데 목적이 있습니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A smooth, glowing neon stream of data flowing through a code editor, connecting different functions and files seamlessly."
+  },
+  {
+    "id": "ai__077",
+    "question": "Claude Code에서 파일 수정 권한을 설정할 때, 'Read-only' 모드로 실행했을 때의 결과는 무엇인가요?",
+    "choices": [
+      "파일을 읽을 수 없으며 에러가 발생한다",
+      "AI가 코드를 분석하고 제안은 하지만 실제 파일에 쓰기 작업을 수행하지 않는다",
+      "읽기 권한이 없으므로 터미널 명령어를 사용할 수 없다",
+      "모든 파일이 자동으로 백업 폴더로 복사된다"
+    ],
+    "answer": 1,
+    "explanation": "Read-only 모드는 AI가 코드를 마음대로 수정하는 것이 불안하거나, 단순히 분석 및 리뷰만 필요할 때 사용합니다. 실무에서는 운영 서버의 코드를 분석할 때 안전을 위해 이 설정을 사용합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A digital lock icon placed over a source code file, with a magnifying glass analyzing the text."
+  },
+  {
+    "id": "ai__078",
+    "question": "GitHub Copilot의 'Copilot Extensions'를 통해 얻을 수 있는 이점은 무엇인가요?",
+    "choices": [
+      "IDE의 폰트 크기를 자동으로 조절한다",
+      "외부 서비스(예: Sentry, Azure)의 데이터를 채팅창에서 직접 조회하고 활용할 수 있다",
+      "인터넷 연결 없이도 모든 기능을 사용할 수 있게 한다",
+      "코드 작성 속도를 물리적으로 2배 빠르게 만든다"
+    ],
+    "answer": 1,
+    "explanation": "Extensions는 Copilot이 단순 코드 생성을 넘어 외부 에코시스템과 통합되게 합니다. 예를 들어 Sentry 확장 프로그램을 사용하면 에러 로그를 바로 확인하고 수정 코드를 제안받는 등 개발 파이프라인 전체를 AI로 연결할 수 있습니다.",
+    "tag": "GitHub Copilot",
+    "image_prompt": "The GitHub Copilot logo connected to various third-party app icons via glowing electric lines."
+  },
+  {
+    "id": "ai__079",
+    "question": "Claude Code에서 `/compact` 명령어의 주요 목적은 무엇인가요?",
+    "choices": [
+      "코드 파일의 용량을 압축하여 저장 공간을 확보한다",
+      "대화 기록을 요약하여 컨텍스트 윈도우(토큰) 사용량을 최적화한다",
+      "여러 개의 파일을 하나의 파일로 합친다",
+      "UI 레이아웃을 작게 만들어 화면 공간을 넓힌다"
+    ],
+    "answer": 1,
+    "explanation": "/compact는 길어진 대화 내용을 핵심 위주로 요약하여 AI가 기억해야 할 컨텍스트를 효율적으로 관리합니다. 이는 토큰 비용을 절감하고, 너무 많은 정보로 인해 AI가 혼란을 느끼는 'Lost in the Middle' 현상을 방지합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A large pile of digital papers being compressed into a small, glowing diamond-shaped crystal."
+  },
+  {
+    "id": "ai__080",
+    "question": "MCP 서버를 구축하여 로컬 DB(SQLite 등)와 연결했을 때, AI가 수행할 수 있는 작업으로 가장 적절한 것은?",
+    "choices": [
+      "DB의 물리적 하드디스크 위치를 변경한다",
+      "자연어 쿼리를 SQL로 변환하여 실제 데이터를 조회하고 분석 결과를 보고한다",
+      "DB 서버의 CPU 클럭 속도를 오버클럭한다",
+      "데이터베이스 소프트웨어를 최신 버전으로 자동 업데이트한다"
+    ],
+    "answer": 1,
+    "explanation": "MCP를 통해 DB에 연결되면 AI는 '사용자별 구매 내역을 알려줘'라는 자연어 요청을 SQL 쿼리로 변환해 실행하고 그 결과를 해석해 줄 수 있습니다. 이는 데이터 분석가 없이도 개발자가 빠르게 데이터를 확인할 수 있게 합니다.",
+    "tag": "MCP",
+    "image_prompt": "A chat interface showing a natural language question and a corresponding SQL table appearing as a holographic projection."
+  },
+  {
+    "id": "ai__081",
+    "question": "Claude Code에서 `/review` 명령어를 실행했을 때 기대할 수 있는 결과는 무엇인가요?",
+    "choices": [
+      "코드의 문법 오류를 자동으로 모두 수정하고 저장한다",
+      "현재 변경 사항에 대해 잠재적 버그, 성능 개선점, 가독성 피드백을 제공한다",
+      "작성된 코드를 즉시 GitHub 리포지토리에 푸시한다",
+      "코드를 컴파일하여 실행 파일(.exe)로 변환한다"
+    ],
+    "answer": 1,
+    "explanation": "/review는 코드 리뷰어의 역할을 수행합니다. 단순히 돌아가는 코드가 아니라 '더 나은' 코드를 만들기 위해 유지보수성, 보안 취약점 등을 분석해주므로 PR(Pull Request) 전 단계에서 매우 유용합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A digital checklist with green checkmarks and yellow warning signs appearing next to a block of code."
+  },
+  {
+    "id": "ai__082",
+    "question": "Cursor의 '.cursorrules' 파일과 Claude Code의 'CLAUDE.md'의 공통점은 무엇인가요?",
+    "choices": [
+      "둘 다 반드시 JSON 형식으로 작성해야 한다",
+      "AI에게 프로젝트 특화 지침(Custom Instructions)을 제공하여 일관성을 유지한다",
+      "IDE의 설치 경로를 설정하는 환경 설정 파일이다",
+      "컴파일러의 최적화 옵션을 결정하는 설정 파일이다"
+    ],
+    "answer": 1,
+    "explanation": "두 파일 모두 AI가 프로젝트의 맥락(Context)을 빠르게 파악하도록 돕는 '지침서' 역할을 합니다. 이를 통해 팀원 간의 코딩 컨벤션을 통일하고 AI가 엉뚱한 라이브러리를 추천하는 것을 방지할 수 있습니다.",
+    "tag": "AI Tools",
+    "image_prompt": "Two different scrolls (one labeled .cursorrules, one CLAUDE.md) merging into a single beam of light entering an AI brain."
+  },
+  {
+    "id": "ai__083",
+    "question": "Claude Code에서 터미널 명령어를 실행할 때 'Permission' 요청이 뜨는 이유는 무엇인가요?",
+    "choices": [
+      "사용자의 PC에 관리자 권한이 없기 때문에",
+      "AI가 시스템에 영향을 줄 수 있는 명령어(rm, write 등)를 실행하기 전 사용자의 승인을 받기 위해",
+      "네트워크 방화벽이 명령어를 차단하고 있기 때문에",
+      "명령어의 오타가 발생하여 시스템이 인식하지 못했기 때문에"
+    ],
+    "answer": 1,
+    "explanation": "AI 에이전트가 자율적으로 파일을 삭제하거나 수정하는 것은 위험할 수 있습니다. 따라서 Claude Code는 파괴적인 작업이나 외부 영향이 큰 명령어를 실행하기 전 반드시 사용자의 명시적 승인을 요구하여 안전성을 확보합니다.",
+    "tag": "Claude Code",
+    "image_prompt": "A futuristic security prompt window with 'Allow' and 'Deny' buttons, flashing a warning sign."
+  },
+  {
+    "id": "ai__084",
+    "question": "다음 중 AI 코딩 도구를 활용한 실무 워크플로우로 가장 효율적인 순서는?",
+    "choices": [
+      "코드 작성 → 테스트 실행 → CLAUDE.md 수정 → 리뷰 요청",
+      "CLAUDE.md 설정 → 기능 구현(Composer/Code) → hooks를 통한 자동 검증 → /review 피드백 반영"
+    ],
+    "answer": 1,
+    "explanation": "가장 효율적인 흐름은 먼저 AI에게 규칙을 알려주고(CLAUDE.md), 도구를 통해 빠르게 구현한 뒤, 설정된 자동화 도구(hooks)로 검증하고, 마지막으로 정밀 리뷰(/review)를 받는 것입니다. 이는 개발 사이클의 각 단계에서 AI의 강점을 극대화하는 방식입니다.",
+    "tag": "AI Tools",
+    "image_prompt": "A circular flow chart showing the steps: Setup -> Build -> Verify -> Review, with glowing arrows connecting them."
+  },
+  {
+    "id": "ai__085",
+    "question": "Cursor IDE에서 프로젝트 전체의 코딩 스타일, 라이브러리 사용 규칙, 아키텍처 가이드라인을 AI에게 강제하기 위해 사용하는 설정 파일은 무엇인가요?",
+    "choices": [
+      ".cursorrules",
+      ".gitignore",
+      "cursor.config.json",
+      "settings.json"
+    ],
+    "answer": 0,
+    "explanation": ".cursorrules 파일은 Cursor IDE가 코드를 생성하거나 수정할 때 참조하는 프로젝트 전용 지침서입니다.\n실무에서는 팀 내 컨벤션(예: '함수형 컴포넌트 사용', 'Tailwind CSS 우선 적용')을 정의하여 AI가 일관된 코드를 작성하게 만드는 데 필수적입니다.\n이 파일이 없으면 AI는 일반적인 학습 데이터에 의존하므로 프로젝트 특유의 규칙을 놓칠 수 있습니다.",
+    "tag": "Cursor",
+    "image_prompt": "A digital configuration file icon with a glowing cursor symbol, futuristic coding environment background, high tech, 4k"
+  },
+  {
+    "id": "ai__086",
+    "question": "최근 AI IDE에서 강조되는 'Agent 모드'의 핵심적인 특징으로 가장 적절한 것은 무엇인가요?",
+    "choices": [
+      "단순히 코드 한 줄을 자동 완성하는 기능",
+      "사용자의 승인 하에 파일 생성, 터미널 명령 실행, 브라우징 등을 스스로 수행하는 능력",
+      "코드의 문법 오류를 실시간으로 찾아주는 린팅(Linting) 기능",
+      "여러 명의 개발자가 동시에 같은 파일을 수정하는 협업 기능"
+    ],
+    "answer": 1,
+    "explanation": "Agent 모드는 단순한 채팅을 넘어 '실행력'을 가진 상태를 의미합니다.\nAI가 스스로 파일 구조를 분석하고, 필요한 파일을 생성하며, 터미널에서 테스트 명령어를 실행해 오류를 수정하는 루프를 수행합니다.\n이는 개발자가 일일이 복사-붙여넣기를 하던 방식에서 AI가 직접 워크플로우를 완결 짓는 방식으로의 진화를 의미합니다.",
+    "tag": "AgentMode",
+    "image_prompt": "An autonomous AI robot hand typing on a holographic keyboard, managing multiple floating code windows, cinematic lighting"
+  },
+  {
+    "id": "ai__087",
+    "question": "MCP(Model Context Protocol)의 주요 목적은 무엇인가요?",
+    "choices": [
+      "AI 모델의 학습 속도를 높이기 위한 데이터 압축 프로토콜",
+      "LLM이 외부 데이터 소스 및 도구(DB, API, 로컬 파일 등)에 표준화된 방식으로 접근하게 하는 인터페이스",
+      "코드의 실행 속도를 최적화하는 컴파일러 프로토콜",
+      "여러 대의 GPU를 연결하여 추론 속도를 높이는 분산 처리 기술"
+    ],
+    "answer": 1,
+    "explanation": "MCP는 AI 모델이 다양한 외부 도구와 데이터에 쉽게 연결될 수 있도록 하는 개방형 표준입니다.\n이를 통해 개발자는 매번 새로운 플러그인을 만들 필요 없이, MCP 서버 하나로 여러 AI 도구(Cursor, Claude Desktop 등)에서 동일한 데이터 소스를 사용할 수 있습니다.\n실무적으로는 DB 스키마를 직접 읽거나 API 문서를 실시간으로 참조하는 능력을 극대화합니다.",
+    "tag": "MCP",
+    "image_prompt": "A complex network of glowing nodes connecting a central AI brain to various data icons like databases, clouds, and files, blueprint style"
+  },
+  {
+    "id": "ai__088",
+    "question": "Cursor에서 '@' 심볼을 사용하여 Context를 제공하는 기능 중, 특정 문서(URL)의 내용을 AI에게 학습시키지 않고 즉시 참조하게 하는 방법은?",
+    "choices": [
+      "@Files",
+      "@Codebase",
+      "@Docs",
+      "@Web"
+    ],
+    "answer": 2,
+    "explanation": "@Docs 기능을 사용하면 외부 라이브러리의 공식 문서 URL을 추가하여 AI가 최신 API 명세서를 기반으로 답변하게 할 수 있습니다.\nAI의 학습 데이터는 과거 시점에 머물러 있어 최신 버전의 라이브러리 함수를 잘못 제안하는 경우가 많은데, 이를 해결하는 가장 실용적인 방법입니다.\n실무에서는 빠르게 업데이트되는 프레임워크(Next.js 등)를 사용할 때 필수적으로 활용됩니다.",
+    "tag": "Cursor",
+    "image_prompt": "A digital library with floating holographic documents and a search cursor highlighting specific text, futuristic blue tone"
+  },
+  {
+    "id": "ai__089",
+    "question": "Claude Code와 같은 CLI 기반 AI 도구가 기존 IDE 플러그인 방식보다 가질 수 있는 상대적 강점은 무엇인가요?",
+    "choices": [
+      "GUI가 없으므로 메모리 사용량이 무조건 0에 가깝다",
+      "터미널 환경에서 git, npm, docker 등 시스템 명령어와 더 밀접하게 통합되어 자동화 루프를 만들기 쉽다",
+      "코드 작성 속도가 IDE보다 물리적으로 빠르다",
+      "인터넷 연결 없이 오프라인으로만 작동한다"
+    ],
+    "answer": 1,
+    "explanation": "CLI 기반 도구는 개발자가 이미 사용 중인 터미널 환경에서 직접 명령어를 실행하고 결과를 확인하는 흐름에 최적화되어 있습니다.\n예를 들어 '테스트 코드를 작성하고, 실패하면 수정하고, 통과할 때까지 반복해'라는 지시를 쉘 명령어와 결합하여 매우 효율적으로 수행합니다.\n이는 IDE의 UI 제약을 벗어나 시스템 레벨의 자동화를 가능하게 합니다.",
+    "tag": "ClaudeCode",
+    "image_prompt": "A sleek dark terminal window with glowing green text and an AI assistant logo, matrix style background"
+  },
+  {
+    "id": "ai__090",
+    "question": "Windsurf IDE가 강조하는 'Flow' 개념의 핵심은 무엇인가요?",
+    "choices": [
+      "코드를 작성할 때 오타를 자동으로 수정해주는 흐름",
+      "사용자의 의도를 파악하여 코드 수정-터미널 실행-결과 확인이 끊김 없이 이어지는 통합 경험",
+      "파일을 저장할 때마다 서버에 자동 배포하는 CI/CD 흐름",
+      "여러 명의 개발자가 코드를 리뷰하는 워크플로우"
+    ],
+    "answer": 1,
+    "explanation": "Windsurf의 Flow는 AI가 단순한 보조 도구가 아니라 개발 과정의 '맥락'을 완전히 이해하고 능동적으로 개입하는 것을 의미합니다.\n코드 수정 후 사용자가 요청하지 않아도 관련 테스트를 실행하거나 로그를 확인하여 다음 단계를 제안하는 유기적인 연결성을 지향합니다.\n이는 컨텍스트 스위칭(Context Switching) 비용을 최소화하여 개발 생산성을 극대화합니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A seamless flowing river of binary code transforming into a polished software interface, abstract and artistic"
+  },
+  {
+    "id": "ai__091",
+    "question": "Cursor의 '@Codebase' 기능이 내부적으로 작동하는 방식에 대한 설명으로 가장 적절한 것은?",
+    "choices": [
+      "프로젝트의 모든 파일을 텍스트로 읽어 LLM 프롬프트에 한꺼번에 넣는다",
+      "파일 이름만 읽어서 관련 있을 법한 파일 하나를 무작위로 선택한다",
+      "코드베이스를 벡터화(Embedding)하여 저장하고, 질문과 가장 관련성이 높은 코드 조각을 검색해 컨텍스트로 제공한다",
+      "실시간으로 모든 코드를 다시 컴파일하여 구조를 분석한다"
+    ],
+    "answer": 2,
+    "explanation": "@Codebase는 RAG(Retrieval-Augmented Generation) 기술의 일종인 임베딩 기반 검색을 사용합니다.\n수만 줄의 코드를 모두 프롬프트에 넣으면 토큰 제한과 비용 문제가 발생하므로, 질문과 의미적으로 유사한 부분만 찾아내어 AI에게 전달합니다.\n실무에서는 대규모 프로젝트에서 특정 기능이 어디에 구현되어 있는지 찾거나 전체적인 로직을 파악할 때 매우 유용합니다.",
+    "tag": "Cursor",
+    "image_prompt": "A 3D map of code structures with glowing connection lines, a magnifying glass focusing on a specific cluster"
+  },
+  {
+    "id": "ai__092",
+    "question": "GitHub Copilot의 'Copilot Workspace'가 기존의 단순 자동 완성(Autocomplete)과 차별화되는 점은 무엇인가요?",
+    "choices": [
+      "더 많은 프로그래밍 언어를 지원한다",
+      "이슈(Issue) 단계부터 계획 수립, 코드 구현, 테스트까지 이어지는 엔드-투-엔드 개발 워크플로우를 제공한다",
+      "코드 작성 속도가 2배 더 빠르다",
+      "오프라인 모드를 지원하여 인터넷 없이 사용 가능하다"
+    ],
+    "answer": 1,
+    "explanation": "기존 Copilot이 '다음 단어'를 예측하는 수준이었다면, Workspace는 '문제 해결 계획'을 세우는 단계로 진화한 것입니다.\nGitHub Issue에서 시작해 AI가 구현 계획(Plan)을 제안하고, 사용자가 이를 승인하면 실제 코드로 변환하여 PR(Pull Request)까지 생성합니다.\n이는 단순 코딩 보조를 넘어 소프트웨어 엔지니어링 프로세스 자체를 AI가 리드하는 방향으로의 변화입니다.",
+    "tag": "GitHubCopilot",
+    "image_prompt": "A Kanban board transforming into code blocks, with a GitHub Octocat guiding the process, clean flat design"
+  },
+  {
+    "id": "ai__093",
+    "question": "Cursor에서 .cursorrules 파일에 '항상 TypeScript의 strict 모드를 준수하고, any 타입을 사용하지 마시오'라고 명시했을 때 기대할 수 있는 효과는?",
+    "choices": [
+      "컴파일러가 자동으로 코드를 수정하여 에러를 없애준다",
+      "AI가 코드를 생성할 때부터 any 타입을 피하고 엄격한 타입 정의를 적용한 코드를 제안한다",
+      "코드 실행 속도가 비약적으로 향상된다",
+      "IDE의 테마 색상이 변경되어 경고 표시가 더 잘 보인다"
+    ],
+    "answer": 1,
+    "explanation": ".cursorrules는 AI의 '페르소나'와 '제약 조건'을 설정하는 파일입니다.\n명시적인 규칙을 제공하면 AI는 일반적인 관습보다 사용자가 정의한 프로젝트 규칙을 우선순위에 두고 코드를 생성합니다.\n실무에서는 코드 리뷰 시간을 줄이고 팀 전체의 타입 안정성을 확보하는 데 매우 효과적입니다.",
+    "tag": "Cursor",
+    "image_prompt": "A shield icon protecting a block of clean code, with 'Strict Mode' written in glowing text, professional tech style"
+  },
+  {
+    "id": "ai__094",
+    "question": "AI IDE에서 Context Window(컨텍스트 창)의 크기가 실무적으로 중요한 이유는 무엇인가요?",
+    "choices": [
+      "화면 해상도가 높아야 코드가 잘 보이기 때문에",
+      "한 번에 입력하고 기억할 수 있는 정보량이 많을수록 더 복잡한 로직과 많은 파일을 동시에 고려해 정확한 답변을 낼 수 있기 때문에",
+      "타이핑 속도를 결정하는 핵심 요소이기 때문에",
+      "인터넷 연결 속도와 직접적인 관련이 있기 때문에"
+    ],
+    "answer": 1,
+    "explanation": "컨텍스트 창은 AI가 한 번에 '읽고 생각할 수 있는' 메모리 공간과 같습니다.\n창이 클수록 여러 파일의 상관관계를 분석하거나, 매우 긴 로그 파일을 입력하여 원인을 찾을 때 정보 누락 없이 정확한 추론이 가능합니다.\n최근 Claude 3.5 Sonnet 등이 큰 컨텍스트 창을 제공하며 복잡한 프로젝트 분석 능력이 비약적으로 상승한 이유입니다.",
+    "tag": "Context",
+    "image_prompt": "A wide panoramic view of a digital landscape made of code, representing an expansive memory space, futuristic"
+  },
+  {
+    "id": "ai__095",
+    "question": "MCP 서버를 구축하여 AI 도구에 연결했을 때 얻을 수 있는 가장 큰 이점은 무엇인가요?",
+    "choices": [
+      "AI 모델의 파라미터 수를 늘릴 수 있다",
+      "로컬 DB나 사내 API 같은 폐쇄적인 데이터에 AI가 안전하고 표준화된 방식으로 접근하게 할 수 있다",
+      "GPU 없이도 LLM을 로컬에서 실행할 수 있게 한다",
+      "코드의 런타임 에러를 100% 제거한다"
+    ],
+    "answer": 1,
+    "explanation": "MCP는 모델과 데이터 사이의 '표준 커넥터' 역할을 합니다.\n기존에는 각 AI 도구마다 API 연동 방식을 새로 만들어야 했지만, MCP 서버 하나만 구축하면 이를 지원하는 모든 AI 클라이언트에서 동일한 데이터를 사용할 수 있습니다.\n실무적으로는 사내 위키(Confluence)나 Jira 티켓 정보를 AI가 실시간으로 읽어 코딩에 반영하게 하는 등의 확장이 가능합니다.",
+    "tag": "MCP",
+    "image_prompt": "A universal plug connecting a glowing AI core to various data sources like SQL, JSON, and Cloud API, technical diagram style"
+  },
+  {
+    "id": "ai__096",
+    "question": "Cursor의 'Composer' 모드(Ctrl+I)와 일반 채팅(Ctrl+L)의 결정적인 차이점은 무엇인가요?",
+    "choices": [
+      "채팅은 질문만 가능하고, Composer는 코드 수정 제안만 가능하다",
+      "채팅은 단일 파일 중심의 대화라면, Composer는 여러 파일을 동시에 생성/수정하며 프로젝트 구조를 변경하는 '멀티 파일 편집'에 최적화되어 있다",
+      "Composer는 유료 사용자만 사용할 수 있고 채팅은 무료다",
+      "채팅은 인터넷이 필요하고 Composer는 오프라인에서 작동한다"
+    ],
+    "answer": 1,
+    "explanation": "일반 채팅은 주로 정보를 묻거나 특정 부분의 코드를 수정하는 용도입니다.\n반면 Composer는 '새로운 기능을 추가해줘'라는 요청에 대해 A 파일 생성, B 파일 수정, C 파일 삭제 등 여러 단계의 작업을 한 번에 수행하고 적용(Apply)할 수 있게 합니다.\n이는 단순한 코드 조각 생성을 넘어 실제 소프트웨어 개발의 '구현 단위' 작업을 AI에게 맡길 수 있음을 의미합니다.",
+    "tag": "Cursor",
+    "image_prompt": "A conductor leading an orchestra of floating code files, coordinating multiple changes simultaneously, artistic and high-tech"
+  },
+  {
+    "id": "ai__097",
+    "question": "AI Agent가 터미널 명령어를 실행할 때 발생할 수 있는 위험을 방지하기 위한 가장 바람직한 실무 설정은?",
+    "choices": [
+      "모든 명령어 실행을 AI에게 완전히 맡기고 확인하지 않는다",
+      "터미널 접근 권한을 완전히 차단한다",
+      "명령어 실행 전 반드시 사용자의 승인을 거치도록 설정하고, 실행될 명령어를 미리 검토한다",
+      "가장 최신 버전의 OS를 설치하여 보안 패치를 적용한다"
+    ],
+    "answer": 2,
+    "explanation": "AI Agent는 강력하지만 `rm -rf /`와 같은 파괴적인 명령어나 의도치 않은 패키지 설치를 수행할 위험이 있습니다.\n따라서 'Human-in-the-loop' 원칙에 따라 AI가 제안한 명령어를 사용자가 확인하고 승인하는 단계가 반드시 필요합니다.\n실무에서는 특히 운영 서버나 중요한 데이터가 포함된 환경에서 이 설정이 필수적입니다.",
+    "tag": "AgentMode",
+    "image_prompt": "A human finger hovering over a glowing 'Approve' button on a futuristic terminal screen, security and control concept"
+  },
+  {
+    "id": "ai__098",
+    "question": "다음 중 Cursor에서 컨텍스트를 효율적으로 관리하여 AI의 환각(Hallucination)을 줄이는 방법으로 적절하지 않은 것은?",
+    "choices": [
+      "불필요한 파일은 @Files에서 제외하고 꼭 필요한 파일만 지정한다",
+      "@Codebase를 통해 전체 맥락을 파악하게 한다",
+      "최대한 많은 파일을 한꺼번에 프롬프트에 넣어 AI가 알아서 찾게 한다",
+      ".cursorrules에 명확한 제약 조건을 작성한다"
+    ],
+    "answer": 2,
+    "explanation": "너무 많은 무관한 정보를 컨텍스트에 넣으면 'Lost in the Middle' 현상이 발생하여 AI가 중요한 정보를 놓치거나 잘못된 답변(환각)을 내놓을 확률이 높아집니다.\n필요한 정보만 정밀하게 제공하는 것이 더 정확한 결과를 얻는 비결입니다.\n실무에서는 @Docs나 특정 파일 지정을 통해 컨텍스트의 밀도를 높이는 전략이 필요합니다.",
+    "tag": "Context",
+    "image_prompt": "A filter cleaning a messy stream of data into a clear, focused beam of light, conceptual representation of noise reduction"
+  },
+  {
+    "id": "ai__099",
+    "question": "Claude Code와 같은 도구를 사용하여 레거시 코드를 분석할 때 가장 효율적인 접근 방식은?",
+    "choices": [
+      "전체 코드를 한 번에 복사해서 채팅창에 붙여넣는다",
+      "먼저 파일 구조를 파악하고, 핵심 진입점(Entry point)부터 단계적으로 분석하며 필요한 부분만 컨텍스트로 추가한다",
+      "AI에게 무조건 '전부 다 고쳐줘'라고 요청한다",
+      "코드를 읽지 않고 AI가 생성한 요약본만 믿고 수정한다"
+    ],
+    "answer": 1,
+    "explanation": "방대한 레거시 코드는 한 번에 이해하기 어렵고 토큰 제한에 걸리기 쉽습니다.\n먼저 `ls`나 파일 트리 분석을 통해 구조를 파악하고, 메인 함수나 설정 파일부터 시작해 의존성 그래프를 따라가며 분석하는 것이 정석입니다.\n이 과정에서 AI에게 '이 함수의 호출 흐름을 분석해줘'와 같이 단계적인 요청을 보내는 것이 가장 정확한 분석 결과를 도출합니다.",
+    "tag": "ClaudeCode",
+    "image_prompt": "A detective with a magnifying glass examining a complex web of old parchment and digital code, mystery and analysis theme"
+  },
+  {
+    "id": "ai__100",
+    "question": "MCP(Model Context Protocol)의 핵심 목적과 가장 거리가 먼 것은 무엇입니까?",
+    "choices": [
+      "LLM이 외부 데이터 소스에 표준화된 방식으로 접근하게 함",
+      "다양한 AI 도구 간의 컨텍스트 공유 체계를 통합함",
+      "특정 LLM 모델의 파라미터를 실시간으로 튜닝하여 성능을 최적화함",
+      "서버-클라이언트 구조를 통해 데이터 읽기 및 도구 실행 기능을 제공함"
+    ],
+    "answer": 2,
+    "explanation": "MCP는 모델 자체의 가중치나 파라미터를 수정하는 '파인튜닝' 도구가 아니라, 모델이 외부 세계(데이터베이스, 파일 시스템 등)와 상호작용하는 '인터페이스 표준'입니다. 실무에서는 이를 통해 한 번 구축한 MCP 서버를 Cursor, Claude Desktop 등 여러 클라이언트에서 공통으로 사용할 수 있습니다.",
+    "tag": "MCP",
+    "image_prompt": "A conceptual diagram showing a central hub connecting various data sources to an AI brain via standardized plugs."
+  },
+  {
+    "id": "ai__101",
+    "question": "MCP 서버에서 'Resource'의 역할로 가장 적절한 설명은 무엇입니까?",
+    "choices": [
+      "LLM이 직접 실행하여 상태를 변경하는 함수형 인터페이스",
+      "LLM이 읽을 수 있도록 제공되는 정적 또는 동적인 데이터 세트",
+      "사용자가 입력하는 시스템 프롬프트의 템플릿 모음",
+      "MCP 서버와 클라이언트 간의 인증을 담당하는 보안 토큰"
+    ],
+    "answer": 1,
+    "explanation": "Resource는 LLM이 참고할 수 있는 '읽기 전용' 데이터(예: 로그 파일, DB 레코드, API 문서)를 의미합니다. Tool이 '동작'이라면 Resource는 '정보'에 해당하며, 실무에서는 프로젝트의 최신 문서를 Resource로 등록해 AI가 항상 최신 정보를 바탕으로 답변하게 합니다.",
+    "tag": "MCP_Resource",
+    "image_prompt": "A digital library shelf where an AI is picking a specific document folder labeled 'Context Data'."
+  },
+  {
+    "id": "ai__102",
+    "question": "MCP의 'Tool'과 'Resource'의 결정적인 차이점은 무엇입니까?",
+    "choices": [
+      "Tool은 읽기 전용이며, Resource는 쓰기가 가능하다",
+      "Tool은 클라이언트에서 정의하고, Resource는 서버에서 정의한다",
+      "Tool은 LLM이 실행하여 외부 세계에 영향을 주거나 계산을 수행하며, Resource는 정보를 제공한다",
+      "Tool은 텍스트 데이터만 다루고, Resource는 바이너리 파일만 다룬다"
+    ],
+    "answer": 2,
+    "explanation": "Tool은 '함수 호출(Function Calling)'과 유사하게 LLM이 특정 동작을 수행하도록 요청하는 것입니다(예: 파일 생성, API 전송). 반면 Resource는 AI가 읽고 참고할 데이터입니다. 실무적으로 Tool은 '액션'을 위해, Resource는 '지식'을 위해 사용됩니다.",
+    "tag": "MCP_Tool_vs_Resource",
+    "image_prompt": "A split screen showing a wrench (Tool) on one side and an open book (Resource) on the other."
+  },
+  {
+    "id": "ai__103",
+    "question": "Claude Code를 사용할 때, MCP 서버를 연결함으로써 얻을 수 있는 가장 큰 이점은 무엇입니까?",
+    "choices": [
+      "로컬 PC의 CPU 점유율을 낮춰 실행 속도를 높인다",
+      "터미널 환경에서 LLM이 로컬 파일 시스템 및 외부 API에 표준화된 방식으로 접근하게 한다",
+      "Claude 모델의 토큰 비용을 획기적으로 줄여준다",
+      "인터넷 연결 없이 오프라인 상태에서도 모든 기능을 사용할 수 있게 한다"
+    ],
+    "answer": 1,
+    "explanation": "Claude Code는 터미널 기반 도구로, MCP 서버를 통해 로컬 DB 조회나 특정 사내 API 호출 등의 기능을 확장할 수 있습니다. 이를 통해 개발자는 채팅창을 벗어나지 않고도 실제 인프라 상태를 확인하고 코드를 수정하는 워크플로우를 구축할 수 있습니다.",
+    "tag": "Claude_Code",
+    "image_prompt": "A command line interface terminal with glowing connections extending to a database and a cloud server."
+  },
+  {
+    "id": "ai__104",
+    "question": "Cursor IDE의 'Composer' 모드와 일반 채팅의 가장 큰 차이점은 무엇입니까?",
+    "choices": [
+      "Composer는 단순 질문 답변만 가능하고, 채팅은 코드 수정이 가능하다",
+      "Composer는 여러 파일에 걸친 동시 수정 및 생성 작업을 수행할 수 있는 에이전트적 성격이 강하다",
+      "채팅 모드는 유료이며 Composer 모드는 무료로 제공된다",
+      "Composer는 외부 라이브러리 설치를 자동으로 수행하지만 채팅은 불가능하다"
+    ],
+    "answer": 1,
+    "explanation": "Cursor의 Composer(Ctrl+I)는 단순한 코드 제안을 넘어 프로젝트 전체 구조를 이해하고 여러 파일을 동시에 수정하는 '멀티 파일 편집' 능력이 핵심입니다. 실무에서는 기능 하나를 구현하기 위해 API 정의서, 서비스 로직, UI 컴포넌트를 한 번에 수정할 때 매우 유용합니다.",
+    "tag": "Cursor",
+    "image_prompt": "An IDE screen showing multiple files being updated simultaneously by a magical AI cursor."
+  },
+  {
+    "id": "ai__105",
+    "question": "Windsurf IDE가 강조하는 'Flow' 개념의 핵심은 무엇입니까?",
+    "choices": [
+      "코드 작성 속도를 높이기 위한 자동 완성 기능의 최적화",
+      "사용자의 의도와 AI의 실행 단계가 끊김 없이 이어지는 컨텍스트 유지 및 자율적 행동",
+      "Git 커밋 메시지를 자동으로 생성하여 워크플로우를 단순화하는 것",
+      "여러 명의 개발자가 동시에 한 파일을 수정하는 실시간 협업 기능"
+    ],
+    "answer": 1,
+    "explanation": "Windsurf의 Flow는 AI가 단순히 코드를 짜주는 것을 넘어, 터미널 실행 결과 확인 -> 에러 분석 -> 코드 수정 -> 재실행의 루프를 자율적으로 수행하는 능력을 의미합니다. 이는 개발자가 일일이 지시하지 않아도 목표 달성을 위해 스스로 단계를 밟아가는 에이전트적 경험을 제공합니다.",
+    "tag": "Windsurf",
+    "image_prompt": "A seamless glowing stream of data flowing from a user's thought to code, then to terminal execution."
+  },
+  {
+    "id": "ai__106",
+    "question": "MCP 서버에서 'Prompt' 템플릿을 제공하는 이유는 무엇입니까?",
+    "choices": [
+      "LLM의 응답 속도를 물리적으로 빠르게 하기 위해",
+      "사용자가 자주 사용하는 복잡한 요청 형식을 표준화하여 일관된 결과를 얻기 위해",
+      "서버의 메모리 사용량을 줄여 효율성을 높이기 위해",
+      "API 호출 횟수를 제한하여 비용을 절감하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "MCP Prompt는 특정 작업(예: '코드 리뷰 요청', 'DB 스키마 분석')에 최적화된 프롬프트를 서버 측에서 정의해 클라이언트에 제공하는 것입니다. 이를 통해 팀원 모두가 동일한 고품질의 프롬프트를 사용하여 일관된 AI 결과물을 얻을 수 있습니다.",
+    "tag": "MCP_Prompt",
+    "image_prompt": "A blueprint of a prompt being slotted into an AI engine to produce a perfect result."
+  },
+  {
+    "id": "ai__107",
+    "question": "GitHub Copilot의 'Workspace' 기능이 지향하는 바와 가장 일치하는 것은?",
+    "choices": [
+      "단일 파일 내에서의 빠른 코드 자동 완성",
+      "전체 저장소(Repository) 수준의 컨텍스트를 이해한 계획 수립 및 구현",
+      "클라우드 환경에서 코드를 직접 실행하고 배포하는 기능",
+      "다른 개발자의 코드를 실시간으로 감시하고 수정하는 기능"
+    ],
+    "answer": 1,
+    "explanation": "Copilot Workspace는 단순한 라인 단위 완성을 넘어 '이슈(Issue)'를 분석하고 이를 해결하기 위한 전체 계획을 세운 뒤, 관련 파일을 모두 찾아 수정안을 제시하는 저장소 중심의 워크플로우를 제공합니다. 이는 개별 파일 단위의 편집에서 프로젝트 단위의 편집으로 진화한 형태입니다.",
+    "tag": "GitHub_Copilot",
+    "image_prompt": "A wide-angle view of a complex software architecture with an AI highlighting the path to fix a bug."
+  },
+  {
+    "id": "ai__108",
+    "question": "MCP 서버를 구축할 때, 'Transport' 계층에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "데이터를 압축하여 전송 속도를 높이는 알고리즘이다",
+      "Stdio(표준 입출력)나 HTTP/SSE 등을 통해 클라이언트와 서버가 통신하는 방식이다",
+      "LLM이 사용하는 토큰의 종류를 결정하는 프로토콜이다",
+      "사용자의 인증 정보를 암호화하여 저장하는 데이터베이스 계층이다"
+    ],
+    "answer": 1,
+    "explanation": "MCP는 클라이언트와 서버가 어떻게 메시지를 주고받을지 정의하는 Transport 계층을 가집니다. 로컬 실행 시에는 주로 Stdio를 사용하며, 원격 서버 연결 시에는 HTTP/SSE(Server-Sent Events) 방식을 사용하여 실시간 양방향 통신을 구현합니다.",
+    "tag": "MCP_Transport",
+    "image_prompt": "Two computer nodes connected by a glowing pipe with data packets moving back and forth."
+  },
+  {
+    "id": "ai__109",
+    "question": "다음 중 AI 코딩 도구의 'Context Window' 관리 전략으로 가장 효율적인 방법은?",
+    "choices": [
+      "모든 프로젝트 파일을 항상 프롬프트에 포함시킨다",
+      "필요한 파일만 선택적으로 제공하거나 MCP Resource를 통해 동적으로 로드한다",
+      "모델의 컨텍스트 윈도우 크기를 무제한으로 늘려달라고 요청한다",
+      "파일 내용을 모두 삭제하고 요약본만 사용한다"
+    ],
+    "answer": 1,
+    "explanation": "무조건 많은 정보를 넣으면 'Lost in the Middle' 현상(중간 정보 망각)이 발생하고 비용과 속도가 저하됩니다. Cursor의 @ 기호나 MCP Resource처럼 필요한 시점에 정확한 컨텍스트만 주입하는 것이 실무적으로 가장 효율적입니다.",
+    "tag": "Context_Management",
+    "image_prompt": "A spotlight illuminating only the necessary parts of a huge mountain of documents."
+  },
+  {
+    "id": "ai__110",
+    "question": "MCP 서버에서 Tool을 정의할 때 'inputSchema'가 필요한 이유는 무엇입니까?",
+    "choices": [
+      "서버의 실행 속도를 높이기 위해",
+      "LLM이 해당 도구를 호출할 때 어떤 인자(Argument)를 어떤 형식으로 전달해야 하는지 알게 하기 위해",
+      "도구의 실행 결과물을 암호화하기 위해",
+      "클라이언트의 UI 디자인을 자동으로 생성하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "LLM은 Tool의 이름과 설명, 그리고 inputSchema(JSON Schema 형식)를 보고 '아, 이 도구를 쓰려면 filename이라는 문자열 인자가 필요하구나'라고 판단합니다. 스키마가 정확하지 않으면 LLM이 잘못된 인자를 전달하여 런타임 에러가 발생하게 됩니다.",
+    "tag": "MCP_Tool",
+    "image_prompt": "A precise mold (schema) into which a piece of data is perfectly fitted."
+  },
+  {
+    "id": "ai__111",
+    "question": "Cursor IDE에서 '.cursorrules' 파일의 주된 용도는 무엇입니까?",
+    "choices": [
+      "프로젝트의 빌드 설정을 저장하는 파일",
+      "AI가 코드를 생성할 때 준수해야 할 프로젝트 전용 규칙과 스타일 가이드를 정의하는 파일",
+      "사용자의 로그인 정보를 저장하는 보안 파일",
+      "외부 라이브러리의 의존성을 관리하는 파일"
+    ],
+    "answer": 1,
+    "explanation": ".cursorrules 파일을 통해 '함수 이름은 camelCase로 작성해줘', '에러 처리는 반드시 try-catch 문을 사용해줘' 같은 팀 내 컨벤션을 설정할 수 있습니다. 이렇게 하면 매번 프롬프트에 규칙을 적지 않아도 AI가 일관된 스타일의 코드를 생성합니다.",
+    "tag": "Cursor_Rules",
+    "image_prompt": "A rulebook open next to a computer screen, with the AI following the rules strictly."
+  },
+  {
+    "id": "ai__112",
+    "question": "MCP 서버를 통해 '로컬 데이터베이스'를 연결했을 때, LLM이 수행할 수 있는 가장 적절한 작업 흐름은?",
+    "choices": [
+      "DB의 물리적 하드디스크 성능을 직접 최적화한다",
+      "Resource로 테이블 스키마를 읽고, Tool로 SQL 쿼리를 실행하여 데이터를 분석한다",
+      "DB 서버의 OS 커널 버전을 자동으로 업데이트한다",
+      "데이터베이스의 모든 데이터를 LLM 내부 메모리에 영구적으로 저장한다"
+    ],
+    "answer": 1,
+    "explanation": "실무적인 MCP 활용 패턴입니다. 먼저 Resource를 통해 '어떤 테이블이 있는지' 파악하고(Context 확보), 이후 Tool을 사용하여 '특정 조건의 데이터를 조회하는 SQL'을 실행하여 결과를 얻는 방식입니다.",
+    "tag": "MCP_Workflow",
+    "image_prompt": "An AI agent looking at a database map and then executing a precise query command."
+  },
+  {
+    "id": "ai__113",
+    "question": "Windsurf의 'Cascade' 기능이 제공하는 핵심 가치는 무엇입니까?",
+    "choices": [
+      "코드 작성 시 오타를 실시간으로 수정해주는 단순 교정 기능",
+      "사용자의 의도를 깊게 이해하고, 필요한 도구를 스스로 선택하여 복잡한 작업을 완수하는 지능형 흐름",
+      "여러 명의 개발자가 동시에 코딩할 수 있는 화이트보드 기능",
+      "작성된 코드를 자동으로 다른 언어로 변환해주는 컴파일러 기능"
+    ],
+    "answer": 1,
+    "explanation": "Cascade는 단순한 자동완성을 넘어 '추론 -> 계획 -> 실행 -> 검증'의 단계를 스스로 수행하는 에이전트 시스템입니다. 사용자가 '로그인 기능을 구현해줘'라고 하면 파일 생성부터 테스트 코드 작성까지 일련의 흐름(Cascade)을 만들어 완수합니다.",
+    "tag": "Windsurf_Cascade",
+    "image_prompt": "A waterfall of logical steps cascading down from a high-level goal to detailed code implementation."
+  },
+  {
+    "id": "ai__114",
+    "question": "다음 중 MCP(Model Context Protocol)의 생태계 확장에 따른 미래 전망으로 가장 적절한 것은?",
+    "choices": [
+      "모든 LLM이 하나의 모델로 통합되어 더 이상 프로토콜이 필요 없게 된다",
+      "특정 기업의 폐쇄적인 API만 사용하게 되어 호환성이 낮아진다",
+      "다양한 서비스(Slack, Jira, GitHub 등)가 MCP 서버를 제공함으로써 AI 도구 간의 데이터 장벽이 허물어진다",
+      "로컬 LLM의 성능이 저하되어 클라우드 모델만 사용하게 된다"
+    ],
+    "answer": 2,
+    "explanation": "MCP는 'USB'와 같은 표준 인터페이스를 지향합니다. 각 서비스가 MCP 서버만 제공한다면, 사용자는 어떤 AI 클라이언트(Cursor, Claude Code 등)를 쓰더라도 동일한 방식으로 자신의 데이터에 접근하고 도구를 사용할 수 있게 됩니다.",
+    "tag": "MCP_Future",
+    "image_prompt": "A world map where various app icons are connected by a universal glowing network of MCP cables."
   }
 ]

@@ -2,7 +2,12 @@
   {
     "id": "llm_001",
     "question": "`ollama run llama3` 실행 후 API는 어디에서 자동 제공되나?",
-    "choices": ["localhost:8080", "localhost:11434", "localhost:3000", "localhost:5000"],
+    "choices": [
+      "localhost:8080",
+      "localhost:11434",
+      "localhost:3000",
+      "localhost:5000"
+    ],
     "answer": 1,
     "explanation": "Ollama는 모델 실행 시 localhost:11434에 OpenAI 호환 REST API를 자동으로 제공합니다. curl http://localhost:11434/api/generate 또는 OpenAI SDK의 base_url만 바꿔서 바로 연동 가능합니다.",
     "tag": "Ollama",
@@ -11,7 +16,12 @@
   {
     "id": "llm_002",
     "question": "GGUF 파일명에서 'Q4_K_M'의 의미는?",
-    "choices": ["4GB 크기, K서버, M모델", "4비트 양자화, K-means 방식, Medium(균형 최적화)", "4코어 최적화, K버전, Multi-GPU", "Quarter 4, King, Master"],
+    "choices": [
+      "4GB 크기, K서버, M모델",
+      "4비트 양자화, K-means 방식, Medium(균형 최적화)",
+      "4코어 최적화, K버전, Multi-GPU",
+      "Quarter 4, King, Master"
+    ],
     "answer": 1,
     "explanation": "Q4=4비트 양자화(기본 16비트 대비 메모리 1/4), K=K-means 클러스터링 방식(정확도 향상), M=Medium(속도와 품질 균형). Q8_0은 8비트(더 정확), Q2_K는 2비트(더 가벼움).",
     "tag": "GGUF",
@@ -20,7 +30,12 @@
   {
     "id": "llm_003",
     "question": "로컬 LLM의 'context window' 크기가 중요한 이유는?",
-    "choices": ["화면 창 크기를 결정", "한 번에 처리 가능한 최대 토큰 수 → 긴 문서 처리 능력 결정", "로컬 캐시 크기", "GPU VRAM 크기"],
+    "choices": [
+      "화면 창 크기를 결정",
+      "한 번에 처리 가능한 최대 토큰 수 → 긴 문서 처리 능력 결정",
+      "로컬 캐시 크기",
+      "GPU VRAM 크기"
+    ],
     "answer": 1,
     "explanation": "context window가 4K면 약 3,000 영어 단어(한국어 약 1,500자)를 한 번에 처리합니다. 128K context는 긴 소설이나 코드베이스 전체를 넣을 수 있습니다. 큰 context는 VRAM을 더 사용합니다.",
     "tag": "LLM 기초",
@@ -29,7 +44,12 @@
   {
     "id": "llm_004",
     "question": "Ollama와 LM Studio의 가장 큰 차이는?",
-    "choices": ["지원 모델 수 차이", "Ollama는 CLI/API 중심(개발자), LM Studio는 GUI 기반(일반 사용자)", "가격 차이", "속도 차이"],
+    "choices": [
+      "지원 모델 수 차이",
+      "Ollama는 CLI/API 중심(개발자), LM Studio는 GUI 기반(일반 사용자)",
+      "가격 차이",
+      "속도 차이"
+    ],
     "answer": 1,
     "explanation": "LM Studio는 모델 다운로드·실행·채팅을 GUI로 쉽게 할 수 있어 입문용으로 좋습니다. Ollama는 CLI와 API가 강력해 코드로 연동하거나 서버로 활용할 때 씁니다. 둘 다 무료 오픈소스입니다.",
     "tag": "로컬LLM 도구",
@@ -38,7 +58,12 @@
   {
     "id": "llm_005",
     "question": "모델을 4비트로 양자화할 때 발생하는 트레이드오프는?",
-    "choices": ["속도가 느려짐", "메모리/VRAM 사용이 줄지만 정확도(품질)가 약간 감소", "메모리가 늘어남", "파일 크기가 늘어남"],
+    "choices": [
+      "속도가 느려짐",
+      "메모리/VRAM 사용이 줄지만 정확도(품질)가 약간 감소",
+      "메모리가 늘어남",
+      "파일 크기가 늘어남"
+    ],
     "answer": 1,
     "explanation": "70B 모델은 원본(FP16)이 140GB이지만 Q4로 양자화하면 약 40GB로 줄어듭니다. RTX 5090(32GB VRAM)에서 실행 가능한 크기가 됩니다. 대화 품질은 약간 낮아지지만 실용상 차이가 크지 않습니다.",
     "tag": "양자화",
@@ -47,7 +72,12 @@
   {
     "id": "llm_006",
     "question": "`llama.cpp`의 핵심 역할은?",
-    "choices": ["LLM 학습(Training) 프레임워크", "C++로 구현된 LLM 추론 엔진 — CPU만으로도 실행 가능", "클라우드 LLM 배포 도구", "LLM 파인튜닝 도구"],
+    "choices": [
+      "LLM 학습(Training) 프레임워크",
+      "C++로 구현된 LLM 추론 엔진 — CPU만으로도 실행 가능",
+      "클라우드 LLM 배포 도구",
+      "LLM 파인튜닝 도구"
+    ],
     "answer": 1,
     "explanation": "llama.cpp는 Georgi Gerganov가 만든 C++ 추론 엔진으로 PyTorch 없이 LLM을 실행합니다. CUDA, Metal, CPU 모두 지원하며 Ollama·LM Studio가 내부적으로 llama.cpp를 사용합니다. GGUF 포맷의 기원이기도 합니다.",
     "tag": "llama.cpp",
@@ -56,10 +86,1163 @@
   {
     "id": "llm_007",
     "question": "로컬에서 OpenAI SDK 코드를 Ollama로 연동하려면?",
-    "choices": ["SDK를 새로 설치", "base_url='http://localhost:11434/v1'로만 변경하면 됨", "별도 변환 코드 필요", "Ollama 전용 SDK 사용"],
+    "choices": [
+      "SDK를 새로 설치",
+      "base_url='http://localhost:11434/v1'로만 변경하면 됨",
+      "별도 변환 코드 필요",
+      "Ollama 전용 SDK 사용"
+    ],
     "answer": 1,
     "explanation": "Ollama가 OpenAI 호환 API를 제공하기 때문에 openai.OpenAI(base_url='http://localhost:11434/v1', api_key='ollama')로 클라이언트를 만들면 기존 OpenAI 코드를 그대로 씁니다. api_key는 아무 값이나 넣어도 됩니다.",
     "tag": "Ollama",
     "image_prompt": "OpenAI SDK connecting to local Ollama server by changing one URL, minimal code change visualization"
+  },
+  {
+    "id": "loc_008",
+    "question": "Ollama의 Modelfile에서 모델의 시스템 프롬프트(역할 부여)를 설정하기 위해 사용하는 키워드는 무엇입니까?",
+    "choices": [
+      "PARAMETER",
+      "SYSTEM",
+      "TEMPLATE",
+      "ADAPTER"
+    ],
+    "answer": 1,
+    "explanation": "SYSTEM 키워드는 AI에게 페르소나를 부여하거나 특정 행동 지침을 내릴 때 사용합니다.\n실무에서는 '너는 유능한 한국어 AI 어시스턴트 미로다'와 같은 설정을 통해 일관된 답변 톤을 유지합니다.\nPARAMETER는 온도(temperature) 등 하이퍼파라미터를 조절할 때 사용합니다.",
+    "tag": "Ollama Modelfile",
+    "image_prompt": "A digital blueprint of an AI brain with a 'SYSTEM' label, futuristic interface, cybernetic style."
+  },
+  {
+    "id": "loc_009",
+    "question": "llama.cpp를 빌드할 때 NVIDIA GPU의 가속 기능을 사용하기 위해 활성화해야 하는 옵션은 무엇입니까?",
+    "choices": [
+      "LLAMA_METAL=1",
+      "LLAMA_VULKAN=1",
+      "LLAMA_CUDA=1",
+      "LLAMA_OPENCL=1"
+    ],
+    "answer": 2,
+    "explanation": "NVIDIA GPU의 Tensor Core를 활용하여 추론 속도를 극대화하려면 CUDA 빌드 옵션이 필수적입니다.\nRTX 5090과 같은 고성능 PC에서는 CUDA 설정을 통해 VRAM을 최대한 활용한 빠른 토큰 생성이 가능합니다.\nMetal은 Apple Silicon(M1, M2, M3) 전용 가속 옵션입니다.",
+    "tag": "llama.cpp",
+    "image_prompt": "NVIDIA GPU chip with glowing green circuits and 'CUDA' text, high-tech hardware render."
+  },
+  {
+    "id": "loc_010",
+    "question": "LM Studio의 서버 모드(Local Server)를 실행했을 때 제공되는 API의 특징으로 옳은 것은?",
+    "choices": [
+      "전용 프로토콜만 사용한다.",
+      "OpenAI API 규격과 호환된다.",
+      "HTTP 요청을 지원하지 않는다.",
+      "클라우드 연결이 필수적이다."
+    ],
+    "answer": 1,
+    "explanation": "LM Studio 서버 모드는 OpenAI의 Chat Completions API 규격을 그대로 따릅니다.\n덕분에 기존에 작성된 OpenAI 연동 라이브러리나 코드를 엔드포인트 주소만 변경하여 로컬 모델에 바로 적용할 수 있습니다.\n이는 개발자가 외부 API 비용 없이 로컬에서 테스트 환경을 구축하는 데 매우 유리합니다.",
+    "tag": "LM Studio",
+    "image_prompt": "A bridge connecting a local PC icon and an OpenAI logo, symbolizing API compatibility."
+  },
+  {
+    "id": "loc_011",
+    "question": "OpenAI 호환 API를 사용하여 로컬 LLM에 요청을 보낼 때, Python의 'openai' 라이브러리에서 수정해야 할 핵심 설정값은?",
+    "choices": [
+      "model_name만 변경",
+      "api_key와 base_url 변경",
+      "temperature 값 고정",
+      "max_tokens 제한 해제"
+    ],
+    "answer": 1,
+    "explanation": "로컬 서버(LM Studio, Ollama 등)를 사용할 때는 base_url을 'http://localhost:1234/v1' 등으로 변경해야 합니다.\napi_key는 로컬 서버에서 검증하지 않는 경우가 많지만, 라이브러리 필수 입력값이라 임의의 문자열('lm-studio')을 넣어야 작동합니다.\n이 설정을 통해 클라우드 AI에서 로컬 AI로 인프라를 즉시 전환할 수 있습니다.",
+    "tag": "OpenAI API",
+    "image_prompt": "Python code snippet on a screen showing 'base_url' being changed to localhost, coding environment."
+  },
+  {
+    "id": "loc_012",
+    "question": "GGUF 양자화 방식 중 Q4_K_M과 Q8_0의 차이점에 대한 설명으로 가장 적절한 것은?",
+    "choices": [
+      "Q8_0가 메모리를 훨씬 적게 사용한다.",
+      "Q4_K_M은 정밀도가 더 높고 용량이 크다.",
+      "Q8_0는 정밀도가 높지만 VRAM 점유율이 더 높다.",
+      "두 방식의 성능 차이는 전혀 없다."
+    ],
+    "answer": 2,
+    "explanation": "Q8_0는 8비트 양자화로 원본 모델에 가까운 높은 정밀도를 유지하지만 메모리 사용량이 많습니다.\nQ4_K_M은 4비트 기반의 최적화된 방식으로, 약간의 성능 손실을 감수하면서 VRAM 효율을 극대화한 실용적인 선택지입니다.\nRTX 5090처럼 VRAM이 넉넉하다면 Q8_0를, 모델 크기가 너무 커서 메모리가 부족하다면 Q4_K_M을 추천합니다.",
+    "tag": "GGUF Quantization",
+    "image_prompt": "A scale balancing a 'High Precision' weight (Q8) and a 'Low Memory' weight (Q4), 3D render."
+  },
+  {
+    "id": "loc_013",
+    "question": "GGUF 양자화 옵션 중 Q5_K_S의 특징은 무엇입니까?",
+    "choices": [
+      "가장 낮은 정밀도의 초경량 모델이다.",
+      "Q4보다 정밀하고 Q8보다 가벼운 중간 단계의 균형 잡힌 설정이다.",
+      "FP16과 동일한 무손실 압축 방식이다.",
+      "텍스트 생성 속도가 가장 빠른 최적화 모드다."
+    ],
+    "answer": 1,
+    "explanation": "Q5_K_S는 5비트 양자화 방식으로, Q4의 가벼움과 Q8의 정밀도 사이에서 타협점을 찾은 설정입니다.\n실무적으로 모델의 지능 저하를 최소화하면서 VRAM 효율을 챙기고 싶을 때 선택하는 '스위트 스팟' 옵션 중 하나입니다.\nK-Quants 방식이 적용되어 가중치별로 정밀도를 다르게 부여해 효율을 높였습니다.",
+    "tag": "GGUF Quantization",
+    "image_prompt": "A spectrum bar showing precision levels from Q2 to Q8, with a highlight on Q5."
+  },
+  {
+    "id": "loc_014",
+    "question": "LLM 설정에서 'context_length' 또는 'num_ctx' 값이 의미하는 것은 무엇입니까?",
+    "choices": [
+      "모델이 한 번에 생성할 수 있는 최대 토큰 수",
+      "모델의 학습 데이터 총량",
+      "모델이 기억하고 처리할 수 있는 입력+출력 텍스트의 최대 길이",
+      "GPU의 연산 속도(TFLOPS)"
+    ],
+    "answer": 2,
+    "explanation": "num_ctx는 모델이 한 번에 '주의(Attention)'를 기울일 수 있는 전체 토큰 창의 크기를 결정합니다.\n이 값이 너무 작으면 대화 내용이 길어질 때 이전 내용을 망각하며, 너무 크면 VRAM 사용량이 급격히 증가합니다.\n긴 문서 요약이나 복잡한 코드 분석 작업을 수행할 때는 이 값을 충분히 높여야 합니다.",
+    "tag": "Context Window",
+    "image_prompt": "A sliding window moving over a long scroll of text, highlighting the active memory area."
+  },
+  {
+    "id": "loc_015",
+    "question": "vLLM과 Ollama의 가장 큰 차이점으로 옳은 것은?",
+    "choices": [
+      "Ollama는 서버용이고 vLLM은 개인 PC용이다.",
+      "vLLM은 PagedAttention을 통한 고성능 처리(Throughput)에 특화되어 있고, Ollama는 쉬운 설치와 관리에 특화되어 있다.",
+      "Ollama는 CUDA를 지원하지 않는다.",
+      "vLLM은 GGUF 파일만 사용할 수 있다."
+    ],
+    "answer": 1,
+    "explanation": "vLLM은 PagedAttention 기술을 사용하여 여러 사용자의 요청을 동시에 처리하는 '처리량(Throughput)' 극대화에 최적화된 엔터프라이즈급 엔진입니다.\n반면 Ollama는 Modelfile과 간단한 CLI를 통해 일반 사용자가 로컬에서 모델을 쉽게 실행하고 관리하도록 설계되었습니다.\n서비스 배포 목적이라면 vLLM을, 개인 개발 및 테스트 목적이라면 Ollama가 적합합니다.",
+    "tag": "vLLM vs Ollama",
+    "image_prompt": "A comparison chart: a sleek rocket (vLLM) and a friendly Swiss army knife (Ollama)."
+  },
+  {
+    "id": "loc_016",
+    "question": "멀티모달 모델인 LLaVA의 주요 특징은 무엇입니까?",
+    "choices": [
+      "텍스트만 처리하는 초경량 모델이다.",
+      "이미지를 입력받아 텍스트로 설명하거나 분석할 수 있다.",
+      "오디오 파일을 실시간으로 음악으로 변환한다.",
+      "코드 생성 전용으로 설계된 모델이다."
+    ],
+    "answer": 1,
+    "explanation": "LLaVA(Large Language-and-Vision Assistant)는 시각 인코더와 LLM을 결합하여 이미지 이해 능력을 갖춘 멀티모달 모델입니다.\n사용자가 이미지를 업로드하고 '이 사진에 무엇이 있니?'라고 물으면 이를 분석해 답변할 수 있습니다.\n최근에는 로컬 환경에서도 LLaVA를 통해 OCR 작업이나 이미지 캡셔닝을 수행하는 사례가 많습니다.",
+    "tag": "Multimodal LLM",
+    "image_prompt": "An AI eye scanning a photograph and converting it into descriptive text bubbles."
+  },
+  {
+    "id": "loc_017",
+    "question": "Gemma 3와 같은 최신 멀티모달 모델이 기존 텍스트 전용 모델과 차별화되는 점은?",
+    "choices": [
+      "학습 데이터의 양이 적다.",
+      "추론 속도가 무조건 느리다.",
+      "텍스트, 이미지 등 다양한 모달리티를 통합적으로 처리하는 능력이 있다.",
+      "인터넷 연결 없이는 작동하지 않는다."
+    ],
+    "answer": 2,
+    "explanation": "Gemma 3와 같은 최신 모델들은 설계 단계부터 멀티모달 입력을 처리할 수 있도록 구축되었습니다.\n단순히 외부 플러그인을 붙인 것이 아니라, 다양한 형태의 데이터를 통합적으로 이해하여 더 정교한 추론이 가능합니다.\n이는 복잡한 도표 분석이나 시각적 문맥이 포함된 질의응답에서 압도적인 성능을 보여줍니다.",
+    "tag": "Gemma 3",
+    "image_prompt": "A futuristic sphere absorbing text, images, and sound waves simultaneously."
+  },
+  {
+    "id": "loc_018",
+    "question": "Ollama에서 새로운 모델을 생성할 때 'FROM' 명령어의 역할은 무엇입니까?",
+    "choices": [
+      "모델의 출력 언어를 설정한다.",
+      "기반이 될 베이스 모델(Base Model)을 지정한다.",
+      "모델의 저장 경로를 변경한다.",
+      "API 서버의 포트 번호를 설정한다."
+    ],
+    "answer": 1,
+    "explanation": "FROM은 Modelfile의 가장 첫 줄에 위치하며, 어떤 기존 모델을 바탕으로 커스텀 설정을 입힐지 결정합니다.\n예를 들어 'FROM llama3'라고 작성하면 Llama 3 모델을 불러온 뒤 그 위에 SYSTEM 프롬프트나 PARAMETER를 추가하게 됩니다.\n이는 마치 Dockerfile에서 베이스 이미지를 지정하는 방식과 매우 유사합니다.",
+    "tag": "Ollama Modelfile",
+    "image_prompt": "A foundation stone labeled 'Base Model' with other blocks being built on top of it."
+  },
+  {
+    "id": "loc_019",
+    "question": "로컬 LLM 운용 시 VRAM 부족으로 인해 'Out of Memory(OOM)' 에러가 발생했을 때 가장 효과적인 해결책은?",
+    "choices": [
+      "Windows 업데이트를 수행한다.",
+      "더 높은 비트의 양자화 모델(예: Q8_0 → Q4_K_M)로 변경한다.",
+      "context_length 값을 더 크게 늘린다.",
+      "CPU 클럭 속도를 강제로 높인다."
+    ],
+    "answer": 1,
+    "explanation": "VRAM 부족 문제는 모델의 크기를 줄이는 것이 가장 확실한 해결책입니다.\nQ8_0(8비트) 모델을 Q4_K_M(4비트)으로 변경하면 메모리 사용량이 거의 절반으로 줄어들어 OOM 에러를 방지할 수 있습니다.\n또한 num_ctx 값을 낮추는 것도 VRAM 확보에 도움이 되지만, 지능 저하가 심하므로 양자화 모델 변경을 우선 권장합니다.",
+    "tag": "VRAM Optimization",
+    "image_prompt": "A computer memory bar turning from red (full) to green (available) as a model is compressed."
+  },
+  {
+    "id": "llm_020",
+    "question": "llama.cpp를 NVIDIA GPU에서 가속하기 위해 컴파일 시 사용하는 백엔드 플래그는 무엇입니까?",
+    "choices": [
+      "GGML_METAL=ON",
+      "GGML_CUDA=ON",
+      "GGML_OPENCL=ON",
+      "GGML_CPU=ON"
+    ],
+    "answer": 1,
+    "explanation": "NVIDIA GPU의 CUDA 코어를 활용하여 추론 속도를 높이려면 GGML_CUDA=ON 플래그를 사용하여 컴파일해야 합니다.",
+    "tag": "CUDA",
+    "image_prompt": "A high-tech NVIDIA GPU with glowing green circuits and the text 'CUDA' floating above it, cinematic lighting."
+  },
+  {
+    "id": "llm_021",
+    "question": "Apple Silicon(M1, M2, M3 등) Mac에서 하드웨어 가속을 사용하기 위한 컴파일 플래그는 무엇입니까?",
+    "choices": [
+      "GGML_CUDA=ON",
+      "GGML_VULKAN=ON",
+      "GGML_METAL=ON",
+      "GGML_ROCm=ON"
+    ],
+    "answer": 2,
+    "explanation": "Apple의 Metal API를 사용하여 GPU 가속을 구현하려면 GGML_METAL=ON 플래그가 필요합니다.",
+    "tag": "Metal",
+    "image_prompt": "An Apple M2 chip on a motherboard with a sleek silver metallic finish and the 'Metal' logo, minimalist style."
+  },
+  {
+    "id": "llm_022",
+    "question": "GPU 없이 오직 CPU만 사용하여 llama.cpp를 빌드할 때 기본적으로 적용되는 설정은 무엇입니까?",
+    "choices": [
+      "CUDA 가속 활성화",
+      "Metal 가속 활성화",
+      "CPU 전용 모드",
+      "Vulkan 가속 활성화"
+    ],
+    "answer": 2,
+    "explanation": "별도의 GPU 백엔드 플래그를 지정하지 않으면 llama.cpp는 기본적으로 CPU 기반의 추론 모드로 동작합니다.",
+    "tag": "CPU",
+    "image_prompt": "A powerful computer processor (CPU) with blue energy pulses flowing through the pins, technical diagram style."
+  },
+  {
+    "id": "llm_023",
+    "question": "추론 시 사용할 CPU 스레드 수를 지정하는 실행 옵션 플래그는 무엇입니까?",
+    "choices": [
+      "-t",
+      "-s",
+      "-n",
+      "-g"
+    ],
+    "answer": 0,
+    "explanation": "-t (또는 --threads) 옵션을 통해 모델 추론에 사용할 물리적/논리적 CPU 코어 수를 지정할 수 있습니다.",
+    "tag": "threads",
+    "image_prompt": "A visualization of multiple parallel processing lines representing CPU threads, digital abstract art."
+  },
+  {
+    "id": "llm_024",
+    "question": "CUDA 컴파일 후, 모델의 일부 레이어를 GPU로 오프로드(Offload)하기 위해 사용하는 실행 옵션은?",
+    "choices": [
+      "-t",
+      "-ngl",
+      "-m",
+      "-c"
+    ],
+    "answer": 1,
+    "explanation": "-ngl (또는 --n-gpu-layers) 옵션을 사용하여 몇 개의 레이어를 GPU 메모리에 올릴지 결정합니다.",
+    "tag": "CUDA",
+    "image_prompt": "Data packets moving from a CPU icon to a GPU icon via a high-speed bridge, 3D render."
+  },
+  {
+    "id": "llm_025",
+    "question": "CPU 추론 시 성능을 최적화하기 위해 사용되는 명령어 집합(Instruction Set) 중 하나는?",
+    "choices": [
+      "CUDA Core",
+      "Metal API",
+      "AVX2/AVX512",
+      "Ray Tracing"
+    ],
+    "answer": 2,
+    "explanation": "llama.cpp는 CPU 성능 극대화를 위해 AVX, AVX2, AVX512와 같은 SIMD 명령어 집합을 활용합니다.",
+    "tag": "CPU",
+    "image_prompt": "A close-up of a silicon wafer with binary codes and 'AVX' text etched into the surface."
+  },
+  {
+    "id": "llm_026",
+    "question": "Metal 가속을 사용하는 Mac 환경에서 GPU 메모리 부족 시 발생하는 현상으로 가장 적절한 것은?",
+    "choices": [
+      "컴파일 에러 발생",
+      "시스템 전체 셧다운",
+      "CPU로의 자동 폴백(Fallback) 또는 속도 저하",
+      "인터넷 연결 끊김"
+    ],
+    "answer": 2,
+    "explanation": "GPU 메모리가 부족하면 일부 레이어가 CPU에서 처리되거나 시스템 스왑 메모리를 사용하여 추론 속도가 급격히 느려집니다.",
+    "tag": "Metal",
+    "image_prompt": "A warning sign on a computer screen showing 'Memory Full' with a slow-loading progress bar."
+  },
+  {
+    "id": "llm_027",
+    "question": "CPU 스레드(-t) 설정 시 가장 권장되는 값은 무엇입니까?",
+    "choices": [
+      "무조건 최대 숫자",
+      "물리 코어 수와 일치 또는 약간 적게",
+      "항상 1로 설정",
+      "메모리 용량과 동일하게"
+    ],
+    "answer": 1,
+    "explanation": "하이퍼스레딩을 포함한 논리 코어 전체보다 실제 물리 코어 수에 맞추는 것이 컨텍스트 스위칭 비용을 줄여 더 효율적입니다.",
+    "tag": "threads",
+    "image_prompt": "A balance scale comparing 'Physical Cores' and 'Logical Threads', clean infographic style."
+  },
+  {
+    "id": "llm_028",
+    "question": "CUDA 백엔드로 컴파일된 llama.cpp에서 -ngl 0으로 설정했을 때의 결과는?",
+    "choices": [
+      "모든 레이어가 GPU에서 동작",
+      "GPU 가속이 완전히 꺼지고 CPU만 사용",
+      "컴퓨터가 재부팅됨",
+      "메모리 오류 발생"
+    ],
+    "answer": 1,
+    "explanation": "-ngl 0은 GPU로 오프로드할 레이어 수를 0개로 설정하는 것이므로, CUDA 컴파일 여부와 상관없이 CPU만 사용하게 됩니다.",
+    "tag": "CUDA",
+    "image_prompt": "A GPU icon turned off (greyed out) and a CPU icon glowing brightly, contrast lighting."
+  },
+  {
+    "id": "llm_029",
+    "question": "llama.cpp 빌드 시스템(CMake)에서 특정 백엔드를 활성화하는 일반적인 명령어 형식은?",
+    "choices": [
+      "make run",
+      "cmake -DGGML_CUDA=ON ..",
+      "pip install llama-cpp",
+      "git clone cuda"
+    ],
+    "answer": 1,
+    "explanation": "CMake를 사용할 때 -D 옵션을 통해 GGML_CUDA=ON과 같은 정의(Definition)를 전달하여 특정 기능을 활성화합니다.",
+    "tag": "컴파일",
+    "image_prompt": "A terminal window showing a CMake command being typed with syntax highlighting, dark mode."
+  },
+  {
+    "id": "llm_030",
+    "question": "Ollama Modelfile에서 기본이 되는 모델을 지정하는 명령어는 무엇인가요?",
+    "choices": [
+      "BASE",
+      "FROM",
+      "IMPORT",
+      "MODEL"
+    ],
+    "answer": 1,
+    "explanation": "FROM 명령어는 기반이 될 모델(예: llama3, mistral)을 지정하며 Modelfile의 가장 첫 줄에 위치해야 합니다.",
+    "tag": "FROM",
+    "image_prompt": "A blueprint of a building foundation with the word 'FROM' written on it, digital art style."
+  },
+  {
+    "id": "llm_031",
+    "question": "모델의 온도(Temperature)나 컨텍스트 창 크기를 조절하기 위해 사용하는 명령어는?",
+    "choices": [
+      "SET",
+      "CONFIG",
+      "PARAMETER",
+      "OPTION"
+    ],
+    "answer": 2,
+    "explanation": "PARAMETER 명령어를 사용하여 temperature, num_ctx, stop sequence 등 모델의 동작 파라미터를 설정합니다.",
+    "tag": "PARAMETER",
+    "image_prompt": "A futuristic control panel with sliders and knobs adjusting digital values, high tech."
+  },
+  {
+    "id": "llm_032",
+    "question": "모델이 사용자와 주고받는 대화의 형식을 정의하는 명령어는 무엇인가요?",
+    "choices": [
+      "FORMAT",
+      "TEMPLATE",
+      "STRUCTURE",
+      "LAYOUT"
+    ],
+    "answer": 1,
+    "explanation": "TEMPLATE 명령어를 통해 프롬프트 템플릿을 설정하여 모델이 입력 데이터를 어떻게 해석하고 응답할지 형식을 지정합니다.",
+    "tag": "TEMPLATE",
+    "image_prompt": "A digital document template with placeholders and brackets, clean UI design."
+  },
+  {
+    "id": "llm_033",
+    "question": "모델에게 특정한 역할(Persona)이나 행동 지침을 부여하는 명령어는?",
+    "choices": [
+      "ROLE",
+      "INSTRUCTION",
+      "SYSTEM",
+      "PROMPT"
+    ],
+    "answer": 2,
+    "explanation": "SYSTEM 명령어를 사용하여 모델의 정체성, 말투, 제약 사항 등 시스템 프롬프트를 설정합니다.",
+    "tag": "SYSTEM",
+    "image_prompt": "A robotic brain being programmed with a set of rules and identity, cybernetic style."
+  },
+  {
+    "id": "llm_034",
+    "question": "PARAMETER에서 'temperature' 값을 높였을 때 나타나는 현상은?",
+    "choices": [
+      "응답이 더 결정론적이고 일관되게 변한다.",
+      "응답의 창의성과 무작위성이 증가한다.",
+      "모델의 추론 속도가 빨라진다.",
+      "컨텍스트 기억 용량이 늘어난다."
+    ],
+    "answer": 1,
+    "explanation": "Temperature 값이 높을수록 모델은 더 다양한 토큰을 선택하여 창의적이고 예측 불가능한 응답을 생성합니다.",
+    "tag": "PARAMETER",
+    "image_prompt": "A colorful explosion of ideas and sparks coming out of a computer screen."
+  },
+  {
+    "id": "llm_035",
+    "question": "Modelfile에서 FROM 명령어 뒤에 모델 이름 대신 파일 경로를 적으면 어떻게 되나요?",
+    "choices": [
+      "오류가 발생하며 실행되지 않는다.",
+      "기본 모델을 자동으로 다운로드한다.",
+      "지정된 경로의 GGUF 파일을 기반 모델로 사용한다.",
+      "시스템 설정을 초기화한다."
+    ],
+    "answer": 2,
+    "explanation": "FROM 명령어 뒤에 로컬 파일 경로(예: ./my-model.gguf)를 입력하면 해당 파일을 직접 불러와 사용할 수 있습니다.",
+    "tag": "FROM",
+    "image_prompt": "A folder icon with an arrow pointing to a large binary file, technical diagram."
+  },
+  {
+    "id": "llm_036",
+    "question": "TEMPLATE 설정 시 주로 사용되는 {{ .Prompt }}의 의미는 무엇인가요?",
+    "choices": [
+      "모델의 시스템 메시지를 출력한다.",
+      "사용자가 입력한 실제 프롬프트 내용이 들어갈 자리이다.",
+      "모델의 파라미터를 변경하는 변수이다.",
+      "응답을 종료하는 정지 시퀀스이다."
+    ],
+    "answer": 1,
+    "explanation": "{{ .Prompt }}는 Ollama 템플릿 엔진에서 사용자의 입력값이 동적으로 삽입되는 플레이스홀더입니다.",
+    "tag": "TEMPLATE",
+    "image_prompt": "A puzzle piece fitting into a gap in a sentence, conceptual digital art."
+  },
+  {
+    "id": "llm_037",
+    "question": "SYSTEM 명령어를 통해 '너는 전문 코딩 전문가야'라고 설정했을 때의 효과는?",
+    "choices": [
+      "모델의 학습 데이터가 실시간으로 변경된다.",
+      "모델이 답변할 때 코딩 전문가의 관점과 말투를 유지한다.",
+      "컴퓨터의 CPU 사용량이 줄어든다.",
+      "인터넷 연결 없이도 최신 라이브러리를 알게 된다."
+    ],
+    "answer": 1,
+    "explanation": "SYSTEM 프롬프트는 모델에게 페르소나를 부여하여 응답의 톤과 매너, 전문성 수준을 제어합니다.",
+    "tag": "SYSTEM",
+    "image_prompt": "A hologram of a professional software engineer standing next to an AI core."
+  },
+  {
+    "id": "llm_038",
+    "question": "PARAMETER에서 'stop' 설정의 목적은 무엇인가요?",
+    "choices": [
+      "모델의 실행을 완전히 중단시킨다.",
+      "특정 문자열이 생성되면 생성을 멈추게 하여 불필요한 출력을 방지한다.",
+      "메모리 사용량을 제한한다.",
+      "입력 토큰의 수를 제한한다."
+    ],
+    "answer": 1,
+    "explanation": "stop 파라미터는 모델이 특정 단어나 기호(예: \n\n)를 생성했을 때 즉시 출력을 중단하도록 설정하는 기능입니다.",
+    "tag": "PARAMETER",
+    "image_prompt": "A red stop sign placed in the middle of a stream of binary code."
+  },
+  {
+    "id": "llm_039",
+    "question": "다음 중 Modelfile의 올바른 구성 순서로 가장 적절한 것은?",
+    "choices": [
+      "SYSTEM → FROM → PARAMETER",
+      "PARAMETER → TEMPLATE → FROM",
+      "FROM → PARAMETER → SYSTEM → TEMPLATE",
+      "TEMPLATE → SYSTEM → FROM"
+    ],
+    "answer": 2,
+    "explanation": "일반적으로 기반 모델을 정의하는 FROM이 가장 먼저 오며, 이후 파라미터 설정, 시스템 프롬프트, 템플릿 순으로 구성하는 것이 정석입니다.",
+    "tag": "Modelfile",
+    "image_prompt": "A vertical stack of layers: Base, Settings, Identity, Format, architectural style."
+  },
+  {
+    "id": "llm_040",
+    "question": "GGUF 양자화 방식 중 Q2_K의 가장 큰 특징은 무엇입니까?",
+    "choices": [
+      "최고의 추론 품질 제공",
+      "가장 낮은 메모리 사용량과 빠른 속도",
+      "무손실 압축에 가까운 정밀도",
+      "Q8_0와 동일한 가중치 비트 수"
+    ],
+    "answer": 1,
+    "explanation": "Q2_K는 매우 낮은 비트로 양자화하여 모델 크기를 최소화하고 메모리 사용량을 줄여 속도를 높이지만, 품질 손실이 가장 큽니다.",
+    "tag": "GGUF_Q2_K",
+    "image_prompt": "A small, lightweight digital cube representing a compressed AI model, minimalist style, blue neon lines."
+  },
+  {
+    "id": "llm_041",
+    "question": "품질과 성능의 균형(Sweet Spot)으로 가장 널리 추천되는 양자화 설정은 무엇입니까?",
+    "choices": [
+      "Q2_K",
+      "Q4_K_M",
+      "Q8_0",
+      "F16"
+    ],
+    "answer": 1,
+    "explanation": "Q4_K_M은 적절한 모델 크기 감소와 최소한의 품질 저하를 제공하여 일반적인 사용자에게 가장 효율적인 선택지로 평가받습니다.",
+    "tag": "GGUF_Q4_K_M",
+    "image_prompt": "A balanced scale with a brain on one side and a lightning bolt on the other, symbolizing quality and speed balance."
+  },
+  {
+    "id": "llm_042",
+    "question": "Q8_0 양자화 방식의 주요 장점은 무엇입니까?",
+    "choices": [
+      "메모리 사용량을 획기적으로 줄임",
+      "추론 속도가 Q2_K보다 훨씬 빠름",
+      "원본 모델(F16)에 매우 근접한 높은 품질 유지",
+      "저사양 PC에서도 원활하게 작동"
+    ],
+    "answer": 2,
+    "explanation": "Q8_0는 8비트를 사용하여 양자화 손실을 최소화하므로, 메모리 여유가 있다면 원본 모델과 거의 차이 없는 고품질 결과를 얻을 수 있습니다.",
+    "tag": "GGUF_Q8_0",
+    "image_prompt": "A high-definition crystal sphere reflecting complex data patterns, representing high precision."
+  },
+  {
+    "id": "llm_043",
+    "question": "다음 중 추론 속도가 가장 빠른 순서대로 나열된 것은 무엇입니까?",
+    "choices": [
+      "Q8_0 > Q4_K_M > Q2_K",
+      "Q2_K > Q4_K_M > Q8_0",
+      "Q4_K_M > Q2_K > Q8_0",
+      "모두 동일한 속도"
+    ],
+    "answer": 1,
+    "explanation": "양자화 비트 수가 낮을수록(모델 크기가 작을수록) 메모리 대역폭 요구량이 줄어들어 추론 속도가 빨라집니다.",
+    "tag": "Performance",
+    "image_prompt": "Three runners on a track: a small fast runner, a medium runner, and a heavy slow runner."
+  },
+  {
+    "id": "llm_044",
+    "question": "Q4_K_M에서 'M'이 의미하는 바와 가장 가까운 설명은 무엇입니까?",
+    "choices": [
+      "Maximum (최대 품질)",
+      "Minimum (최소 크기)",
+      "Medium (중간 정도의 최적화 설정)",
+      "Multi-layer (다층 구조)"
+    ],
+    "answer": 2,
+    "explanation": "K-Quant 방식에서 M은 Medium을 의미하며, 일부 레이어에 더 많은 비트를 할당하여 품질과 크기의 균형을 맞춘 설정입니다.",
+    "tag": "GGUF_Naming",
+    "image_prompt": "A slider bar set to the middle position between 'Small' and 'Large'."
+  },
+  {
+    "id": "llm_045",
+    "question": "RTX 5090과 같이 VRAM이 매우 넉넉한 환경에서 품질을 최우선으로 한다면 어떤 선택이 가장 적절합니까?",
+    "choices": [
+      "Q2_K",
+      "Q4_K_M",
+      "Q8_0",
+      "양자화하지 않은 F32"
+    ],
+    "answer": 2,
+    "explanation": "VRAM이 충분하다면 Q8_0를 사용하여 품질 저하를 최소화하는 것이 실용적인 고품질 선택지입니다.",
+    "tag": "Hardware_Optimization",
+    "image_prompt": "A powerful GPU with glowing gold circuits and a crown on top."
+  },
+  {
+    "id": "llm_046",
+    "question": "양자화 비트 수가 낮아질 때 발생하는 현상으로 틀린 것은 무엇입니까?",
+    "choices": [
+      "모델 파일 크기가 감소한다.",
+      "Perplexity(혼란도)가 증가하여 품질이 떨어진다.",
+      "VRAM 점유율이 높아진다.",
+      "토큰 생성 속도가 빨라지는 경향이 있다."
+    ],
+    "answer": 2,
+    "explanation": "양자화 비트 수가 낮아지면 모델 크기가 줄어들므로 VRAM 점유율은 오히려 낮아집니다.",
+    "tag": "Quantization_Effect",
+    "image_prompt": "A shrinking digital box with a warning sign indicating quality loss."
+  },
+  {
+    "id": "llm_047",
+    "question": "Q2_K를 사용할 때 발생할 수 있는 가장 큰 부작용은 무엇입니까?",
+    "choices": [
+      "컴퓨터 전력 소모 급증",
+      "답변의 논리적 일관성 결여 및 환각 현상 증가",
+      "파일 읽기 속도 저하",
+      "GPU 온도 상승"
+    ],
+    "answer": 1,
+    "explanation": "너무 낮은 비트로 양자화하면 모델이 학습한 지식을 제대로 복원하지 못해 엉뚱한 대답을 하거나 논리가 깨지는 현상이 심해집니다.",
+    "tag": "Quality_Loss",
+    "image_prompt": "A glitchy robot head with fragmented digital pieces floating around."
+  },
+  {
+    "id": "llm_048",
+    "question": "GGUF 양자화에서 'K-Quants' 방식의 특징은 무엇입니까?",
+    "choices": [
+      "모든 가중치를 동일한 비트로 고정함",
+      "레이어별로 중요도에 따라 다른 비트를 할당하여 효율을 높임",
+      "CPU에서만 작동하도록 설계됨",
+      "이미지 생성 전용 양자화 방식임"
+    ],
+    "answer": 1,
+    "explanation": "K-Quants는 모델의 각 레이어가 품질에 미치는 영향이 다르다는 점을 이용해 중요 부위에는 더 많은 비트를 할당하는 지능적인 방식입니다.",
+    "tag": "K_Quants",
+    "image_prompt": "A complex puzzle where some pieces are larger and more detailed than others."
+  },
+  {
+    "id": "llm_049",
+    "question": "다음 중 '품질 > 속도' 순으로 우선순위가 높은 설정부터 나열한 것은?",
+    "choices": [
+      "Q2_K > Q4_K_M > Q8_0",
+      "Q8_0 > Q4_K_M > Q2_K",
+      "Q4_K_M > Q8_0 > Q2_K",
+      "모두 동일함"
+    ],
+    "answer": 1,
+    "explanation": "비트 수가 높을수록(Q8_0) 품질이 좋고 속도는 상대적으로 느리며, 비트 수가 낮을수록(Q2_K) 품질은 낮지만 속도는 빠릅니다.",
+    "tag": "Comparison",
+    "image_prompt": "A gradient arrow moving from a high-quality diamond to a fast-moving silver bullet."
+  },
+  {
+    "id": "llm_050",
+    "question": "Open WebUI를 설치할 때 가장 권장되는 방식은 무엇입니까?",
+    "choices": [
+      "직접 소스 코드 컴파일",
+      "Docker 컨테이너 사용",
+      "Windows 실행 파일(.exe) 다운로드",
+      "웹 브라우저 확장 프로그램 설치"
+    ],
+    "answer": 1,
+    "explanation": "Open WebUI는 의존성 관리가 복잡하므로 Docker를 통해 컨테이너 형태로 설치하는 것이 가장 빠르고 안정적입니다.",
+    "tag": "설치",
+    "image_prompt": "A professional 3D render of a Docker whale logo with glowing blue digital circuits around it, high tech atmosphere."
+  },
+  {
+    "id": "llm_051",
+    "question": "Open WebUI와 Ollama를 연동하기 위해 설정해야 하는 주요 항목은 무엇입니까?",
+    "choices": [
+      "Ollama API URL",
+      "GPU 드라이버 버전",
+      "사용자 윈도우 계정명",
+      "웹 브라우저 캐시 삭제"
+    ],
+    "answer": 0,
+    "explanation": "Open WebUI 설정에서 Ollama 서버의 주소(기본값 http://localhost:11434)를 정확히 입력해야 모델 목록을 불러올 수 있습니다.",
+    "tag": "연동",
+    "image_prompt": "A conceptual diagram showing a web interface connecting to a server backend via a glowing digital bridge, futuristic style."
+  },
+  {
+    "id": "llm_052",
+    "question": "Ollama에서 새로운 모델을 다운로드(Pull)하기 위해 사용하는 명령어는 무엇입니까?",
+    "choices": [
+      "ollama download [모델명]",
+      "ollama get [모델명]",
+      "ollama pull [모델명]",
+      "ollama install [모델명]"
+    ],
+    "answer": 2,
+    "explanation": "Ollama CLI에서 'ollama pull' 명령어를 사용하여 라이브러리에서 모델 파일을 로컬로 내려받습니다.",
+    "tag": "모델 관리",
+    "image_prompt": "A command line interface screen showing a progress bar of a large file being downloaded, cyber punk aesthetic."
+  },
+  {
+    "id": "llm_053",
+    "question": "Open WebUI에서 여러 모델을 동시에 띄워 답변을 비교하는 기능의 명칭은 무엇입니까?",
+    "choices": [
+      "모델 병렬 처리",
+      "멀티 모델 채팅 (Model Comparison)",
+      "더블 챗",
+      "에코 모드"
+    ],
+    "answer": 1,
+    "explanation": "Open WebUI는 여러 모델을 선택하여 동일한 질문에 대해 각각 어떻게 답변하는지 한 화면에서 비교할 수 있는 기능을 제공합니다.",
+    "tag": "기능",
+    "image_prompt": "A split screen showing two different AI chat interfaces side by side, comparing responses, clean UI design."
+  },
+  {
+    "id": "llm_054",
+    "question": "Ollama 서버가 다른 PC에 설치되어 있을 때 Open WebUI에서 접속하려면 어떤 환경 변수 설정이 필요합니까?",
+    "choices": [
+      "OLLAMA_HOST=0.0.0.0",
+      "OLLAMA_PORT=8080",
+      "OLLAMA_USER=admin",
+      "OLLAMA_GPU=true"
+    ],
+    "answer": 0,
+    "explanation": "기본적으로 Ollama는 로컬 접속만 허용하므로, 외부 접속을 위해 OLLAMA_HOST 환경 변수를 0.0.0.0으로 설정해야 합니다.",
+    "tag": "연동",
+    "image_prompt": "A network map showing a laptop connecting to a powerful server in a data center, glowing connection lines."
+  },
+  {
+    "id": "llm_055",
+    "question": "Open WebUI에서 'Modelfile'을 통해 사용자 정의 모델을 만드는 목적은 무엇입니까?",
+    "choices": [
+      "모델의 파일 용량을 줄이기 위해",
+      "시스템 프롬프트 및 파라미터를 설정하여 특화된 페르소나를 만들기 위해",
+      "GPU 가속도를 높이기 위해",
+      "인터넷 연결 없이 모델을 업데이트하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "Modelfile을 사용하면 기본 모델에 특정 역할(Persona)이나 지침(System Prompt)을 부여하여 맞춤형 모델을 생성할 수 있습니다.",
+    "tag": "모델 관리",
+    "image_prompt": "A digital blueprint of an AI brain being customized with various settings and sliders, technical drawing style."
+  },
+  {
+    "id": "llm_056",
+    "question": "Open WebUI 설치 후 처음 접속했을 때 가장 먼저 수행해야 하는 작업은 무엇입니까?",
+    "choices": [
+      "GPU 드라이버 업데이트",
+      "관리자 계정 생성",
+      "모델 파일 삭제",
+      "포트 번호 변경"
+    ],
+    "answer": 1,
+    "explanation": "최초 접속 시 첫 번째로 가입하는 사용자가 자동으로 관리자(Admin) 권한을 갖게 되며, 계정 생성이 필수적입니다.",
+    "tag": "설치",
+    "image_prompt": "A sleek sign-up page of a modern web application with 'Create Account' button highlighted, soft lighting."
+  },
+  {
+    "id": "llm_057",
+    "question": "Ollama에서 모델의 양자화(Quantization) 버전이 의미하는 것은 무엇입니까?",
+    "choices": [
+      "모델의 학습 데이터 양",
+      "모델 가중치의 정밀도를 낮춰 메모리 사용량을 줄인 것",
+      "모델의 답변 속도를 강제로 높이는 설정",
+      "여러 개의 GPU를 하나로 묶는 기술"
+    ],
+    "answer": 1,
+    "explanation": "양자화는 모델의 파라미터 정밀도(예: FP16 -> INT4)를 낮추어 VRAM 사용량을 줄이고 추론 속도를 높이는 기법입니다.",
+    "tag": "모델 관리",
+    "image_prompt": "A visual representation of a large complex cube being compressed into a smaller, efficient cube, abstract 3D art."
+  },
+  {
+    "id": "llm_058",
+    "question": "Open WebUI에서 RAG(Retrieval-Augmented Generation) 기능을 구현하기 위해 업로드하는 파일의 역할은 무엇입니까?",
+    "choices": [
+      "모델의 가중치를 변경함",
+      "AI가 답변할 때 참고할 외부 지식 베이스를 제공함",
+      "웹 UI의 테마 색상을 변경함",
+      "Ollama 서버의 성능을 최적화함"
+    ],
+    "answer": 1,
+    "explanation": "RAG는 문서(PDF, TXT 등)를 업로드하여 AI가 해당 문서의 내용을 바탕으로 정확한 답변을 생성하도록 돕는 기술입니다.",
+    "tag": "기능",
+    "image_prompt": "A digital library where a robot is picking a specific book to answer a question, futuristic library setting."
+  },
+  {
+    "id": "llm_059",
+    "question": "Docker로 Open WebUI를 실행할 때 `-v open-webui:/app/backend/data` 옵션의 의미는 무엇입니까?",
+    "choices": [
+      "컨테이너의 포트를 변경함",
+      "데이터를 호스트 PC에 저장하여 컨테이너 삭제 후에도 유지(볼륨 마운트)함",
+      "모델 다운로드 경로를 지정함",
+      "GPU 사용 가능 여부를 확인함"
+    ],
+    "answer": 1,
+    "explanation": "볼륨 마운트 옵션은 채팅 기록, 사용자 설정 등의 데이터를 영구적으로 저장하여 컨테이너가 재시작되어도 데이터가 사라지지 않게 합니다.",
+    "tag": "설치",
+    "image_prompt": "A hard drive icon connected to a floating virtual container by a glowing cable, data synchronization concept."
+  },
+  {
+    "id": "llm_060",
+    "question": "vLLM에서 Tensor Parallelism(TP)의 주요 목적은 무엇입니까?",
+    "choices": [
+      "모델의 학습 속도 향상",
+      "단일 모델 가중치를 여러 GPU에 분산하여 메모리 부족 해결 및 추론 속도 향상",
+      "데이터셋을 여러 개로 나누어 병렬 처리",
+      "CPU와 GPU 간의 데이터 전송 속도 최적화"
+    ],
+    "answer": 1,
+    "explanation": "Tensor Parallelism은 거대한 모델 가중치를 여러 개의 GPU에 나누어 배치함으로써, 단일 GPU 메모리 한계를 극복하고 연산을 병렬로 처리하여 추론 지연 시간을 줄입니다.",
+    "tag": "tensor_parallel",
+    "image_prompt": "A conceptual diagram showing a large neural network layer being split across four GPUs with arrows indicating parallel computation."
+  },
+  {
+    "id": "llm_061",
+    "question": "Continuous Batching(연속 배칭)이 기존의 Static Batching과 비교하여 갖는 가장 큰 장점은 무엇입니까?",
+    "choices": [
+      "메모리 사용량을 완전히 제거함",
+      "모델의 파라미터 수를 줄여줌",
+      "요청이 끝나는 즉시 새로운 요청을 투입하여 GPU 유휴 시간을 최소화하고 처리량을 높임",
+      "학습 데이터의 셔플링 성능을 개선함"
+    ],
+    "answer": 2,
+    "explanation": "Static Batching은 배치 내 모든 문장이 끝날 때까지 기다려야 하지만, Continuous Batching은 개별 요청이 완료되는 즉시 새로운 요청을 끼워 넣어 GPU 효율성을 극대화합니다.",
+    "tag": "continuous_batching",
+    "image_prompt": "A comparison chart showing a static block of requests versus a fluid stream of requests entering and leaving a processing pipeline."
+  },
+  {
+    "id": "llm_062",
+    "question": "vLLM의 처리량(Throughput)을 결정짓는 핵심 요소 중 하나인 PagedAttention의 역할은 무엇입니까?",
+    "choices": [
+      "모델 가중치를 압축하여 저장함",
+      "KV 캐시 메모리를 페이지 단위로 관리하여 메모리 낭비를 줄이고 더 많은 요청을 동시에 처리함",
+      "토큰 생성 속도를 물리적으로 빠르게 함",
+      "네트워크 패킷 손실을 방지함"
+    ],
+    "answer": 1,
+    "explanation": "PagedAttention은 OS의 가상 메모리 개념을 도입하여 KV 캐시를 불연속적인 메모리 공간에 할당함으로써, 메모리 단편화를 막고 배치 크기를 크게 늘려 처리량을 향상시킵니다.",
+    "tag": "throughput",
+    "image_prompt": "A visualization of memory blocks organized like a page table in an operating system, mapping to KV cache tokens."
+  },
+  {
+    "id": "llm_063",
+    "question": "Tensor Parallelism 설정 시 `tensor_parallel_size`를 2로 설정했다면, 이는 무엇을 의미합니까?",
+    "choices": [
+      "모델을 2번 복제하여 실행함",
+      "데이터셋을 2개로 나누어 처리함",
+      "하나의 모델 레이어를 2개의 GPU가 나누어 연산함",
+      "추론 속도를 2배 느리게 제한함"
+    ],
+    "answer": 2,
+    "explanation": "tensor_parallel_size는 모델의 텐서를 몇 개의 GPU에 분할하여 배치할지를 결정하는 설정값입니다. 2로 설정하면 2개의 GPU가 협력하여 하나의 모델을 구동합니다.",
+    "tag": "tensor_parallel",
+    "image_prompt": "A single matrix multiplication operation split into two halves, each being processed by a different GPU."
+  },
+  {
+    "id": "llm_064",
+    "question": "Continuous Batching 환경에서 'Iteration-level scheduling'의 특징은 무엇입니까?",
+    "choices": [
+      "전체 요청이 완료될 때까지 스케줄링을 하지 않음",
+      "매 토큰 생성 단계(iteration)마다 새로운 요청을 배치에 추가하거나 제거할 수 있음",
+      "CPU에서만 모든 스케줄링을 수행함",
+      "고정된 크기의 배치만 처리 가능함"
+    ],
+    "answer": 1,
+    "explanation": "vLLM은 매 반복(iteration) 단계마다 현재 상태를 확인하고, 완료된 요청은 내보내고 대기 중인 요청을 투입하는 세밀한 스케줄링을 수행합니다.",
+    "tag": "continuous_batching",
+    "image_prompt": "A timeline showing tokens being generated step-by-step with new requests joining the queue at each tick."
+  },
+  {
+    "id": "llm_065",
+    "question": "vLLM에서 처리량(Throughput)을 높이기 위해 가장 효과적인 방법은 무엇입니까?",
+    "choices": [
+      "모델의 정밀도를 FP32로 높임",
+      "KV 캐시 메모리 관리를 최적화하여 동시 처리 요청 수(Batch size)를 늘림",
+      "GPU 개수를 줄여 통신 비용을 없앰",
+      "모든 요청을 순차적으로 하나씩 처리함"
+    ],
+    "answer": 1,
+    "explanation": "처리량은 단위 시간당 처리하는 토큰 수입니다. PagedAttention 등을 통해 메모리 효율을 높여 더 많은 요청을 동시에 처리(Batching)할수록 처리량이 증가합니다.",
+    "tag": "throughput",
+    "image_prompt": "A graph showing the increase in tokens per second as the batch size increases on a GPU."
+  },
+  {
+    "id": "llm_066",
+    "question": "Tensor Parallelism 사용 시 발생할 수 있는 주요 오버헤드는 무엇입니까?",
+    "choices": [
+      "디스크 I/O 속도 저하",
+      "GPU 간의 데이터 통신(All-reduce 등) 비용",
+      "CPU 램 용량 부족",
+      "전력 소비 감소"
+    ],
+    "answer": 1,
+    "explanation": "텐서를 나누어 계산하면 각 GPU가 계산한 결과를 합쳐야 하므로, GPU 간 고속 통신(NVLink 등)을 통한 데이터 교환 비용이 발생합니다.",
+    "tag": "tensor_parallel",
+    "image_prompt": "Two GPUs connected by a high-speed link with data packets moving back and forth during synchronization."
+  },
+  {
+    "id": "llm_067",
+    "question": "Continuous Batching이 특히 유리한 상황은 언제입니까?",
+    "choices": [
+      "모든 입력과 출력의 길이가 동일할 때",
+      "단일 요청만 처리하는 매우 작은 서비스일 때",
+      "요청마다 생성되는 토큰의 길이가 서로 크게 다를 때",
+      "모델 가중치가 너무 작아 GPU 한 장에 충분히 들어갈 때"
+    ],
+    "answer": 2,
+    "explanation": "출력 길이가 제각각인 경우, Static Batching은 가장 긴 문장이 끝날 때까지 짧은 문장들이 자원을 점유하며 기다려야 하지만, Continuous Batching은 이를 즉시 해제하여 효율적입니다.",
+    "tag": "continuous_batching",
+    "image_prompt": "A bar chart with varying lengths of bars representing different sequence lengths, showing gaps being filled by new requests."
+  },
+  {
+    "id": "llm_068",
+    "question": "vLLM의 처리량 측정 지표 중 'Tokens per second'가 의미하는 것은 무엇입니까?",
+    "choices": [
+      "초당 모델이 읽어들이는 파라미터 수",
+      "초당 생성되는 총 토큰의 수",
+      "초당 GPU 전력 소비량",
+      "초당 네트워크 패킷 전송 횟수"
+    ],
+    "answer": 1,
+    "explanation": "Tokens per second(TPS)는 서버가 초당 얼마나 많은 토큰을 생성하여 사용자에게 전달하는지를 나타내는 핵심 처리량 지표입니다.",
+    "tag": "throughput",
+    "image_prompt": "A digital counter rapidly increasing numbers next to a stream of text tokens."
+  },
+  {
+    "id": "llm_069",
+    "question": "다음 중 vLLM의 성능 최적화 기술이 아닌 것은 무엇입니까?",
+    "choices": [
+      "PagedAttention",
+      "Continuous Batching",
+      "Tensor Parallelism",
+      "Sequential Processing"
+    ],
+    "answer": 3,
+    "explanation": "vLLM은 병렬 처리와 효율적인 배칭을 지향합니다. Sequential Processing(순차 처리)은 한 번에 하나씩 처리하는 방식으로 vLLM이 해결하고자 하는 저효율 방식입니다.",
+    "tag": "throughput",
+    "image_prompt": "A red 'X' mark over a line of people waiting in a single file queue, contrasted with a multi-lane highway."
+  },
+  {
+    "id": "llm_070",
+    "question": "RAG(Retrieval-Augmented Generation) 시스템에서 임베딩 모델의 주된 역할은 무엇입니까?",
+    "choices": [
+      "텍스트를 생성하여 사용자에게 답변 제공",
+      "텍스트 데이터를 고차원 벡터로 변환하여 의미적 유사도 계산 가능하게 함",
+      "LLM의 파라미터 수를 줄여 추론 속도를 향상시킴",
+      "데이터베이스의 SQL 쿼리를 자동으로 작성함"
+    ],
+    "answer": 1,
+    "explanation": "임베딩 모델은 텍스트를 숫자로 이루어진 벡터로 변환하여, 컴퓨터가 단어의 의미적 유사성을 계산하고 관련 문서를 효율적으로 찾을 수 있게 합니다.",
+    "tag": "RAG 기초",
+    "image_prompt": "A conceptual diagram showing text transforming into a series of numerical vectors in a 3D space."
+  },
+  {
+    "id": "llm_071",
+    "question": "Ollama에서 사용할 수 있는 'nomic-embed-text' 모델의 특징으로 가장 적절한 것은?",
+    "choices": [
+      "이미지 생성 전용 모델이다",
+      "매우 큰 파라미터를 가져서 GPU 메모리를 극심하게 소모한다",
+      "고성능 오픈소스 임베딩 모델로, 긴 컨텍스트 윈도우를 지원하여 효율적인 문서 검색이 가능하다",
+      "한국어 전용으로만 설계된 폐쇄형 모델이다"
+    ],
+    "answer": 2,
+    "explanation": "nomic-embed-text는 Ollama에서 제공하는 대표적인 임베딩 모델로, 넓은 컨텍스트 범위를 지원하며 효율적인 벡터 검색을 가능하게 합니다.",
+    "tag": "nomic-embed-text",
+    "image_prompt": "A digital representation of a long document being compressed into a precise vector point."
+  },
+  {
+    "id": "llm_072",
+    "question": "mxbai-embed-large 모델이 RAG 파이프라인에서 가지는 강점은 무엇입니까?",
+    "choices": [
+      "텍스트를 음성으로 변환하는 기능",
+      "높은 검색 정확도(Retrieval Accuracy)와 벤치마크 성능",
+      "인터넷 연결 없이 작동하지 않는 클라우드 전용 모델임",
+      "이미지 캡셔닝 기능 제공"
+    ],
+    "answer": 1,
+    "explanation": "mxbai-embed-large는 최신 임베딩 벤치마크에서 높은 성능을 보이며, 특히 문서 검색의 정확도를 높이는 데 특화되어 있습니다.",
+    "tag": "mxbai",
+    "image_prompt": "A magnifying glass focusing on a specific data point among thousands of scattered dots in a vector space."
+  },
+  {
+    "id": "llm_073",
+    "question": "Ollama를 통해 임베딩 모델을 실행할 때, 일반적인 LLM(예: Llama3)과 다른 점은 무엇입니까?",
+    "choices": [
+      "임베딩 모델은 텍스트 답변을 생성하지 않고 벡터 값만 반환한다",
+      "임베딩 모델은 반드시 인터넷에 연결되어 있어야 한다",
+      "임베딩 모델은 GPU를 전혀 사용하지 않는다",
+      "임베딩 모델은 채팅 인터페이스로만 작동한다"
+    ],
+    "answer": 0,
+    "explanation": "LLM은 다음 토큰을 예측하여 문장을 생성하지만, 임베딩 모델은 입력된 텍스트의 의미를 대표하는 고정된 길이의 숫자 배열(벡터)을 출력합니다.",
+    "tag": "Ollama 작동원리",
+    "image_prompt": "A split screen showing a chat bubble on one side and a list of floating numbers (vectors) on the other."
+  },
+  {
+    "id": "llm_074",
+    "question": "RAG 과정에서 '벡터 데이터베이스(Vector DB)'가 필요한 이유는 무엇입니까?",
+    "choices": [
+      "LLM의 학습 데이터를 저장하기 위해",
+      "임베딩 모델이 생성한 벡터들을 저장하고 빠르게 유사도 검색을 수행하기 위해",
+      "사용자의 채팅 로그를 텍스트 파일로 저장하기 위해",
+      "GPU 드라이버를 업데이트하기 위해"
+    ],
+    "answer": 1,
+    "explanation": "수많은 문서의 임베딩 벡터를 효율적으로 저장하고, 질문 벡터와 가장 유사한 문서를 빠르게 찾아내기 위해 벡터 DB가 사용됩니다.",
+    "tag": "Vector DB",
+    "image_prompt": "A futuristic library where books are stored as glowing geometric shapes in a grid."
+  },
+  {
+    "id": "llm_075",
+    "question": "nomic-embed-text 모델을 Ollama에서 사용하기 위해 입력해야 하는 명령어는 무엇입니까?",
+    "choices": [
+      "ollama run llama3",
+      "ollama pull nomic-embed-text",
+      "ollama create embed",
+      "ollama search nomic"
+    ],
+    "answer": 1,
+    "explanation": "Ollama에서 특정 모델을 다운로드하여 사용 가능하게 하려면 'ollama pull [모델명]' 명령어를 사용합니다.",
+    "tag": "Ollama 명령어",
+    "image_prompt": "A command line interface showing the text 'ollama pull nomic-embed-text' with a progress bar."
+  },
+  {
+    "id": "llm_076",
+    "question": "임베딩 모델의 '차원(Dimension)'이란 무엇을 의미합니까?",
+    "choices": [
+      "모델이 학습한 데이터셋의 총 개수",
+      "텍스트를 표현하는 벡터의 길이(숫자의 개수)",
+      "GPU의 물리적인 크기",
+      "문서의 전체 페이지 수"
+    ],
+    "answer": 1,
+    "explanation": "차원은 하나의 텍스트가 몇 개의 숫자로 변환되는지를 나타냅니다. 예를 들어 768차원 모델은 텍스트 하나를 768개의 숫자로 표현합니다.",
+    "tag": "임베딩 개념",
+    "image_prompt": "A coordinate system with X, Y, Z axes extending into multiple dimensions."
+  },
+  {
+    "id": "llm_077",
+    "question": "mxbai-embed-large와 nomic-embed-text 중 일반적으로 더 큰 벡터 차원을 가지며 정밀한 표현이 가능한 모델은 무엇입니까?",
+    "choices": [
+      "nomic-embed-text",
+      "mxbai-embed-large",
+      "두 모델의 차원은 항상 동일하다",
+      "둘 다 임베딩 모델이 아니므로 해당 없다"
+    ],
+    "answer": 1,
+    "explanation": "mxbai-embed-large는 이름에서 알 수 있듯이 'Large' 모델로서 더 높은 차원의 벡터를 생성하여 보다 세밀한 의미 표현이 가능합니다.",
+    "tag": "모델 비교",
+    "image_prompt": "Two different sized spheres representing vector spaces, one larger and more detailed than the other."
+  },
+  {
+    "id": "llm_078",
+    "question": "RAG 시스템에서 질문(Query)과 문서(Document)의 임베딩 모델이 서로 달라야 하는가?",
+    "choices": [
+      "반드시 달라야 검색 성능이 올라간다",
+      "동일한 모델을 사용해야 동일한 벡터 공간에서 유사도 비교가 가능하다",
+      "모델 종류는 상관없으며 결과값만 같으면 된다",
+      "임베딩 모델은 질문에만 적용하고 문서에는 적용하지 않는다"
+    ],
+    "answer": 1,
+    "explanation": "질문과 문서를 서로 다른 모델로 임베딩하면 벡터 공간의 기준이 달라져 유사도 계산이 불가능해집니다. 반드시 동일한 모델을 사용해야 합니다.",
+    "tag": "RAG 워크플로우",
+    "image_prompt": "Two puzzle pieces fitting perfectly together, labeled 'Query Embedding' and 'Document Embedding'."
+  },
+  {
+    "id": "llm_079",
+    "question": "Ollama를 이용한 로컬 RAG 구성의 가장 큰 장점은 무엇입니까?",
+    "choices": [
+      "인터넷 속도가 빨라진다",
+      "데이터가 외부 서버로 전송되지 않아 보안성과 개인정보 보호에 유리하다",
+      "하드웨어 사양이 낮아도 무조건 빠르게 작동한다",
+      "모델 학습(Training)을 자동으로 수행해준다"
+    ],
+    "answer": 1,
+    "explanation": "로컬 환경에서 Ollama를 사용하면 민감한 내부 문서가 외부 API 서버로 전송되지 않으므로 데이터 보안을 완벽하게 제어할 수 있습니다.",
+    "tag": "로컬 LLM",
+    "image_prompt": "A shield icon protecting a local computer server from external cloud connections."
+  },
+  {
+    "id": "llm_080",
+    "question": "Hugging Face의 'pipeline' 추상화 도구에 대한 설명으로 가장 적절한 것은?",
+    "choices": [
+      "모델의 가중치를 직접 수정하는 저수준 API이다.",
+      "토크나이징, 모델 추론, 후처리를 하나의 인터페이스로 묶어 제공한다.",
+      "데이터셋을 전처리하기 위한 전용 라이브러리이다.",
+      "GPU 메모리를 자동으로 최적화하는 하드웨어 가속기이다."
+    ],
+    "answer": 1,
+    "explanation": "pipeline은 복잡한 NLP 태스크를 단순화하여 토크나이저 호출부터 모델 예측, 결과 해석까지의 전 과정을 한 번에 처리할 수 있게 해주는 고수준 API입니다.",
+    "tag": "pipeline",
+    "image_prompt": "A conceptual diagram showing a pipeline flow from raw text to final prediction with icons of a tokenizer and a neural network."
+  },
+  {
+    "id": "llm_081",
+    "question": "AutoModel 클래스의 주요 목적은 무엇인가?",
+    "choices": [
+      "모델의 학습 속도를 2배로 높이는 것이다.",
+      "특정 모델 아키텍처에 상관없이 설정 파일(config.json)을 기반으로 적절한 모델 클래스를 자동으로 로드하는 것이다.",
+      "모든 모델을 CPU에서만 실행하도록 강제하는 것이다.",
+      "데이터셋의 크기를 자동으로 조절하는 것이다."
+    ],
+    "answer": 1,
+    "explanation": "AutoModel은 모델 이름이나 경로를 입력하면 해당 모델의 설정 파일을 읽어 적절한 아키텍처(예: BERT, GPT-2 등)의 클래스를 자동으로 생성해줍니다.",
+    "tag": "AutoModel",
+    "image_prompt": "A magic box that takes a model name as input and outputs the correct neural network architecture."
+  },
+  {
+    "id": "llm_082",
+    "question": "토크나이저(Tokenizer)의 역할 중 '인코딩(Encoding)' 과정에 해당하는 것은?",
+    "choices": [
+      "숫자로 변환된 토큰 ID를 다시 텍스트로 바꾸는 것",
+      "모델의 가중치를 업데이트하는 것",
+      "텍스트 문장을 모델이 이해할 수 있는 숫자 시퀀스로 변환하는 것",
+      "학습 데이터의 중복을 제거하는 것"
+    ],
+    "answer": 2,
+    "explanation": "인코딩은 사람이 읽는 텍스트를 토큰 단위로 나누고, 이를 사전에 정의된 정수 ID(Input IDs)로 변환하는 과정입니다.",
+    "tag": "tokenizer",
+    "image_prompt": "Text 'Hello World' being broken into small blocks and converted into a sequence of numbers [101, 7592, 2088, 102]."
+  },
+  {
+    "id": "llm_083",
+    "question": "AutoTokenizer.from_pretrained() 메서드를 사용할 때 발생하는 일로 틀린 것은?",
+    "choices": [
+      "사전 학습된 모델의 어휘집(vocabulary)을 다운로드한다.",
+      "해당 모델이 사용한 토큰화 알고리즘(BPE, WordPiece 등) 설정을 가져온다.",
+      "모델의 가중치(weights) 파일을 다운로드하여 메모리에 올린다.",
+      "특수 토큰([CLS], [SEP] 등)에 대한 정보를 로드한다."
+    ],
+    "answer": 2,
+    "explanation": "AutoTokenizer는 텍스트 처리를 위한 설정과 어휘집을 로드하는 것이며, 모델의 가중치 파일은 AutoModel 클래스를 통해 로드합니다.",
+    "tag": "tokenizer",
+    "image_prompt": "A download icon showing a vocabulary file and configuration settings being transferred from a cloud server."
+  },
+  {
+    "id": "llm_084",
+    "question": "pipeline('sentiment-analysis')를 실행했을 때 내부적으로 일어나는 순서가 옳은 것은?",
+    "choices": [
+      "모델 로드 → 후처리 → 토크나이징 → 추론",
+      "토크나이징 → 모델 추론 → 후처리(라벨링)",
+      "후처리 → 토크나이징 → 모델 로드 → 추론",
+      "추론 → 토크나이징 → 후처리 → 모델 로드"
+    ],
+    "answer": 1,
+    "explanation": "입력 텍스트는 먼저 토크나이저를 통해 숫자로 변환되고(토크나이징), 모델을 거쳐 예측값(Logits)이 나오며, 마지막으로 이를 사람이 읽을 수 있는 라벨로 변환(후처리)합니다.",
+    "tag": "pipeline",
+    "image_prompt": "A linear flowchart: Text -> Tokenizer -> Model -> Label (Positive/Negative)."
+  },
+  {
+    "id": "llm_085",
+    "question": "AutoModelForSequenceClassification 클래스를 사용하는 주된 이유는 무엇인가?",
+    "choices": [
+      "텍스트 생성(Generation) 성능을 높이기 위해",
+      "모델의 모든 레이어를 제거하기 위해",
+      "기본 모델 위에 분류를 위한 Linear Layer(Head)를 자동으로 추가하기 위해",
+      "토크나이저 없이 텍스트를 처리하기 위해"
+    ],
+    "answer": 2,
+    "explanation": "AutoModel은 기본 백본(Backbone)만 제공하지만, AutoModelForSequenceClassification은 그 위에 분류 작업을 위한 출력층(Classification Head)을 추가하여 바로 학습/추론이 가능하게 합니다.",
+    "tag": "AutoModel",
+    "image_prompt": "A base neural network block with an additional small 'classification head' layer attached to the top."
+  },
+  {
+    "id": "llm_086",
+    "question": "토크나이저의 결과물 중 'attention_mask'의 역할은 무엇인가?",
+    "choices": [
+      "문장의 감정을 분석하는 마스크이다.",
+      "패딩(Padding) 토큰을 무시하고 실제 의미 있는 토큰에만 집중하게 한다.",
+      "모델의 학습률(Learning Rate)을 조절한다.",
+      "텍스트의 대소문자를 구분하지 않게 한다."
+    ],
+    "answer": 1,
+    "explanation": "attention_mask는 입력 시퀀스에서 실제 데이터(1)와 패딩된 부분(0)을 구분하여, 모델이 불필요한 패딩 토큰에 주의를 기울이지 않도록 합니다.",
+    "tag": "tokenizer",
+    "image_prompt": "A sequence of 1s and 0s acting as a filter over a set of tokens."
+  },
+  {
+    "id": "llm_087",
+    "question": "다음 중 pipeline에서 사용할 수 있는 태스크(task) 이름으로 적절하지 않은 것은?",
+    "choices": [
+      "'text-generation'",
+      "'summarization'",
+      "'translation'",
+      "'gpu-acceleration'"
+    ],
+    "answer": 3,
+    "explanation": "'gpu-acceleration'은 태스크가 아니라 하드웨어 설정입니다. pipeline의 첫 번째 인자로는 'text-classification', 'question-answering' 같은 작업 종류를 입력해야 합니다.",
+    "tag": "pipeline",
+    "image_prompt": "A list of NLP tasks like a menu, with one item marked as an error."
+  },
+  {
+    "id": "llm_088",
+    "question": "AutoModel과 AutoTokenizer를 함께 사용하여 추론을 구현할 때 가장 일반적인 흐름은?",
+    "choices": [
+      "모델 로드 → 텍스트 입력 → 토크나이저 적용 → 결과 출력",
+      "토크나이저 로드 → 텍스트 인코딩 → 모델 로드 및 추론 → 디코딩/후처리",
+      "결과 출력 → 모델 로드 → 토크나이저 로드 → 텍스트 입력",
+      "텍스트 인코딩 → 결과 출력 → 모델 로드 → 토크나이저 로드"
+    ],
+    "answer": 1,
+    "explanation": "먼저 도구(토크나이저, 모델)를 준비하고, 텍스트를 숫자로 바꾼 뒤, 모델에 넣어 결과를 얻고 이를 다시 해석하는 순서로 진행됩니다.",
+    "tag": "AutoModel",
+    "image_prompt": "A step-by-step sequence: Load Tools -> Encode Text -> Model Inference -> Decode Result."
+  },
+  {
+    "id": "llm_089",
+    "question": "토크나이저의 'Padding'과 'Truncation' 설정에 대한 설명으로 옳은 것은?",
+    "choices": [
+      "Padding은 문장을 짧게 자르는 것이고, Truncation은 길이를 맞추는 것이다.",
+      "Padding은 부족한 길이를 채우는 것이고, Truncation은 최대 길이를 초과하는 부분을 자르는 것이다.",
+      "두 설정 모두 모델의 가중치를 초기화하는 기능이다.",
+      "Padding을 사용하면 모델의 추론 속도가 항상 빨라진다."
+    ],
+    "answer": 1,
+    "explanation": "Padding은 배치 처리를 위해 짧은 문장에 더미 토큰을 채워 길이를 맞추는 것이며, Truncation은 모델이 수용 가능한 최대 길이보다 긴 문장을 잘라내는 것입니다.",
+    "tag": "tokenizer",
+    "image_prompt": "Two images: one showing a short sentence being filled with zeros (padding), another showing a long sentence being cut off (truncation)."
   }
 ]
