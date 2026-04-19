@@ -1,0 +1,29 @@
+[
+  {
+    "id": "cmn_001",
+    "question": "빛의 속도는 진공에서 초속 약 얼마인가?",
+    "choices": ["30만 km/s", "3만 km/s", "300만 km/s", "3천 km/s"],
+    "answer": 0,
+    "explanation": "빛의 속도는 약 299,792,458 m/s ≈ 30만 km/s입니다. 아인슈타인의 특수상대성이론에서 우주의 절대 속도 상한선으로, 어떤 물질도 이 속도를 넘을 수 없습니다.",
+    "tag": "과학",
+    "image_prompt": "beam of light traveling through space at incredible speed, rainbow spectrum, cosmic background"
+  },
+  {
+    "id": "cmn_002",
+    "question": "DNA의 이중나선 구조를 발견한 과학자 쌍은?",
+    "choices": ["아인슈타인·보어", "왓슨·크릭", "퀴리·퀴리", "뉴턴·라이프니츠"],
+    "answer": 1,
+    "explanation": "1953년 제임스 왓슨과 프랜시스 크릭이 DNA 이중나선 구조를 발표했습니다. 로잘린드 프랭클린의 X선 회절 사진이 결정적 단서가 됐으나 당시 공을 인정받지 못했습니다.",
+    "tag": "과학",
+    "image_prompt": "glowing DNA double helix structure, molecular biology visualization, blue and white on dark background"
+  },
+  {
+    "id": "cmn_003",
+    "question": "현재 세계에서 가장 많은 사람이 사용하는 언어는?",
+    "choices": ["영어", "스페인어", "힌디어", "중국어(만다린)"],
+    "answer": 3,
+    "explanation": "중국어(만다린)는 약 9억 2천만 명의 원어민 사용자를 보유해 세계 1위입니다. 다만 영어는 제2언어 사용자를 포함하면 총 사용자 수에서 1위가 됩니다.",
+    "tag": "상식",
+    "image_prompt": "world map with language distribution, glowing population centers, flat design infographic style"
+  }
+]

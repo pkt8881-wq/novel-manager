@@ -1,0 +1,29 @@
+[
+  {
+    "id": "hist_001",
+    "question": "고려 시대 세계 최초로 금속활자를 발명한 책은?",
+    "choices": ["팔만대장경", "직지심체요절", "훈민정음", "동의보감"],
+    "answer": 1,
+    "explanation": "직지심체요절(1377년)은 현존하는 세계 최고(最古) 금속활자 인쇄본으로 구텐베르크의 성경(1455년)보다 78년 앞섭니다. 현재 프랑스 국립도서관에 보관되어 있으며 유네스코 세계기록유산입니다.",
+    "tag": "한국사",
+    "image_prompt": "ancient Korean metal type printing press, traditional Korean art style, gold on dark background"
+  },
+  {
+    "id": "hist_002",
+    "question": "나폴레옹이 최종 패배한 전투는?",
+    "choices": ["아우스터리츠 전투", "라이프치히 전투", "워털루 전투", "보로디노 전투"],
+    "answer": 2,
+    "explanation": "1815년 워털루 전투에서 나폴레옹은 영국의 웰링턴 공작과 프로이센 블뤼허 군의 협공에 패배했습니다. 이후 세인트헬레나 섬에 유배되어 생을 마쳤습니다.",
+    "tag": "세계사",
+    "image_prompt": "epic battlefield scene in historical painting style, cannon smoke and cavalry, dramatic lighting"
+  },
+  {
+    "id": "hist_003",
+    "question": "조선을 건국한 태조 이성계가 위화도에서 회군한 해는?",
+    "choices": ["1380년", "1388년", "1392년", "1394년"],
+    "answer": 1,
+    "explanation": "1388년 이성계는 요동 정벌 도중 위화도에서 군을 돌려(위화도 회군) 권력을 장악했습니다. 이후 4년 뒤인 1392년에 조선을 건국했습니다.",
+    "tag": "한국사",
+    "image_prompt": "ancient Korean general on horseback at river crossing, dramatic clouds, traditional ink painting style"
+  }
+]

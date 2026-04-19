@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ai_001",
+    "question": "2024년 가장 많이 쓰인 AI 에이전트 프레임워크는?",
+    "choices": ["LangChain", "AutoGPT", "CrewAI", "Semantic Kernel"],
+    "answer": 0,
+    "explanation": "LangChain은 2024년 기준 GitHub 스타 90,000+를 기록하며 가장 널리 쓰이는 AI 에이전트/RAG 프레임워크입니다. LLM 체이닝, 툴 사용, 메모리 관리를 통합 제공합니다.",
+    "tag": "에이전트",
+    "image_prompt": "futuristic AI robot with chain links connecting glowing neural nodes, dark blue neon style"
+  },
+  {
+    "id": "ai_002",
+    "question": "로컬 LLM 실행 시 모델 양자화 포맷으로 가장 보편적인 것은?",
+    "choices": ["ONNX", "GGUF", "TensorRT", "SafeTensors"],
+    "answer": 1,
+    "explanation": "GGUF(GPT-Generated Unified Format)는 llama.cpp에서 사용하는 양자화 포맷으로, CPU/GPU 혼합 실행과 메모리 절약에 최적화되어 Ollama·LM Studio 등에서 표준처럼 쓰입니다.",
+    "tag": "로컬LLM",
+    "image_prompt": "compact computer chip glowing green, binary code floating around, dark tech background"
+  },
+  {
+    "id": "ai_003",
+    "question": "Claude, GPT-4o, Gemini 모두 지원하는 공통 API 규격은?",
+    "choices": ["OpenAI API", "HuggingFace Inference API", "Anthropic API", "LiteLLM"],
+    "answer": 3,
+    "explanation": "LiteLLM은 100+ LLM을 OpenAI 스펙 하나로 통일해서 호출할 수 있는 프록시/라이브러리입니다. Claude·Gemini·로컬모델 등을 동일한 코드로 바꿔가며 쓸 수 있어 멀티모델 개발에 필수입니다.",
+    "tag": "API",
+    "image_prompt": "multiple AI model logos connected to single hub interface, minimalist flat design"
+  },
+  {
+    "id": "ai_004",
+    "question": "RAG(검색 증강 생성)에서 벡터 저장소로 가장 많이 쓰이는 오픈소스는?",
+    "choices": ["Redis", "ChromaDB", "MongoDB", "SQLite"],
+    "answer": 1,
+    "explanation": "ChromaDB는 설치가 간단하고 Python 친화적인 오픈소스 벡터 데이터베이스입니다. 로컬 파일 기반으로도 동작해 소규모 RAG 프로젝트 시작점으로 표준이 됐습니다.",
+    "tag": "RAG",
+    "image_prompt": "colorful 3D vector space with floating document nodes connected by glowing lines"
+  },
+  {
+    "id": "ai_005",
+    "question": "2025년 현재 가장 강력한 추론 특화 모델 계열은?",
+    "choices": ["GPT-4 Turbo", "Claude 3 Opus", "o3 / o3-mini", "Gemini Ultra"],
+    "answer": 2,
+    "explanation": "OpenAI o3 시리즈는 '생각하는 단계'(Chain-of-Thought를 내부 실행)를 통해 수학·코딩·과학 벤치마크에서 최고 성능을 기록했습니다. o3-mini는 비용 대비 효율로 특히 인기입니다.",
+    "tag": "트렌드",
+    "image_prompt": "brain with mathematical equations floating around, deep thinking concept, purple glow"
+  }
+]
