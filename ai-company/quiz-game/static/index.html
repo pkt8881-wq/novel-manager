@@ -392,10 +392,16 @@ function renderGenreGrid() {
 }
 
 function selectGenre(key) {
+  const wasPlaying = document.getElementById('quiz-card').classList.contains('show');
   curGenre = key;
   document.querySelectorAll('.genre-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.genre === key);
   });
+  if (wasPlaying) {
+    // 퀴즈 중 장르 변경 → 바로 재시작
+    document.getElementById('result-screen').classList.remove('show');
+    startQuiz();
+  }
 }
 
 // ── 문제 로드 ──────────────────────────────
@@ -419,8 +425,6 @@ async function startQuiz() {
   sessionQ = shuffle(pool).slice(0, Math.min(MAX_Q, pool.length));
   qIdx = 0; score = 0; streak = 0; correctCnt = 0;
   document.getElementById('start-btn').classList.remove('show');
-  document.getElementById('genre-section').style.opacity = '.35';
-  document.getElementById('genre-section').style.pointerEvents = 'none';
   document.getElementById('result-screen').classList.remove('show');
   updateScoreBar();
   showQ();
@@ -520,8 +524,6 @@ function replayQuiz() {
 function goHome() {
   document.getElementById('result-screen').classList.remove('show');
   document.getElementById('quiz-card').classList.remove('show');
-  document.getElementById('genre-section').style.opacity = '';
-  document.getElementById('genre-section').style.pointerEvents = '';
   document.getElementById('start-btn').classList.add('show');
   score=0; streak=0; correctCnt=0; qIdx=0;
   updateScoreBar();
