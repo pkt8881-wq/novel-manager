@@ -16,6 +16,7 @@
   --red: #ef4444;
   --yellow: #f59e0b;
   --orange: #f97316;
+  --blue: #3b82f6;
   --text: #e2e8f0;
   --muted: #546880;
 }
@@ -59,7 +60,7 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 14px 10px;
-  margin-bottom: 22px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
   gap: 8px;
 }
@@ -67,6 +68,57 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
 .score-item .val { font-size: 1.4rem; font-weight: 800; color: var(--accent); }
 .score-item .val.streak { color: var(--yellow); }
 .score-item .lbl { font-size: .72rem; color: var(--muted); margin-top: 2px; }
+
+/* ── 레벨 스트립 ── */
+.level-strip {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.lstrip-label {
+  font-size: 1rem;
+  font-weight: 800;
+  white-space: nowrap;
+  min-width: 80px;
+}
+.lstrip-bar-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lstrip-bar {
+  flex: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.lstrip-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width .4s ease;
+  background: linear-gradient(90deg, var(--green), var(--accent));
+}
+.lstrip-pct {
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+  min-width: 40px;
+  text-align: right;
+}
+.lstrip-max {
+  font-size: .75rem;
+  color: var(--orange);
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 /* ── 장르 그리드 ── */
 .genre-section { margin-bottom: 20px; }
@@ -97,6 +149,21 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
   background: var(--card2); border-radius: 20px; padding: 2px 8px; display: inline-block;
 }
 .genre-btn.active .cnt { background: rgba(0,212,255,.1); color: var(--accent); }
+
+/* 레벨 뱃지 (장르 버튼 우상단) */
+.lvl-badge {
+  position: absolute;
+  top: 5px; right: 5px;
+  font-size: .6rem;
+  font-weight: 800;
+  padding: 2px 5px;
+  border-radius: 8px;
+  background: rgba(16,185,129,.2);
+  color: var(--green);
+  border: 1px solid rgba(16,185,129,.3);
+}
+.lvl-badge.lv2 { background: rgba(59,130,246,.2); color: var(--blue); border-color: rgba(59,130,246,.3); }
+.lvl-badge.lv3 { background: rgba(249,115,22,.2); color: var(--orange); border-color: rgba(249,115,22,.3); }
 
 /* ── 시작 버튼 ── */
 .start-wrap { margin-bottom: 10px; }
@@ -136,9 +203,10 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
 .progress-bar { height: 3px; background: var(--border); border-radius: 4px; margin-bottom: 18px; overflow: hidden; }
 .progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; transition: width .4s ease; }
 
-.q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.q-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 6px; }
 .q-tag { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.25); padding: 4px 12px; border-radius: 20px; font-size: .78rem; font-weight: 700; }
 .q-num { color: var(--muted); font-size: .82rem; }
+.q-diff { font-size: .8rem; }
 
 .q-text { font-size: 1.2rem; font-weight: 700; line-height: 1.6; margin-bottom: 22px; color: #f0f6ff; }
 
@@ -186,8 +254,6 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
 .explain-header.ok  { background: #041e12; color: var(--green); border-bottom: 1px solid #064d25; }
 .explain-header.ng  { background: #200a0a; color: var(--red);   border-bottom: 1px solid #5c1515; }
 .explain-body { background: var(--card2); padding: 18px; line-height: 1.8; font-size: .92rem; color: #b8c8dc; }
-.explain-img { width: 100%; max-height: 180px; object-fit: cover; border-top: 1px solid var(--border); display: none; }
-.explain-img.show { display: block; }
 
 /* ── 다음 버튼 ── */
 .next-btn {
@@ -236,6 +302,50 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
 .replay-btn:hover { opacity: .88; }
 .replay-btn.outline { background: var(--card2); border: 2px solid var(--border); color: var(--text); }
 
+/* ── 레벨업 오버레이 ── */
+.levelup-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.75);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+.levelup-overlay.show { opacity: 1; pointer-events: all; }
+
+.levelup-card {
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: 24px;
+  padding: 44px 52px;
+  text-align: center;
+  animation: levelupPop .45s ease;
+  max-width: 340px;
+  width: 90%;
+}
+@keyframes levelupPop {
+  from { transform: scale(.6); opacity: 0; }
+  to   { transform: scale(1);  opacity: 1; }
+}
+.levelup-emoji { font-size: 4.5rem; margin-bottom: 12px; }
+.levelup-title {
+  font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.levelup-sub { color: var(--muted); margin-bottom: 28px; font-size: 1rem; line-height: 1.6; }
+.levelup-btn {
+  width: 100%; padding: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border: none; border-radius: 13px;
+  color: #fff; font-size: 1rem; font-weight: 800;
+  cursor: pointer; transition: opacity .2s;
+}
+.levelup-btn:hover { opacity: .88; }
+
 /* ── 토스트 ── */
 #toast {
   position: fixed; bottom: 28px; left: 50%;
@@ -254,15 +364,24 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
   .genre-grid { grid-template-columns: repeat(2, 1fr); }
   .choices { grid-template-columns: 1fr; }
   .result-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 360px) {
-  .genre-grid { grid-template-columns: repeat(2, 1fr); }
+  .level-strip { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .lstrip-bar-wrap { width: 100%; }
 }
 </style>
 </head>
 <body>
 
 <canvas id="bg-canvas"></canvas>
+
+<!-- 레벨업 오버레이 -->
+<div class="levelup-overlay" id="levelup-overlay">
+  <div class="levelup-card">
+    <div class="levelup-emoji" id="lu-emoji">🎉</div>
+    <div class="levelup-title" id="lu-title">레벨 업!</div>
+    <div class="levelup-sub" id="lu-sub">다음 레벨로 진급했습니다!</div>
+    <button class="levelup-btn" onclick="closeLevelUp()">계속하기 →</button>
+  </div>
+</div>
 
 <div class="app">
   <header>
@@ -279,12 +398,22 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
     <div class="score-item"><div class="val" id="sc-acc">-</div><div class="lbl">정답률</div></div>
   </div>
 
+  <!-- 레벨 스트립 -->
+  <div class="level-strip">
+    <div class="lstrip-label" id="lstrip-label">🌱 입문</div>
+    <div class="lstrip-bar-wrap">
+      <div class="lstrip-bar">
+        <div class="lstrip-fill" id="lstrip-fill" style="width:0%"></div>
+      </div>
+      <div class="lstrip-pct" id="lstrip-pct">0/10</div>
+    </div>
+    <div class="lstrip-max" id="lstrip-max"></div>
+  </div>
+
   <!-- 장르 선택 -->
   <div class="genre-section" id="genre-section">
     <h2>장르 선택</h2>
-    <div class="genre-grid" id="genre-grid">
-      <!-- JS로 동적 생성 -->
-    </div>
+    <div class="genre-grid" id="genre-grid"></div>
   </div>
 
   <!-- 시작 버튼 -->
@@ -297,6 +426,7 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
     <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
     <div class="q-meta">
       <span class="q-tag" id="q-tag">-</span>
+      <span class="q-diff" id="q-diff"></span>
       <span class="q-num" id="q-num">1 / 10</span>
     </div>
     <div class="q-text" id="q-text">로딩 중...</div>
@@ -305,7 +435,6 @@ header p { color: var(--muted); margin-top: 6px; font-size: .9rem; }
     <div class="explain-panel" id="explain-panel">
       <div class="explain-header" id="explain-header"></div>
       <div class="explain-body" id="explain-body"></div>
-      <img class="explain-img" id="explain-img" src="" alt="">
     </div>
 
     <button class="next-btn" id="next-btn" onclick="nextQuestion()">다음 문제 →</button>
@@ -357,9 +486,76 @@ function draw() {
 window.addEventListener('resize',()=>{resize();initPts();});
 resize(); initPts(); draw();
 
+// ── 레벨 시스템 ──────────────────────────────
+const LEVEL_INFO = {
+  1: { label: '🌱 입문',    color: '#10b981', barColor: 'linear-gradient(90deg,#10b981,#3b82f6)' },
+  2: { label: '📚 중급',    color: '#3b82f6', barColor: 'linear-gradient(90deg,#3b82f6,#8b5cf6)' },
+  3: { label: '🔥 전문가',  color: '#f97316', barColor: 'linear-gradient(90deg,#f97316,#ef4444)' },
+};
+const LV_NEXT_LABELS = { 1: '중급', 2: '전문가', 3: null };
+const LEVEL_UP_NEED = 10;
+
+function getLevel(genre)    { return parseInt(localStorage.getItem('lvl_'+genre) || '1'); }
+function getLvlProg(genre)  { return parseInt(localStorage.getItem('lp_'+genre)  || '0'); }
+
+// 정답 시 레벨 진행, 레벨업이면 새 레벨 반환, 아니면 false
+function addLvlCorrect(genre) {
+  const lv = getLevel(genre);
+  if (lv >= 3) return false;
+  const prog = getLvlProg(genre) + 1;
+  localStorage.setItem('lp_'+genre, prog);
+  if (prog >= LEVEL_UP_NEED) {
+    const newLv = lv + 1;
+    localStorage.setItem('lvl_'+genre, newLv);
+    localStorage.setItem('lp_'+genre, '0');
+    return newLv;
+  }
+  return false;
+}
+
+function updateLevelStrip(genre) {
+  const lv   = getLevel(genre);
+  const prog = getLvlProg(genre);
+  const info = LEVEL_INFO[lv];
+  const fill = document.getElementById('lstrip-fill');
+  document.getElementById('lstrip-label').textContent = info.label;
+  document.getElementById('lstrip-label').style.color = info.color;
+  fill.style.background = info.barColor;
+
+  if (lv >= 3) {
+    fill.style.width = '100%';
+    document.getElementById('lstrip-pct').textContent = '만렙!';
+    document.getElementById('lstrip-max').textContent = '🏆';
+  } else {
+    fill.style.width = (prog / LEVEL_UP_NEED * 100) + '%';
+    document.getElementById('lstrip-pct').textContent = prog + '/' + LEVEL_UP_NEED;
+    document.getElementById('lstrip-max').textContent = '→ ' + LV_NEXT_LABELS[lv];
+  }
+}
+
+function showLevelUp(newLevel) {
+  const info = LEVEL_INFO[newLevel];
+  const overlay = document.getElementById('levelup-overlay');
+  document.getElementById('lu-emoji').textContent = newLevel === 3 ? '🏆' : '🎉';
+  document.getElementById('lu-title').textContent = info.label + ' 달성!';
+  document.getElementById('lu-sub').textContent =
+    newLevel < 3
+      ? `축하합니다! 이제 ${info.label} 문제에 도전합니다.\n더 어려운 문제가 기다리고 있어요!`
+      : `🔥 전문가 레벨 달성!\n최고 난이도 문제를 풀고 있습니다!`;
+  overlay.classList.add('show');
+  // 다음 퀴즈 시 새 레벨 문제 로드를 위해 캐시 초기화
+  allQ[curGenre] = null;
+}
+
+function closeLevelUp() {
+  document.getElementById('levelup-overlay').classList.remove('show');
+  updateLevelStrip(curGenre);
+  updateGenreGrid();
+}
+
 // ── 상태 ──────────────────────────────
-let allQ = {};       // { genre: [...] }
-let genres = {};     // { genre: {label, icon, count} }
+let allQ = {};
+let genres = {};
 let curGenre = 'ai_tools';
 let sessionQ = [], qIdx = 0, score = 0, streak = 0, correctCnt = 0;
 const MAX_Q = 10;
@@ -369,7 +565,6 @@ async function init() {
   const res = await fetch('/api/genres');
   genres = await res.json();
   renderGenreGrid();
-  // 첫 번째 장르 선택
   const firstKey = Object.keys(genres)[0];
   if (firstKey) selectGenre(firstKey);
 }
@@ -378,16 +573,30 @@ function renderGenreGrid() {
   const grid = document.getElementById('genre-grid');
   grid.innerHTML = '';
   Object.entries(genres).forEach(([key, g]) => {
+    const lv = getLevel(key);
+    const lvClass = lv === 1 ? '' : lv === 2 ? ' lv2' : ' lv3';
     const btn = document.createElement('button');
     btn.className = 'genre-btn' + (key === curGenre ? ' active' : '');
-    btn.id = `gbtn-${key}`;
-    btn.setAttribute('data-genre', key);
+    btn.id = 'gbtn-'+key;
+    btn.dataset.genre = key;
     btn.innerHTML = `
+      <span class="lvl-badge${lvClass}">Lv.${lv}</span>
       <span class="icon">${g.icon}</span>
       <span class="name">${g.label}</span>
       <span class="cnt">${g.count}문제</span>`;
     btn.onclick = () => selectGenre(key);
     grid.appendChild(btn);
+  });
+}
+
+function updateGenreGrid() {
+  Object.keys(genres).forEach(key => {
+    const btn = document.getElementById('gbtn-'+key);
+    if (!btn) return;
+    const lv = getLevel(key);
+    const lvClass = lv === 1 ? '' : lv === 2 ? ' lv2' : ' lv3';
+    const badge = btn.querySelector('.lvl-badge');
+    if (badge) { badge.textContent = 'Lv.'+lv; badge.className = 'lvl-badge'+lvClass; }
   });
 }
 
@@ -397,18 +606,25 @@ function selectGenre(key) {
   document.querySelectorAll('.genre-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.genre === key);
   });
+  updateLevelStrip(key);
   if (wasPlaying) {
-    // 퀴즈 중 장르 변경 → 바로 재시작
     document.getElementById('result-screen').classList.remove('show');
     startQuiz();
   }
 }
 
-// ── 문제 로드 ──────────────────────────────
+// ── 문제 로드 (난이도 필터) ──────────────────────────────
 async function loadGenreQ(genre) {
   if (allQ[genre]) return allQ[genre];
-  const r = await fetch(`/api/questions/${genre}`);
-  allQ[genre] = await r.json();
+  const lv = getLevel(genre);
+  const r = await fetch(`/api/questions/${genre}?difficulty=${lv}`);
+  let data = await r.json();
+  // 해당 난이도 문제 없으면 전체 로드
+  if (!data.length) {
+    const r2 = await fetch(`/api/questions/${genre}`);
+    data = await r2.json();
+  }
+  allQ[genre] = data;
   return allQ[genre];
 }
 
@@ -427,21 +643,28 @@ async function startQuiz() {
   document.getElementById('start-btn').classList.remove('show');
   document.getElementById('result-screen').classList.remove('show');
   updateScoreBar();
+  updateLevelStrip(curGenre);
   showQ();
 }
+
+// ── 난이도 별 표시 ──────────────────────────────
+const DIFF_STARS = { 1: '⭐', 2: '⭐⭐', 3: '⭐⭐⭐' };
+const DIFF_COLORS = { 1: '#10b981', 2: '#3b82f6', 3: '#f97316' };
 
 function showQ() {
   const card = document.getElementById('quiz-card');
   card.classList.remove('show'); void card.offsetWidth; card.classList.add('show');
 
   const q = sessionQ[qIdx];
+  const diff = q.difficulty || 2;
   document.getElementById('q-tag').textContent = q.tag || curGenre;
+  document.getElementById('q-diff').textContent = DIFF_STARS[diff];
+  document.getElementById('q-diff').style.color = DIFF_COLORS[diff];
   document.getElementById('q-num').textContent = `${qIdx+1} / ${sessionQ.length}`;
   document.getElementById('q-text').textContent = q.question;
   document.getElementById('progress-fill').style.width = `${(qIdx/sessionQ.length)*100}%`;
   document.getElementById('explain-panel').classList.remove('show');
   document.getElementById('next-btn').classList.remove('show');
-  document.getElementById('explain-img').classList.remove('show');
 
   const labels = ['①','②','③','④'];
   const el = document.getElementById('choices');
@@ -467,7 +690,18 @@ function pick(chosen, q) {
     streak++; correctCnt++;
     const bonus = streak > 1 ? (streak-1)*20 : 0;
     score += 100 + bonus;
-    toast(streak > 1 ? `🔥 연속 ${streak}! +${100+bonus}점` : '✅ 정답! +100점');
+
+    // 레벨 진행
+    const leveledUp = addLvlCorrect(curGenre);
+    updateLevelStrip(curGenre);
+    updateGenreGrid();
+
+    if (leveledUp) {
+      toast('🎉 레벨업! ' + LEVEL_INFO[leveledUp].label + ' 달성!');
+      setTimeout(() => showLevelUp(leveledUp), 800);
+    } else {
+      toast(streak > 1 ? `🔥 연속 ${streak}! +${100+bonus}점` : '✅ 정답! +100점');
+    }
   } else {
     streak = 0;
     toast('❌ 오답... 해설을 확인하세요');
@@ -485,16 +719,6 @@ function showExplain(ok, q) {
   hdr.textContent = ok ? '✅ 정답입니다!' : `❌ 오답 — 정답: ${q.choices[q.answer]}`;
   body.textContent = q.explanation;
   document.getElementById('explain-panel').classList.add('show');
-
-  if(q.image_prompt) {
-    fetch(`/api/image?prompt=${encodeURIComponent(q.image_prompt)}`)
-      .then(r=>r.json()).then(d => {
-        if(d.url) {
-          const img = document.getElementById('explain-img');
-          img.src = d.url; img.classList.add('show');
-        }
-      }).catch(()=>{});
-  }
 }
 
 // ── 다음 / 결과 ──────────────────────────────
@@ -506,7 +730,13 @@ function nextQuestion() {
 function showResult() {
   document.getElementById('quiz-card').classList.remove('show');
   const acc = Math.round((correctCnt/sessionQ.length)*100);
-  const [em, msg] = acc>=80 ? ['🏆','완전 고수! 훌륭해요!'] : acc>=60 ? ['😊','잘 하셨어요!'] : acc>=40 ? ['🤔','절반은 맞췄어요!'] : ['💪','다시 도전해봐요!'];
+  const lv = getLevel(curGenre);
+  const lvLabel = LEVEL_INFO[lv].label;
+  const [em, msg] = acc>=80
+    ? ['🏆', `${lvLabel} 완벽 마스터!`]
+    : acc>=60 ? ['😊','잘 하셨어요! 조금만 더!']
+    : acc>=40 ? ['🤔','절반은 맞췄어요!']
+    : ['💪','다시 도전해봐요!'];
   document.getElementById('result-emoji').textContent = em;
   document.getElementById('result-score').textContent = `${score.toLocaleString()}점`;
   document.getElementById('result-msg').textContent = msg;
@@ -518,6 +748,7 @@ function showResult() {
 
 function replayQuiz() {
   document.getElementById('result-screen').classList.remove('show');
+  allQ[curGenre] = null; // 다시 섞기
   startQuiz();
 }
 
@@ -543,7 +774,7 @@ function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
   clearTimeout(t._tid);
-  t._tid = setTimeout(()=>t.classList.remove('show'), 2000);
+  t._tid = setTimeout(()=>t.classList.remove('show'), 2200);
 }
 
 init();

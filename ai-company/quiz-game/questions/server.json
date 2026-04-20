@@ -11,7 +11,8 @@
     "answer": 1,
     "explanation": "FastAPI는 Starlette(ASGI 프레임워크) 위에 구축되어 비동기 I/O를 기본 지원합니다. 또한 Pydantic으로 입출력 자동 검증, Swagger UI 자동 생성이 되어 현재 파이썬 API 서버의 표준이 됐습니다.",
     "tag": "FastAPI",
-    "image_prompt": "FastAPI rocket vs Flask flask speed comparison, async lightning bolts, dark tech background"
+    "image_prompt": "FastAPI rocket vs Flask flask speed comparison, async lightning bolts, dark tech background",
+    "difficulty": 1
   },
   {
     "id": "srv_002",
@@ -25,7 +26,8 @@
     "answer": 1,
     "explanation": "PUT /users/1에 {name:'Kim', age:30}을 보내면 기존 필드 전체가 교체됩니다. PATCH /users/1에 {age:31}만 보내면 age만 수정되고 나머지는 유지됩니다. 부분 업데이트는 항상 PATCH를 씁니다.",
     "tag": "REST API",
-    "image_prompt": "REST API methods comparison PUT full replace vs PATCH partial update, clean diagram dark"
+    "image_prompt": "REST API methods comparison PUT full replace vs PATCH partial update, clean diagram dark",
+    "difficulty": 1
   },
   {
     "id": "srv_003",
@@ -39,7 +41,8 @@
     "answer": 1,
     "explanation": "브라우저는 보안상 localhost:3000에서 localhost:8000으로 요청 시 CORS 헤더가 없으면 차단합니다. 서버에서 Access-Control-Allow-Origin 헤더를 반환하면 해결됩니다. Flask-CORS, FastAPI CORSMiddleware로 간단히 설정 가능합니다.",
     "tag": "서버 기초",
-    "image_prompt": "CORS browser security wall blocking cross-origin requests, locked door between two servers"
+    "image_prompt": "CORS browser security wall blocking cross-origin requests, locked door between two servers",
+    "difficulty": 1
   },
   {
     "id": "srv_004",
@@ -53,7 +56,8 @@
     "answer": 1,
     "explanation": "Blueprint로 auth, api, admin 등 라우트를 별도 파일로 분리하고 app.register_blueprint()로 등록합니다. 팀 협업과 유지보수에 필수적인 Flask 구조화 패턴입니다.",
     "tag": "Flask",
-    "image_prompt": "Flask Blueprint modular architecture, separate route modules connecting to main app, blueprint diagram"
+    "image_prompt": "Flask Blueprint modular architecture, separate route modules connecting to main app, blueprint diagram",
+    "difficulty": 1
   },
   {
     "id": "srv_005",
@@ -67,7 +71,8 @@
     "answer": 1,
     "explanation": "FastAPI/Pydantic에서 요청 데이터가 스키마 검증에 실패하면 422를 반환합니다. 예: 숫자 필드에 문자열 전송. 개발 시 자주 마주치는 상태코드이며 응답 body에 어떤 필드가 왜 틀렸는지 상세히 나옵니다.",
     "tag": "HTTP",
-    "image_prompt": "HTTP 422 error code with validation failure details, form validation red marks, dark screen"
+    "image_prompt": "HTTP 422 error code with validation failure details, form validation red marks, dark screen",
+    "difficulty": 1
   },
   {
     "id": "srv_006",
@@ -81,7 +86,8 @@
     "answer": 0,
     "explanation": "Flask는 WSGI라 gunicorn으로 배포합니다. FastAPI는 ASGI라 uvicorn을 씁니다. 실무에서는 gunicorn --worker-class uvicorn.workers.UvicornWorker 조합으로 FastAPI를 멀티프로세스로 운영하는 게 표준입니다.",
     "tag": "서버 배포",
-    "image_prompt": "ASGI vs WSGI server comparison, async green vs sync blue architecture diagram"
+    "image_prompt": "ASGI vs WSGI server comparison, async green vs sync blue architecture diagram",
+    "difficulty": 1
   },
   {
     "id": "srv_007",
@@ -95,7 +101,8 @@
     "answer": 1,
     "explanation": "JWT는 Header(알고리즘).Payload(데이터).Signature(서명) 3파트를 점(.)으로 연결합니다. 서버에 세션을 저장하지 않아도 되는 Stateless 인증 방식으로, API 서버 인증 표준이 됐습니다.",
     "tag": "인증",
-    "image_prompt": "JWT token structure three parts connected by dots, header payload signature visualization"
+    "image_prompt": "JWT token structure three parts connected by dots, header payload signature visualization",
+    "difficulty": 1
   },
   {
     "id": "ser_008",
@@ -109,7 +116,8 @@
     "answer": 1,
     "explanation": "Pydantic의 BaseModel을 상속받아 데이터 모델을 정의하면 FastAPI가 자동으로 JSON 파싱과 유효성 검사를 수행합니다.\n실무에서는 API 요청/응답 규격을 명확히 하여 런타임 에러를 방지하는 핵심 도구로 사용됩니다.",
     "tag": "FastAPI_Pydantic",
-    "image_prompt": "A digital blueprint of a data structure with validation checkmarks, futuristic UI style."
+    "image_prompt": "A digital blueprint of a data structure with validation checkmarks, futuristic UI style.",
+    "difficulty": 1
   },
   {
     "id": "ser_009",
@@ -123,7 +131,8 @@
     "answer": 2,
     "explanation": "Depends()는 DB 세션 관리나 인증 로직처럼 여러 엔드포인트에서 공통으로 필요한 기능을 모듈화하여 주입할 때 사용합니다.\n코드 중복을 줄이고 테스트 시 Mock 객체로 교체하기 용이하게 만듭니다.",
     "tag": "FastAPI_Depends",
-    "image_prompt": "A puzzle piece fitting into a slot, representing modular dependency injection in software."
+    "image_prompt": "A puzzle piece fitting into a slot, representing modular dependency injection in software.",
+    "difficulty": 1
   },
   {
     "id": "ser_010",
@@ -137,7 +146,8 @@
     "answer": 0,
     "explanation": "BackgroundTasks를 사용하면 이메일 발송이나 로그 기록 같은 시간이 걸리는 작업을 응답 후에 처리하여 사용자 경험을 개선합니다.\nCelery 같은 무거운 큐 시스템 없이 간단한 비동기 처리를 구현할 때 유용합니다.",
     "tag": "FastAPI_BackgroundTasks",
-    "image_prompt": "A clock icon with a gear turning in the background, symbolizing asynchronous background processing."
+    "image_prompt": "A clock icon with a gear turning in the background, symbolizing asynchronous background processing.",
+    "difficulty": 1
   },
   {
     "id": "ser_011",
@@ -151,7 +161,8 @@
     "answer": 2,
     "explanation": "WebSocket은 클라이언트와 서버가 연결을 유지하며 실시간으로 데이터를 주고받는 양방향 통신을 가능하게 합니다.\n채팅 서비스나 실시간 알림 대시보드 구현 시 필수적으로 사용됩니다.",
     "tag": "FastAPI_WebSocket",
-    "image_prompt": "Two glowing nodes connected by a continuous stream of data pulses, representing a WebSocket connection."
+    "image_prompt": "Two glowing nodes connected by a continuous stream of data pulses, representing a WebSocket connection.",
+    "difficulty": 1
   },
   {
     "id": "ser_012",
@@ -165,7 +176,8 @@
     "answer": 1,
     "explanation": "미들웨어는 요청이 핸들러에 도달하기 전과 응답이 나가기 직전에 실행되는 함수입니다.\n전역적인 로깅이나 보안 헤더 추가 등 공통 처리를 중앙 집중식으로 관리할 수 있습니다.",
     "tag": "FastAPI_Middleware",
-    "image_prompt": "A filter layer between a user and a server, cleaning and checking data packets."
+    "image_prompt": "A filter layer between a user and a server, cleaning and checking data packets.",
+    "difficulty": 1
   },
   {
     "id": "ser_013",
@@ -179,7 +191,8 @@
     "answer": 1,
     "explanation": "최신 FastAPI에서는 lifespan 컨텍스트 매니저를 통해 앱 시작 시 DB 연결, 종료 시 연결 해제 등을 통합 관리합니다.\n기존 on_event 방식보다 더 유연하고 안전한 리소스 관리가 가능합니다.",
     "tag": "FastAPI_Lifespan",
-    "image_prompt": "A seed sprouting and then a flower wilting, symbolizing the lifecycle of an application."
+    "image_prompt": "A seed sprouting and then a flower wilting, symbolizing the lifecycle of an application.",
+    "difficulty": 1
   },
   {
     "id": "ser_014",
@@ -193,7 +206,8 @@
     "answer": 2,
     "explanation": "HTTPException을 raise하면 FastAPI가 이를 캐치하여 지정된 상태 코드(예: 404, 401)와 상세 메시지를 JSON으로 반환합니다.\nAPI 설계 시 표준 HTTP 상태 코드를 준수하는 것이 중요합니다.",
     "tag": "FastAPI_HTTPException",
-    "image_prompt": "A red warning sign with '404 Not Found' text on a digital screen."
+    "image_prompt": "A red warning sign with '404 Not Found' text on a digital screen.",
+    "difficulty": 1
   },
   {
     "id": "ser_015",
@@ -207,7 +221,8 @@
     "answer": 0,
     "explanation": "response_model을 지정하면 내부 DB 모델에서 민감한 정보(비밀번호 등)를 제외하고 필요한 필드만 클라이언트에 노출할 수 있습니다.\n데이터 유출 방지를 위한 필수적인 보안 설정입니다.",
     "tag": "FastAPI_ResponseModel",
-    "image_prompt": "A funnel filtering a large data set into a clean, structured small set."
+    "image_prompt": "A funnel filtering a large data set into a clean, structured small set.",
+    "difficulty": 1
   },
   {
     "id": "ser_016",
@@ -221,7 +236,8 @@
     "answer": 1,
     "explanation": "Blueprint는 대규모 프로젝트에서 라우팅을 여러 파일로 나누어 관리할 수 있게 해주는 컴포넌트입니다.\n유지보수성을 높이고 팀 단위 개발 시 충돌을 줄여줍니다.",
     "tag": "Flask_Blueprint",
-    "image_prompt": "An architectural blueprint of a building divided into different rooms and sections."
+    "image_prompt": "An architectural blueprint of a building divided into different rooms and sections.",
+    "difficulty": 1
   },
   {
     "id": "ser_017",
@@ -235,7 +251,8 @@
     "answer": 2,
     "explanation": "g(global) 객체는 단일 요청 내에서 여러 함수 간에 데이터를 공유할 때 사용하며, 요청이 끝나면 소멸합니다.\n사용자 인증 정보나 DB 연결 객체를 임시 저장하는 용도로 활용됩니다.",
     "tag": "Flask_g",
-    "image_prompt": "A temporary storage box labeled 'g' inside a request-response cycle loop."
+    "image_prompt": "A temporary storage box labeled 'g' inside a request-response cycle loop.",
+    "difficulty": 1
   },
   {
     "id": "ser_018",
@@ -249,7 +266,8 @@
     "answer": 1,
     "explanation": "@before_request는 요청이 실제 뷰 함수에 도달하기 전에 실행되어 인증 확인이나 세션 체크 등에 사용됩니다.\n모든 경로에 대해 공통 전처리를 수행할 때 매우 효율적입니다.",
     "tag": "Flask_before_request",
-    "image_prompt": "A security guard checking IDs before allowing people into a building."
+    "image_prompt": "A security guard checking IDs before allowing people into a building.",
+    "difficulty": 1
   },
   {
     "id": "ser_019",
@@ -263,7 +281,8 @@
     "answer": 1,
     "explanation": "@after_request는 응답 객체를 인자로 받아 수정 후 반환하며, 공통 응답 헤더 추가나 로그 기록에 사용됩니다.\n응답의 최종 형태를 제어하는 마지막 단계입니다.",
     "tag": "Flask_after_request",
-    "image_prompt": "A quality control inspector adding a final stamp to a product before shipping."
+    "image_prompt": "A quality control inspector adding a final stamp to a product before shipping.",
+    "difficulty": 1
   },
   {
     "id": "srv_020",
@@ -277,7 +296,8 @@
     "answer": 0,
     "explanation": "APIRouter는 FastAPI에서 관련 엔드포인트들을 그룹화하고 별도의 파일이나 모듈로 분리하여 관리할 수 있게 해주는 핵심 클래스입니다.",
     "tag": "APIRouter",
-    "image_prompt": "A conceptual diagram showing a main application hub connecting to several smaller router modules, clean software architecture style."
+    "image_prompt": "A conceptual diagram showing a main application hub connecting to several smaller router modules, clean software architecture style.",
+    "difficulty": 1
   },
   {
     "id": "srv_021",
@@ -291,7 +311,8 @@
     "answer": 1,
     "explanation": "prefix는 해당 라우터에 정의된 모든 경로 앞에 자동으로 추가되는 기본 경로입니다. 예를 들어 prefix='/users'로 설정하면 '/login' 경로는 '/users/login'이 됩니다.",
     "tag": "prefix",
-    "image_prompt": "A visual representation of a URL path being prefixed with /users/, showing the concatenation process."
+    "image_prompt": "A visual representation of a URL path being prefixed with /users/, showing the concatenation process.",
+    "difficulty": 1
   },
   {
     "id": "srv_022",
@@ -305,7 +326,8 @@
     "answer": 2,
     "explanation": "tags는 FastAPI가 생성하는 자동 API 문서(Swagger UI)에서 관련 경로들을 하나의 그룹으로 묶어 시각적으로 구분하기 위해 사용됩니다.",
     "tag": "tags",
-    "image_prompt": "A screenshot of a Swagger UI page showing endpoints organized under colorful category tags."
+    "image_prompt": "A screenshot of a Swagger UI page showing endpoints organized under colorful category tags.",
+    "difficulty": 1
   },
   {
     "id": "srv_023",
@@ -319,7 +341,8 @@
     "answer": 1,
     "explanation": "메인 FastAPI 객체에서 .include_router(router_instance) 메서드를 호출하여 정의된 라우터를 앱에 통합합니다.",
     "tag": "APIRouter",
-    "image_prompt": "A puzzle piece representing a router being slotted into a larger main application block."
+    "image_prompt": "A puzzle piece representing a router being slotted into a larger main application block.",
+    "difficulty": 1
   },
   {
     "id": "srv_024",
@@ -333,7 +356,8 @@
     "answer": 2,
     "explanation": "라우터 구조화는 개발자의 생산성과 유지보수성을 위한 설계 패턴이며, 실제 HTTP 요청 처리 속도(런타임 성능)에 직접적인 영향을 주지는 않습니다.",
     "tag": "구조화",
-    "image_prompt": "A comparison image: a messy single file of code vs. a neatly organized folder structure."
+    "image_prompt": "A comparison image: a messy single file of code vs. a neatly organized folder structure.",
+    "difficulty": 2
   },
   {
     "id": "srv_025",
@@ -347,7 +371,8 @@
     "answer": 2,
     "explanation": "prefix와 개별 경로가 결합되어 '/items' + '/{item_id}' = '/items/{item_id}'가 됩니다.",
     "tag": "prefix",
-    "image_prompt": "A flow chart showing the combination of a prefix and a path parameter to form a full URL."
+    "image_prompt": "A flow chart showing the combination of a prefix and a path parameter to form a full URL.",
+    "difficulty": 2
   },
   {
     "id": "srv_026",
@@ -361,7 +386,8 @@
     "answer": 1,
     "explanation": "app.include_router(router, tags=['NewTag'])와 같이 호출하면 해당 라우터의 모든 엔드포인트에 추가적인 태그를 적용할 수 있습니다.",
     "tag": "tags",
-    "image_prompt": "A settings icon with a list of tags being added to a router module."
+    "image_prompt": "A settings icon with a list of tags being added to a router module.",
+    "difficulty": 2
   },
   {
     "id": "srv_027",
@@ -375,7 +401,8 @@
     "answer": 1,
     "explanation": "기능별로 파일을 나누어 routers/ 디렉토리에 저장하고 이를 main.py에서 통합하는 방식이 가장 표준적이고 확장성이 좋습니다.",
     "tag": "구조화",
-    "image_prompt": "A directory tree structure showing a 'routers' folder containing multiple .py files."
+    "image_prompt": "A directory tree structure showing a 'routers' folder containing multiple .py files.",
+    "difficulty": 2
   },
   {
     "id": "srv_028",
@@ -389,7 +416,8 @@
     "answer": 1,
     "explanation": "APIRouter(dependencies=[Depends(...)]) 또는 app.include_router(router, dependencies=[...])를 통해 해당 그룹 전체에 공통 의존성을 적용할 수 있습니다.",
     "tag": "APIRouter",
-    "image_prompt": "A shield icon representing security/dependency guarding a group of API endpoints."
+    "image_prompt": "A shield icon representing security/dependency guarding a group of API endpoints.",
+    "difficulty": 2
   },
   {
     "id": "srv_029",
@@ -403,7 +431,8 @@
     "answer": 3,
     "explanation": "일반적으로는 라우터 인스턴스를 먼저 생성하고 경로를 정의한 뒤 include_router에 전달해야 합니다. 빈 APIRouter()를 즉시 넣으면 정의된 경로가 없어 아무런 효과가 없습니다.",
     "tag": "APIRouter",
-    "image_prompt": "A red 'X' mark over a piece of incorrect Python code showing an empty router inclusion."
+    "image_prompt": "A red 'X' mark over a piece of incorrect Python code showing an empty router inclusion.",
+    "difficulty": 2
   },
   {
     "id": "srv_030",
@@ -417,7 +446,8 @@
     "answer": 1,
     "explanation": "OAuth2PasswordBearer는 클라이언트가 요청 헤더에 'Authorization: Bearer <token>' 형식으로 보낸 토큰을 찾아내어 FastAPI 의존성 주입 시스템으로 전달하는 역할을 합니다.",
     "tag": "FastAPI_Auth",
-    "image_prompt": "A conceptual diagram showing an HTTP request header with a golden key labeled 'Bearer Token' being extracted by a filter."
+    "image_prompt": "A conceptual diagram showing an HTTP request header with a golden key labeled 'Bearer Token' being extracted by a filter.",
+    "difficulty": 2
   },
   {
     "id": "srv_031",
@@ -431,7 +461,8 @@
     "answer": 2,
     "explanation": "JWT는 Base64로 인코딩된 헤더(Header), 데이터가 담긴 페이로드(Payload), 그리고 무결성을 검증하는 서명(Signature)의 세 부분으로 구성됩니다.",
     "tag": "JWT_Basic",
-    "image_prompt": "Three colorful blocks labeled 'Header', 'Payload', and 'Signature' connected by dots, forming a single token string."
+    "image_prompt": "Three colorful blocks labeled 'Header', 'Payload', and 'Signature' connected by dots, forming a single token string.",
+    "difficulty": 2
   },
   {
     "id": "srv_032",
@@ -445,7 +476,8 @@
     "answer": 2,
     "explanation": "모든 요청에 대해 공통적으로 토큰을 검증하려면 BaseHTTPMiddleware를 사용하여 요청이 엔드포인트에 도달하기 전 단계에서 처리하는 것이 효율적입니다.",
     "tag": "FastAPI_Middleware",
-    "image_prompt": "A network request passing through a security gate (middleware) before reaching a server icon."
+    "image_prompt": "A network request passing through a security gate (middleware) before reaching a server icon.",
+    "difficulty": 2
   },
   {
     "id": "srv_033",
@@ -459,7 +491,8 @@
     "answer": 1,
     "explanation": "JWT의 서명은 헤더와 페이로드를 합친 값에 서버의 비밀키(Secret Key)를 사용하여 생성하며, 이를 통해 토큰이 변조되지 않았음을 보장합니다.",
     "tag": "JWT_Security",
-    "image_prompt": "A digital seal being stamped onto a document using a secret golden key."
+    "image_prompt": "A digital seal being stamped onto a document using a secret golden key.",
+    "difficulty": 2
   },
   {
     "id": "srv_034",
@@ -473,7 +506,8 @@
     "answer": 2,
     "explanation": "OAuth2PasswordBearer 의존성이 설정된 엔드포인트에 토큰 없이 접근하면 FastAPI는 자동으로 401 Unauthorized 응답을 반환합니다.",
     "tag": "FastAPI_Auth",
-    "image_prompt": "A red '401 Unauthorized' error message appearing on a computer screen with a lock icon."
+    "image_prompt": "A red '401 Unauthorized' error message appearing on a computer screen with a lock icon.",
+    "difficulty": 2
   },
   {
     "id": "srv_035",
@@ -487,7 +521,8 @@
     "answer": 2,
     "explanation": "JWT의 페이로드는 Base64로 인코딩되어 있어 누구나 쉽게 디코딩하여 내용을 볼 수 있습니다. 따라서 비밀번호와 같은 민감한 정보는 절대 포함해서는 안 됩니다.",
     "tag": "JWT_Security",
-    "image_prompt": "A transparent envelope showing a password inside with a large red 'X' mark over it."
+    "image_prompt": "A transparent envelope showing a password inside with a large red 'X' mark over it.",
+    "difficulty": 2
   },
   {
     "id": "srv_036",
@@ -501,7 +536,8 @@
     "answer": 1,
     "explanation": "OAuth2PasswordBearer를 사용하면 FastAPI가 이를 인식하여 Swagger UI(/docs)에 인증 버튼을 생성해주므로 API 테스트가 매우 편리해집니다.",
     "tag": "FastAPI_Swagger",
-    "image_prompt": "A screenshot of a web browser showing the 'Authorize' button in a professional API documentation page."
+    "image_prompt": "A screenshot of a web browser showing the 'Authorize' button in a professional API documentation page.",
+    "difficulty": 2
   },
   {
     "id": "srv_037",
@@ -515,7 +551,8 @@
     "answer": 2,
     "explanation": "ExpiredSignatureError는 JWT 페이로드의 'exp' 필드에 설정된 시간이 현재 시간보다 이전일 때, 즉 토큰이 만료되었을 때 발생합니다.",
     "tag": "JWT_Validation",
-    "image_prompt": "An hourglass with all the sand fallen and a digital clock showing an expired time."
+    "image_prompt": "An hourglass with all the sand fallen and a digital clock showing an expired time.",
+    "difficulty": 2
   },
   {
     "id": "srv_038",
@@ -529,7 +566,8 @@
     "answer": 1,
     "explanation": "FastAPI(Starlette) 미들웨어에서는 `request.state` 객체를 사용하여 요청 생명주기 동안 유지될 사용자 정보나 상태 값을 전달할 수 있습니다.",
     "tag": "FastAPI_Middleware",
-    "image_prompt": "A relay race where a runner (middleware) passes a baton (user info) to the next runner (endpoint)."
+    "image_prompt": "A relay race where a runner (middleware) passes a baton (user info) to the next runner (endpoint).",
+    "difficulty": 2
   },
   {
     "id": "srv_039",
@@ -543,7 +581,8 @@
     "answer": 2,
     "explanation": "HS256은 대칭키 방식의 HMAC 알고리즘으로, 하나의 비밀키를 사용하여 토큰을 생성하고 검증하는 JWT의 가장 표준적인 알고리즘 중 하나입니다.",
     "tag": "JWT_Algorithm",
-    "image_prompt": "A complex mathematical formula and a shield icon representing the HS256 encryption algorithm."
+    "image_prompt": "A complex mathematical formula and a shield icon representing the HS256 encryption algorithm.",
+    "difficulty": 2
   },
   {
     "id": "srv_040",
@@ -557,7 +596,8 @@
     "answer": 1,
     "explanation": "UploadFile은 파일 크기가 작으면 메모리에 저장하고, 일정 크기를 넘어가면 디스크에 임시 파일로 저장하여 서버의 메모리 부족 현상을 방지합니다.",
     "tag": "FastAPI_UploadFile",
-    "image_prompt": "A conceptual diagram showing a file being streamed from a client to a server with a memory and disk storage split."
+    "image_prompt": "A conceptual diagram showing a file being streamed from a client to a server with a memory and disk storage split.",
+    "difficulty": 2
   },
   {
     "id": "srv_041",
@@ -571,7 +611,8 @@
     "answer": 2,
     "explanation": "파일 업로드는 multipart/form-data 형식을 사용하므로, 일반 텍스트 필드 역시 Form 클래스를 사용하여 정의해야 함께 수신할 수 있습니다.",
     "tag": "FastAPI_Form",
-    "image_prompt": "A web form interface showing a text input field and a file upload button side by side."
+    "image_prompt": "A web form interface showing a text input field and a file upload button side by side.",
+    "difficulty": 2
   },
   {
     "id": "srv_042",
@@ -585,7 +626,8 @@
     "answer": 1,
     "explanation": "UploadFile 클래스는 클라이언트가 업로드한 파일의 원래 이름을 담고 있는 filename 속성을 제공합니다.",
     "tag": "FastAPI_UploadFile",
-    "image_prompt": "A code snippet highlighting the '.filename' attribute of an UploadFile object."
+    "image_prompt": "A code snippet highlighting the '.filename' attribute of an UploadFile object.",
+    "difficulty": 2
   },
   {
     "id": "srv_043",
@@ -599,7 +641,8 @@
     "answer": 1,
     "explanation": "UploadFile의 read(), write(), seek(), close() 메서드는 모두 awaitable 하므로 async 함수 내에서 await 키워드와 함께 사용해야 합니다.",
     "tag": "FastAPI_Async",
-    "image_prompt": "An illustration of an asynchronous data stream flowing into a server."
+    "image_prompt": "An illustration of an asynchronous data stream flowing into a server.",
+    "difficulty": 2
   },
   {
     "id": "srv_044",
@@ -613,7 +656,8 @@
     "answer": 2,
     "explanation": "FastAPI는 multipart/form-data 요청을 파싱하기 위해 내부적으로 python-multipart 라이브러리를 사용하므로 반드시 설치되어 있어야 합니다.",
     "tag": "FastAPI_Dependency",
-    "image_prompt": "A terminal window showing the command 'pip install python-multipart'."
+    "image_prompt": "A terminal window showing the command 'pip install python-multipart'.",
+    "difficulty": 2
   },
   {
     "id": "srv_045",
@@ -627,7 +671,8 @@
     "answer": 1,
     "explanation": "여러 파일을 받으려면 List[UploadFile] 타입을 사용하여 리스트 형태로 매개변수를 선언해야 합니다.",
     "tag": "FastAPI_MultipleFiles",
-    "image_prompt": "A folder icon with multiple documents being uploaded simultaneously to a cloud server."
+    "image_prompt": "A folder icon with multiple documents being uploaded simultaneously to a cloud server.",
+    "difficulty": 2
   },
   {
     "id": "srv_046",
@@ -641,7 +686,8 @@
     "answer": 1,
     "explanation": "UploadFile은 업로드된 파일의 콘텐츠 타입을 나타내는 content_type 속성을 제공합니다.",
     "tag": "FastAPI_UploadFile",
-    "image_prompt": "A magnifying glass inspecting a file and revealing the text 'image/png'."
+    "image_prompt": "A magnifying glass inspecting a file and revealing the text 'image/png'.",
+    "difficulty": 2
   },
   {
     "id": "srv_047",
@@ -655,7 +701,8 @@
     "answer": 2,
     "explanation": "bytes 타입의 File을 사용하면 파일 전체가 메모리에 적재되므로, 대용량 파일 업로드 시 서버 메모리 부족(OOM) 현상이 발생할 수 있습니다.",
     "tag": "FastAPI_File",
-    "image_prompt": "A server RAM bar filling up to 100% and turning red due to a large file upload."
+    "image_prompt": "A server RAM bar filling up to 100% and turning red due to a large file upload.",
+    "difficulty": 2
   },
   {
     "id": "srv_048",
@@ -669,7 +716,8 @@
     "answer": 2,
     "explanation": "UploadFile은 내부적으로 임시 파일을 생성할 수 있으므로, 사용이 끝난 후 close() 메서드를 호출하여 리소스를 해제하는 것이 좋습니다.",
     "tag": "FastAPI_Resource",
-    "image_prompt": "A hand closing a file folder to symbolize resource cleanup."
+    "image_prompt": "A hand closing a file folder to symbolize resource cleanup.",
+    "difficulty": 2
   },
   {
     "id": "srv_049",
@@ -683,7 +731,8 @@
     "answer": 1,
     "explanation": "파일 업로드와 폼 데이터 전송은 일반적으로 HTTP POST 메서드를 통해 요청 바디에 데이터를 담아 보냅니다.",
     "tag": "HTTP_Method",
-    "image_prompt": "An HTTP request packet labeled 'POST' carrying a payload of form data and files."
+    "image_prompt": "An HTTP request packet labeled 'POST' carrying a payload of form data and files.",
+    "difficulty": 2
   },
   {
     "id": "srv_050",
@@ -697,7 +746,8 @@
     "answer": 1,
     "explanation": "FastAPI는 starlette의 TestClient를 상속받아 제공하며, 이를 통해 실제 서버를 실행하지 않고도 HTTP 요청을 시뮬레이션할 수 있습니다.",
     "tag": "TestClient",
-    "image_prompt": "A digital illustration of a software testing tool connecting to an API server with checkmarks."
+    "image_prompt": "A digital illustration of a software testing tool connecting to an API server with checkmarks.",
+    "difficulty": 2
   },
   {
     "id": "srv_051",
@@ -711,7 +761,8 @@
     "answer": 2,
     "explanation": "pytest의 fixture를 사용하면 테스트 세션 동안 클라이언트 객체를 생성하고 여러 테스트 함수에서 공유하여 효율적으로 사용할 수 있습니다.",
     "tag": "pytest",
-    "image_prompt": "A conceptual diagram of a pytest fixture acting as a reusable resource for multiple test cases."
+    "image_prompt": "A conceptual diagram of a pytest fixture acting as a reusable resource for multiple test cases.",
+    "difficulty": 2
   },
   {
     "id": "srv_052",
@@ -725,7 +776,8 @@
     "answer": 0,
     "explanation": "app.dependency_overrides는 딕셔너리 형태로, 기존의 의존성 함수를 테스트용 대체 함수로 매핑하여 동작을 변경할 수 있게 합니다.",
     "tag": "dependency override",
-    "image_prompt": "A schematic showing a real database being swapped with a mock database in a software pipeline."
+    "image_prompt": "A schematic showing a real database being swapped with a mock database in a software pipeline.",
+    "difficulty": 2
   },
   {
     "id": "srv_053",
@@ -739,7 +791,8 @@
     "answer": 1,
     "explanation": "TestClient의 응답 객체는 status_code 속성을 통해 HTTP 상태 코드를 제공합니다.",
     "tag": "TestClient",
-    "image_prompt": "A computer screen showing a Python test code with an assertion for status_code 200."
+    "image_prompt": "A computer screen showing a Python test code with an assertion for status_code 200.",
+    "difficulty": 2
   },
   {
     "id": "srv_054",
@@ -753,7 +806,8 @@
     "answer": 0,
     "explanation": "app.dependency_overrides는 일반 딕셔너리이므로, 빈 딕셔너리로 초기화하면 모든 오버라이드가 제거되고 원래 의존성으로 돌아갑니다.",
     "tag": "dependency override",
-    "image_prompt": "An icon of a reset button clearing a list of configuration overrides."
+    "image_prompt": "An icon of a reset button clearing a list of configuration overrides.",
+    "difficulty": 2
   },
   {
     "id": "srv_055",
@@ -767,7 +821,8 @@
     "answer": 1,
     "explanation": "FastAPI의 async def 엔드포인트를 pytest에서 직접 테스트하려면 pytest-asyncio 플러그인이 필요합니다.",
     "tag": "pytest",
-    "image_prompt": "The logo of pytest and an asyncio symbol connected by a bridge."
+    "image_prompt": "The logo of pytest and an asyncio symbol connected by a bridge.",
+    "difficulty": 2
   },
   {
     "id": "srv_056",
@@ -781,7 +836,8 @@
     "answer": 2,
     "explanation": "client.post('/path', json={'key': 'value'})와 같이 json 매개변수를 사용하면 자동으로 Content-Type이 application/json으로 설정됩니다.",
     "tag": "TestClient",
-    "image_prompt": "A JSON data structure being sent through a network pipe to an API."
+    "image_prompt": "A JSON data structure being sent through a network pipe to an API.",
+    "difficulty": 2
   },
   {
     "id": "srv_057",
@@ -795,7 +851,8 @@
     "answer": 1,
     "explanation": "의존성을 대체할 때 원래 함수가 반환하는 타입과 동일한 타입을 반환해야 애플리케이션 로직에서 오류가 발생하지 않습니다.",
     "tag": "dependency override",
-    "image_prompt": "Two puzzle pieces fitting together perfectly, representing type compatibility."
+    "image_prompt": "Two puzzle pieces fitting together perfectly, representing type compatibility.",
+    "difficulty": 2
   },
   {
     "id": "srv_058",
@@ -809,7 +866,8 @@
     "answer": 1,
     "explanation": "scope='module'은 해당 모듈 내의 모든 테스트 함수가 동일한 fixture 인스턴스를 공유하게 하여 성능을 최적화합니다.",
     "tag": "pytest",
-    "image_prompt": "A group of test functions sharing a single resource block."
+    "image_prompt": "A group of test functions sharing a single resource block.",
+    "difficulty": 2
   },
   {
     "id": "srv_059",
@@ -823,7 +881,8 @@
     "answer": 2,
     "explanation": "의존성 오버라이드를 통해 DB 접근 계층을 가짜(Mock) 객체로 대체하면 외부 환경에 의존하지 않는 빠르고 독립적인 단위 테스트가 가능합니다.",
     "tag": "dependency override",
-    "image_prompt": "A developer replacing a heavy database icon with a light, transparent mock icon."
+    "image_prompt": "A developer replacing a heavy database icon with a light, transparent mock icon.",
+    "difficulty": 2
   },
   {
     "id": "srv_060",
@@ -837,7 +896,8 @@
     "answer": 0,
     "explanation": "FROM 명령어는 빌드할 이미지의 기초가 되는 베이스 이미지를 지정하며, 모든 Dockerfile은 반드시 FROM으로 시작해야 합니다.",
     "tag": "Dockerfile",
-    "image_prompt": "A conceptual diagram showing a foundation block labeled 'FROM' supporting other software layers."
+    "image_prompt": "A conceptual diagram showing a foundation block labeled 'FROM' supporting other software layers.",
+    "difficulty": 2
   },
   {
     "id": "srv_061",
@@ -851,7 +911,8 @@
     "answer": 0,
     "explanation": "depends_on 옵션을 사용하면 특정 서비스가 시작되기 전에 다른 서비스가 먼저 실행되도록 의존 관계를 설정할 수 있습니다.",
     "tag": "docker-compose",
-    "image_prompt": "A flowchart showing arrows connecting different container icons in a specific sequence."
+    "image_prompt": "A flowchart showing arrows connecting different container icons in a specific sequence.",
+    "difficulty": 2
   },
   {
     "id": "srv_062",
@@ -865,7 +926,8 @@
     "answer": 0,
     "explanation": "RUN은 이미지를 생성하는 빌드 단계에서 레이어를 추가하기 위해 사용되며, CMD는 컨테이너가 런타임에 시작될 때 기본적으로 실행될 명령어를 지정합니다.",
     "tag": "Dockerfile",
-    "image_prompt": "A split screen showing a 'Build' phase with RUN and a 'Run' phase with CMD."
+    "image_prompt": "A split screen showing a 'Build' phase with RUN and a 'Run' phase with CMD.",
+    "difficulty": 2
   },
   {
     "id": "srv_063",
@@ -879,7 +941,8 @@
     "answer": 2,
     "explanation": "retries 옵션은 healthcheck 명령어가 연속으로 몇 번 실패해야 컨테이너를 unhealthy 상태로 표시할지를 결정합니다.",
     "tag": "healthcheck",
-    "image_prompt": "A heartbeat monitor showing a few failed pulses before an alarm goes off."
+    "image_prompt": "A heartbeat monitor showing a few failed pulses before an alarm goes off.",
+    "difficulty": 2
   },
   {
     "id": "srv_064",
@@ -893,7 +956,8 @@
     "answer": 1,
     "explanation": "environment 섹션을 통해 컨테이너 내부에서 사용할 환경 변수를 직접 정의하거나 외부 파일(.env)을 참조할 수 있습니다.",
     "tag": "docker-compose",
-    "image_prompt": "A settings gear icon surrounded by key-value pair text labels."
+    "image_prompt": "A settings gear icon surrounded by key-value pair text labels.",
+    "difficulty": 3
   },
   {
     "id": "srv_065",
@@ -907,7 +971,8 @@
     "answer": 1,
     "explanation": "COPY 명령어는 로컬 파일 시스템의 파일을 컨테이너 이미지 내부로 복사하는 가장 표준적인 방법입니다. (ADD는 URL 지원 등 추가 기능이 있음)",
     "tag": "Dockerfile",
-    "image_prompt": "An arrow moving a file icon from a laptop to a shipping container."
+    "image_prompt": "An arrow moving a file icon from a laptop to a shipping container.",
+    "difficulty": 3
   },
   {
     "id": "srv_066",
@@ -921,7 +986,8 @@
     "answer": 1,
     "explanation": "interval은 헬스체크 명령어를 얼마나 자주 실행할 것인지에 대한 주기(시간 간격)를 설정합니다.",
     "tag": "healthcheck",
-    "image_prompt": "A clock icon with a repeating circular arrow indicating a periodic cycle."
+    "image_prompt": "A clock icon with a repeating circular arrow indicating a periodic cycle.",
+    "difficulty": 3
   },
   {
     "id": "srv_067",
@@ -935,7 +1001,8 @@
     "answer": 2,
     "explanation": "volumes 섹션을 사용하면 호스트의 디렉토리나 파일을 컨테이너에 연결하여 데이터 영속성을 유지할 수 있습니다.",
     "tag": "docker-compose",
-    "image_prompt": "A bridge connecting a hard drive icon to a container icon."
+    "image_prompt": "A bridge connecting a hard drive icon to a container icon.",
+    "difficulty": 3
   },
   {
     "id": "srv_068",
@@ -949,7 +1016,8 @@
     "answer": 1,
     "explanation": "각 RUN 명령어는 새로운 이미지 레이어를 생성하므로, &&를 사용하여 여러 명령어를 하나로 합치면 최종 이미지 크기를 줄일 수 있습니다.",
     "tag": "Dockerfile",
-    "image_prompt": "A stack of many thin layers being compressed into a few thick layers."
+    "image_prompt": "A stack of many thin layers being compressed into a few thick layers.",
+    "difficulty": 3
   },
   {
     "id": "srv_069",
@@ -963,7 +1031,8 @@
     "answer": 0,
     "explanation": "ports 섹션에서 '호스트포트:컨테이너포트' 형식의 리스트로 작성하여 외부 접근을 허용합니다.",
     "tag": "docker-compose",
-    "image_prompt": "A network cable connecting a port on a server to a port on a container."
+    "image_prompt": "A network cable connecting a port on a server to a port on a container.",
+    "difficulty": 3
   },
   {
     "id": "srv_070",
@@ -977,7 +1046,8 @@
     "answer": 0,
     "explanation": "멀티플렉싱은 단일 TCP 연결 내에서 여러 요청과 응답을 동시에 처리하여 HOL(Head-of-Line) Blocking 문제를 해결하고 효율성을 높이는 HTTP/2의 핵심 기능입니다.",
     "tag": "HTTP/2",
-    "image_prompt": "A conceptual diagram showing a single pipe splitting into multiple colorful data streams, representing network multiplexing, futuristic digital style."
+    "image_prompt": "A conceptual diagram showing a single pipe splitting into multiple colorful data streams, representing network multiplexing, futuristic digital style.",
+    "difficulty": 3
   },
   {
     "id": "srv_071",
@@ -991,7 +1061,8 @@
     "answer": 2,
     "explanation": "Protocol Buffers는 바이너리 형식으로 데이터를 인코딩하여 JSON보다 크기가 훨씬 작고 처리 속도가 매우 빨라 마이크로서비스 간 통신에 최적화되어 있습니다.",
     "tag": "gRPC",
-    "image_prompt": "A comparison image showing a bulky text document (JSON) being compressed into a small, dense golden cube (Protobuf), high-tech laboratory background."
+    "image_prompt": "A comparison image showing a bulky text document (JSON) being compressed into a small, dense golden cube (Protobuf), high-tech laboratory background.",
+    "difficulty": 3
   },
   {
     "id": "srv_072",
@@ -1005,7 +1076,8 @@
     "answer": 1,
     "explanation": "WebSocket은 HTTP 핸드셰이크를 통해 연결을 설정한 후, 프로토콜을 업그레이드하여 서버와 클라이언트가 언제든 데이터를 보낼 수 있는 전이중(Full-duplex) 통신을 제공합니다.",
     "tag": "WebSocket",
-    "image_prompt": "Two futuristic devices connected by a glowing neon blue line with arrows pointing in both directions, symbolizing bidirectional communication."
+    "image_prompt": "Two futuristic devices connected by a glowing neon blue line with arrows pointing in both directions, symbolizing bidirectional communication.",
+    "difficulty": 3
   },
   {
     "id": "srv_073",
@@ -1019,7 +1091,8 @@
     "answer": 2,
     "explanation": "gRPC는 강력한 타입 체크와 바이너리 전송 덕분에 내부 서버 간 통신(Internal RPC)에서 매우 높은 성능을 발휘하며 MSA 구조에 적합합니다.",
     "tag": "gRPC",
-    "image_prompt": "A network of interconnected microservice cubes in a data center, with fast light beams flashing between them."
+    "image_prompt": "A network of interconnected microservice cubes in a data center, with fast light beams flashing between them.",
+    "difficulty": 3
   },
   {
     "id": "srv_074",
@@ -1033,7 +1106,8 @@
     "answer": 1,
     "explanation": "Server Push는 클라이언트가 HTML을 요청했을 때, 서버가 CSS나 JS 파일이 필요할 것임을 예측하고 미리 전송하여 페이지 로딩 속도를 개선하는 기능입니다.",
     "tag": "HTTP/2",
-    "image_prompt": "A server pushing a package of files toward a client computer before the client asks for them, conceptual 3D illustration."
+    "image_prompt": "A server pushing a package of files toward a client computer before the client asks for them, conceptual 3D illustration.",
+    "difficulty": 3
   },
   {
     "id": "srv_075",
@@ -1047,7 +1121,8 @@
     "answer": 2,
     "explanation": "실시간으로 빈번하게 데이터가 업데이트되어야 하는 채팅이나 주식 차트의 경우, 연결을 유지하며 양방향으로 데이터를 주고받는 WebSocket이 가장 효율적입니다.",
     "tag": "WebSocket",
-    "image_prompt": "A real-time stock market dashboard with rapidly changing numbers and a glowing connection line to a server."
+    "image_prompt": "A real-time stock market dashboard with rapidly changing numbers and a glowing connection line to a server.",
+    "difficulty": 3
   },
   {
     "id": "srv_076",
@@ -1061,7 +1136,8 @@
     "answer": 0,
     "explanation": "Server Streaming은 클라이언트의 요청 하나에 대해 서버가 데이터 스트림을 생성하여 여러 개의 메시지를 순차적으로 전송하는 모델입니다.",
     "tag": "gRPC",
-    "image_prompt": "A single arrow from client to server, and a continuous stream of multiple arrows flowing back from server to client."
+    "image_prompt": "A single arrow from client to server, and a continuous stream of multiple arrows flowing back from server to client.",
+    "difficulty": 3
   },
   {
     "id": "srv_077",
@@ -1075,7 +1151,8 @@
     "answer": 1,
     "explanation": "HTTP/2가 효율적인 요청-응답 구조를 개선한 것이라면, WebSocket은 완전히 다른 프로토콜로 전환하여 서버와 클라이언트가 대등하게 데이터를 주고받는 상태 유지 연결을 지향합니다.",
     "tag": "비교",
-    "image_prompt": "A split screen showing a structured request-response cycle on one side and a continuous flowing loop of data on the other."
+    "image_prompt": "A split screen showing a structured request-response cycle on one side and a continuous flowing loop of data on the other.",
+    "difficulty": 3
   },
   {
     "id": "srv_078",
@@ -1089,7 +1166,8 @@
     "answer": 1,
     "explanation": "브라우저는 HTTP/2의 세부 프레임 제어 권한이 제한적이며 protobuf 바이너리 데이터를 직접 다루기 어려워, 보통 gRPC-Web과 같은 프록시를 통해 사용합니다.",
     "tag": "gRPC",
-    "image_prompt": "A web browser trying to read a binary code block and showing a question mark, with a proxy server acting as a translator in the middle."
+    "image_prompt": "A web browser trying to read a binary code block and showing a question mark, with a proxy server acting as a translator in the middle.",
+    "difficulty": 3
   },
   {
     "id": "srv_079",
@@ -1103,7 +1181,8 @@
     "answer": 1,
     "explanation": "HPACK은 클라이언트와 서버가 헤더 정보를 공유하는 테이블을 유지하여, 중복된 헤더를 보내지 않고 인덱스만 전송함으로써 네트워크 트래픽을 줄이는 기술입니다.",
     "tag": "HTTP/2",
-    "image_prompt": "A large set of repetitive text headers being compressed into a small list of numbers, digital optimization concept."
+    "image_prompt": "A large set of repetitive text headers being compressed into a small list of numbers, digital optimization concept.",
+    "difficulty": 3
   },
   {
     "id": "srv_080",
@@ -1117,7 +1196,8 @@
     "answer": 1,
     "explanation": "SET 명령어는 지정한 키에 문자열 값을 저장하는 가장 기본적인 쓰기 작업입니다.",
     "tag": "SET/GET",
-    "image_prompt": "A digital illustration of a data block being placed into a labeled slot in a high-tech server rack."
+    "image_prompt": "A digital illustration of a data block being placed into a labeled slot in a high-tech server rack.",
+    "difficulty": 3
   },
   {
     "id": "srv_081",
@@ -1131,7 +1211,8 @@
     "answer": 2,
     "explanation": "EXPIRE 명령어는 기존 키에 초 단위의 만료 시간을 설정하여 캐시 데이터의 신선도를 유지하고 메모리를 효율적으로 관리하게 합니다.",
     "tag": "EXPIRE",
-    "image_prompt": "A digital hourglass next to a glowing data cube, symbolizing time-to-live (TTL)."
+    "image_prompt": "A digital hourglass next to a glowing data cube, symbolizing time-to-live (TTL).",
+    "difficulty": 3
   },
   {
     "id": "srv_082",
@@ -1145,7 +1226,8 @@
     "answer": 1,
     "explanation": "PUBLISH 명령어는 특정 채널로 메시지를 보내며, 해당 채널을 구독 중인 모든 클라이언트에게 메시지가 전달됩니다.",
     "tag": "pub/sub",
-    "image_prompt": "A megaphone broadcasting signals to multiple receiving antennas in a network diagram."
+    "image_prompt": "A megaphone broadcasting signals to multiple receiving antennas in a network diagram.",
+    "difficulty": 3
   },
   {
     "id": "srv_083",
@@ -1159,7 +1241,8 @@
     "answer": 1,
     "explanation": "Redis는 외부 저장소이므로 여러 대의 애플리케이션 서버가 동일한 Redis를 바라보게 하여 세션 불일치 문제를 해결할 수 있습니다.",
     "tag": "세션 저장",
-    "image_prompt": "Multiple web servers connected to a single central glowing Redis logo, sharing user session data."
+    "image_prompt": "Multiple web servers connected to a single central glowing Redis logo, sharing user session data.",
+    "difficulty": 3
   },
   {
     "id": "srv_084",
@@ -1173,7 +1256,8 @@
     "answer": 2,
     "explanation": "GET 명령어는 지정한 키에 저장된 문자열 값을 반환합니다.",
     "tag": "SET/GET",
-    "image_prompt": "A robotic arm retrieving a glowing data capsule from a futuristic storage wall."
+    "image_prompt": "A robotic arm retrieving a glowing data capsule from a futuristic storage wall.",
+    "difficulty": 3
   },
   {
     "id": "srv_085",
@@ -1187,7 +1271,8 @@
     "answer": 2,
     "explanation": "Pub/Sub은 'Fire and Forget' 방식으로, 실시간 전송에 특화되어 있으며 메시지를 저장하지 않습니다.",
     "tag": "pub/sub",
-    "image_prompt": "A fast-moving stream of light particles flowing from one point to many endpoints instantly."
+    "image_prompt": "A fast-moving stream of light particles flowing from one point to many endpoints instantly.",
+    "difficulty": 3
   },
   {
     "id": "srv_086",
@@ -1201,7 +1286,8 @@
     "answer": 0,
     "explanation": "SETEX(Set with Expiration)는 원자적으로 값을 설정하고 만료 시간을 지정하여 네트워크 왕복 횟수를 줄여줍니다.",
     "tag": "SET/GET",
-    "image_prompt": "A combination icon of a 'plus' sign and a 'clock', representing simultaneous set and expire operations."
+    "image_prompt": "A combination icon of a 'plus' sign and a 'clock', representing simultaneous set and expire operations.",
+    "difficulty": 3
   },
   {
     "id": "srv_087",
@@ -1215,7 +1301,8 @@
     "answer": 1,
     "explanation": "로그아웃 시에는 해당 사용자의 세션 ID와 연결된 Redis 키를 DEL 명령어로 삭제하여 세션을 무효화해야 합니다.",
     "tag": "세션 저장",
-    "image_prompt": "A digital key being dissolved or erased from a database screen."
+    "image_prompt": "A digital key being dissolved or erased from a database screen.",
+    "difficulty": 3
   },
   {
     "id": "srv_088",
@@ -1229,7 +1316,8 @@
     "answer": 2,
     "explanation": "SUBSCRIBE 명령어를 통해 특정 채널을 구독하면, 해당 채널로 PUBLISH 되는 메시지를 실시간으로 받을 수 있습니다.",
     "tag": "pub/sub",
-    "image_prompt": "A person wearing headphones listening to a specific frequency on a digital radio spectrum."
+    "image_prompt": "A person wearing headphones listening to a specific frequency on a digital radio spectrum.",
+    "difficulty": 3
   },
   {
     "id": "srv_089",
@@ -1243,6 +1331,217 @@
     "answer": 0,
     "explanation": "캐시 미스 발생 시 DB에서 데이터를 조회한 후, 다음 요청을 위해 Redis에 저장하고 사용자에게 결과를 반환합니다.",
     "tag": "SET/GET",
-    "image_prompt": "A flowchart showing a request going to Cache (Miss) -> Database (Hit) -> Update Cache -> User."
+    "image_prompt": "A flowchart showing a request going to Cache (Miss) -> Database (Hit) -> Update Cache -> User.",
+    "difficulty": 3
+  },
+  {
+    "id": "srv_090",
+    "difficulty": 1,
+    "question": "HTTP 상태 코드 중 '200 OK'가 의미하는 것은 무엇인가요?",
+    "choices": [
+      "요청이 성공적으로 처리됨",
+      "페이지를 찾을 수 없음",
+      "서버 내부 오류 발생",
+      "권한이 없어 접근 불가"
+    ],
+    "answer": 0,
+    "explanation": "200 OK는 클라이언트의 요청이 서버에서 성공적으로 처리되었음을 나타내는 가장 대표적인 성공 상태 코드입니다.",
+    "tag": "상태코드",
+    "image_prompt": "A green checkmark icon on a digital screen representing success and confirmation, flat design, vector style."
+  },
+  {
+    "id": "srv_091",
+    "difficulty": 1,
+    "question": "웹 브라우저에서 단순히 페이지를 조회하거나 데이터를 가져올 때 주로 사용하는 HTTP 메서드는 무엇인가요?",
+    "choices": [
+      "POST",
+      "GET",
+      "PUT",
+      "DELETE"
+    ],
+    "answer": 1,
+    "explanation": "GET 메서드는 서버로부터 특정 리소스를 '가져오기' 위해 사용되며, 데이터 조회 시 가장 많이 쓰입니다.",
+    "tag": "HTTP메서드",
+    "image_prompt": "A magnifying glass searching for a document on a web page, clean blue and white interface, 3D render."
+  },
+  {
+    "id": "srv_092",
+    "difficulty": 1,
+    "question": "사용자가 로그인 폼에 아이디와 비밀번호를 입력하여 서버로 전송할 때 가장 적절한 HTTP 메서드는 무엇인가요?",
+    "choices": [
+      "GET",
+      "POST",
+      "HEAD",
+      "OPTIONS"
+    ],
+    "answer": 1,
+    "explanation": "POST 메서드는 서버에 새로운 데이터를 생성하거나 제출할 때 사용하며, 데이터가 URL이 아닌 본문(Body)에 담겨 전송되어 보안상 더 유리합니다.",
+    "tag": "HTTP메서드",
+    "image_prompt": "A digital envelope being sent from a laptop to a cloud server, data transmission concept, isometric style."
+  },
+  {
+    "id": "srv_093",
+    "difficulty": 1,
+    "question": "HTTP 상태 코드 '404 Not Found'가 발생하는 주된 이유는 무엇인가요?",
+    "choices": [
+      "서버 전원이 꺼져 있음",
+      "인터넷 연결이 끊김",
+      "요청한 URL에 해당하는 페이지가 없음",
+      "로그인이 필요함"
+    ],
+    "answer": 2,
+    "explanation": "404 코드는 클라이언트가 요청한 리소스를 서버가 찾을 수 없을 때 반환하는 오류 코드입니다.",
+    "tag": "상태코드",
+    "image_prompt": "A cute robot looking confused in front of a 'Page Not Found' sign, soft lighting, 3D character design."
+  },
+  {
+    "id": "srv_094",
+    "difficulty": 1,
+    "question": "HTTP 헤더(Header)의 주요 역할로 가장 적절한 것은 무엇인가요?",
+    "choices": [
+      "웹 페이지의 실제 본문 내용을 표시함",
+      "데이터 전송을 위한 부가 정보(메타데이터)를 제공함",
+      "서버의 하드웨어 성능을 측정함",
+      "사용자의 마우스 클릭 횟수를 기록함"
+    ],
+    "answer": 1,
+    "explanation": "HTTP 헤더는 요청/응답 본문 외에 콘텐츠 타입, 브라우저 정보, 인증 토큰 등 통신에 필요한 부가 정보를 담고 있습니다.",
+    "tag": "헤더",
+    "image_prompt": "A digital document with a header section highlighted in gold, showing metadata and labels, technical diagram style."
+  },
+  {
+    "id": "srv_095",
+    "difficulty": 1,
+    "question": "HTTP 상태 코드 중 '500 Internal Server Error'는 누구의 문제일 가능성이 가장 높나요?",
+    "choices": [
+      "사용자의 키보드 고장",
+      "웹 브라우저의 버전 낮음",
+      "서버 측의 프로그램 오류",
+      "네트워크 케이블 단선"
+    ],
+    "answer": 2,
+    "explanation": "500번대 상태 코드는 서버 내부에서 예상치 못한 오류가 발생했을 때 반환되는 서버 측 오류입니다.",
+    "tag": "상태코드",
+    "image_prompt": "A server rack with a red warning light flashing and a gear icon breaking, dark background, cinematic lighting."
+  },
+  {
+    "id": "srv_096",
+    "difficulty": 1,
+    "question": "GET 방식과 POST 방식의 차이점으로 옳은 것은 무엇인가요?",
+    "choices": [
+      "GET은 데이터를 본문에 숨겨서 보낸다",
+      "POST는 URL에 데이터가 노출된다",
+      "GET은 주로 조회에, POST는 주로 생성/수정에 사용된다",
+      "두 방식은 완전히 동일한 기능을 수행한다"
+    ],
+    "answer": 2,
+    "explanation": "GET은 리소스 요청(조회)에 최적화되어 있고, POST는 서버의 상태를 변경하거나 데이터를 제출하는 데 사용됩니다.",
+    "tag": "HTTP메서드",
+    "image_prompt": "A comparison chart showing a 'Get' arrow and a 'Post' box, simple infographic design, contrasting colors."
+  },
+  {
+    "id": "srv_097",
+    "difficulty": 2,
+    "question": "FastAPI에서 의존성 주입을 위해 사용하는 데코레이터와 함수는 무엇인가요?",
+    "choices": [
+      "@app.dependency() / inject()",
+      "@app.inject() / Depends()",
+      "@app.depends() / Dependency()",
+      "@app.require() / Depends()"
+    ],
+    "answer": 1,
+    "explanation": "FastAPI에서는 'Depends()' 함수를 사용하여 의존성을 정의하고 주입합니다.",
+    "tag": "Dependency Injection",
+    "image_prompt": "A conceptual diagram showing a puzzle piece being slotted into a software architecture, representing dependency injection, clean flat design."
+  },
+  {
+    "id": "srv_098",
+    "difficulty": 2,
+    "question": "FastAPI 미들웨어(Middleware)의 주요 역할로 가장 적절한 것은 무엇인가요?",
+    "choices": [
+      "데이터베이스 스키마 정의",
+      "HTTP 요청이 처리되기 전과 후에 공통 로직 수행",
+      "API 문서 자동 생성",
+      "Pydantic 모델의 유효성 검사"
+    ],
+    "answer": 1,
+    "explanation": "미들웨어는 모든 요청에 대해 실행되며, 요청을 가로채어 수정하거나 응답을 보내기 전에 처리하는 공통 로직(인증, 로깅 등)을 수행합니다.",
+    "tag": "Middleware",
+    "image_prompt": "A digital filter layer between a user request and a server response, futuristic network visualization."
+  },
+  {
+    "id": "srv_099",
+    "difficulty": 2,
+    "question": "응답 모델을 설계할 때 'response_model' 매개변수를 사용하는 주된 이유는 무엇인가요?",
+    "choices": [
+      "데이터베이스 저장 속도 향상",
+      "클라이언트에게 전달될 데이터 필터를 통한 보안 및 데이터 정제",
+      "HTTP 상태 코드 강제 지정",
+      "비동기 처리 성능 최적화"
+    ],
+    "answer": 1,
+    "explanation": "response_model을 사용하면 Pydantic 모델을 통해 출력 데이터를 필터링하여 민감한 정보를 제외하고 필요한 데이터만 반환할 수 있습니다.",
+    "tag": "Response Model",
+    "image_prompt": "A funnel filtering raw data into a clean, structured JSON format, professional infographic style."
+  },
+  {
+    "id": "srv_100",
+    "difficulty": 2,
+    "question": "FastAPI의 의존성 주입 시스템에서 'sub-dependency'란 무엇을 의미하나요?",
+    "choices": [
+      "외부 라이브러리에 대한 의존성",
+      "하나의 의존성이 또 다른 의존성을 필요로 하는 구조",
+      "클라이언트가 서버에 요청하는 데이터",
+      "미들웨어 내에서 호출되는 함수"
+    ],
+    "answer": 1,
+    "explanation": "FastAPI는 의존성 그래프를 생성하여, 특정 의존성이 다른 의존성에 의존하고 있을 때 이를 계층적으로 모두 해결해 줍니다.",
+    "tag": "Dependency Injection",
+    "image_prompt": "A hierarchical tree structure of interconnected nodes representing software dependencies."
+  },
+  {
+    "id": "srv_101",
+    "difficulty": 2,
+    "question": "미들웨어에서 'call_next' 함수의 역할은 무엇인가요?",
+    "choices": [
+      "서버를 즉시 종료함",
+      "다음 미들웨어나 경로 작업 함수로 요청을 전달함",
+      "클라이언트에게 에러 메시지를 즉시 반환함",
+      "데이터베이스 연결을 해제함"
+    ],
+    "answer": 1,
+    "explanation": "call_next는 현재 미들웨어의 처리를 마치고 다음 단계(다른 미들웨어 또는 실제 엔드포인트)로 요청을 넘겨주는 역할을 합니다.",
+    "tag": "Middleware",
+    "image_prompt": "A relay race runner passing a baton to the next runner, symbolizing request flow in middleware."
+  },
+  {
+    "id": "srv_102",
+    "difficulty": 2,
+    "question": "Pydantic 모델을 사용하여 응답 모델을 정의할 때, 특정 필드를 선택적으로 숨기거나 표시하기 위해 가장 권장되는 방법은?",
+    "choices": [
+      "함수 내부에서 dict.pop() 사용",
+      "별도의 Response 전용 Pydantic 모델(Schema) 생성",
+      "모든 데이터를 반환하고 클라이언트에서 처리",
+      "global 변수로 필드 목록 관리"
+    ],
+    "answer": 1,
+    "explanation": "입력 모델과 출력 모델을 분리하여 각각의 DTO(Data Transfer Object)를 정의하는 것이 유지보수와 보안 측면에서 가장 권장됩니다.",
+    "tag": "Response Model",
+    "image_prompt": "Two different blueprints of the same building, one detailed and one simplified for public view."
+  },
+  {
+    "id": "srv_103",
+    "difficulty": 2,
+    "question": "FastAPI에서 의존성 주입을 통해 데이터베이스 세션을 관리할 때 'yield' 키워드를 사용하는 이유는 무엇인가요?",
+    "choices": [
+      "함수의 실행 속도를 높이기 위해",
+      "응답이 반환된 후 리소스(세션)를 정리(close)하기 위해",
+      "비동기 루프를 강제로 생성하기 위해",
+      "메모리 사용량을 줄이기 위해"
+    ],
+    "answer": 1,
+    "explanation": "yield를 사용하면 의존성 주입 시 세션을 제공하고, 요청 처리가 완료된 후 yield 이후의 코드가 실행되어 DB 세션 종료 등의 정리 작업을 수행할 수 있습니다.",
+    "tag": "Dependency Injection",
+    "image_prompt": "A cycle icon showing a resource being opened and then closed, clean technical illustration."
   }
 ]

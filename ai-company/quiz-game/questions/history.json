@@ -11,7 +11,8 @@
     "answer": 1,
     "explanation": "직지심체요절(1377년)은 현존하는 세계 최고(最古) 금속활자 인쇄본으로 구텐베르크의 성경(1455년)보다 78년 앞섭니다. 현재 프랑스 국립도서관에 보관되어 있으며 유네스코 세계기록유산입니다.",
     "tag": "한국사",
-    "image_prompt": "ancient Korean metal type printing press, traditional Korean art style, gold on dark background"
+    "image_prompt": "ancient Korean metal type printing press, traditional Korean art style, gold on dark background",
+    "difficulty": 1
   },
   {
     "id": "hist_002",
@@ -25,7 +26,8 @@
     "answer": 2,
     "explanation": "1815년 워털루 전투에서 나폴레옹은 영국의 웰링턴 공작과 프로이센 블뤼허 군의 협공에 패배했습니다. 이후 세인트헬레나 섬에 유배되어 생을 마쳤습니다.",
     "tag": "세계사",
-    "image_prompt": "epic battlefield scene in historical painting style, cannon smoke and cavalry, dramatic lighting"
+    "image_prompt": "epic battlefield scene in historical painting style, cannon smoke and cavalry, dramatic lighting",
+    "difficulty": 1
   },
   {
     "id": "hist_003",
@@ -39,7 +41,8 @@
     "answer": 1,
     "explanation": "1388년 이성계는 요동 정벌 도중 위화도에서 군을 돌려(위화도 회군) 권력을 장악했습니다. 이후 4년 뒤인 1392년에 조선을 건국했습니다.",
     "tag": "한국사",
-    "image_prompt": "ancient Korean general on horseback at river crossing, dramatic clouds, traditional ink painting style"
+    "image_prompt": "ancient Korean general on horseback at river crossing, dramatic clouds, traditional ink painting style",
+    "difficulty": 1
   },
   {
     "id": "his_004",
@@ -53,7 +56,8 @@
     "answer": 1,
     "explanation": "이이는 율곡으로 알려져 있으며, 성리학의 이론적 체계를 세우는 동시에 현실적인 사회 개혁안을 제시했습니다.\n그의 철학은 이후 조선 후기 실학사상에도 영향을 주었으며, 국가 경영의 효율성을 강조했습니다.\n현대적 관점에서는 이론과 실무를 겸비한 전략가적 면모를 보여줍니다.",
     "tag": "조선시대_인물",
-    "image_prompt": "A detailed portrait of a Joseon dynasty scholar in traditional white hanbok, holding a brush and writing on a scroll, scholarly atmosphere, soft lighting."
+    "image_prompt": "A detailed portrait of a Joseon dynasty scholar in traditional white hanbok, holding a brush and writing on a scroll, scholarly atmosphere, soft lighting.",
+    "difficulty": 1
   },
   {
     "id": "his_005",
@@ -67,7 +71,8 @@
     "answer": 2,
     "explanation": "정약용은 다산으로 불리며 실사구시의 정신을 바탕으로 백성들의 삶을 개선하는 구체적인 행정 방안을 연구했습니다.\n그가 저술한 '목민심서'는 공직자의 청렴함과 책임감을 강조하는 현대 공무원 윤리의 원형이라고 볼 수 있습니다.\n실용주의적 접근법은 오늘날의 데이터 기반 행정과도 맥락이 닿아 있습니다.",
     "tag": "조선시대_인물",
-    "image_prompt": "An old Korean book 'Mongmin Simseo' placed on a traditional wooden table with an inkstone and brush, warm sunlight filtering through paper windows."
+    "image_prompt": "An old Korean book 'Mongmin Simseo' placed on a traditional wooden table with an inkstone and brush, warm sunlight filtering through paper windows.",
+    "difficulty": 1
   },
   {
     "id": "his_006",
@@ -81,7 +86,8 @@
     "answer": 1,
     "explanation": "교정도감은 최충헌이 설치한 최고 행정 및 군사 기구로, 국정을 완전히 장악하여 무신 정권의 핵심 역할을 했습니다.\n이는 공식적인 국가 체계보다 개인의 권력이 우선시되었던 비정상적인 통치 구조를 보여줍니다.\n조직 관리 측면에서 보면 공식 라인을 우회한 '그림자 조직'이 실권을 잡은 사례입니다.",
     "tag": "고려시대_사건",
-    "image_prompt": "A scene of a powerful military official in Goryeo dynasty armor sitting on a high chair, surrounded by subordinates in a traditional hall."
+    "image_prompt": "A scene of a powerful military official in Goryeo dynasty armor sitting on a high chair, surrounded by subordinates in a traditional hall.",
+    "difficulty": 1
   },
   {
     "id": "his_007",
@@ -95,7 +101,8 @@
     "answer": 2,
     "explanation": "기벌포 전투와 매소성 전투를 통해 신라는 당나라의 한반도 지배 야욕을 물리치고 실질적인 통일을 완성했습니다.\n단순한 정복이 아니라 외세와의 전략적 제휴 후 다시 그 외세를 밀어내는 고도의 외교 전략이 포함된 사건입니다.\n이는 현대 비즈니스에서 파트너십 체결 후 시장 주도권을 확보하는 전략과 유사합니다.",
     "tag": "삼국통일",
-    "image_prompt": "A grand ancient naval battle scene between Silla and Tang dynasty ships on the sea, splashing waves, arrows flying."
+    "image_prompt": "A grand ancient naval battle scene between Silla and Tang dynasty ships on the sea, splashing waves, arrows flying.",
+    "difficulty": 1
   },
   {
     "id": "his_008",
@@ -109,7 +116,8 @@
     "answer": 0,
     "explanation": "신민회는 비밀 결사 조직으로 교육과 산업 진흥을 통해 실력을 양성하고 무장 투쟁의 기반을 마련했습니다.\n특히 신흥무관학교 설립은 체계적인 군사 훈련 시스템을 구축하여 독립 전쟁의 인적 자원을 확보한 핵심 작업이었습니다.\n인프라 구축(교육)이 결과물(독립운동)로 이어지는 전형적인 성장 모델입니다.",
     "tag": "독립운동가",
-    "image_prompt": "A group of young Korean independence fighters in early 20th century military uniforms training in the snowy mountains of Manchuria."
+    "image_prompt": "A group of young Korean independence fighters in early 20th century military uniforms training in the snowy mountains of Manchuria.",
+    "difficulty": 1
   },
   {
     "id": "his_009",
@@ -123,7 +131,8 @@
     "answer": 1,
     "explanation": "프랑스 혁명은 시민 계급이 주체가 되어 봉건적 특권을 폐지하고 인권 선언을 통해 근대 민주주의의 기초를 닦았습니다.\n기존의 수직적 위계 구조를 파괴하고 보편적 권리를 주장한 이 사건은 전 세계 정치 체제의 패러다임을 바꿨습니다.\n이는 조직 내에서 하향식(Top-down) 의사결정이 무너지고 상향식(Bottom-up) 소통이 시작되는 변화와 같습니다.",
     "tag": "세계사_혁명",
-    "image_prompt": "The storming of the Bastille prison in Paris, crowds of citizens with flags and torches, dramatic smoke and fire."
+    "image_prompt": "The storming of the Bastille prison in Paris, crowds of citizens with flags and torches, dramatic smoke and fire.",
+    "difficulty": 1
   },
   {
     "id": "his_010",
@@ -137,7 +146,8 @@
     "answer": 0,
     "explanation": "보스턴 차 사건은 영국의 조세 정책에 대한 식민지 주민들의 직접적인 저항으로, 미국 독립 전쟁의 결정적 계기가 되었습니다.\n'대표 없는 곳에 과세 없다'는 원칙은 정당한 합의 없는 비용 청구에 대한 거부라는 현대적 권리 주장과 일맥상통합니다.\n사용자 경험(UX) 관점에서 보면 강제적인 서비스 업데이트에 대한 사용자의 강력한 반발과 유사합니다.",
     "tag": "세계사_혁명",
-    "image_prompt": "Colonists disguised as Native Americans throwing crates of tea into the Boston harbor from a wooden ship, night scene."
+    "image_prompt": "Colonists disguised as Native Americans throwing crates of tea into the Boston harbor from a wooden ship, night scene.",
+    "difficulty": 1
   },
   {
     "id": "his_011",
@@ -151,7 +161,8 @@
     "answer": 2,
     "explanation": "러시아 혁명은 제1차 세계대전의 혼란 속에서 노동자와 농민이 중심이 되어 차르 체제를 무너뜨린 사건입니다.\n생산 수단의 국유화라는 파격적인 경제 모델을 도입하여 자본주의와는 완전히 다른 시스템을 구축하려 했습니다.\n이는 기존 레거시 시스템을 완전히 폐기하고 새로운 아키텍처로 마이그레이션하는 것과 같은 급진적 변화였습니다.",
     "tag": "세계사_혁명",
-    "image_prompt": "Vladimir Lenin speaking to a crowd of workers in Red Square, red flags waving, industrial background."
+    "image_prompt": "Vladimir Lenin speaking to a crowd of workers in Red Square, red flags waving, industrial background.",
+    "difficulty": 1
   },
   {
     "id": "his_012",
@@ -165,7 +176,8 @@
     "answer": 1,
     "explanation": "스탈린그라드 전투는 인류 역사상 가장 치열했던 시가전 중 하나로, 독일 육군의 무적 신화를 깨뜨린 결정적 사건입니다.\n소모전 끝에 얻어낸 승리는 전쟁의 주도권을 연합군 쪽으로 완전히 가져오는 계기가 되었습니다.\n리소스(병력/물자)를 극한까지 투입하여 임계점을 넘긴 뒤 반전을 이끌어낸 사례입니다.",
     "tag": "2차세계대전",
-    "image_prompt": "A ruined city with crumbling buildings, soldiers fighting in the rubble of Stalingrad, winter snow and grey sky."
+    "image_prompt": "A ruined city with crumbling buildings, soldiers fighting in the rubble of Stalingrad, winter snow and grey sky.",
+    "difficulty": 1
   },
   {
     "id": "his_013",
@@ -179,7 +191,8 @@
     "answer": 1,
     "explanation": "냉전은 직접적인 무력 충돌 대신 이념, 경제, 군비 경쟁을 통해 세력을 확장하려 했던 긴장 상태를 의미합니다.\n우주 경쟁(Space Race)과 같은 기술 경쟁이 가속화되었으며, 이는 현대 IT 및 항공 우주 기술 발전의 토대가 되었습니다.\n경쟁사 간의 보이지 않는 기술 전쟁이 시장 전체의 표준을 높이는 현상과 비슷합니다.",
     "tag": "냉전시대",
-    "image_prompt": "A symbolic image of a wall dividing a city, with an American flag on one side and a Soviet hammer and sickle on the other."
+    "image_prompt": "A symbolic image of a wall dividing a city, with an American flag on one side and a Soviet hammer and sickle on the other.",
+    "difficulty": 1
   },
   {
     "id": "his_014",
@@ -193,7 +206,8 @@
     "answer": 2,
     "explanation": "6.25 전쟁은 냉전 체제의 첫 번째 대규모 열전으로, 한반도를 이념적 갈등의 최전선으로 만들었습니다.\n전쟁 이후 폐허가 된 국가를 재건하는 과정에서 강력한 국가 주도의 경제 성장 모델이 도입되었습니다.\n완전한 시스템 붕괴(Crash) 후 백업 없이 처음부터 다시 구축해야 했던 극한의 복구 상황과 같습니다.",
     "tag": "한국현대사",
-    "image_prompt": "A black and white photo style image of refugees walking along a dusty road, destroyed bridges in the background."
+    "image_prompt": "A black and white photo style image of refugees walking along a dusty road, destroyed bridges in the background.",
+    "difficulty": 1
   },
   {
     "id": "his_015",
@@ -207,7 +221,8 @@
     "answer": 1,
     "explanation": "한국은 부족한 자원을 극복하기 위해 해외 시장을 겨냥한 수출 주도형 성장 전략을 채택하여 빠르게 경제 성장을 이루었습니다.\n경공업에서 중화학 공업으로 산업 구조를 고도화하며 '한강의 기적'이라 불리는 성과를 냈습니다.\n이는 니치 마켓(Niche Market)을 찾아 진입한 뒤 규모의 경제를 달성하여 글로벌 시장으로 확장하는 성장 전략입니다.",
     "tag": "한국현대사",
-    "image_prompt": "A vintage scene of a busy Korean port in the 1970s, large cargo ships being loaded with containers, industrial cranes."
+    "image_prompt": "A vintage scene of a busy Korean port in the 1970s, large cargo ships being loaded with containers, industrial cranes.",
+    "difficulty": 1
   },
   {
     "id": "his_016",
@@ -221,7 +236,8 @@
     "answer": 1,
     "explanation": "3.1 운동은 고종의 인산일을 계기로 일어난 최대 규모의 민족 운동으로, 이후 대한민국 임시 정부 수립의 결정적인 계기가 되었습니다.",
     "tag": "일제강점기",
-    "image_prompt": "A large crowd of Korean people in white traditional Hanbok holding Taegeukgi flags and shouting for independence in a city street, 1919 style."
+    "image_prompt": "A large crowd of Korean people in white traditional Hanbok holding Taegeukgi flags and shouting for independence in a city street, 1919 style.",
+    "difficulty": 1
   },
   {
     "id": "his_017",
@@ -235,7 +251,8 @@
     "answer": 2,
     "explanation": "무단 통치 시기에는 헌병 경찰이 즉결 처분권을 가졌으며, 특히 한국인에게만 적용되었던 '태형'을 통해 공포 분위기를 조성했습니다.",
     "tag": "일제강점기",
-    "image_prompt": "A stern Japanese military police officer in a khaki uniform standing guard with a sword, early 20th century colonial Korea."
+    "image_prompt": "A stern Japanese military police officer in a khaki uniform standing guard with a sword, early 20th century colonial Korea.",
+    "difficulty": 1
   },
   {
     "id": "his_018",
@@ -249,7 +266,8 @@
     "answer": 1,
     "explanation": "제2차 세계 대전 중 미국이 일본에 원자폭탄을 투하하고 소련이 참전하면서 일본이 무조건 항복을 선언함으로써 한국은 광복을 맞았습니다.",
     "tag": "광복",
-    "image_prompt": "A vintage black and white photo style of people celebrating in the streets of Seoul with joy after liberation, 1945."
+    "image_prompt": "A vintage black and white photo style of people celebrating in the streets of Seoul with joy after liberation, 1945.",
+    "difficulty": 1
   },
   {
     "id": "his_019",
@@ -263,7 +281,8 @@
     "answer": 0,
     "explanation": "맥아더 장군은 1950년 9월 인천상륙작전을 성공시켜 북한군의 보급로를 차단하고 서울을 탈환하는 결정적인 역할을 했습니다.",
     "tag": "한국전쟁",
-    "image_prompt": "General Douglas MacArthur standing on a beach with landing crafts and soldiers in the background, Incheon Landing Operation."
+    "image_prompt": "General Douglas MacArthur standing on a beach with landing crafts and soldiers in the background, Incheon Landing Operation.",
+    "difficulty": 1
   },
   {
     "id": "his_020",
@@ -277,7 +296,8 @@
     "answer": 3,
     "explanation": "토지 조사 사업은 1910년대 무단 통치 시기에 경제적 수탈을 위해 실시된 것이며, 30년대 후반은 민족 말살 통치 시기입니다.",
     "tag": "일제강점기",
-    "image_prompt": "A Japanese colonial school classroom where students are forced to bow toward a Shinto shrine."
+    "image_prompt": "A Japanese colonial school classroom where students are forced to bow toward a Shinto shrine.",
+    "difficulty": 1
   },
   {
     "id": "his_021",
@@ -291,7 +311,8 @@
     "answer": 1,
     "explanation": "1948년 8월 15일 대한민국 정부가 공식적으로 수립되어 민주 공화국으로서의 출발을 알렸습니다.",
     "tag": "광복",
-    "image_prompt": "The official proclamation of the Republic of Korea government in 1948, formal ceremony with flags."
+    "image_prompt": "The official proclamation of the Republic of Korea government in 1948, formal ceremony with flags.",
+    "difficulty": 1
   },
   {
     "id": "his_022",
@@ -305,7 +326,8 @@
     "answer": 2,
     "explanation": "1953년 7월 27일 판문점에서 정전 협정이 체결되어 전쟁의 포성이 멈추고 휴전 상태에 들어갔습니다.",
     "tag": "한국전쟁",
-    "image_prompt": "A signing ceremony of the Armistice Agreement at Panmunjom, military officers from UN and North Korea/China."
+    "image_prompt": "A signing ceremony of the Armistice Agreement at Panmunjom, military officers from UN and North Korea/China.",
+    "difficulty": 1
   },
   {
     "id": "his_023",
@@ -319,7 +341,8 @@
     "answer": 1,
     "explanation": "김좌진 장군은 북로군정서를 이끌어 1920년 청산리 전투에서 일본군을 상대로 대승을 거두었습니다.",
     "tag": "일제강점기",
-    "image_prompt": "Korean independence army soldiers in winter gear fighting in the snowy mountains of Manchuria."
+    "image_prompt": "Korean independence army soldiers in winter gear fighting in the snowy mountains of Manchuria.",
+    "difficulty": 1
   },
   {
     "id": "his_024",
@@ -333,7 +356,8 @@
     "answer": 1,
     "explanation": "한국전쟁 전후로 좌우 익의 극심한 이념 갈등 속에서 보도연맹 사건 등 수많은 민간인 희생자가 발생했습니다.",
     "tag": "한국전쟁",
-    "image_prompt": "A desolate village scene during the Korean War with refugees carrying bundles on their backs."
+    "image_prompt": "A desolate village scene during the Korean War with refugees carrying bundles on their backs.",
+    "difficulty": 1
   },
   {
     "id": "his_025",
@@ -347,7 +371,8 @@
     "answer": 1,
     "explanation": "3.1 운동 이후 일제는 강압적인 무단 통치만으로는 한계가 있음을 깨닫고, 기만적인 '문화 통치'로 정책을 전환하여 민족 분열을 꾀했습니다.",
     "tag": "일제강점기",
-    "image_prompt": "A Japanese colonial official speaking to a group of Korean intellectuals in a formal setting, deceptive atmosphere."
+    "image_prompt": "A Japanese colonial official speaking to a group of Korean intellectuals in a formal setting, deceptive atmosphere.",
+    "difficulty": 1
   },
   {
     "id": "his_026",
@@ -361,7 +386,8 @@
     "answer": 0,
     "explanation": "1939년 9월 1일, 나치 독일이 폴란드를 침공하면서 영국과 프랑스가 독일에 선전포고를 하며 전쟁이 시작되었습니다.",
     "tag": "개전",
-    "image_prompt": "Historical map of Europe in 1939 showing the German invasion of Poland, vintage style."
+    "image_prompt": "Historical map of Europe in 1939 showing the German invasion of Poland, vintage style.",
+    "difficulty": 1
   },
   {
     "id": "his_027",
@@ -375,7 +401,8 @@
     "answer": 0,
     "explanation": "1941년 독일이 소련을 기습 공격한 작전으로, '바바 로사(Operation Barbarossa)'라고 불립니다.",
     "tag": "독소전쟁",
-    "image_prompt": "German army marching across the vast Russian steppes, cinematic historical scene."
+    "image_prompt": "German army marching across the vast Russian steppes, cinematic historical scene.",
+    "difficulty": 1
   },
   {
     "id": "his_028",
@@ -389,7 +416,8 @@
     "answer": 1,
     "explanation": "1941년 12월 7일, 일본 제국 해군이 하와이 진주만을 기습 공격하면서 미국이 참전을 결정했습니다.",
     "tag": "태평양전쟁",
-    "image_prompt": "Aerial view of the Pearl Harbor attack with smoke and explosions over warships."
+    "image_prompt": "Aerial view of the Pearl Harbor attack with smoke and explosions over warships.",
+    "difficulty": 1
   },
   {
     "id": "his_029",
@@ -403,7 +431,8 @@
     "answer": 2,
     "explanation": "스탈린그라드 전투에서 독일 제6군이 괴멸하며 전쟁의 주도권이 소련으로 넘어가는 결정적인 계기가 되었습니다.",
     "tag": "독소전쟁",
-    "image_prompt": "Ruined city of Stalingrad with soldiers fighting in the rubble, winter atmosphere."
+    "image_prompt": "Ruined city of Stalingrad with soldiers fighting in the rubble, winter atmosphere.",
+    "difficulty": 1
   },
   {
     "id": "his_030",
@@ -417,7 +446,8 @@
     "answer": 0,
     "explanation": "코드명 '오버로드'로 알려진 노르망디 상륙작전은 역사상 최대 규모의 상륙 작전으로 서부 전선을 열었습니다.",
     "tag": "유럽전선",
-    "image_prompt": "Allied soldiers landing on the beaches of Normandy, Higgins boats and chaos of war."
+    "image_prompt": "Allied soldiers landing on the beaches of Normandy, Higgins boats and chaos of war.",
+    "difficulty": 1
   },
   {
     "id": "his_031",
@@ -431,7 +461,8 @@
     "answer": 1,
     "explanation": "미드웨이 해전을 통해 미국은 일본의 제해권을 빼앗고 공세로 전환하는 결정적인 승리를 거두었습니다.",
     "tag": "태평양전쟁",
-    "image_prompt": "Dramatic naval battle in the Pacific Ocean with aircraft carriers and dive bombers."
+    "image_prompt": "Dramatic naval battle in the Pacific Ocean with aircraft carriers and dive bombers.",
+    "difficulty": 1
   },
   {
     "id": "his_032",
@@ -445,7 +476,8 @@
     "answer": 0,
     "explanation": "홀로코스트(Holocaust)는 나치 독일이 인종주의적 편견을 바탕으로 유대인과 소수자를 체계적으로 학살한 사건입니다.",
     "tag": "전쟁범죄",
-    "image_prompt": "Somber image of a concentration camp gate with barbed wire, black and white photography style."
+    "image_prompt": "Somber image of a concentration camp gate with barbed wire, black and white photography style.",
+    "difficulty": 1
   },
   {
     "id": "his_033",
@@ -459,7 +491,8 @@
     "answer": 3,
     "explanation": "유럽에서는 뉘른베르크 재판이, 아시아에서는 도쿄 재판이 열려 추축국의 전범들을 심판했습니다.",
     "tag": "전후처리",
-    "image_prompt": "A courtroom scene with judges and defendants in a formal historical setting."
+    "image_prompt": "A courtroom scene with judges and defendants in a formal historical setting.",
+    "difficulty": 1
   },
   {
     "id": "his_034",
@@ -473,7 +506,8 @@
     "answer": 2,
     "explanation": "1945년 8월, 미국은 원자폭탄을 투하하여 일본의 무조건 항복을 받아냈으며 이는 전쟁의 종결로 이어졌습니다.",
     "tag": "종전",
-    "image_prompt": "A massive mushroom cloud rising over a city skyline, cinematic and terrifying."
+    "image_prompt": "A massive mushroom cloud rising over a city skyline, cinematic and terrifying.",
+    "difficulty": 1
   },
   {
     "id": "his_035",
@@ -487,7 +521,8 @@
     "answer": 1,
     "explanation": "전쟁의 참상을 되풀이하지 않기 위해 1945년 국제연합(United Nations)이 창설되었습니다.",
     "tag": "국제정치",
-    "image_prompt": "The United Nations logo and the General Assembly hall with representatives from various countries."
+    "image_prompt": "The United Nations logo and the General Assembly hall with representatives from various countries.",
+    "difficulty": 2
   },
   {
     "id": "his_036",
@@ -501,7 +536,8 @@
     "answer": 1,
     "explanation": "제임스 와트는 기존의 뉴커먼 증기기관을 개량하여 효율성을 크게 높였으며, 이는 공장과 교통 수단에 광범위하게 적용되어 산업혁명의 핵심 동력이 되었습니다.",
     "tag": "증기기관",
-    "image_prompt": "A detailed 18th-century steam engine designed by James Watt in a vintage industrial setting, cinematic lighting, steampunk aesthetic."
+    "image_prompt": "A detailed 18th-century steam engine designed by James Watt in a vintage industrial setting, cinematic lighting, steampunk aesthetic.",
+    "difficulty": 2
   },
   {
     "id": "his_037",
@@ -515,7 +551,8 @@
     "answer": 1,
     "explanation": "제임스 하그리브스가 발명한 제니 방직기는 한 명의 작업자가 여러 개의 스핀들을 동시에 돌릴 수 있게 하여 실 생산량을 획기적으로 늘렸습니다.",
     "tag": "방직기",
-    "image_prompt": "An early industrial spinning jenny machine in a dim textile mill, wooden structure, cotton threads, historical atmosphere."
+    "image_prompt": "An early industrial spinning jenny machine in a dim textile mill, wooden structure, cotton threads, historical atmosphere.",
+    "difficulty": 2
   },
   {
     "id": "his_038",
@@ -529,7 +566,8 @@
     "answer": 0,
     "explanation": "공장제가 도입되면서 일자리를 찾아 농촌을 떠나 도시로 몰려드는 인구가 급증하였고, 이는 거대 공업 도시들의 형성으로 이어졌습니다.",
     "tag": "사회변화",
-    "image_prompt": "A 19th-century industrial city skyline with smoking chimneys and crowded brick houses, smoggy atmosphere, oil painting style."
+    "image_prompt": "A 19th-century industrial city skyline with smoking chimneys and crowded brick houses, smoggy atmosphere, oil painting style.",
+    "difficulty": 2
   },
   {
     "id": "his_039",
@@ -543,7 +581,8 @@
     "answer": 2,
     "explanation": "증기기관은 스티븐슨의 증기 기관차와 풀턴의 증기선으로 응용되어, 육상과 해상 운송의 속도를 높이고 물류 혁명을 일으켰습니다.",
     "tag": "증기기관",
-    "image_prompt": "An early steam locomotive pulling carriages through the English countryside, billowing black smoke, vintage photography style."
+    "image_prompt": "An early steam locomotive pulling carriages through the English countryside, billowing black smoke, vintage photography style.",
+    "difficulty": 2
   },
   {
     "id": "his_040",
@@ -557,7 +596,8 @@
     "answer": 2,
     "explanation": "초기 산업혁명 시기에는 노동법이 미비하여 열악한 환경에서 저임금과 장시간 노동에 시달렸으며, 이는 후에 노동조합 결성의 계기가 되었습니다.",
     "tag": "사회변화",
-    "image_prompt": "A gritty 19th-century factory interior with tired workers and heavy machinery, dramatic shadows, realistic style."
+    "image_prompt": "A gritty 19th-century factory interior with tired workers and heavy machinery, dramatic shadows, realistic style.",
+    "difficulty": 2
   },
   {
     "id": "his_041",
@@ -571,7 +611,8 @@
     "answer": 1,
     "explanation": "영국에서는 면직물에 대한 수요가 높았고, 제니 방직기 등의 발명으로 생산 효율이 극대화되면서 면직물 공업이 산업혁명을 주도했습니다.",
     "tag": "방직기",
-    "image_prompt": "Close-up of vintage textile looms weaving white cotton fabric in a bright industrial hall, historical accuracy."
+    "image_prompt": "Close-up of vintage textile looms weaving white cotton fabric in a bright industrial hall, historical accuracy.",
+    "difficulty": 2
   },
   {
     "id": "his_042",
@@ -585,7 +626,8 @@
     "answer": 1,
     "explanation": "생산 수단을 소유한 공장주 중심의 자본가 계급과 자신의 노동력을 판매하는 임금 노동자 계급이라는 새로운 사회 구조가 형성되었습니다.",
     "tag": "사회변화",
-    "image_prompt": "A contrast image showing a wealthy industrialist in a top hat and a poor factory worker in rags, split screen composition."
+    "image_prompt": "A contrast image showing a wealthy industrialist in a top hat and a poor factory worker in rags, split screen composition.",
+    "difficulty": 2
   },
   {
     "id": "his_043",
@@ -599,7 +641,8 @@
     "answer": 2,
     "explanation": "증기기관은 석탄을 태워 물을 끓이는 방식으로 작동했기 때문에, 석탄 수요가 폭발적으로 증가하며 탄광 산업이 크게 발달했습니다.",
     "tag": "증기기관",
-    "image_prompt": "A deep coal mine shaft with workers and carts of black coal, dim lantern light, industrial revolution era."
+    "image_prompt": "A deep coal mine shaft with workers and carts of black coal, dim lantern light, industrial revolution era.",
+    "difficulty": 2
   },
   {
     "id": "his_044",
@@ -613,7 +656,8 @@
     "answer": 1,
     "explanation": "러다이트(Luddite) 운동은 기계의 도입으로 일자리를 잃은 숙련 노동자들이 생존권을 지키기 위해 공장의 기계를 파괴한 사건입니다.",
     "tag": "사회변화",
-    "image_prompt": "Angry workers with hammers smashing a mechanical loom in a dark factory, sparks flying, dramatic action scene."
+    "image_prompt": "Angry workers with hammers smashing a mechanical loom in a dark factory, sparks flying, dramatic action scene.",
+    "difficulty": 2
   },
   {
     "id": "his_045",
@@ -627,7 +671,8 @@
     "answer": 2,
     "explanation": "영국은 국가 주도의 계획 경제가 아니라 민간 자본의 투자와 자유로운 기업 활동, 그리고 풍부한 자원과 시장이라는 환경 덕분에 산업혁명이 시작되었습니다.",
     "tag": "사회변화",
-    "image_prompt": "A map of 18th century Britain with icons of coal mines and ships sailing to colonies, vintage parchment style."
+    "image_prompt": "A map of 18th century Britain with icons of coal mines and ships sailing to colonies, vintage parchment style.",
+    "difficulty": 2
   },
   {
     "id": "his_046",
@@ -641,7 +686,8 @@
     "answer": 0,
     "explanation": "앙시앵 레짐(Ancien Régime)은 혁명 전 프랑스의 신분제도로, 소수의 특권층이 권력을 독점하고 제3신분이 과도한 세금 부담을 졌던 구체제를 의미합니다.",
     "tag": "원인",
-    "image_prompt": "A conceptual illustration of the Three Estates in pre-revolutionary France, showing a burdened commoner carrying nobles and clergy on his back."
+    "image_prompt": "A conceptual illustration of the Three Estates in pre-revolutionary France, showing a burdened commoner carrying nobles and clergy on his back.",
+    "difficulty": 2
   },
   {
     "id": "his_047",
@@ -655,7 +701,8 @@
     "answer": 0,
     "explanation": "제3신분은 삼부회에서 투표 방식에 반발하여 스스로를 '국민의회'로 선포하고, 헌법 제정을 요구하는 테니스 코트의 맹세를 했습니다.",
     "tag": "전개",
-    "image_prompt": "A historical painting style depiction of the Tennis Court Oath in 1789."
+    "image_prompt": "A historical painting style depiction of the Tennis Court Oath in 1789.",
+    "difficulty": 2
   },
   {
     "id": "his_048",
@@ -669,7 +716,8 @@
     "answer": 1,
     "explanation": "1789년 7월 14일, 파리 시민들이 전제 정치의 상징이었던 바스티유 감옥을 습격하며 혁명이 본격적으로 폭발했습니다.",
     "tag": "전개",
-    "image_prompt": "A dramatic scene of the storming of the Bastille fortress with smoke and crowds."
+    "image_prompt": "A dramatic scene of the storming of the Bastille fortress with smoke and crowds.",
+    "difficulty": 2
   },
   {
     "id": "his_049",
@@ -683,7 +731,8 @@
     "answer": 2,
     "explanation": "1789년 발표된 '인간과 시민의 권리 선언'은 자유, 평등, 박애라는 혁명의 기본 정신을 담고 있으며 현대 민주주의의 기초가 되었습니다.",
     "tag": "전개",
-    "image_prompt": "A parchment document with the title 'Declaration of the Rights of Man and of the Citizen' in French."
+    "image_prompt": "A parchment document with the title 'Declaration of the Rights of Man and of the Citizen' in French.",
+    "difficulty": 2
   },
   {
     "id": "his_050",
@@ -697,7 +746,8 @@
     "answer": 1,
     "explanation": "1794년 로베스피에르의 과격한 공포 정치에 반발하여 그를 처형하고 온건파가 권력을 잡은 사건을 테르미도르 반동이라고 합니다.",
     "tag": "전개",
-    "image_prompt": "A scene of a chaotic French revolutionary tribunal in the late 18th century."
+    "image_prompt": "A scene of a chaotic French revolutionary tribunal in the late 18th century.",
+    "difficulty": 2
   },
   {
     "id": "his_051",
@@ -711,7 +761,8 @@
     "answer": 0,
     "explanation": "기요틴은 모든 신분에게 평등한 죽음을 준다는 명목으로 도입된 처형 도구로, 루이 16세와 수많은 혁명기 희생자들이 사용되었습니다.",
     "tag": "전개",
-    "image_prompt": "A silhouette of a guillotine against a cloudy sky in revolutionary Paris."
+    "image_prompt": "A silhouette of a guillotine against a cloudy sky in revolutionary Paris.",
+    "difficulty": 2
   },
   {
     "id": "his_052",
@@ -725,7 +776,8 @@
     "answer": 2,
     "explanation": "나폴레옹은 1799년 브뤼메르 18일 쿠데타를 통해 총재정부를 무너뜨리고 제1통령이 되어 실권을 장악했습니다.",
     "tag": "나폴레옹",
-    "image_prompt": "Napoleon Bonaparte in military uniform leading a group of soldiers into a government hall."
+    "image_prompt": "Napoleon Bonaparte in military uniform leading a group of soldiers into a government hall.",
+    "difficulty": 2
   },
   {
     "id": "his_053",
@@ -739,7 +791,8 @@
     "answer": 1,
     "explanation": "나폴레옹 법전은 혁명의 성과를 법제화하여 유럽 전역에 자유와 평등의 가치를 확산시키는 계기가 되었습니다.",
     "tag": "나폴레옹",
-    "image_prompt": "An open leather-bound law book with the title 'Code Civil' and a gavel."
+    "image_prompt": "An open leather-bound law book with the title 'Code Civil' and a gavel.",
+    "difficulty": 2
   },
   {
     "id": "his_054",
@@ -753,7 +806,8 @@
     "answer": 1,
     "explanation": "나폴레옹은 러시아의 청야 전술과 혹독한 추위로 인해 대육군(Grande Armée)의 대부분을 잃으며 몰락의 길을 걷게 되었습니다.",
     "tag": "나폴레옹",
-    "image_prompt": "Napoleon's army retreating through a snowy Russian landscape, exhausted and freezing."
+    "image_prompt": "Napoleon's army retreating through a snowy Russian landscape, exhausted and freezing.",
+    "difficulty": 2
   },
   {
     "id": "his_055",
@@ -767,7 +821,8 @@
     "answer": 2,
     "explanation": "워털루 전투에서 패배한 나폴레옹은 대서양의 외딴섬인 세인트헬레나로 유배되어 그곳에서 생을 마감했습니다.",
     "tag": "나폴레옹",
-    "image_prompt": "A lonely figure of Napoleon looking at the ocean from a cliff on Saint Helena island."
+    "image_prompt": "A lonely figure of Napoleon looking at the ocean from a cliff on Saint Helena island.",
+    "difficulty": 2
   },
   {
     "id": "his_056",
@@ -781,7 +836,8 @@
     "answer": 1,
     "explanation": "세종대왕은 1443년 백성들이 자신의 생각을 쉽게 표현할 수 있도록 과학적인 문자 체계인 훈민정음을 창제하였습니다.",
     "tag": "세종대왕",
-    "image_prompt": "Ancient Korean manuscript of Hunminjeongeum with traditional calligraphy and ink brush on old parchment."
+    "image_prompt": "Ancient Korean manuscript of Hunminjeongeum with traditional calligraphy and ink brush on old parchment.",
+    "difficulty": 2
   },
   {
     "id": "his_057",
@@ -795,7 +851,8 @@
     "answer": 2,
     "explanation": "한산도 대첩에서 이순신 장군은 학익진 전술과 거북선을 활용하여 일본 수군을 섬멸하며 남해의 제해권을 장악했습니다.",
     "tag": "임진왜란",
-    "image_prompt": "A majestic Korean Turtle Ship (Geobukseon) firing cannons amidst a naval battle in the blue sea."
+    "image_prompt": "A majestic Korean Turtle Ship (Geobukseon) firing cannons amidst a naval battle in the blue sea.",
+    "difficulty": 2
   },
   {
     "id": "his_058",
@@ -809,7 +866,8 @@
     "answer": 0,
     "explanation": "당쟁은 사림 세력이 권력을 잡은 후 학문적, 정치적 견해 차이로 인해 동인, 서인 등으로 나뉘어 갈등한 현상을 말합니다.",
     "tag": "당쟁",
-    "image_prompt": "Two groups of Joseon dynasty scholars in traditional white robes debating intensely in a royal court setting."
+    "image_prompt": "Two groups of Joseon dynasty scholars in traditional white robes debating intensely in a royal court setting.",
+    "difficulty": 2
   },
   {
     "id": "his_059",
@@ -823,7 +881,8 @@
     "answer": 2,
     "explanation": "앙부일구는 '솥 모양의 해시계'라는 뜻으로, 일반 백성들도 시간을 알 수 있도록 공공장소에 설치되었습니다.",
     "tag": "세종대왕",
-    "image_prompt": "A detailed bronze hemispherical sundial (Angbuilgu) placed in a traditional Korean palace courtyard."
+    "image_prompt": "A detailed bronze hemispherical sundial (Angbuilgu) placed in a traditional Korean palace courtyard.",
+    "difficulty": 2
   },
   {
     "id": "his_060",
@@ -837,7 +896,8 @@
     "answer": 1,
     "explanation": "의병은 관군이 무너진 상황에서 지역 유생과 농민들이 스스로 조직하여 고향을 지키기 위해 싸운 민간 군대입니다.",
     "tag": "임진왜란",
-    "image_prompt": "Korean righteous army (Uibyeong) soldiers in traditional commoner clothes holding spears and bows in a forest."
+    "image_prompt": "Korean righteous army (Uibyeong) soldiers in traditional commoner clothes holding spears and bows in a forest.",
+    "difficulty": 2
   },
   {
     "id": "his_061",
@@ -851,7 +911,8 @@
     "answer": 2,
     "explanation": "탕평책은 특정 붕당에 권력이 집중되는 것을 막고 여러 정파의 인재를 조화롭게 등용하여 왕권을 강화하려 한 정책입니다.",
     "tag": "당쟁",
-    "image_prompt": "King Yeongjo sitting on the throne, balancing different political factions in a symmetrical palace hall."
+    "image_prompt": "King Yeongjo sitting on the throne, balancing different political factions in a symmetrical palace hall.",
+    "difficulty": 2
   },
   {
     "id": "his_062",
@@ -865,7 +926,8 @@
     "answer": 0,
     "explanation": "농사직설은 중국의 농서가 아닌 우리나라 실제 농부들의 경험을 바탕으로 작성된 실용적인 농업 지침서입니다.",
     "tag": "세종대왕",
-    "image_prompt": "An old Korean agricultural book open on a wooden table with rice stalks and farming tools nearby."
+    "image_prompt": "An old Korean agricultural book open on a wooden table with rice stalks and farming tools nearby.",
+    "difficulty": 2
   },
   {
     "id": "his_063",
@@ -879,7 +941,8 @@
     "answer": 1,
     "explanation": "도요토미 히데요시는 일본을 통일한 후 내부 불만을 외부로 돌리기 위해 '명나라로 가는 길을 비켜달라(정명가도)'는 구실로 조선을 침공했습니다.",
     "tag": "임진왜란",
-    "image_prompt": "Toyotomi Hideyoshi in ornate Japanese armor looking at a map of East Asia with an ambitious expression."
+    "image_prompt": "Toyotomi Hideyoshi in ornate Japanese armor looking at a map of East Asia with an ambitious expression.",
+    "difficulty": 2
   },
   {
     "id": "his_064",
@@ -893,7 +956,8 @@
     "answer": 2,
     "explanation": "무오사화는 연산군 때 김종직의 '조의제문'이 발단이 되어 사림 세력이 대거 숙청된 최초의 사화입니다.",
     "tag": "당쟁",
-    "image_prompt": "A dramatic scene of Joseon scholars being arrested by royal guards in a rainy palace courtyard."
+    "image_prompt": "A dramatic scene of Joseon scholars being arrested by royal guards in a rainy palace courtyard.",
+    "difficulty": 2
   },
   {
     "id": "his_065",
@@ -907,7 +971,8 @@
     "answer": 0,
     "explanation": "세종대왕은 유교적 예악 정치를 실현하기 위해 궁중 음악인 아악을 정비하고 편경 등의 악기를 제작하였습니다.",
     "tag": "세종대왕",
-    "image_prompt": "Traditional Korean court musicians playing stone chimes (Pyeongyeong) and bells in a grand palace hall."
+    "image_prompt": "Traditional Korean court musicians playing stone chimes (Pyeongyeong) and bells in a grand palace hall.",
+    "difficulty": 2
   },
   {
     "id": "his_066",
@@ -921,7 +986,8 @@
     "answer": 1,
     "explanation": "마샬 플랜(Marshall Plan)은 미국 국무장관 조지 마샬이 제안한 유럽 부흥 계획으로, 공산주의 확산을 막기 위해 서유럽 국가들에 막대한 경제 원조를 제공했습니다.",
     "tag": "마샬플랜",
-    "image_prompt": "A vintage 1940s style map of Europe with gold coins and dollar signs symbolizing economic aid flowing from the USA to Western Europe."
+    "image_prompt": "A vintage 1940s style map of Europe with gold coins and dollar signs symbolizing economic aid flowing from the USA to Western Europe.",
+    "difficulty": 2
   },
   {
     "id": "his_067",
@@ -935,7 +1001,8 @@
     "answer": 2,
     "explanation": "경제적 빈곤은 공산주의가 확산되기 좋은 환경을 제공하므로, 미국은 경제 원조를 통해 유럽의 안정을 도모하고 소련의 영향력을 차단하고자 했습니다.",
     "tag": "마샬플랜",
-    "image_prompt": "A conceptual image of a shield protecting Western Europe from a red tide representing communism."
+    "image_prompt": "A conceptual image of a shield protecting Western Europe from a red tide representing communism.",
+    "difficulty": 2
   },
   {
     "id": "his_068",
@@ -949,7 +1016,8 @@
     "answer": 2,
     "explanation": "쿠바 미사일 위기는 소련이 쿠바에 핵미사일을 배치하려 하자 미국이 이를 발견하고 해상 봉쇄를 단행하며 발생한 냉전 최대의 위기였습니다.",
     "tag": "쿠바미사일위기",
-    "image_prompt": "A tense atmosphere with a nuclear missile silo in Cuba and US naval ships blocking the coast, cinematic lighting."
+    "image_prompt": "A tense atmosphere with a nuclear missile silo in Cuba and US naval ships blocking the coast, cinematic lighting.",
+    "difficulty": 2
   },
   {
     "id": "his_069",
@@ -963,7 +1031,8 @@
     "answer": 2,
     "explanation": "케네디 대통령과 흐루쇼프 서기장이 협상을 통해 소련은 쿠바에서 미사일을 철수하고, 미국은 쿠바를 침공하지 않으며 터키 내 미사일을 철수하기로 합의하며 해결되었습니다.",
     "tag": "쿠바미사일위기",
-    "image_prompt": "Two leaders, Kennedy and Khrushchev, shaking hands in a dimly lit room with flags of USA and USSR behind them."
+    "image_prompt": "Two leaders, Kennedy and Khrushchev, shaking hands in a dimly lit room with flags of USA and USSR behind them.",
+    "difficulty": 3
   },
   {
     "id": "his_070",
@@ -977,7 +1046,8 @@
     "answer": 1,
     "explanation": "냉전 시기 자유와 경제적 풍요를 찾아 동베를린에서 서베를린으로 탈출하는 인구가 급증하자, 동독 정부가 이를 막기 위해 장벽을 설치했습니다.",
     "tag": "베를린장벽",
-    "image_prompt": "A high concrete wall with barbed wire and guards, separating a grey city from a colorful city."
+    "image_prompt": "A high concrete wall with barbed wire and guards, separating a grey city from a colorful city.",
+    "difficulty": 3
   },
   {
     "id": "his_071",
@@ -991,7 +1061,8 @@
     "answer": 2,
     "explanation": "1989년 11월 9일, 동독 정부의 여행 자유화 발표와 시민들의 요구로 베를린 장벽이 무너졌으며 이는 독일 통일과 냉전 종식의 상징이 되었습니다.",
     "tag": "베를린장벽",
-    "image_prompt": "Crowds of people cheering and climbing on top of the Berlin Wall, holding hammers to break it."
+    "image_prompt": "Crowds of people cheering and climbing on top of the Berlin Wall, holding hammers to break it.",
+    "difficulty": 3
   },
   {
     "id": "his_072",
@@ -1005,7 +1076,8 @@
     "answer": 3,
     "explanation": "소련은 마샬 플랜에 대응해 몰로토프 계획을 세웠고, 이후 이를 구체화하여 경제 상호원조회의(COMECON)를 창설했습니다.",
     "tag": "마샬플랜",
-    "image_prompt": "A red star symbol and industrial factories in Eastern Europe, contrasting with the American dollar sign."
+    "image_prompt": "A red star symbol and industrial factories in Eastern Europe, contrasting with the American dollar sign.",
+    "difficulty": 3
   },
   {
     "id": "his_073",
@@ -1019,7 +1091,8 @@
     "answer": 1,
     "explanation": "케네디 대통령은 소련 선박이 쿠바로 미사일을 운반하는 것을 막기 위해 쿠바 주변 해역에 해군을 배치하여 '해상 봉쇄'를 실시했습니다.",
     "tag": "쿠바미사일위기",
-    "image_prompt": "US Navy destroyers forming a line in the ocean to block Soviet cargo ships."
+    "image_prompt": "US Navy destroyers forming a line in the ocean to block Soviet cargo ships.",
+    "difficulty": 3
   },
   {
     "id": "his_074",
@@ -1033,7 +1106,8 @@
     "answer": 1,
     "explanation": "소련이 서베를린으로 가는 육로를 봉쇄하자, 미국과 영국 등 서방 국가들은 비행기를 통해 식량과 연료를 공급하는 '베를린 공수 작전'을 펼쳤습니다.",
     "tag": "베를린장벽",
-    "image_prompt": "Vintage cargo planes flying over Berlin dropping packages of food and coal."
+    "image_prompt": "Vintage cargo planes flying over Berlin dropping packages of food and coal.",
+    "difficulty": 3
   },
   {
     "id": "his_075",
@@ -1047,7 +1121,8 @@
     "answer": 2,
     "explanation": "냉전(Cold War)은 직접적인 무력 충돌 대신 정치, 경제, 외교적 대립과 대리전을 통해 경쟁했기 때문에 '차가운 전쟁'이라고 불립니다.",
     "tag": "냉전시대",
-    "image_prompt": "A chessboard where the pieces are nuclear missiles and flags of USA and USSR."
+    "image_prompt": "A chessboard where the pieces are nuclear missiles and flags of USA and USSR.",
+    "difficulty": 3
   },
   {
     "id": "his_076",
@@ -1061,7 +1136,8 @@
     "answer": 1,
     "explanation": "메이지 유신은 서구 열강의 압력 속에서 일본이 근대 국가로 거듭나기 위해 서양의 제도와 기술을 적극적으로 받아들인 문명개화 정책을 추진했습니다.",
     "tag": "메이지유신",
-    "image_prompt": "A 19th century Japanese street showing a mix of traditional kimono and Western-style suits, with brick buildings in the background."
+    "image_prompt": "A 19th century Japanese street showing a mix of traditional kimono and Western-style suits, with brick buildings in the background.",
+    "difficulty": 3
   },
   {
     "id": "his_077",
@@ -1075,7 +1151,8 @@
     "answer": 2,
     "explanation": "동학 농민 혁명을 진압하기 위해 조선 정부의 요청으로 청나라와 일본군이 동시에 파병되었고, 이 과정에서 갈등이 폭발하며 청일전쟁으로 이어졌습니다.",
     "tag": "청일전쟁",
-    "image_prompt": "Historical painting of 19th century soldiers from Qing China and Meiji Japan facing each other in a tense standoff."
+    "image_prompt": "Historical painting of 19th century soldiers from Qing China and Meiji Japan facing each other in a tense standoff.",
+    "difficulty": 3
   },
   {
     "id": "his_078",
@@ -1089,7 +1166,8 @@
     "answer": 1,
     "explanation": "의화단 운동은 외세의 침략에 반발하여 '부청멸양'을 내걸고 서양 세력과 기독교를 배척한 농민 중심의 민족주의 운동이었습니다.",
     "tag": "의화단운동",
-    "image_prompt": "A group of Chinese peasants in traditional dress performing ritual dances and holding banners against foreign influence."
+    "image_prompt": "A group of Chinese peasants in traditional dress performing ritual dances and holding banners against foreign influence.",
+    "difficulty": 3
   },
   {
     "id": "his_079",
@@ -1103,7 +1181,8 @@
     "answer": 3,
     "explanation": "시모노세키 조약으로 일본은 조선의 독립을 명문화(실제로는 영향력 확대)하고 타이완 등을 할양받았으며 막대한 배상금을 받아냈습니다.",
     "tag": "청일전쟁",
-    "image_prompt": "A formal treaty signing scene in a traditional Japanese room with diplomats from China and Japan."
+    "image_prompt": "A formal treaty signing scene in a traditional Japanese room with diplomats from China and Japan.",
+    "difficulty": 3
   },
   {
     "id": "his_080",
@@ -1117,7 +1196,8 @@
     "answer": 1,
     "explanation": "메이지 정부는 근대적 국가 체제를 구축하기 위해 기존의 사농공상의 신분제를 폐지하고 모든 국민이 평등하다는 '사민평등'을 추진했습니다.",
     "tag": "메이지유신",
-    "image_prompt": "A symbolic image of a samurai sword being laid down next to modern administrative documents."
+    "image_prompt": "A symbolic image of a samurai sword being laid down next to modern administrative documents.",
+    "difficulty": 3
   },
   {
     "id": "his_081",
@@ -1131,7 +1211,8 @@
     "answer": 3,
     "explanation": "8개국 연합군은 영국, 미국, 러시아, 일본, 프랑스, 독일, 이탈리아, 오스트리아-헝가리 제국으로 구성되었습니다.",
     "tag": "의화단운동",
-    "image_prompt": "A map of the world with arrows from various Western powers and Japan pointing towards Beijing."
+    "image_prompt": "A map of the world with arrows from various Western powers and Japan pointing towards Beijing.",
+    "difficulty": 3
   },
   {
     "id": "his_082",
@@ -1145,7 +1226,8 @@
     "answer": 1,
     "explanation": "양무운동이 '중체서용(중국의 정신을 유지하며 기술만 수용)'이었다면, 메이지 유신은 정치 체제와 사회 구조까지 바꾸는 근본적인 변혁이었습니다.",
     "tag": "동아시아근대화",
-    "image_prompt": "A split screen showing a Chinese official with traditional robes using a telescope and a Japanese official in a Western suit."
+    "image_prompt": "A split screen showing a Chinese official with traditional robes using a telescope and a Japanese official in a Western suit.",
+    "difficulty": 3
   },
   {
     "id": "his_083",
@@ -1159,7 +1241,8 @@
     "answer": 2,
     "explanation": "일본은 천황에게 강력한 권한을 부여하는 프로이센(독일)의 헌법 체제를 모델로 하여 '대일본제국 헌법'을 제정했습니다.",
     "tag": "메이지유신",
-    "image_prompt": "An old parchment of a constitution with the Imperial Seal of Japan and German architectural motifs."
+    "image_prompt": "An old parchment of a constitution with the Imperial Seal of Japan and German architectural motifs.",
+    "difficulty": 3
   },
   {
     "id": "his_084",
@@ -1173,7 +1256,8 @@
     "answer": 1,
     "explanation": "청일전쟁의 승리로 일본은 청나라를 밀어내고 한반도와 동아시아에서 주도권을 잡으며 제국주의 국가로 빠르게 성장했습니다.",
     "tag": "청일전쟁",
-    "image_prompt": "A balance scale with a small Japanese flag outweighing a large Qing dynasty dragon emblem."
+    "image_prompt": "A balance scale with a small Japanese flag outweighing a large Qing dynasty dragon emblem.",
+    "difficulty": 3
   },
   {
     "id": "his_085",
@@ -1187,6 +1271,7 @@
     "answer": 1,
     "explanation": "신축조약으로 청나라는 엄청난 액수의 배상금을 물게 되었고, 외국 군대가 베이징에 주둔하는 치욕을 겪으며 반식민지 상태가 심화되었습니다.",
     "tag": "의화단운동",
-    "image_prompt": "Foreign soldiers patrolling the streets of old Beijing near the Forbidden City."
+    "image_prompt": "Foreign soldiers patrolling the streets of old Beijing near the Forbidden City.",
+    "difficulty": 3
   }
 ]

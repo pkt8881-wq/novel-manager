@@ -11,7 +11,8 @@
     "answer": 1,
     "explanation": "SQLite는 별도 서버 없이 .db 파일 하나로 동작합니다. 파이썬 표준 라이브러리(sqlite3)에 내장되어 있어 설치 없이 바로 사용 가능합니다. 소형 앱, 모바일 앱, 프로토타입에 최적입니다.",
     "tag": "SQLite",
-    "image_prompt": "single SQLite database file containing all data, minimalist serverless concept, file icon glowing"
+    "image_prompt": "single SQLite database file containing all data, minimalist serverless concept, file icon glowing",
+    "difficulty": 1
   },
   {
     "id": "db_002",
@@ -25,7 +26,8 @@
     "answer": 1,
     "explanation": "PRIMARY KEY는 테이블의 각 행을 고유하게 식별합니다. NULL이 불가하고 중복이 없으며 테이블당 하나만 설정할 수 있습니다. 보통 id INTEGER PRIMARY KEY AUTOINCREMENT로 자동 증가 ID를 씁니다.",
     "tag": "SQL 기초",
-    "image_prompt": "primary key uniquely identifying database rows, golden key with unique identifier, dark tech"
+    "image_prompt": "primary key uniquely identifying database rows, golden key with unique identifier, dark tech",
+    "difficulty": 1
   },
   {
     "id": "db_003",
@@ -39,7 +41,8 @@
     "answer": 1,
     "explanation": "INNER JOIN은 교집합입니다. users JOIN orders ON users.id = orders.user_id 하면 주문이 없는 사용자는 결과에 나타나지 않습니다. 주문이 없는 사용자도 보려면 LEFT JOIN을 씁니다.",
     "tag": "SQL 중급",
-    "image_prompt": "Venn diagram INNER JOIN intersection highlighted, two database tables overlapping, clean diagram"
+    "image_prompt": "Venn diagram INNER JOIN intersection highlighted, two database tables overlapping, clean diagram",
+    "difficulty": 1
   },
   {
     "id": "db_004",
@@ -53,7 +56,8 @@
     "answer": 1,
     "explanation": "인덱스는 책의 목차와 같습니다. 검색은 빨라지지만 데이터 변경 시 인덱스도 함께 업데이트해야 해서 쓰기가 느려집니다. 자주 검색하는 컬럼(WHERE절에 쓰는 컬럼)에 적절히 추가하는 것이 핵심입니다.",
     "tag": "DB 성능",
-    "image_prompt": "database index vs full scan speed comparison, book index vs reading all pages, visualization"
+    "image_prompt": "database index vs full scan speed comparison, book index vs reading all pages, visualization",
+    "difficulty": 1
   },
   {
     "id": "db_005",
@@ -67,7 +71,8 @@
     "answer": 1,
     "explanation": "SQLAlchemy, Django ORM 등을 쓰면 user = User(name='Kim')처럼 파이썬 객체로 DB를 조작합니다. SQL을 직접 쓰지 않아도 되지만 복잡한 쿼리는 N+1 문제 등이 생길 수 있어 SQL도 알아야 합니다.",
     "tag": "ORM",
-    "image_prompt": "ORM mapping Python objects to database tables, bridge between code and SQL, clean architecture"
+    "image_prompt": "ORM mapping Python objects to database tables, bridge between code and SQL, clean architecture",
+    "difficulty": 1
   },
   {
     "id": "db_006",
@@ -81,7 +86,8 @@
     "answer": 1,
     "explanation": "게시글 10개를 조회(1번) 후 각 게시글의 작성자를 개별 조회(10번) = 총 11번 쿼리. 해결책은 JOIN을 사용하거나 ORM의 eager loading(SQLAlchemy: joinedload, Django: select_related)을 씁니다.",
     "tag": "DB 성능",
-    "image_prompt": "N+1 query problem waterfall diagram, 1 query spawning N additional queries, performance warning"
+    "image_prompt": "N+1 query problem waterfall diagram, 1 query spawning N additional queries, performance warning",
+    "difficulty": 1
   },
   {
     "id": "db_007",
@@ -95,7 +101,8 @@
     "answer": 1,
     "explanation": "SQLite(그리고 대부분의 SQL DB)는 트랜잭션 기반입니다. INSERT/UPDATE/DELETE 후 commit()을 호출해야 변경사항이 파일에 영구 저장됩니다. commit() 없이 연결을 닫으면 변경사항이 사라집니다.",
     "tag": "SQLite",
-    "image_prompt": "database commit saving data permanently, save button locking data to disk, dark tech visualization"
+    "image_prompt": "database commit saving data permanently, save button locking data to disk, dark tech visualization",
+    "difficulty": 1
   },
   {
     "id": "dat_008",
@@ -109,7 +116,8 @@
     "answer": 1,
     "explanation": "WAL 모드는 읽기 작업과 쓰기 작업을 분리하여 동시성을 높입니다.\n현장 서비스 운영 시 DB 잠김(Database is locked) 오류를 줄이는 핵심 설정입니다.\n로그 파일에 먼저 기록한 후 나중에 메인 DB로 병합하는 방식입니다.",
     "tag": "SQLite WAL",
-    "image_prompt": "A conceptual diagram showing a database file and a separate write-ahead log file with arrows indicating simultaneous read and write operations, professional technical style."
+    "image_prompt": "A conceptual diagram showing a database file and a separate write-ahead log file with arrows indicating simultaneous read and write operations, professional technical style.",
+    "difficulty": 1
   },
   {
     "id": "dat_009",
@@ -123,7 +131,8 @@
     "answer": 2,
     "explanation": "데이터 삭제 후에도 SQLite 파일 크기는 자동으로 줄어들지 않습니다.\nVACUUM은 데이터베이스 파일을 재구성하여 물리적 용량을 최적화합니다.\n대량의 데이터를 삭제한 후 디스크 공간 확보를 위해 필수적으로 사용됩니다.",
     "tag": "SQLite VACUUM",
-    "image_prompt": "A visual metaphor of a vacuum cleaner cleaning up fragmented blocks in a digital database storage, 3D isometric style."
+    "image_prompt": "A visual metaphor of a vacuum cleaner cleaning up fragmented blocks in a digital database storage, 3D isometric style.",
+    "difficulty": 1
   },
   {
     "id": "dat_010",
@@ -137,7 +146,8 @@
     "answer": 2,
     "explanation": "Engine은 DB 드라이버와 연결 풀을 관리하는 저수준 인터페이스입니다.\nSession은 비즈니스 로직 단위로 객체의 상태를 추적하고 트랜잭션을 제어합니다.\n실무에서는 Engine 하나에 여러 Session을 생성하여 사용합니다.",
     "tag": "SQLAlchemy Basic",
-    "image_prompt": "A technical architecture diagram showing 'Engine' as a bridge to the Database and 'Session' as a workspace above it, clean flat design."
+    "image_prompt": "A technical architecture diagram showing 'Engine' as a bridge to the Database and 'Session' as a workspace above it, clean flat design.",
+    "difficulty": 1
   },
   {
     "id": "dat_011",
@@ -151,7 +161,8 @@
     "answer": 1,
     "explanation": "declarative_base는 ORM 모델 정의를 위한 기반 클래스를 만듭니다.\n이를 상속받은 클래스는 테이블 이름, 컬럼 정의 등을 통해 DB 스키마와 연결됩니다.\n현대적인 SQLAlchemy 코드 작성의 표준 방식입니다.",
     "tag": "SQLAlchemy declarative_base",
-    "image_prompt": "A blueprint showing a Python class transforming into a SQL table structure, technical schematic style."
+    "image_prompt": "A blueprint showing a Python class transforming into a SQL table structure, technical schematic style.",
+    "difficulty": 1
   },
   {
     "id": "dat_012",
@@ -165,7 +176,8 @@
     "answer": 2,
     "explanation": "lazy loading은 실제 데이터에 접근하는 시점에 쿼리를 날립니다.\n목록을 가져온 후 각 항목의 연관 데이터를 조회하면 루프 횟수만큼 쿼리가 추가 실행됩니다.\n이는 성능 저하의 주범이 되는 N+1 문제입니다.",
     "tag": "SQLAlchemy Relationship",
-    "image_prompt": "A sequence diagram showing one main query followed by many small repetitive queries, highlighting the inefficiency."
+    "image_prompt": "A sequence diagram showing one main query followed by many small repetitive queries, highlighting the inefficiency.",
+    "difficulty": 1
   },
   {
     "id": "dat_013",
@@ -179,7 +191,8 @@
     "answer": 1,
     "explanation": "joinedload는 SQL JOIN 문을 사용하여 메인 엔티티와 연관 엔티티를 한 번에 가져옵니다.\n단일 객체나 소량의 데이터를 조회할 때 매우 효율적입니다.\nEager Loading의 대표적인 방식 중 하나입니다.",
     "tag": "SQLAlchemy joinedload",
-    "image_prompt": "Two database tables merging into one result set via a JOIN operation, professional data flow diagram."
+    "image_prompt": "Two database tables merging into one result set via a JOIN operation, professional data flow diagram.",
+    "difficulty": 1
   },
   {
     "id": "dat_014",
@@ -193,7 +206,8 @@
     "answer": 2,
     "explanation": "selectinload는 메인 쿼리 후 ID 목록을 추출해 'WHERE id IN (...)' 쿼리를 한 번 더 날립니다.\n1:N 관계에서 JOIN으로 인한 데이터 중복(Cartesian Product) 문제를 방지할 수 있습니다.\n컬렉션 데이터를 로드할 때 joinedload보다 권장되는 경우가 많습니다.",
     "tag": "SQLAlchemy selectinload",
-    "image_prompt": "A diagram showing a primary query and then a second query using an 'IN' clause to fetch related items, clean technical style."
+    "image_prompt": "A diagram showing a primary query and then a second query using an 'IN' clause to fetch related items, clean technical style.",
+    "difficulty": 1
   },
   {
     "id": "dat_015",
@@ -207,7 +221,8 @@
     "answer": 1,
     "explanation": "Alembic은 SQLAlchemy 모델 변경 사항을 DB 스키마에 반영하는 버전 관리 도구입니다.\n`revision` 파일을 통해 어떤 변경이 있었는지 기록하고 `upgrade`/`downgrade`가 가능합니다.\n협업 시 팀원 간의 DB 상태를 동일하게 맞추는 데 필수적입니다.",
     "tag": "Alembic",
-    "image_prompt": "A timeline showing different versions of a database schema evolving over time, version control concept."
+    "image_prompt": "A timeline showing different versions of a database schema evolving over time, version control concept.",
+    "difficulty": 1
   },
   {
     "id": "dat_016",
@@ -221,7 +236,8 @@
     "answer": 2,
     "explanation": "CTE는 쿼리 실행 동안만 존재하는 임시 결과 집합이며 물리적 테이블이 아닙니다.\n복잡한 서브쿼리를 상단에 정의함으로써 쿼리의 가독성을 비약적으로 높여줍니다.\n조직도나 카테고리 같은 트리 구조 조회 시 재귀 CTE가 매우 유용합니다.",
     "tag": "SQL WITH (CTE)",
-    "image_prompt": "A complex SQL query being broken down into a clean 'WITH' block and a final SELECT statement, code editor style."
+    "image_prompt": "A complex SQL query being broken down into a clean 'WITH' block and a final SELECT statement, code editor style.",
+    "difficulty": 1
   },
   {
     "id": "dat_017",
@@ -235,7 +251,8 @@
     "answer": 2,
     "explanation": "실행 계획을 통해 'SCAN TABLE'(전체 스캔)인지 'SEARCH TABLE'(인덱스 검색)인지 알 수 있습니다.\n성능 저하가 발생할 때 인덱스가 제대로 작동하는지 확인하는 가장 빠른 방법입니다.\n실무에서 쿼리 튜닝의 시작점이라고 할 수 있습니다.",
     "tag": "EXPLAIN QUERY PLAN",
-    "image_prompt": "A magnifying glass inspecting a SQL query and revealing an execution path with index markers, technical analysis style."
+    "image_prompt": "A magnifying glass inspecting a SQL query and revealing an execution path with index markers, technical analysis style.",
+    "difficulty": 1
   },
   {
     "id": "dat_018",
@@ -249,7 +266,8 @@
     "answer": 2,
     "explanation": "이것이 전형적인 N+1 문제입니다. (1번의 메인 쿼리 + N개의 연관 데이터 쿼리)\n데이터가 많아질수록 네트워크 왕복 시간이 증가하여 서비스 응답 속도가 느려집니다.\n이를 방지하기 위해 joinedload나 selectinload를 사용해야 합니다.",
     "tag": "N+1 Problem",
-    "image_prompt": "A visual representation of a 'Waterfall' effect where one request triggers dozens of subsequent database requests."
+    "image_prompt": "A visual representation of a 'Waterfall' effect where one request triggers dozens of subsequent database requests.",
+    "difficulty": 1
   },
   {
     "id": "dat_019",
@@ -263,7 +281,8 @@
     "answer": 2,
     "explanation": "Session은 논리적인 작업 단위이며, 물리적 디스크 관리는 DB 엔진의 역할입니다.\nSession은 'Unit of Work' 패턴을 구현하여 변경된 객체들을 한 번에 반영합니다.\n트랜잭션의 원자성을 보장하는 핵심 인터페이스입니다.",
     "tag": "SQLAlchemy Session",
-    "image_prompt": "A conceptual image of a 'Session' acting as a staging area or a clipboard before committing changes to a database."
+    "image_prompt": "A conceptual image of a 'Session' acting as a staging area or a clipboard before committing changes to a database.",
+    "difficulty": 1
   },
   {
     "id": "db_020",
@@ -277,7 +296,8 @@
     "answer": 1,
     "explanation": "SQLite는 서버리스(Serverless) 엔진으로, 데이터베이스 전체가 하나의 디스크 파일로 저장되어 별도의 설치나 설정 없이 사용할 수 있습니다.",
     "tag": "SQLite",
-    "image_prompt": "A simple database icon represented as a single file on a hard drive, minimalist flat design."
+    "image_prompt": "A simple database icon represented as a single file on a hard drive, minimalist flat design.",
+    "difficulty": 1
   },
   {
     "id": "db_021",
@@ -291,7 +311,8 @@
     "answer": 2,
     "explanation": "PostgreSQL은 객체-관계형 데이터베이스(ORDBMS)로, 매우 복잡한 쿼리 최적화와 다양한 확장 데이터 타입을 지원하여 엔터프라이즈급 기능에 강점이 있습니다.",
     "tag": "PostgreSQL",
-    "image_prompt": "A complex architectural blueprint of a database system with various interconnected data types, professional technical style."
+    "image_prompt": "A complex architectural blueprint of a database system with various interconnected data types, professional technical style.",
+    "difficulty": 1
   },
   {
     "id": "db_022",
@@ -305,7 +326,8 @@
     "answer": 1,
     "explanation": "MySQL은 단순함과 빠른 읽기 속도로 유명하며, 전 세계적으로 가장 많이 사용되는 오픈소스 RDBMS 중 하나입니다.",
     "tag": "MySQL",
-    "image_prompt": "A fast-moving data stream entering a dolphin icon (MySQL logo style), representing high speed and efficiency."
+    "image_prompt": "A fast-moving data stream entering a dolphin icon (MySQL logo style), representing high speed and efficiency.",
+    "difficulty": 1
   },
   {
     "id": "db_023",
@@ -319,7 +341,8 @@
     "answer": 2,
     "explanation": "SQLite는 가볍고 설정이 필요 없으며 리소스 소모가 적어 모바일 앱이나 IoT 기기의 로컬 저장소로 최적입니다.",
     "tag": "SQLite",
-    "image_prompt": "A smartphone and a small embedded chip connected to a tiny database icon, clean vector art."
+    "image_prompt": "A smartphone and a small embedded chip connected to a tiny database icon, clean vector art.",
+    "difficulty": 1
   },
   {
     "id": "db_024",
@@ -333,7 +356,8 @@
     "answer": 2,
     "explanation": "PostgreSQL은 SQL 표준을 매우 엄격하게 준수하며, 데이터 무결성과 신뢰성을 최우선으로 설계되었습니다.",
     "tag": "PostgreSQL",
-    "image_prompt": "A golden seal of quality placed on a database table, symbolizing strict standards and integrity."
+    "image_prompt": "A golden seal of quality placed on a database table, symbolizing strict standards and integrity.",
+    "difficulty": 2
   },
   {
     "id": "db_025",
@@ -347,7 +371,8 @@
     "answer": 1,
     "explanation": "SQLite는 쓰기 작업 시 데이터베이스 파일 전체에 락을 거는 경우가 많아, 다수의 사용자가 동시에 데이터를 수정하는 환경에는 부적합합니다.",
     "tag": "SQLite",
-    "image_prompt": "A traffic jam of data packets trying to enter a single narrow door, representing write locking."
+    "image_prompt": "A traffic jam of data packets trying to enter a single narrow door, representing write locking.",
+    "difficulty": 2
   },
   {
     "id": "db_026",
@@ -361,7 +386,8 @@
     "answer": 2,
     "explanation": "SQLite는 설치가 필요 없는 파일 기반이므로 MySQL보다 설정이 훨씬 간단합니다.",
     "tag": "비교",
-    "image_prompt": "A balance scale comparing a dolphin (MySQL) and an elephant (PostgreSQL), technical infographic style."
+    "image_prompt": "A balance scale comparing a dolphin (MySQL) and an elephant (PostgreSQL), technical infographic style.",
+    "difficulty": 2
   },
   {
     "id": "db_027",
@@ -375,7 +401,8 @@
     "answer": 2,
     "explanation": "PostgreSQL은 PostGIS라는 매우 강력한 공간 데이터베이스 확장 기능을 통해 정교한 지리 정보 처리가 가능합니다.",
     "tag": "PostgreSQL",
-    "image_prompt": "A digital world map with database coordinates and polygons overlaid, high-tech GIS visualization."
+    "image_prompt": "A digital world map with database coordinates and polygons overlaid, high-tech GIS visualization.",
+    "difficulty": 2
   },
   {
     "id": "db_028",
@@ -389,7 +416,8 @@
     "answer": 2,
     "explanation": "개인용 앱의 로컬 저장은 서버 구축이 필요 없고 가벼운 SQLite가 가장 효율적입니다.",
     "tag": "시나리오",
-    "image_prompt": "A simple notepad app interface with a small database icon tucked underneath it."
+    "image_prompt": "A simple notepad app interface with a small database icon tucked underneath it.",
+    "difficulty": 2
   },
   {
     "id": "db_029",
@@ -403,7 +431,8 @@
     "answer": 2,
     "explanation": "금융 시스템처럼 데이터 무결성이 절대적이고 복잡한 분석이 필요한 경우 PostgreSQL이 가장 신뢰할 수 있는 선택입니다.",
     "tag": "시나리오",
-    "image_prompt": "A professional financial dashboard with complex charts and a secure database lock icon."
+    "image_prompt": "A professional financial dashboard with complex charts and a secure database lock icon.",
+    "difficulty": 2
   },
   {
     "id": "db_030",
@@ -417,7 +446,8 @@
     "answer": 1,
     "explanation": "CTE는 WITH 절을 사용하여 정의하며, 해당 쿼리 실행 동안에만 유효한 임시 결과 집합으로 가독성을 높이고 복잡한 쿼리를 구조화하는 데 사용됩니다.",
     "tag": "CTE",
-    "image_prompt": "A conceptual diagram showing a temporary data block being fed into a main SQL query, clean flat design, blue and white theme."
+    "image_prompt": "A conceptual diagram showing a temporary data block being fed into a main SQL query, clean flat design, blue and white theme.",
+    "difficulty": 2
   },
   {
     "id": "db_031",
@@ -431,7 +461,8 @@
     "answer": 2,
     "explanation": "일반 집계 함수(SUM, AVG 등)는 GROUP BY와 함께 사용되어 행을 그룹화하고 수를 줄이지만, 윈도우 함수는 OVER 절을 통해 개별 행의 정체성을 유지하며 계산 결과를 추가합니다.",
     "tag": "Window Function",
-    "image_prompt": "Comparison chart showing a grouped table vs a detailed table with an added calculation column, professional infographic style."
+    "image_prompt": "Comparison chart showing a grouped table vs a detailed table with an added calculation column, professional infographic style.",
+    "difficulty": 2
   },
   {
     "id": "db_032",
@@ -445,7 +476,8 @@
     "answer": 2,
     "explanation": "RANK()는 공동 1위가 2명일 때 다음 순위를 3위로 매기지만, DENSE_RANK()는 공동 1위가 여러 명이라도 다음 순위를 2위로 매깁니다.",
     "tag": "RANK",
-    "image_prompt": "A leaderboard showing two people at rank 1 and the next person at rank 3 vs rank 2, side-by-side comparison."
+    "image_prompt": "A leaderboard showing two people at rank 1 and the next person at rank 3 vs rank 2, side-by-side comparison.",
+    "difficulty": 2
   },
   {
     "id": "db_033",
@@ -459,7 +491,8 @@
     "answer": 1,
     "explanation": "PARTITION BY는 데이터를 논리적인 그룹(파티션)으로 나누어, 각 파티션 내에서 독립적으로 순위나 합계 등의 계산이 이루어지게 합니다.",
     "tag": "PARTITION BY",
-    "image_prompt": "A large dataset being split into smaller colored boxes based on a category, conceptual data processing illustration."
+    "image_prompt": "A large dataset being split into smaller colored boxes based on a category, conceptual data processing illustration.",
+    "difficulty": 2
   },
   {
     "id": "db_034",
@@ -473,7 +506,8 @@
     "answer": 1,
     "explanation": "재귀적 CTE는 초기 쿼리(Anchor member)와 재귀 쿼리(Recursive member)를 UNION ALL 또는 UNION으로 결합하여 반복적으로 실행되는 구조를 가집니다.",
     "tag": "CTE",
-    "image_prompt": "A recursive loop diagram showing a seed value expanding into a tree structure, technical schematic."
+    "image_prompt": "A recursive loop diagram showing a seed value expanding into a tree structure, technical schematic.",
+    "difficulty": 2
   },
   {
     "id": "db_035",
@@ -487,7 +521,8 @@
     "answer": 2,
     "explanation": "ROW_NUMBER()는 값의 중복 여부와 상관없이 무조건 1부터 시작하여 고유한 번호를 부여합니다. 동일 순위를 부여하는 것은 RANK()나 DENSE_RANK()입니다.",
     "tag": "RANK",
-    "image_prompt": "A list of items with unique numbers 1, 2, 3, 4 assigned regardless of their values, clean UI design."
+    "image_prompt": "A list of items with unique numbers 1, 2, 3, 4 assigned regardless of their values, clean UI design.",
+    "difficulty": 2
   },
   {
     "id": "db_036",
@@ -501,7 +536,8 @@
     "answer": 0,
     "explanation": "ROWS BETWEEN [시작] AND [끝] 구문을 사용하며, '2 PRECEDING'은 현재 행 기준 이전 2행을 의미합니다.",
     "tag": "Window Function",
-    "image_prompt": "A sliding window highlighting a small section of a data table, focus on the current row and two rows above."
+    "image_prompt": "A sliding window highlighting a small section of a data table, focus on the current row and two rows above.",
+    "difficulty": 2
   },
   {
     "id": "db_037",
@@ -515,7 +551,8 @@
     "answer": 1,
     "explanation": "LAG()는 현재 행보다 앞에 있는(이전) 행의 값을 가져오고, LEAD()는 뒤에 있는(다음) 행의 값을 가져와 전일 대비 증감 등을 계산할 때 유용합니다.",
     "tag": "Window Function",
-    "image_prompt": "Arrows pointing from one row to the previous and next rows in a spreadsheet, data flow visualization."
+    "image_prompt": "Arrows pointing from one row to the previous and next rows in a spreadsheet, data flow visualization.",
+    "difficulty": 2
   },
   {
     "id": "db_038",
@@ -529,7 +566,8 @@
     "answer": 1,
     "explanation": "NTILE(n) 함수는 전체 결과 집합을 n개의 버킷으로 나누어 각 행이 어느 그룹에 속하는지 번호(1~n)를 매깁니다. (예: 사분위수 계산)",
     "tag": "Window Function",
-    "image_prompt": "A long list of data divided into four equal colored segments, 1 to 4 labels."
+    "image_prompt": "A long list of data divided into four equal colored segments, 1 to 4 labels.",
+    "difficulty": 2
   },
   {
     "id": "db_039",
@@ -543,7 +581,8 @@
     "answer": 1,
     "explanation": "CTE는 성능 향상보다는 주로 가독성과 구조적 단순화를 위해 사용됩니다. 논리적으로 서브쿼리와 유사하게 작동하며 유지보수성을 크게 개선합니다.",
     "tag": "CTE",
-    "image_prompt": "A messy spiderweb of subqueries transforming into a clean, organized flow chart, conceptual art."
+    "image_prompt": "A messy spiderweb of subqueries transforming into a clean, organized flow chart, conceptual art.",
+    "difficulty": 2
   },
   {
     "id": "db_040",
@@ -557,7 +596,8 @@
     "answer": 1,
     "explanation": "SQLAlchemy 2.0에서는 기존의 session.query() 방식 대신 select() 함수를 사용하여 SQL 문을 생성하고 이를 execute()로 실행하는 방식을 권장합니다.",
     "tag": "select",
-    "image_prompt": "A digital illustration of a magnifying glass focusing on a database table, futuristic blue interface."
+    "image_prompt": "A digital illustration of a magnifying glass focusing on a database table, futuristic blue interface.",
+    "difficulty": 2
   },
   {
     "id": "db_041",
@@ -571,7 +611,8 @@
     "answer": 2,
     "explanation": "execute()는 기본적으로 행(Row) 튜플의 집합을 반환합니다. scalars()를 호출하면 각 행의 첫 번째 요소(보통 모델 객체)만 추출하여 편리하게 사용할 수 있습니다.",
     "tag": "scalars",
-    "image_prompt": "A filter icon separating complex data rows into single clean objects, 3D render."
+    "image_prompt": "A filter icon separating complex data rows into single clean objects, 3D render.",
+    "difficulty": 2
   },
   {
     "id": "db_042",
@@ -585,7 +626,8 @@
     "answer": 1,
     "explanation": "AsyncSession의 execute()는 코루틴이므로 반드시 await 키워드를 사용하여 비동기적으로 호출해야 합니다.",
     "tag": "async_session",
-    "image_prompt": "A glowing clock and a loading symbol representing asynchronous processing in code."
+    "image_prompt": "A glowing clock and a loading symbol representing asynchronous processing in code.",
+    "difficulty": 2
   },
   {
     "id": "db_043",
@@ -599,7 +641,8 @@
     "answer": 2,
     "explanation": "where() 메서드는 SQL의 WHERE 절과 동일하게 특정 조건에 맞는 레코드만 필터링하는 역할을 합니다.",
     "tag": "select",
-    "image_prompt": "A funnel filtering gold coins from a pile of silver coins, conceptual art."
+    "image_prompt": "A funnel filtering gold coins from a pile of silver coins, conceptual art.",
+    "difficulty": 2
   },
   {
     "id": "db_044",
@@ -613,7 +656,8 @@
     "answer": 2,
     "explanation": "scalars()로 추출된 결과에 .all()을 붙이면 조회된 모든 객체가 Python 리스트 형태로 반환됩니다.",
     "tag": "scalars",
-    "image_prompt": "A neat list of user profile icons arranged vertically on a screen."
+    "image_prompt": "A neat list of user profile icons arranged vertically on a screen.",
+    "difficulty": 2
   },
   {
     "id": "db_045",
@@ -627,7 +671,8 @@
     "answer": 1,
     "explanation": "async with session.begin(): 을 사용하면 블록 내에서 예외 발생 시 자동으로 롤백되고, 성공 시 자동으로 커밋되어 안전합니다.",
     "tag": "async_session",
-    "image_prompt": "A secure shield protecting a database transaction flow, neon lines."
+    "image_prompt": "A secure shield protecting a database transaction flow, neon lines.",
+    "difficulty": 2
   },
   {
     "id": "db_046",
@@ -641,7 +686,8 @@
     "answer": 2,
     "explanation": "여러 엔티티를 select하면 execute()의 결과는 각 행마다 (User, Address)와 같은 튜플 형태로 반환됩니다.",
     "tag": "execute",
-    "image_prompt": "Two puzzle pieces connecting to form a complete data record."
+    "image_prompt": "Two puzzle pieces connecting to form a complete data record.",
+    "difficulty": 2
   },
   {
     "id": "db_047",
@@ -655,7 +701,8 @@
     "answer": 1,
     "explanation": "scalars()로 객체화한 후 first()를 호출하면 첫 번째 결과 하나만 가져오거나 없으면 None을 반환합니다.",
     "tag": "scalars",
-    "image_prompt": "A single bright star highlighted among many dim stars."
+    "image_prompt": "A single bright star highlighted among many dim stars.",
+    "difficulty": 2
   },
   {
     "id": "db_048",
@@ -669,7 +716,8 @@
     "answer": 1,
     "explanation": "select()는 SQL 문을 정의하는 '선언적' 단계일 뿐이며, 실제 DB와 통신하는 execute() 단계에서만 await가 필요합니다.",
     "tag": "select",
-    "image_prompt": "A blueprint of a building being drawn on paper before actual construction."
+    "image_prompt": "A blueprint of a building being drawn on paper before actual construction.",
+    "difficulty": 2
   },
   {
     "id": "db_049",
@@ -683,7 +731,8 @@
     "answer": 1,
     "explanation": "scalars()를 거치지 않으면 SQLAlchemy의 Row 객체(튜플과 유사)들이 담긴 리스트가 반환됩니다.",
     "tag": "execute",
-    "image_prompt": "A spreadsheet view showing multiple columns of data in a row."
+    "image_prompt": "A spreadsheet view showing multiple columns of data in a row.",
+    "difficulty": 2
   },
   {
     "id": "db_050",
@@ -697,7 +746,8 @@
     "answer": 0,
     "explanation": "제1정규형은 관계의 모든 도메인이 원자값으로 구성되어야 함을 의미합니다. 즉, 하나의 컬럼에 여러 개의 값이 들어가는 다중값 속성을 제거해야 합니다.",
     "tag": "1NF",
-    "image_prompt": "A diagram showing a table with multiple values in one cell being split into separate rows to achieve atomicity."
+    "image_prompt": "A diagram showing a table with multiple values in one cell being split into separate rows to achieve atomicity.",
+    "difficulty": 2
   },
   {
     "id": "db_051",
@@ -711,7 +761,8 @@
     "answer": 1,
     "explanation": "제2정규형은 제1정규형을 만족하면서, 기본키가 복합키일 때 기본키의 일부분에만 종속되는 '부분 함수적 종속'을 제거하여 완전 함수적 종속 상태로 만드는 것입니다.",
     "tag": "2NF",
-    "image_prompt": "A conceptual illustration of a composite key splitting into two separate tables to remove partial dependency."
+    "image_prompt": "A conceptual illustration of a composite key splitting into two separate tables to remove partial dependency.",
+    "difficulty": 2
   },
   {
     "id": "db_052",
@@ -725,7 +776,8 @@
     "answer": 0,
     "explanation": "제3정규형은 제2정규형을 만족하면서, 기본키가 아닌 속성 간의 종속성인 '이행적 함수적 종속'을 제거하는 단계입니다.",
     "tag": "3NF",
-    "image_prompt": "A flowchart showing A -> B and B -> C relationship being broken into two separate tables (A->B, B->C)."
+    "image_prompt": "A flowchart showing A -> B and B -> C relationship being broken into two separate tables (A->B, B->C).",
+    "difficulty": 2
   },
   {
     "id": "db_053",
@@ -739,7 +791,8 @@
     "answer": 2,
     "explanation": "이행적 함수적 종속이란 기본키(A)가 속성(B)을 결정하고, 그 속성(B)이 다시 다른 속성(C)을 결정하여 결과적으로 A가 C를 결정하게 되는 관계를 말합니다.",
     "tag": "3NF",
-    "image_prompt": "A logical chain diagram showing a transitive relationship between three variables."
+    "image_prompt": "A logical chain diagram showing a transitive relationship between three variables.",
+    "difficulty": 2
   },
   {
     "id": "db_054",
@@ -753,7 +806,8 @@
     "answer": 2,
     "explanation": "역정규화는 정규화로 인해 과도하게 분리된 테이블들을 다시 합치거나 중복 데이터를 추가하여, 조인(Join) 횟수를 줄이고 읽기 성능을 높이기 위해 수행합니다.",
     "tag": "역정규화",
-    "image_prompt": "A comparison image showing a complex multi-join query vs a simple single table query."
+    "image_prompt": "A comparison image showing a complex multi-join query vs a simple single table query.",
+    "difficulty": 2
   },
   {
     "id": "db_055",
@@ -767,7 +821,8 @@
     "answer": 1,
     "explanation": "역정규화는 의도적으로 중복 데이터를 허용하므로, 데이터 수정 시 모든 중복 데이터를 함께 변경해야 하며 이 과정에서 데이터 불일치(이상 현상)가 발생할 가능성이 높습니다.",
     "tag": "역정규화",
-    "image_prompt": "A warning sign icon next to a database table with inconsistent duplicate data."
+    "image_prompt": "A warning sign icon next to a database table with inconsistent duplicate data.",
+    "difficulty": 2
   },
   {
     "id": "db_056",
@@ -781,7 +836,8 @@
     "answer": 1,
     "explanation": "정규화는 단계적으로 진행됩니다. 먼저 원자값을 확보(1NF)하고, 부분 함수적 종속을 제거(2NF)한 뒤, 이행적 함수적 종속을 제거(3NF)하는 순서로 이루어집니다.",
     "tag": "정규화",
-    "image_prompt": "A staircase diagram showing the progression from 1NF to 2NF to 3NF."
+    "image_prompt": "A staircase diagram showing the progression from 1NF to 2NF to 3NF.",
+    "difficulty": 2
   },
   {
     "id": "db_057",
@@ -795,7 +851,8 @@
     "answer": 0,
     "explanation": "부분 함수적 종속은 기본키가 '복합키'일 때만 발생합니다. 따라서 기본키가 단일 속성이라면 부분적으로 종속될 가능성이 없으므로 자동으로 제2정규형을 만족하게 됩니다.",
     "tag": "2NF",
-    "image_prompt": "A simple table with a single primary key highlighted, indicating no partial dependency."
+    "image_prompt": "A simple table with a single primary key highlighted, indicating no partial dependency.",
+    "difficulty": 2
   },
   {
     "id": "db_058",
@@ -809,7 +866,8 @@
     "answer": 1,
     "explanation": "중복 컬럼 추가는 자주 함께 조회되는 데이터를 다른 테이블에서 가져오지 않고 미리 복사해 두어 조인 비용을 줄이는 역정규화 기법입니다.",
     "tag": "역정규화",
-    "image_prompt": "An arrow moving a column from Table B to Table A, creating a duplicate."
+    "image_prompt": "An arrow moving a column from Table B to Table A, creating a duplicate.",
+    "difficulty": 2
   },
   {
     "id": "db_059",
@@ -823,7 +881,8 @@
     "answer": 3,
     "explanation": "정규화는 삽입, 삭제, 갱신 시 발생하는 데이터 불일치 및 무결성 파괴 현상(이상 현상)을 해결하기 위한 과정입니다. '조회 이상'이라는 용어는 표준적인 이상 현상에 포함되지 않습니다.",
     "tag": "정규화",
-    "image_prompt": "A conceptual image showing three broken puzzle pieces labeled Insertion, Deletion, and Update."
+    "image_prompt": "A conceptual image showing three broken puzzle pieces labeled Insertion, Deletion, and Update.",
+    "difficulty": 2
   },
   {
     "id": "db_060",
@@ -837,7 +896,8 @@
     "answer": 0,
     "explanation": "원자성은 트랜잭션 내의 모든 작업이 모두 반영되거나, 하나라도 실패하면 전체가 취소되어 데이터베이스를 이전 상태로 되돌리는 특성입니다.",
     "tag": "ACID",
-    "image_prompt": "A conceptual illustration of an 'all or nothing' switch, representing database atomicity."
+    "image_prompt": "A conceptual illustration of an 'all or nothing' switch, representing database atomicity.",
+    "difficulty": 2
   },
   {
     "id": "db_061",
@@ -851,7 +911,8 @@
     "answer": 3,
     "explanation": "지속성은 성공적으로 완료된 트랜잭션의 결과가 시스템 오류나 전원 차단 등의 장애가 발생하더라도 영구적으로 저장됨을 보장하는 특성입니다.",
     "tag": "ACID",
-    "image_prompt": "A hard drive with a shield icon, symbolizing permanent data storage and durability."
+    "image_prompt": "A hard drive with a shield icon, symbolizing permanent data storage and durability.",
+    "difficulty": 2
   },
   {
     "id": "db_062",
@@ -865,7 +926,8 @@
     "answer": 1,
     "explanation": "일관성은 트랜잭션이 완료된 후 데이터베이스가 논리적으로 올바른 상태를 유지하며, 모든 제약 조건이 충족되어야 함을 의미합니다.",
     "tag": "ACID",
-    "image_prompt": "A balance scale weighing data blocks to represent database consistency."
+    "image_prompt": "A balance scale weighing data blocks to represent database consistency.",
+    "difficulty": 2
   },
   {
     "id": "db_063",
@@ -879,7 +941,8 @@
     "answer": 2,
     "explanation": "격리성은 여러 트랜잭션이 동시에 실행될 때, 각 트랜잭션의 중간 단계가 다른 트랜잭션에 보이지 않도록 분리하는 특성입니다.",
     "tag": "ACID",
-    "image_prompt": "Two separate glass bubbles containing different data processes to represent isolation."
+    "image_prompt": "Two separate glass bubbles containing different data processes to represent isolation.",
+    "difficulty": 2
   },
   {
     "id": "db_064",
@@ -893,7 +956,8 @@
     "answer": 1,
     "explanation": "READ COMMITTED는 커밋된 데이터만 읽으므로 Dirty Read는 방지하지만, 한 트랜잭션 내에서 같은 데이터를 두 번 읽었을 때 값이 달라지는 Non-Repeatable Read는 발생할 수 있습니다.",
     "tag": "Isolation Level",
-    "image_prompt": "A diagram showing a data value changing between two read operations in one transaction."
+    "image_prompt": "A diagram showing a data value changing between two read operations in one transaction.",
+    "difficulty": 3
   },
   {
     "id": "db_065",
@@ -907,7 +971,8 @@
     "answer": 2,
     "explanation": "READ COMMITTED는 다른 트랜잭션이 데이터를 수정하고 '커밋'한 후에만 그 내용을 읽을 수 있게 하여 Dirty Read를 방지합니다.",
     "tag": "Isolation Level",
-    "image_prompt": "A lock icon opening only after a 'Commit' checkmark appears."
+    "image_prompt": "A lock icon opening only after a 'Commit' checkmark appears.",
+    "difficulty": 3
   },
   {
     "id": "db_066",
@@ -921,7 +986,8 @@
     "answer": 2,
     "explanation": "SERIALIZABLE은 가장 엄격한 격리 수준으로, 트랜잭션들이 마치 하나씩 순서대로 실행되는 것처럼 동작하게 하여 모든 동시성 문제를 해결합니다.",
     "tag": "Isolation Level",
-    "image_prompt": "A single-file line of people waiting to enter a door, representing sequential execution."
+    "image_prompt": "A single-file line of people waiting to enter a door, representing sequential execution.",
+    "difficulty": 3
   },
   {
     "id": "db_067",
@@ -935,7 +1001,8 @@
     "answer": 2,
     "explanation": "SERIALIZABLE은 데이터 일관성을 완벽히 보장하지만, 과도한 잠금(Locking)으로 인해 처리량이 감소하고 트랜잭션 간 충돌로 인한 데드락 발생 확률이 높아집니다.",
     "tag": "Isolation Level",
-    "image_prompt": "A traffic jam of data packets with red warning signs."
+    "image_prompt": "A traffic jam of data packets with red warning signs.",
+    "difficulty": 3
   },
   {
     "id": "db_068",
@@ -949,7 +1016,8 @@
     "answer": 2,
     "explanation": "Phantom Read는 데이터의 '값'이 변하는 것이 아니라, 조건에 맞는 '행의 개수'가 변경되어 마치 유령(Phantom)처럼 새로운 행이 나타나거나 사라지는 현상입니다.",
     "tag": "Isolation Level",
-    "image_prompt": "A ghost-like data row appearing in a database table."
+    "image_prompt": "A ghost-like data row appearing in a database table.",
+    "difficulty": 3
   },
   {
     "id": "db_069",
@@ -963,7 +1031,8 @@
     "answer": 3,
     "explanation": "SERIALIZABLE은 Dirty Read뿐만 아니라 Non-Repeatable Read와 Phantom Read까지 모두 방지하는 가장 강력한 수준입니다.",
     "tag": "Isolation Level",
-    "image_prompt": "A comparison table of isolation levels and their protections."
+    "image_prompt": "A comparison table of isolation levels and their protections.",
+    "difficulty": 3
   },
   {
     "id": "db_070",
@@ -977,7 +1046,8 @@
     "answer": 1,
     "explanation": "alembic revision 명령어는 데이터베이스 스키마 변경 사항을 기록할 새로운 리비전 파일을 생성합니다.",
     "tag": "revision",
-    "image_prompt": "A digital blueprint of a database schema being updated with a new version stamp."
+    "image_prompt": "A digital blueprint of a database schema being updated with a new version stamp.",
+    "difficulty": 3
   },
   {
     "id": "db_071",
@@ -991,7 +1061,8 @@
     "answer": 2,
     "explanation": "-autogenerate 옵션은 현재의 SQLAlchemy 모델 정의와 실제 데이터베이스 스키마를 비교하여 차이점을 자동으로 감지하고 리비전 파일에 반영합니다.",
     "tag": "revision",
-    "image_prompt": "A robot comparing two different database diagrams and highlighting the differences."
+    "image_prompt": "A robot comparing two different database diagrams and highlighting the differences.",
+    "difficulty": 3
   },
   {
     "id": "db_072",
@@ -1005,7 +1076,8 @@
     "answer": 0,
     "explanation": "alembic upgrade head 명령어는 데이터베이스를 가장 최신 리비전(head) 상태로 업데이트합니다.",
     "tag": "upgrade",
-    "image_prompt": "An upward arrow pointing to a gold trophy representing the latest version of a database."
+    "image_prompt": "An upward arrow pointing to a gold trophy representing the latest version of a database.",
+    "difficulty": 3
   },
   {
     "id": "db_073",
@@ -1019,7 +1091,8 @@
     "answer": 2,
     "explanation": "alembic downgrade 명령어는 데이터베이스 스키마를 이전 버전으로 되돌리는(롤백) 역할을 합니다.",
     "tag": "downgrade",
-    "image_prompt": "A rewind button on a vintage cassette tape symbolizing database rollback."
+    "image_prompt": "A rewind button on a vintage cassette tape symbolizing database rollback.",
+    "difficulty": 3
   },
   {
     "id": "db_074",
@@ -1033,7 +1106,8 @@
     "answer": 2,
     "explanation": "upgrade() 함수는 해당 리비전이 적용될 때 실행될 SQL 작업(테이블 생성, 컬럼 추가 등)을 정의합니다.",
     "tag": "upgrade",
-    "image_prompt": "A construction worker adding a new floor to a building representing database expansion."
+    "image_prompt": "A construction worker adding a new floor to a building representing database expansion.",
+    "difficulty": 3
   },
   {
     "id": "db_075",
@@ -1047,7 +1121,8 @@
     "answer": 1,
     "explanation": "downgrade() 함수는 upgrade()를 통해 적용된 변경 사항을 다시 원래 상태로 되돌리는 작업을 정의합니다.",
     "tag": "downgrade",
-    "image_prompt": "An eraser removing a line from a technical drawing of a database."
+    "image_prompt": "An eraser removing a line from a technical drawing of a database.",
+    "difficulty": 3
   },
   {
     "id": "db_076",
@@ -1061,7 +1136,8 @@
     "answer": 2,
     "explanation": "-1 옵션은 현재 상태에서 바로 이전 단계(relative revision)로 스키마를 롤백함을 의미합니다.",
     "tag": "downgrade",
-    "image_prompt": "A person taking one step backward on a staircase of version numbers."
+    "image_prompt": "A person taking one step backward on a staircase of version numbers.",
+    "difficulty": 3
   },
   {
     "id": "db_077",
@@ -1075,7 +1151,8 @@
     "answer": 0,
     "explanation": "Alembic은 'alembic_version'이라는 테이블을 생성하여 현재 DB가 어떤 리비전 ID에 머물러 있는지 저장합니다.",
     "tag": "revision",
-    "image_prompt": "A small table in a database containing a single unique alphanumeric version string."
+    "image_prompt": "A small table in a database containing a single unique alphanumeric version string.",
+    "difficulty": 3
   },
   {
     "id": "db_078",
@@ -1089,7 +1166,8 @@
     "answer": 1,
     "explanation": "일반적으로 변경 사항을 정의하는 리비전 파일을 먼저 생성(revision)하고, 이를 DB에 적용(upgrade)하며, 문제가 있을 시 되돌립니다(downgrade).",
     "tag": "workflow",
-    "image_prompt": "A flow chart showing the sequence: Revision File -> Upgrade Arrow -> Downgrade Arrow."
+    "image_prompt": "A flow chart showing the sequence: Revision File -> Upgrade Arrow -> Downgrade Arrow.",
+    "difficulty": 3
   },
   {
     "id": "db_079",
@@ -1103,7 +1181,8 @@
     "answer": 1,
     "explanation": "--message (또는 -m) 옵션은 생성되는 리비전 파일의 이름이나 내용에 설명을 붙여 나중에 어떤 변경이었는지 쉽게 알 수 있게 합니다.",
     "tag": "revision",
-    "image_prompt": "A sticky note attached to a code file with the text 'add_user_table' written on it."
+    "image_prompt": "A sticky note attached to a code file with the text 'add_user_table' written on it.",
+    "difficulty": 3
   },
   {
     "id": "db_080",
@@ -1117,7 +1196,8 @@
     "answer": 2,
     "explanation": "하나의 키에 여러 개의 필드-값 쌍을 저장하는 것은 Hash 자료구조의 특징입니다. String은 단일 값만 저장합니다.",
     "tag": "String",
-    "image_prompt": "A simple key-value pair diagram showing a single string value connected to a key, minimalist flat design."
+    "image_prompt": "A simple key-value pair diagram showing a single string value connected to a key, minimalist flat design.",
+    "difficulty": 3
   },
   {
     "id": "db_081",
@@ -1131,7 +1211,8 @@
     "answer": 1,
     "explanation": "Hash는 필드-값 쌍으로 이루어져 있어 객체 형태의 데이터(예: 사용자 프로필)를 효율적으로 저장하고 관리하는 데 최적입니다.",
     "tag": "Hash",
-    "image_prompt": "A digital filing cabinet where each drawer represents a key and contains multiple labeled folders as fields."
+    "image_prompt": "A digital filing cabinet where each drawer represents a key and contains multiple labeled folders as fields.",
+    "difficulty": 3
   },
   {
     "id": "db_082",
@@ -1145,7 +1226,8 @@
     "answer": 1,
     "explanation": "Redis List는 Linked List로 구현되어 LPUSH, RPUSH, LPOP, RPOP 등의 명령어를 통해 양 끝에서 빠르게 데이터를 처리할 수 있습니다.",
     "tag": "List",
-    "image_prompt": "A chain of connected blocks representing a linked list with arrows pointing to the head and tail."
+    "image_prompt": "A chain of connected blocks representing a linked list with arrows pointing to the head and tail.",
+    "difficulty": 3
   },
   {
     "id": "db_083",
@@ -1159,7 +1241,8 @@
     "answer": 2,
     "explanation": "Set은 중복을 허용하지 않는 Unordered Collection입니다. 동일한 값을 여러 번 추가해도 하나만 저장됩니다.",
     "tag": "Set",
-    "image_prompt": "A circle containing unique colorful spheres with no duplicates, clean vector style."
+    "image_prompt": "A circle containing unique colorful spheres with no duplicates, clean vector style.",
+    "difficulty": 3
   },
   {
     "id": "db_084",
@@ -1173,7 +1256,8 @@
     "answer": 2,
     "explanation": "Sorted Set은 각 요소에 대해 'score'라는 숫자를 부여하며, 이 score를 기준으로 오름차순 또는 내림차순으로 정렬됩니다.",
     "tag": "Sorted Set",
-    "image_prompt": "A leaderboard showing usernames and their corresponding numeric scores in descending order."
+    "image_prompt": "A leaderboard showing usernames and their corresponding numeric scores in descending order.",
+    "difficulty": 3
   },
   {
     "id": "db_085",
@@ -1187,7 +1271,8 @@
     "answer": 1,
     "explanation": "한쪽 끝(Right)으로 넣고 반대쪽 끝(Left)에서 빼는 RPUSH와 LPOP 조합을 통해 FIFO(First-In-First-Out) 큐를 구현할 수 있습니다.",
     "tag": "List",
-    "image_prompt": "A conveyor belt moving boxes from one side to the other, representing a queue process."
+    "image_prompt": "A conveyor belt moving boxes from one side to the other, representing a queue process.",
+    "difficulty": 3
   },
   {
     "id": "db_086",
@@ -1201,7 +1286,8 @@
     "answer": 2,
     "explanation": "SINTER(Set Intersection) 명령어는 두 개 이상의 집합에서 교집합(공통 요소)을 찾아 반환합니다.",
     "tag": "Set",
-    "image_prompt": "A Venn diagram showing the overlapping area of two circles highlighted in a bright color."
+    "image_prompt": "A Venn diagram showing the overlapping area of two circles highlighted in a bright color.",
+    "difficulty": 3
   },
   {
     "id": "db_087",
@@ -1215,7 +1301,8 @@
     "answer": 0,
     "explanation": "ZRANGE(또는 ZRANGEBYSCORE) 명령어를 사용하여 특정 인덱스 범위나 점수 범위의 멤버를 조회할 수 있습니다.",
     "tag": "Sorted Set",
-    "image_prompt": "A magnifying glass focusing on a specific segment of a sorted vertical list."
+    "image_prompt": "A magnifying glass focusing on a specific segment of a sorted vertical list.",
+    "difficulty": 3
   },
   {
     "id": "db_088",
@@ -1229,7 +1316,8 @@
     "answer": 1,
     "explanation": "HSET 명령어를 사용하여 Hash 내의 특정 필드에 값을 설정하거나 기존 값을 업데이트합니다.",
     "tag": "Hash",
-    "image_prompt": "A hand updating a value in a digital table cell, futuristic UI design."
+    "image_prompt": "A hand updating a value in a digital table cell, futuristic UI design.",
+    "difficulty": 3
   },
   {
     "id": "db_089",
@@ -1243,6 +1331,7 @@
     "answer": 2,
     "explanation": "INCR 명령어를 사용하면 해당 키의 정수 값을 원자적으로(atomically) 1 증가시킵니다.",
     "tag": "String",
-    "image_prompt": "A digital counter rapidly increasing from 99 to 100 with a glowing effect."
+    "image_prompt": "A digital counter rapidly increasing from 99 to 100 with a glowing effect.",
+    "difficulty": 3
   }
 ]

@@ -11,7 +11,8 @@
     "answer": 1,
     "explanation": "GIL 때문에 멀티스레드로 CPU 연산을 해도 실제로는 병렬 실행이 안 됩니다. CPU 집약 작업엔 multiprocessing, I/O 집약 작업엔 threading이나 asyncio를 씁니다.",
     "tag": "Python 기초",
-    "image_prompt": "single thread lock on multi-thread Python snake, bottleneck visualization, dark tech"
+    "image_prompt": "single thread lock on multi-thread Python snake, bottleneck visualization, dark tech",
+    "difficulty": 1
   },
   {
     "id": "py_002",
@@ -25,7 +26,8 @@
     "answer": 1,
     "explanation": "@dataclass는 필드 정의만으로 __init__(생성자), __repr__(출력), __eq__(비교)를 자동 생성합니다. Python 3.7+에서 사용 가능하며 반복적인 보일러플레이트 코드를 크게 줄여줍니다.",
     "tag": "Python 기초",
-    "image_prompt": "Python dataclass auto-generating code methods, code factory robot, clean blue background"
+    "image_prompt": "Python dataclass auto-generating code methods, code factory robot, clean blue background",
+    "difficulty": 1
   },
   {
     "id": "py_003",
@@ -39,7 +41,8 @@
     "answer": 1,
     "explanation": "[x for x in range(1000000)]은 즉시 100만 개를 메모리에 올립니다. (x for x in range(1000000))는 호출 시마다 하나씩 생성해 메모리를 거의 쓰지 않습니다. 큰 데이터는 제너레이터가 필수입니다.",
     "tag": "Python 중급",
-    "image_prompt": "memory comparison list vs generator, lazy evaluation conveyor belt, dark tech visualization"
+    "image_prompt": "memory comparison list vs generator, lazy evaluation conveyor belt, dark tech visualization",
+    "difficulty": 1
   },
   {
     "id": "py_004",
@@ -53,7 +56,8 @@
     "answer": 1,
     "explanation": "async def 함수는 호출해도 실행되지 않고 코루틴 객체를 반환합니다. 실행하려면 asyncio.run() 또는 await 키워드가 필요합니다. FastAPI 같은 비동기 프레임워크는 이 구조를 자동으로 처리합니다.",
     "tag": "Python 중급",
-    "image_prompt": "async event loop with coroutines flowing, asyncio visualization, green flowing circuits"
+    "image_prompt": "async event loop with coroutines flowing, asyncio visualization, green flowing circuits",
+    "difficulty": 1
   },
   {
     "id": "py_005",
@@ -67,7 +71,8 @@
     "answer": 1,
     "explanation": "def func(*args, **kwargs): print(args, kwargs) → func(1,2, name='Kim') 호출 시 args=(1,2), kwargs={'name':'Kim'}. 가변 인자를 받는 함수 설계에 핵심입니다.",
     "tag": "Python 기초",
-    "image_prompt": "function arguments flowing into tuple and dictionary boxes, Python code visualization"
+    "image_prompt": "function arguments flowing into tuple and dictionary boxes, Python code visualization",
+    "difficulty": 1
   },
   {
     "id": "py_006",
@@ -81,7 +86,8 @@
     "answer": 1,
     "explanation": "with 문은 __enter__와 __exit__ 메서드를 활용합니다. 예외가 발생해도 __exit__가 반드시 호출되어 파일, DB 연결, 네트워크 소켓 등을 안전하게 닫습니다.",
     "tag": "Python 기초",
-    "image_prompt": "file automatically closing with safety lock, context manager concept, clean minimal design"
+    "image_prompt": "file automatically closing with safety lock, context manager concept, clean minimal design",
+    "difficulty": 1
   },
   {
     "id": "py_007",
@@ -95,7 +101,8 @@
     "answer": 1,
     "explanation": "f'{name}님 {age}세'처럼 변수와 표현식을 직접 삽입합니다. .format()이나 %보다 가독성이 높고 속도도 빠릅니다. f'{2+2}'→'4', f'{obj.method()}'도 가능합니다.",
     "tag": "Python 기초",
-    "image_prompt": "f-string interpolation with variables flowing into string template, Python 3.6 logo, bright"
+    "image_prompt": "f-string interpolation with variables flowing into string template, Python 3.6 logo, bright",
+    "difficulty": 1
   },
   {
     "id": "py_008",
@@ -109,7 +116,8 @@
     "answer": 1,
     "explanation": "Path('/home/user') / 'docs' / 'file.txt' 처럼 / 연산자로 경로를 합칩니다. Path.exists(), .read_text(), .glob() 등 메서드가 직관적이고, Windows/Linux 경로 구분자 차이를 자동 처리합니다.",
     "tag": "Python 중급",
-    "image_prompt": "pathlib object-oriented file path navigation, directory tree with glowing nodes, clean design"
+    "image_prompt": "pathlib object-oriented file path navigation, directory tree with glowing nodes, clean design",
+    "difficulty": 1
   },
   {
     "id": "pyt_009",
@@ -123,7 +131,8 @@
     "answer": 2,
     "explanation": "getter와 setter를 통해 내부 데이터를 보호하면서 외부에서는 일반 변수처럼 사용할 수 있게 합니다.\n실무에서 데이터 유효성 검증 로직을 추가할 때 매우 유용합니다.\n객체 지향의 캡슐화 원칙을 파이썬답게 구현하는 방식입니다.",
     "tag": "property",
-    "image_prompt": "A conceptual diagram showing a lock and key protecting a data variable inside a Python class, digital art style."
+    "image_prompt": "A conceptual diagram showing a lock and key protecting a data variable inside a Python class, digital art style.",
+    "difficulty": 1
   },
   {
     "id": "pyt_010",
@@ -137,7 +146,8 @@
     "answer": 1,
     "explanation": "@classmethod는 cls 인자를 통해 클래스 상태에 접근하거나 팩토리 메서드를 구현할 때 사용합니다.\n반면 @staticmethod는 클래스와 논리적 연관은 있지만 클래스/인스턴스 상태를 수정하지 않는 유틸리티 함수에 적합합니다.\n상속 구조에서 다형성을 유지하려면 @classmethod가 유리합니다.",
     "tag": "decorator",
-    "image_prompt": "Two different paths in a circuit board, one labeled 'Static' and one labeled 'Class', neon blue lighting."
+    "image_prompt": "Two different paths in a circuit board, one labeled 'Static' and one labeled 'Class', neon blue lighting.",
+    "difficulty": 1
   },
   {
     "id": "pyt_011",
@@ -151,7 +161,8 @@
     "answer": 1,
     "explanation": "제너레이터는 필요한 시점에만 값을 생성하므로 대용량 로그 파일이나 무한한 데이터 스트림 처리에 필수적입니다.\n메모리 점유율을 획기적으로 낮춰 서버 리소스 최적화에 기여합니다.\n반복문(for)에서 하나씩 꺼내 쓰는 구조로 동작합니다.",
     "tag": "generator",
-    "image_prompt": "A conveyor belt producing items one by one instead of a giant warehouse full of boxes, isometric 3D render."
+    "image_prompt": "A conveyor belt producing items one by one instead of a giant warehouse full of boxes, isometric 3D render.",
+    "difficulty": 1
   },
   {
     "id": "pyt_012",
@@ -165,7 +176,8 @@
     "answer": 1,
     "explanation": "with 문과 함께 사용되어 파일 닫기, DB 연결 해제, 락(Lock) 해제 등을 자동으로 처리합니다.\n개발자가 실수로 close()를 누락하여 발생하는 메모리 누수나 데드락을 방지합니다.\n실무 인프라 관리 코드에서 안정성을 높이는 핵심 기능입니다.",
     "tag": "context_manager",
-    "image_prompt": "A safety net catching a falling computer chip, symbolizing resource cleanup and stability."
+    "image_prompt": "A safety net catching a falling computer chip, symbolizing resource cleanup and stability.",
+    "difficulty": 1
   },
   {
     "id": "pyt_013",
@@ -179,7 +191,8 @@
     "answer": 2,
     "explanation": "특정 타입에 종속되지 않고 여러 타입(T)을 수용하는 클래스나 함수를 정의할 때 사용합니다.\nIDE의 자동 완성 기능을 극대화하고 정적 분석 도구(mypy 등)로 버그를 사전에 잡을 수 있습니다.\n라이브러리 개발 시 범용적인 인터페이스를 제공하기 위해 필수적입니다.",
     "tag": "type_hint",
-    "image_prompt": "A versatile puzzle piece that can fit into different colored slots, clean vector illustration."
+    "image_prompt": "A versatile puzzle piece that can fit into different colored slots, clean vector illustration.",
+    "difficulty": 1
   },
   {
     "id": "pyt_014",
@@ -193,7 +206,8 @@
     "answer": 1,
     "explanation": "데이터의 무결성을 보장해야 하는 설정 값이나 DTO(Data Transfer Object)를 만들 때 유용합니다.\n불변 객체는 해시 가능(hashable)해지므로 set의 요소나 dict의 키로 사용할 수 있습니다.\n실무에서 상태 변경으로 인한 사이드 이펙트를 방지하는 좋은 방법입니다.",
     "tag": "dataclass",
-    "image_prompt": "A crystal-clear ice cube containing a data table, symbolizing immutability."
+    "image_prompt": "A crystal-clear ice cube containing a data table, symbolizing immutability.",
+    "difficulty": 1
   },
   {
     "id": "pyt_015",
@@ -207,7 +221,8 @@
     "answer": 3,
     "explanation": "파이썬의 match-case는 정적 언어(Rust, Scala 등)와 달리 컴파일 타임에 모든 케이스 처리를 강제하지 않습니다.\n하지만 구조 분해(Destructuring)를 통해 복잡한 JSON 응답 등을 매우 간결하게 처리할 수 있습니다.\n가독성 높은 조건 분기 로직을 작성하는 데 최적입니다.",
     "tag": "pattern_matching",
-    "image_prompt": "A sorting machine directing different shaped blocks into matching slots, futuristic style."
+    "image_prompt": "A sorting machine directing different shaped blocks into matching slots, futuristic style.",
+    "difficulty": 1
   },
   {
     "id": "pyt_016",
@@ -221,7 +236,8 @@
     "answer": 2,
     "explanation": "__iter__는 이터레이터 객체 자신을 반환하고, __next__는 다음 요소를 반환하거나 StopIteration 예외를 발생시킵니다.\n이 프로토콜을 따르면 for 루프나 list() 생성자에서 사용할 수 있는 커스텀 반복자를 만들 수 있습니다.\n대량의 데이터를 효율적으로 순회하는 로직 구현의 기초가 됩니다.",
     "tag": "iterator",
-    "image_prompt": "A continuous loop of arrows pointing to the next element in a sequence, minimalist design."
+    "image_prompt": "A continuous loop of arrows pointing to the next element in a sequence, minimalist design.",
+    "difficulty": 1
   },
   {
     "id": "pyt_017",
@@ -235,7 +251,8 @@
     "answer": 1,
     "explanation": "필드 정의 순서대로 튜플 비교를 수행하는 비교 메서드들을 자동으로 생성합니다.\n별도의 __lt__, __gt__ 등을 구현하지 않고도 sorted() 함수 등으로 객체 리스트를 정렬할 수 있습니다.\n데이터 모델 간의 우선순위 비교가 필요한 실무 로직에서 매우 편리합니다.",
     "tag": "dataclass",
-    "image_prompt": "A row of data blocks being aligned by height, clean 3D infographic."
+    "image_prompt": "A row of data blocks being aligned by height, clean 3D infographic.",
+    "difficulty": 1
   },
   {
     "id": "pyt_018",
@@ -249,7 +266,8 @@
     "answer": 0,
     "explanation": "명시적으로 상속받지 않아도 특정 메서드(인터페이스)를 가지고 있다면 해당 타입으로 간주합니다.\n이는 '덕 타이핑'을 정적 타입 시스템으로 가져온 것으로, 결합도를 낮추는 유연한 설계가 가능합니다.\n다양한 외부 라이브러리 객체들을 공통 인터페이스로 묶어 처리할 때 매우 강력합니다.",
     "tag": "type_hint",
-    "image_prompt": "A universal adapter connecting different electronic plugs, technical drawing style."
+    "image_prompt": "A universal adapter connecting different electronic plugs, technical drawing style.",
+    "difficulty": 1
   },
   {
     "id": "pyt_019",
@@ -263,7 +281,8 @@
     "answer": 3,
     "explanation": "언더바(_)는 어떤 값과도 매칭되며, 이전 case들에 해당하지 않는 모든 경우를 처리하는 default 역할을 합니다.\nswitch-case의 default 문과 동일한 기능을 수행합니다.\n예외 케이스 처리를 통해 프로그램의 안정성을 확보하는 데 사용됩니다.",
     "tag": "pattern_matching",
-    "image_prompt": "A funnel collecting all remaining colorful beads into one container, vibrant colors."
+    "image_prompt": "A funnel collecting all remaining colorful beads into one container, vibrant colors.",
+    "difficulty": 1
   },
   {
     "id": "pyt_020",
@@ -277,7 +296,8 @@
     "answer": 1,
     "explanation": "클래스를 정의하지 않고 yield 전후에 setup/cleanup 로직을 배치하여 간단하게 구현할 수 있습니다.\n코드 양이 줄어들고 가독성이 높아져 단순한 리소스 관리 작업에 주로 사용됩니다.\n실무에서 짧은 생명주기를 가진 임시 파일이나 락 관리에 자주 쓰입니다.",
     "tag": "context_manager",
-    "image_prompt": "A shortcut path on a map leading to a goal, simple flat design."
+    "image_prompt": "A shortcut path on a map leading to a goal, simple flat design.",
+    "difficulty": 1
   },
   {
     "id": "py_021",
@@ -291,7 +311,8 @@
     "answer": 1,
     "explanation": "`functools.wraps`는 데코레이터가 원래 함수의 이름, 문서 문자열(docstring)과 같은 메타데이터를 덮어쓰지 않고 보존하도록 도와줍니다.",
     "tag": "functools.wraps",
-    "image_prompt": "A conceptual illustration of a wrapper protecting the original identity of a function, digital art style."
+    "image_prompt": "A conceptual illustration of a wrapper protecting the original identity of a function, digital art style.",
+    "difficulty": 2
   },
   {
     "id": "py_022",
@@ -305,7 +326,8 @@
     "answer": 1,
     "explanation": "`wraps`를 사용하지 않으면 `func.__name__`을 호출했을 때 원래 함수 이름이 아닌 내부 래퍼 함수의 이름(예: 'wrapper')이 반환됩니다.",
     "tag": "functools.wraps",
-    "image_prompt": "A mirror showing a distorted reflection of a function name, symbolizing loss of identity."
+    "image_prompt": "A mirror showing a distorted reflection of a function name, symbolizing loss of identity.",
+    "difficulty": 2
   },
   {
     "id": "py_023",
@@ -319,7 +341,8 @@
     "answer": 2,
     "explanation": "`__call__` 메서드를 구현하면 클래스의 인스턴스를 함수처럼 `instance()` 형태로 호출할 수 있게 됩니다.",
     "tag": "class_decorator",
-    "image_prompt": "A Python class icon with a 'call' button being pressed, technical diagram style."
+    "image_prompt": "A Python class icon with a 'call' button being pressed, technical diagram style.",
+    "difficulty": 2
   },
   {
     "id": "py_024",
@@ -333,7 +356,8 @@
     "answer": 0,
     "explanation": "클래스 데코레이터가 적용될 때, `__init__`은 데코레이팅 대상이 되는 함수를 인자로 받아 내부 변수에 저장하는 역할을 합니다.",
     "tag": "class_decorator",
-    "image_prompt": "A box (init) receiving a function object as an input, flow chart style."
+    "image_prompt": "A box (init) receiving a function object as an input, flow chart style.",
+    "difficulty": 2
   },
   {
     "id": "py_025",
@@ -347,7 +371,8 @@
     "answer": 2,
     "explanation": "클래스 기반 데코레이터는 상태 관리에 유리하지만, 객체 생성 오버헤드로 인해 단순한 함수형 데코레이터보다 실행 속도가 약간 느릴 수 있습니다.",
     "tag": "class_decorator",
-    "image_prompt": "A comparison scale between a simple function and a complex class structure."
+    "image_prompt": "A comparison scale between a simple function and a complex class structure.",
+    "difficulty": 2
   },
   {
     "id": "py_026",
@@ -361,7 +386,8 @@
     "answer": 1,
     "explanation": "`wraps`는 `functools.update_wrapper`를 호출하여 원래 함수의 `__name__`, `__doc__`, `__module__` 등을 래퍼 함수에 복사합니다.",
     "tag": "functools.wraps",
-    "image_prompt": "Data packets moving from one function block to another, symbolizing attribute copying."
+    "image_prompt": "Data packets moving from one function block to another, symbolizing attribute copying.",
+    "difficulty": 2
   },
   {
     "id": "py_027",
@@ -375,7 +401,8 @@
     "answer": 2,
     "explanation": "클래스 기반 데코레이터에서도 최종적으로 반환되는 것은 `__call__` 내의 함수이므로, 이 함수에 `wraps`를 적용해야 원래 함수의 정보를 유지할 수 있습니다.",
     "tag": "class_decorator",
-    "image_prompt": "A shield protecting a function's metadata inside a class structure."
+    "image_prompt": "A shield protecting a function's metadata inside a class structure.",
+    "difficulty": 2
   },
   {
     "id": "py_028",
@@ -389,7 +416,8 @@
     "answer": 1,
     "explanation": "인자가 있는 클래스 데코레이터는 `__init__(self, *args, **kwargs)`에서 설정값을 받고, `__call__(self, func)`에서 대상 함수를 받아 처리합니다.",
     "tag": "class_decorator",
-    "image_prompt": "A configuration panel feeding into a decorator class, technical blueprint style."
+    "image_prompt": "A configuration panel feeding into a decorator class, technical blueprint style.",
+    "difficulty": 2
   },
   {
     "id": "py_029",
@@ -403,7 +431,8 @@
     "answer": 3,
     "explanation": "`wraps`는 함수의 메타데이터(정적 정보)를 복사하는 것이지, 실행 시점의 지역 변수 상태를 복사하는 것이 아닙니다.",
     "tag": "functools.wraps",
-    "image_prompt": "A filter separating static metadata from dynamic local variables."
+    "image_prompt": "A filter separating static metadata from dynamic local variables.",
+    "difficulty": 2
   },
   {
     "id": "py_030",
@@ -417,7 +446,8 @@
     "answer": 1,
     "explanation": "클래스 기반 데코레이터의 최대 장점은 `self`를 통해 호출 횟수나 캐시 데이터 같은 상태를 인스턴스 변수에 저장하고 유지할 수 있다는 점입니다.",
     "tag": "class_decorator",
-    "image_prompt": "A storage vault attached to a class object, symbolizing state persistence."
+    "image_prompt": "A storage vault attached to a class object, symbolizing state persistence.",
+    "difficulty": 2
   },
   {
     "id": "py_031",
@@ -431,7 +461,8 @@
     "answer": 0,
     "explanation": "asyncio.gather()는 여러 개의 awaitable 객체(코루틴, 태스크 등)를 동시에 스케줄링하고, 모든 작업이 완료될 때까지 기다린 후 결과 리스트를 반환합니다.",
     "tag": "asyncio-gather",
-    "image_prompt": "A conceptual diagram showing multiple parallel arrows merging into a single result list, digital art style."
+    "image_prompt": "A conceptual diagram showing multiple parallel arrows merging into a single result list, digital art style.",
+    "difficulty": 2
   },
   {
     "id": "py_032",
@@ -445,7 +476,8 @@
     "answer": 1,
     "explanation": "create_task()는 코루틴을 Task 객체로 감싸 이벤트 루프에 등록함으로써, await 하지 않고도 백그라운드에서 실행될 수 있게 합니다.",
     "tag": "asyncio-create_task",
-    "image_prompt": "A futuristic conveyor belt moving tasks into a processing engine, neon blue lighting."
+    "image_prompt": "A futuristic conveyor belt moving tasks into a processing engine, neon blue lighting.",
+    "difficulty": 2
   },
   {
     "id": "py_033",
@@ -459,7 +491,8 @@
     "answer": 2,
     "explanation": "Event.set()은 내부 상태 플래그를 True로 설정하며, 이 이벤트가 발생하기를 wait() 하며 기다리던 모든 태스크들이 즉시 실행 가능 상태가 됩니다.",
     "tag": "asyncio-Event",
-    "image_prompt": "A glowing green signal light turning on, waking up several sleeping robots."
+    "image_prompt": "A glowing green signal light turning on, waking up several sleeping robots.",
+    "difficulty": 2
   },
   {
     "id": "py_034",
@@ -473,7 +506,8 @@
     "answer": 1,
     "explanation": "asyncio.Lock은 한 번에 하나의 태스크만 특정 코드 블록(임계 구역)을 실행할 수 있도록 보장하여 데이터 무결성을 유지합니다.",
     "tag": "asyncio-Lock",
-    "image_prompt": "A digital padlock securing a glowing data cube, cyber security theme."
+    "image_prompt": "A digital padlock securing a glowing data cube, cyber security theme.",
+    "difficulty": 2
   },
   {
     "id": "py_035",
@@ -487,7 +521,8 @@
     "answer": 1,
     "explanation": "put()은 비동기적으로 큐에 데이터를 넣는 메서드이며, 큐의 최대 크기(maxsize)가 설정된 경우 공간이 생길 때까지 await 하며 대기합니다.",
     "tag": "asyncio-Queue",
-    "image_prompt": "A futuristic queue of data packets entering a glowing portal."
+    "image_prompt": "A futuristic queue of data packets entering a glowing portal.",
+    "difficulty": 2
   },
   {
     "id": "py_036",
@@ -501,7 +536,8 @@
     "answer": 1,
     "explanation": "gather()는 전달된 모든 awaitable의 결과를 모아 리스트로 반환하는 '대기' 중심의 함수이고, create_task()는 코루틴을 실행 가능한 태스크로 만들어 루프에 등록하는 '스케줄링' 중심의 함수입니다.",
     "tag": "asyncio-comparison",
-    "image_prompt": "A comparison chart showing a group of results vs a single task object, infographic style."
+    "image_prompt": "A comparison chart showing a group of results vs a single task object, infographic style.",
+    "difficulty": 2
   },
   {
     "id": "py_037",
@@ -515,7 +551,8 @@
     "answer": 1,
     "explanation": "async with lock: 구문을 사용하면 예외가 발생하더라도 자동으로 Lock이 해제되어 데드락(Deadlock) 위험을 줄일 수 있습니다.",
     "tag": "asyncio-Lock",
-    "image_prompt": "A clean code snippet inside a glowing holographic screen, highlighting 'async with lock'."
+    "image_prompt": "A clean code snippet inside a glowing holographic screen, highlighting 'async with lock'.",
+    "difficulty": 2
   },
   {
     "id": "py_038",
@@ -529,7 +566,8 @@
     "answer": 2,
     "explanation": "get()은 비동기 메서드로, 큐에 아이템이 없을 경우 다른 태스크가 put()을 통해 데이터를 넣을 때까지 await 상태로 대기합니다.",
     "tag": "asyncio-Queue",
-    "image_prompt": "A robot waiting patiently in front of an empty futuristic conveyor belt."
+    "image_prompt": "A robot waiting patiently in front of an empty futuristic conveyor belt.",
+    "difficulty": 2
   },
   {
     "id": "py_039",
@@ -543,7 +581,8 @@
     "answer": 1,
     "explanation": "clear()는 이벤트의 상태 플래그를 False로 리셋합니다. 이후 wait()를 호출하는 태스크들은 다시 set()이 호출될 때까지 대기하게 됩니다.",
     "tag": "asyncio-Event",
-    "image_prompt": "A red reset button being pressed, turning off a signal light."
+    "image_prompt": "A red reset button being pressed, turning off a signal light.",
+    "difficulty": 2
   },
   {
     "id": "py_040",
@@ -557,7 +596,8 @@
     "answer": 3,
     "explanation": "gather는 여러 작업을 '동시에' 시작하고 모두 완료될 때까지 기다리는 도구이지, 단일 태스크를 순차적으로 실행하기 위한 도구가 아닙니다.",
     "tag": "asyncio-general",
-    "image_prompt": "A confused robot looking at a mismatched puzzle of AI components."
+    "image_prompt": "A confused robot looking at a mismatched puzzle of AI components.",
+    "difficulty": 2
   },
   {
     "id": "py_041",
@@ -571,7 +611,8 @@
     "answer": 1,
     "explanation": "TypeVar는 제네릭(Generic) 프로그래밍에서 사용되는 타입 변수를 생성하며, 함수나 클래스가 다양한 타입을 유연하게 처리하면서도 타입 안전성을 유지할 수 있게 합니다.",
     "tag": "TypeVar",
-    "image_prompt": "A conceptual diagram showing a variable box labeled 'T' transforming into different data types like int and str."
+    "image_prompt": "A conceptual diagram showing a variable box labeled 'T' transforming into different data types like int and str.",
+    "difficulty": 2
   },
   {
     "id": "py_042",
@@ -585,7 +626,8 @@
     "answer": 2,
     "explanation": "Generic을 사용하면 특정 타입에 종속되지 않는 범용 클래스를 설계할 수 있으며, mypy 같은 정적 분석 도구가 타입 일치 여부를 검사할 수 있습니다.",
     "tag": "Generic",
-    "image_prompt": "A blueprint of a container that can hold different shaped objects (circle, square, triangle) labeled 'Generic Class'."
+    "image_prompt": "A blueprint of a container that can hold different shaped objects (circle, square, triangle) labeled 'Generic Class'.",
+    "difficulty": 2
   },
   {
     "id": "py_043",
@@ -599,7 +641,8 @@
     "answer": 1,
     "explanation": "Protocol은 특정 메서드나 속성을 가지고 있다면 상속 관계가 아니더라도 해당 타입으로 인정하는 '구조적 타이핑'을 구현합니다.",
     "tag": "Protocol",
-    "image_prompt": "A puzzle piece fitting into a slot based on its shape, regardless of its color or brand."
+    "image_prompt": "A puzzle piece fitting into a slot based on its shape, regardless of its color or brand.",
+    "difficulty": 2
   },
   {
     "id": "py_044",
@@ -613,7 +656,8 @@
     "answer": 2,
     "explanation": "Literal은 변수가 정확히 지정된 특정 값들 중 하나여야 함을 명시할 때 사용합니다.",
     "tag": "Literal",
-    "image_prompt": "A switch with only two options labeled 'ON' and 'OFF', highlighting the restricted choices."
+    "image_prompt": "A switch with only two options labeled 'ON' and 'OFF', highlighting the restricted choices.",
+    "difficulty": 2
   },
   {
     "id": "py_045",
@@ -627,7 +671,8 @@
     "answer": 1,
     "explanation": "bound는 해당 타입 변수가 가질 수 있는 상한선을 지정하며, 지정된 타입 또는 그 자식 클래스들만 허용합니다.",
     "tag": "TypeVar",
-    "image_prompt": "A hierarchy tree where a root node 'int' is highlighted and its children are grouped together."
+    "image_prompt": "A hierarchy tree where a root node 'int' is highlighted and its children are grouped together.",
+    "difficulty": 2
   },
   {
     "id": "py_046",
@@ -641,7 +686,8 @@
     "answer": 2,
     "explanation": "ABC는 명시적 상속이 필요하지만, Protocol은 필요한 메서드만 구현되어 있다면 자동으로 해당 타입으로 간주됩니다.",
     "tag": "Protocol",
-    "image_prompt": "Two paths: one showing a formal contract (ABC) and another showing a 'if it walks like a duck' approach (Protocol)."
+    "image_prompt": "Two paths: one showing a formal contract (ABC) and another showing a 'if it walks like a duck' approach (Protocol).",
+    "difficulty": 2
   },
   {
     "id": "py_047",
@@ -655,7 +701,8 @@
     "answer": 2,
     "explanation": "Literal은 정의된 값들 외의 값이 들어오면 정적 분석 단계에서 타입 오류로 보고합니다.",
     "tag": "Literal",
-    "image_prompt": "A red warning sign appearing over a piece of code where 'x' is assigned to a Literal['r', 'w', 'a'] variable."
+    "image_prompt": "A red warning sign appearing over a piece of code where 'x' is assigned to a Literal['r', 'w', 'a'] variable.",
+    "difficulty": 2
   },
   {
     "id": "py_048",
@@ -669,7 +716,8 @@
     "answer": 0,
     "explanation": "Generic에서 사용할 타입 매개변수 T는 반드시 TypeVar를 통해 먼저 정의되어야 합니다.",
     "tag": "Generic",
-    "image_prompt": "A code snippet showing the declaration of TypeVar before its use in a class definition."
+    "image_prompt": "A code snippet showing the declaration of TypeVar before its use in a class definition.",
+    "difficulty": 2
   },
   {
     "id": "py_049",
@@ -683,7 +731,8 @@
     "answer": 1,
     "explanation": "제한된 TypeVar는 나열된 특정 타입들 중 하나만 허용하며, bound와 달리 하위 타입까지 허용하지 않는 엄격한 제한입니다.",
     "tag": "TypeVar",
-    "image_prompt": "A filter that only lets through objects labeled 'int' or 'str', blocking all others."
+    "image_prompt": "A filter that only lets through objects labeled 'int' or 'str', blocking all others.",
+    "difficulty": 2
   },
   {
     "id": "py_050",
@@ -697,7 +746,8 @@
     "answer": 2,
     "explanation": "파이썬의 타입 힌트는 기본적으로 '힌트'일 뿐이며, 런타임에 자동으로 타입을 변환하거나 실행 속도를 직접적으로 높여주지는 않습니다.",
     "tag": "General",
-    "image_prompt": "A magnifying glass inspecting code for errors without changing the actual execution flow."
+    "image_prompt": "A magnifying glass inspecting code for errors without changing the actual execution flow.",
+    "difficulty": 2
   },
   {
     "id": "py_051",
@@ -711,7 +761,8 @@
     "answer": 2,
     "explanation": "PEP 518 및 PEP 621에 따라 pyproject.toml은 파이썬 프로젝트의 빌드 시스템과 의존성, 메타데이터를 통합 관리하는 표준 설정 파일입니다.",
     "tag": "pyproject.toml",
-    "image_prompt": "A clean digital illustration of a configuration file named 'pyproject.toml' with gear icons around it, representing system settings."
+    "image_prompt": "A clean digital illustration of a configuration file named 'pyproject.toml' with gear icons around it, representing system settings.",
+    "difficulty": 2
   },
   {
     "id": "py_052",
@@ -725,7 +776,8 @@
     "answer": 1,
     "explanation": "uv는 Rust 언어로 구현되어 기존 pip나 poetry보다 훨씬 빠른 설치 및 해결(resolution) 속도를 제공하는 최신 패키지 관리자입니다.",
     "tag": "uv",
-    "image_prompt": "A high-speed futuristic rocket launching with a Python logo on it, symbolizing extreme speed and performance."
+    "image_prompt": "A high-speed futuristic rocket launching with a Python logo on it, symbolizing extreme speed and performance.",
+    "difficulty": 2
   },
   {
     "id": "py_053",
@@ -739,7 +791,8 @@
     "answer": 0,
     "explanation": "pip-compile은 requirements.in 파일을 읽어 모든 하위 의존성 버전까지 계산하여 requirements.txt(잠금 파일)를 생성합니다.",
     "tag": "pip-tools",
-    "image_prompt": "A diagram showing a simple list transforming into a detailed, complex list with version numbers."
+    "image_prompt": "A diagram showing a simple list transforming into a detailed, complex list with version numbers.",
+    "difficulty": 2
   },
   {
     "id": "py_054",
@@ -753,7 +806,8 @@
     "answer": 2,
     "explanation": "uv sync는 현재 프로젝트의 잠금 파일(uv.lock)을 기준으로 가상환경의 패키지 상태를 정확하게 일치시킵니다.",
     "tag": "uv",
-    "image_prompt": "Two puzzle pieces fitting perfectly together, representing synchronization of environment and configuration."
+    "image_prompt": "Two puzzle pieces fitting perfectly together, representing synchronization of environment and configuration.",
+    "difficulty": 2
   },
   {
     "id": "py_055",
@@ -767,7 +821,8 @@
     "answer": 1,
     "explanation": "[build-system] 섹션은 이 프로젝트를 빌드하기 위해 어떤 도구가 필요한지(requires)와 어떤 객체를 사용할지(build-backend)를 정의합니다.",
     "tag": "pyproject.toml",
-    "image_prompt": "A blueprint of a building with a focus on the foundation, symbolizing the build system."
+    "image_prompt": "A blueprint of a building with a focus on the foundation, symbolizing the build system.",
+    "difficulty": 2
   },
   {
     "id": "py_056",
@@ -781,7 +836,8 @@
     "answer": 2,
     "explanation": "pip-sync는 가상환경에 설치된 패키지 중 requirements.txt에 없는 것은 삭제하고, 부족한 것은 설치하여 환경을 완전히 동기화합니다.",
     "tag": "pip-tools",
-    "image_prompt": "A balance scale showing a local environment on one side and a text file on the other, perfectly balanced."
+    "image_prompt": "A balance scale showing a local environment on one side and a text file on the other, perfectly balanced.",
+    "difficulty": 2
   },
   {
     "id": "py_057",
@@ -795,7 +851,8 @@
     "answer": 1,
     "explanation": "uv는 메모리 안전성과 성능이 뛰어난 Rust로 작성되었으며, 글로벌 캐시를 통해 중복 다운로드를 방지하여 속도를 극대화했습니다.",
     "tag": "uv",
-    "image_prompt": "A comparison image: a slow turtle (pip) and a fast cheetah (uv) racing on a digital track."
+    "image_prompt": "A comparison image: a slow turtle (pip) and a fast cheetah (uv) racing on a digital track.",
+    "difficulty": 3
   },
   {
     "id": "py_058",
@@ -809,7 +866,8 @@
     "answer": 2,
     "explanation": "[project] 섹션은 PEP 621 표준에 따라 프로젝트의 기본 정보와 의존성 리스트를 정의하는 곳입니다.",
     "tag": "pyproject.toml",
-    "image_prompt": "An ID card or a profile page showing project name, version and description."
+    "image_prompt": "An ID card or a profile page showing project name, version and description.",
+    "difficulty": 3
   },
   {
     "id": "py_059",
@@ -823,7 +881,8 @@
     "answer": 2,
     "explanation": "잠금 파일(uv.lock, requirements.txt 등)을 사용하면 언제 어디서 설치하더라도 동일한 버전의 패키지가 설치되어 빌드 결과가 일정해집니다.",
     "tag": "패키징 일반",
-    "image_prompt": "A heavy metal lock securing a box of software packages."
+    "image_prompt": "A heavy metal lock securing a box of software packages.",
+    "difficulty": 3
   },
   {
     "id": "py_060",
@@ -837,7 +896,8 @@
     "answer": 0,
     "explanation": "uv는 'uv python install'로 파이썬 인터프리터를 직접 관리하며, 'uv run'을 통해 필요한 환경에서 즉시 실행할 수 있습니다.",
     "tag": "uv",
-    "image_prompt": "A Swiss Army knife with various Python version tools extending from it."
+    "image_prompt": "A Swiss Army knife with various Python version tools extending from it.",
+    "difficulty": 3
   },
   {
     "id": "py_061",
@@ -851,7 +911,8 @@
     "answer": 0,
     "explanation": "pytest는 기본적으로 'test_'로 시작하거나 '_test'로 끝나는 함수를 테스트 케이스로 인식합니다.",
     "tag": "pytest_basic",
-    "image_prompt": "A clean code editor showing a Python function starting with 'def test_example():', highlighted in a professional IDE."
+    "image_prompt": "A clean code editor showing a Python function starting with 'def test_example():', highlighted in a professional IDE.",
+    "difficulty": 3
   },
   {
     "id": "py_062",
@@ -865,7 +926,8 @@
     "answer": 1,
     "explanation": "Fixture는 테스트 함수가 실행되기 전 필요한 데이터베이스 연결, 파일 생성 등 공통적인 준비 작업을 수행하고 제공하는 역할을 합니다.",
     "tag": "fixture",
-    "image_prompt": "A conceptual illustration of a toolbox providing tools to a worker, symbolizing test fixtures."
+    "image_prompt": "A conceptual illustration of a toolbox providing tools to a worker, symbolizing test fixtures.",
+    "difficulty": 3
   },
   {
     "id": "py_063",
@@ -879,7 +941,8 @@
     "answer": 2,
     "explanation": "@pytest.mark.parametrize를 사용하면 리스트 형태의 데이터를 전달하여 동일한 테스트 로직을 다양한 입력값으로 검증할 수 있습니다.",
     "tag": "parametrize",
-    "image_prompt": "A diagram showing one input function splitting into multiple parallel data paths with different values."
+    "image_prompt": "A diagram showing one input function splitting into multiple parallel data paths with different values.",
+    "difficulty": 3
   },
   {
     "id": "py_064",
@@ -893,7 +956,8 @@
     "answer": 1,
     "explanation": "Mocking은 실제 외부 시스템(API, DB 등)에 연결하지 않고도 해당 시스템이 특정 값을 반환한다고 가정하여 테스트할 수 있게 해줍니다.",
     "tag": "mock",
-    "image_prompt": "A puppet master controlling a wooden dummy that looks like a server, symbolizing mocking."
+    "image_prompt": "A puppet master controlling a wooden dummy that looks like a server, symbolizing mocking.",
+    "difficulty": 3
   },
   {
     "id": "py_065",
@@ -907,7 +971,8 @@
     "answer": 2,
     "explanation": "scope='session'으로 설정하면 전체 테스트 프로세스가 시작될 때 한 번 실행되고 모든 테스트에서 그 결과를 공유하므로 효율적입니다.",
     "tag": "fixture",
-    "image_prompt": "A large umbrella covering multiple small test icons, representing a session-wide scope."
+    "image_prompt": "A large umbrella covering multiple small test icons, representing a session-wide scope.",
+    "difficulty": 3
   },
   {
     "id": "py_066",
@@ -921,7 +986,8 @@
     "answer": 3,
     "explanation": "mock 객체는 assert_called(), assert_called_once(), assert_called_with() 등을 통해 호출 여부와 인자값을 검증할 수 있습니다.",
     "tag": "mock",
-    "image_prompt": "A magnifying glass inspecting a function call log in a terminal."
+    "image_prompt": "A magnifying glass inspecting a function call log in a terminal.",
+    "difficulty": 3
   },
   {
     "id": "py_067",
@@ -935,7 +1001,8 @@
     "answer": 1,
     "explanation": "pytest는 복잡한 assertion 메서드 대신 파이썬 기본 'assert' 키워드를 사용하여 직관적인 테스트 작성을 지원합니다.",
     "tag": "pytest_basic",
-    "image_prompt": "A simple Python code snippet showing 'assert a == b' with a green checkmark next to it."
+    "image_prompt": "A simple Python code snippet showing 'assert a == b' with a green checkmark next to it.",
+    "difficulty": 3
   },
   {
     "id": "py_068",
@@ -949,7 +1016,8 @@
     "answer": 1,
     "explanation": "yield 이전 코드는 Setup(준비), yield 이후 코드는 Teardown(정리) 단계로 작동하여 사용한 리소스를 안전하게 해제할 수 있습니다.",
     "tag": "fixture",
-    "image_prompt": "A cycle diagram showing 'Setup' -> 'Test' -> 'Teardown' as a continuous loop."
+    "image_prompt": "A cycle diagram showing 'Setup' -> 'Test' -> 'Teardown' as a continuous loop.",
+    "difficulty": 3
   },
   {
     "id": "py_069",
@@ -963,7 +1031,8 @@
     "answer": 1,
     "explanation": "첫 번째 인자로 변수 이름들을 문자열로 전달하고, 두 번째 인자로 해당 변수들에 매핑될 값들의 리스트(튜플 포함)를 전달해야 합니다.",
     "tag": "parametrize",
-    "image_prompt": "A table mapping input parameters to expected output values in a spreadsheet style."
+    "image_prompt": "A table mapping input parameters to expected output values in a spreadsheet style.",
+    "difficulty": 3
   },
   {
     "id": "py_070",
@@ -977,7 +1046,8 @@
     "answer": 1,
     "explanation": "mocker fixture는 테스트 함수가 종료되면 patch 했던 내용을 자동으로 복구해주어 다른 테스트에 영향을 주지 않게 합니다.",
     "tag": "mock",
-    "image_prompt": "A 'Reset' button being pressed on a computer screen, returning a system to its original state."
+    "image_prompt": "A 'Reset' button being pressed on a computer screen, returning a system to its original state.",
+    "difficulty": 3
   },
   {
     "id": "py_071",
@@ -991,7 +1061,8 @@
     "answer": 1,
     "explanation": "가변 객체(list, dict 등)를 기본값으로 직접 설정하면 모든 인스턴스가 동일한 객체를 공유하게 됩니다. default_factory를 사용하면 각 인스턴스 생성 시마다 새로운 객체가 생성됩니다.",
     "tag": "field",
-    "image_prompt": "A conceptual diagram showing multiple Python objects each having their own separate list, avoiding a shared reference."
+    "image_prompt": "A conceptual diagram showing multiple Python objects each having their own separate list, avoiding a shared reference.",
+    "difficulty": 3
   },
   {
     "id": "py_072",
@@ -1005,7 +1076,8 @@
     "answer": 2,
     "explanation": "InitVar는 초기화 과정에서 __init__ 메서드에 인자로 전달되어 사용되지만, 생성 후 객체의 속성으로 유지되지는 않습니다.",
     "tag": "InitVar",
-    "image_prompt": "A flow chart showing a variable entering an __init__ method but not being stored in the final object state."
+    "image_prompt": "A flow chart showing a variable entering an __init__ method but not being stored in the final object state.",
+    "difficulty": 3
   },
   {
     "id": "py_073",
@@ -1019,7 +1091,8 @@
     "answer": 2,
     "explanation": "__post_init__는 dataclass가 자동으로 생성한 __init__ 메서드 내에서 모든 필드가 초기화된 후 마지막에 호출됩니다.",
     "tag": "__post_init__",
-    "image_prompt": "A timeline showing the sequence: Class Definition -> __init__ execution -> __post_init__ execution."
+    "image_prompt": "A timeline showing the sequence: Class Definition -> __init__ execution -> __post_init__ execution.",
+    "difficulty": 3
   },
   {
     "id": "py_074",
@@ -1033,7 +1106,8 @@
     "answer": 1,
     "explanation": "repr=False로 설정하면 dataclass가 자동으로 생성하는 __repr__ 메서드에서 해당 필드가 제외되어 출력 결과에 나타나지 않습니다.",
     "tag": "field",
-    "image_prompt": "A comparison of two print outputs: one showing all fields and another hiding a specific sensitive field."
+    "image_prompt": "A comparison of two print outputs: one showing all fields and another hiding a specific sensitive field.",
+    "difficulty": 3
   },
   {
     "id": "py_075",
@@ -1047,7 +1121,8 @@
     "answer": 2,
     "explanation": "InitVar는 속성으로 저장되지 않으므로 self를 통해 접근할 수 없으며, __post_init__의 매개변수로 전달되어 사용됩니다.",
     "tag": "InitVar",
-    "image_prompt": "Code snippet highlighting a variable passed from __init__ to __post_init__ as an argument."
+    "image_prompt": "Code snippet highlighting a variable passed from __init__ to __post_init__ as an argument.",
+    "difficulty": 3
   },
   {
     "id": "py_076",
@@ -1061,7 +1136,8 @@
     "answer": 1,
     "explanation": "init=False로 설정하면 객체를 생성할 때 해당 필드를 인자로 전달받지 않습니다. 주로 __post_init__에서 계산하여 설정하는 필드에 사용합니다.",
     "tag": "field",
-    "image_prompt": "A function signature of __init__ where one specific field is missing from the parameters."
+    "image_prompt": "A function signature of __init__ where one specific field is missing from the parameters.",
+    "difficulty": 3
   },
   {
     "id": "py_077",
@@ -1075,7 +1151,8 @@
     "answer": 2,
     "explanation": "__post_init__는 인스턴스가 생성된 후 호출되므로, 개별 인스턴스의 상태를 설정하거나 검증하는 데 사용하며 클래스 변수를 수정하는 용도가 아닙니다.",
     "tag": "__post_init__",
-    "image_prompt": "A checklist showing 'Validation', 'Dependent Calculation', and 'InitVar usage' as checked items."
+    "image_prompt": "A checklist showing 'Validation', 'Dependent Calculation', and 'InitVar usage' as checked items.",
+    "difficulty": 3
   },
   {
     "id": "py_078",
@@ -1089,7 +1166,8 @@
     "answer": 1,
     "explanation": "compare=False를 설정하면 dataclass가 생성하는 __eq__, __lt__ 등의 비교 메서드에서 해당 필드를 계산에서 제외합니다.",
     "tag": "field",
-    "image_prompt": "Two objects with different values in a 'compare=False' field being evaluated as equal (True)."
+    "image_prompt": "Two objects with different values in a 'compare=False' field being evaluated as equal (True).",
+    "difficulty": 3
   },
   {
     "id": "py_079",
@@ -1103,7 +1181,8 @@
     "answer": 0,
     "explanation": "InitVar는 제네릭 타입처럼 사용하며, '변수명: InitVar[타입]' 형태로 선언합니다.",
     "tag": "InitVar",
-    "image_prompt": "A close-up of Python code showing the syntax 'name: InitVar[str] = \"default\"'."
+    "image_prompt": "A close-up of Python code showing the syntax 'name: InitVar[str] = \"default\"'.",
+    "difficulty": 3
   },
   {
     "id": "py_080",
@@ -1117,6 +1196,277 @@
     "answer": 1,
     "explanation": "외부에서 입력은 받되 속성으로 저장하지는 않는 InitVar와, 이를 이용해 실제 속성을 계산하여 할당하는 __post_init__의 조합이 가장 적절합니다.",
     "tag": "종합",
-    "image_prompt": "A puzzle piece connecting 'InitVar' and '__post_init__' to create a 'Calculated Attribute'."
+    "image_prompt": "A puzzle piece connecting 'InitVar' and '__post_init__' to create a 'Calculated Attribute'.",
+    "difficulty": 3
+  },
+  {
+    "id": "py_081",
+    "difficulty": 1,
+    "question": "파이썬 리스트에서 가장 마지막 요소를 삭제하고 그 값을 반환하는 메서드는 무엇인가요?",
+    "choices": [
+      "remove()",
+      "pop()",
+      "clear()",
+      "delete()"
+    ],
+    "answer": 1,
+    "explanation": "pop() 메서드는 리스트의 마지막 항목을 제거하고 그 값을 반환합니다. 인덱스를 지정하면 해당 위치의 요소를 삭제할 수도 있습니다.",
+    "tag": "리스트 조작",
+    "image_prompt": "A conceptual illustration of a stack of colorful blocks with the top block being lifted away by a robotic arm, clean flat design."
+  },
+  {
+    "id": "py_082",
+    "difficulty": 1,
+    "question": "딕셔너리(Dictionary)에서 특정 키(Key)에 해당하는 값(Value)을 가져오는 올바른 방법은 무엇인가요?",
+    "choices": [
+      "my_dict[key]",
+      "my_dict.get_value(key)",
+      "my_dict.fetch(key)",
+      "my_dict{key}"
+    ],
+    "answer": 0,
+    "explanation": "파이썬 딕셔너리는 대괄호 [ ] 안에 키를 넣어 해당 값을 조회합니다. 또는 .get() 메서드를 사용할 수도 있습니다.",
+    "tag": "딕셔너리 조작",
+    "image_prompt": "A digital dictionary icon with a magnifying glass focusing on a specific key-value pair, futuristic UI style."
+  },
+  {
+    "id": "py_083",
+    "difficulty": 1,
+    "question": "다음 중 리스트 컴프리헨션(List Comprehension)의 올바른 문법은 무엇인가요?",
+    "choices": [
+      "[x for x in range(5)]",
+      "{x for x in range(5)}",
+      "(x for x in range(5))",
+      "list(for x in range(5))"
+    ],
+    "answer": 0,
+    "explanation": "리스트 컴프리헨션은 대괄호 [ ] 내부에 '표현식 for 항목 in 반복가능객체' 형태로 작성합니다.",
+    "tag": "컴프리헨션",
+    "image_prompt": "A conveyor belt transforming raw numbers into a neat row of glowing cubes, conceptual programming art."
+  },
+  {
+    "id": "py_084",
+    "difficulty": 1,
+    "question": "리스트의 전체 요소 개수를 구하는 파이썬 내장 함수는 무엇인가요?",
+    "choices": [
+      "count()",
+      "size()",
+      "len()",
+      "length()"
+    ],
+    "answer": 2,
+    "explanation": "len() 함수는 리스트, 문자열, 딕셔너리 등 시퀀스 객체의 전체 길이를 반환합니다.",
+    "tag": "내장함수",
+    "image_prompt": "A measuring tape wrapping around a list of items, minimalist vector illustration."
+  },
+  {
+    "id": "py_085",
+    "difficulty": 1,
+    "question": "딕셔너리에 새로운 키-값 쌍을 추가하거나 기존 값을 수정하는 방법으로 옳은 것은?",
+    "choices": [
+      "my_dict.add('key', 'value')",
+      "my_dict['key'] = 'value'",
+      "my_dict.insert('key', 'value')",
+      "my_dict.append('key', 'value')"
+    ],
+    "answer": 1,
+    "explanation": "딕셔너리는 my_dict[키] = 값 형태로 작성하여 새로운 데이터를 추가하거나 기존 값을 업데이트할 수 있습니다.",
+    "tag": "딕셔너리 조작",
+    "image_prompt": "A hand placing a new labeled tag onto a digital filing cabinet, clean 3D render."
+  },
+  {
+    "id": "py_086",
+    "difficulty": 1,
+    "question": "다음 중 리스트의 모든 요소를 정렬하여 새로운 리스트를 반환하는 내장 함수는?",
+    "choices": [
+      "sort()",
+      "sorted()",
+      "arrange()",
+      "order()"
+    ],
+    "answer": 1,
+    "explanation": "sorted()는 원본 리스트는 유지한 채 정렬된 새로운 리스트를 반환합니다. (반면 .sort() 메서드는 원본을 직접 수정합니다.)",
+    "tag": "내장함수",
+    "image_prompt": "A set of scattered numbers being organized into a perfect ascending line, soft gradient background."
+  },
+  {
+    "id": "py_087",
+    "difficulty": 2,
+    "question": "파이썬 데코레이터(Decorator)의 기본 동작 원리로 가장 적절한 것은?",
+    "choices": [
+      "함수의 내부 로직을 직접 수정하여 성능을 최적화한다.",
+      "다른 함수를 인자로 받아 기능을 추가한 새로운 함수를 반환하는 클로저 구조이다.",
+      "클래스의 상속을 통해 기존 메서드의 동작을 오버라이딩한다.",
+      "전역 변수를 사용하여 함수의 상태를 저장하고 관리한다."
+    ],
+    "answer": 1,
+    "explanation": "데코레이터는 함수를 인자로 받아 기능을 확장한 뒤 새로운 함수 객체를 반환하는 고차 함수(Higher-order function)의 일종입니다.",
+    "tag": "decorator",
+    "image_prompt": "A conceptual diagram showing a gift box (function) being wrapped in decorative paper (decorator), digital art style."
+  },
+  {
+    "id": "py_088",
+    "difficulty": 2,
+    "question": "데코레이터를 사용할 때 @functools.wraps를 사용하는 주된 이유는 무엇인가?",
+    "choices": [
+      "함수의 실행 속도를 높이기 위해",
+      "데코레이터 내부의 재귀 호출을 방지하기 위해",
+      "원래 함수의 이름, 독스트링(docstring) 등 메타데이터를 유지하기 위해",
+      "여러 개의 데코레이터를 중첩해서 사용할 수 있게 하기 위해"
+    ],
+    "answer": 2,
+    "explanation": "@functools.wraps는 데코레이터가 적용된 후에도 원래 함수의 __name__이나 __doc__ 같은 속성들이 유지되도록 도와줍니다.",
+    "tag": "decorator",
+    "image_prompt": "A magnifying glass inspecting a function's metadata tags, clean flat design."
+  },
+  {
+    "id": "py_089",
+    "difficulty": 2,
+    "question": "컨텍스트 매니저(Context Manager)를 구현하기 위해 클래스 내에 반드시 정의해야 하는 두 메서드는?",
+    "choices": [
+      "__init__, __del__",
+      "__start__, __stop__",
+      "__enter__, __exit__",
+      "__open__, __close__"
+    ],
+    "answer": 2,
+    "explanation": "with 문과 함께 사용되는 컨텍스트 매니저는 리소스 진입 시 __enter__를, 종료(정리) 시 __exit__ 메서드를 호출합니다.",
+    "tag": "context_manager",
+    "image_prompt": "A door opening and closing with a lock icon, representing resource management, vector illustration."
+  },
+  {
+    "id": "py_090",
+    "difficulty": 2,
+    "question": "제너레이터(Generator)에서 yield 키워드의 역할로 옳은 것은?",
+    "choices": [
+      "함수의 실행을 완전히 종료하고 값을 반환한다.",
+      "현재 상태를 보존한 채 값을 반환하고, 다음 호출 시 중단 지점부터 재개한다.",
+      "메모리에 모든 데이터를 한꺼번에 로드하여 리스트로 변환한다.",
+      "멀티스레딩 환경에서 동기화를 위해 실행을 일시 정지시킨다."
+    ],
+    "answer": 1,
+    "explanation": "yield는 값을 반환하면서 함수의 상태(지역 변수 등)를 유지한 채 실행을 일시 중단시키며, next() 호출 시 다시 시작됩니다.",
+    "tag": "generator",
+    "image_prompt": "A conveyor belt delivering items one by one instead of a whole box, isometric 3D render."
+  },
+  {
+    "id": "py_091",
+    "difficulty": 2,
+    "question": "다음 중 제너레이터를 사용했을 때의 가장 큰 장점은?",
+    "choices": [
+      "코드의 가독성이 비약적으로 상승한다.",
+      "함수의 실행 속도가 일반 리스트 반환보다 항상 빠르다.",
+      "데이터를 한꺼번에 메모리에 올리지 않는 '지연 평가(Lazy Evaluation)'로 메모리 효율을 높인다.",
+      "전역 변수 접근 제한을 통해 데이터 무결성을 보장한다."
+    ],
+    "answer": 2,
+    "explanation": "제너레이터는 필요한 시점에만 값을 생성하므로, 대용량 데이터를 처리할 때 메모리 사용량을 획기적으로 줄일 수 있습니다.",
+    "tag": "generator",
+    "image_prompt": "A comparison between a huge water tank (list) and a dripping faucet (generator), conceptual art."
+  },
+  {
+    "id": "py_092",
+    "difficulty": 2,
+    "question": "contextlib 모듈의 @contextmanager 데코레이터를 사용하여 컨텍스트 매니저를 만들 때, yield 문을 기준으로 앞뒤 영역의 역할은?",
+    "choices": [
+      "앞: 리소스 해제 / 뒤: 리소스 할당",
+      "앞: 리소스 할당 및 준비 / 뒤: 리소스 정리 및 해제",
+      "앞: 예외 처리 시작 / 뒤: 예외 처리 종료",
+      "앞: 데이터 입력 / 뒤: 데이터 출력"
+    ],
+    "answer": 1,
+    "explanation": "@contextmanager로 구현 시 yield 이전 코드는 __enter__ 역할을 하며 리소스를 준비하고, yield 이후 코드는 __exit__ 역할을 하여 정리를 수행합니다.",
+    "tag": "context_manager",
+    "image_prompt": "A timeline split by a center point, showing 'Setup' on the left and 'Cleanup' on the right, infographic style."
+  },
+  {
+    "id": "py_093",
+    "difficulty": 3,
+    "question": "asyncio.gather()와 asyncio.TaskGroup(Python 3.11+)의 예외 처리 방식에 대한 설명 중 가장 정확한 것은?",
+    "choices": [
+      "gather는 기본적으로 첫 번째 예외가 발생하면 즉시 모든 태스크를 취소하고 종료한다.",
+      "TaskGroup은 내부에서 발생한 여러 개의 예외를 ExceptionGroup으로 묶어 한꺼번에 던진다.",
+      "gather의 return_exceptions=True 설정 시, 예외가 발생해도 TaskGroup과 동일하게 ExceptionGroup을 반환한다.",
+      "TaskGroup 내에서 하나의 태스크가 실패하더라도 다른 태스크들은 영향을 받지 않고 끝까지 실행된다."
+    ],
+    "answer": 1,
+    "explanation": "asyncio.gather는 return_exceptions=False(기본값)일 때 첫 예외를 즉시 던지지만 다른 태스크들을 자동으로 취소하지는 않습니다. 반면 TaskGroup은 구조적 동시성(Structured Concurrency)을 따르며, 하나라도 실패하면 나머지 태스크를 취소하고 발생한 모든 예외를 ExceptionGroup으로 묶어 전달합니다.",
+    "tag": "asyncio_concurrency",
+    "image_prompt": "A conceptual diagram showing a group of asynchronous tasks being bundled into a single exception container, digital art style, high tech."
+  },
+  {
+    "id": "py_094",
+    "difficulty": 3,
+    "question": "asyncio.gather()를 사용할 때 return_exceptions=True 옵션을 설정했을 때의 동작 결과로 옳은 것은?",
+    "choices": [
+      "예외가 발생한 시점에서 gather 호출 자체가 즉시 Exception을 raise한다.",
+      "모든 태스크가 완료될 때까지 기다리지 않고, 성공한 결과만 리스트로 반환한다.",
+      "성공한 결과와 발생한 예외 객체가 원래의 순서대로 리스트에 포함되어 반환된다.",
+      "예외가 발생하면 해당 태스크는 무시되고 결과 리스트에서 제외된다."
+    ],
+    "answer": 2,
+    "explanation": "return_exceptions=True를 설정하면 예외가 발생하더라도 이를 raise하지 않고, 결과 리스트의 해당 인덱스에 예외 객체(Exception object) 자체를 담아 반환합니다.",
+    "tag": "asyncio_gather",
+    "image_prompt": "A list containing both checkmarks and error icons in a sequence, representing mixed results of async tasks."
+  },
+  {
+    "id": "py_095",
+    "difficulty": 3,
+    "question": "다음 중 asyncio에서 '동시성(Concurrency)'과 '병렬성(Parallelism)'의 차이를 가장 잘 설명한 것은?",
+    "choices": [
+      "asyncio는 멀티코어를 활용하여 여러 CPU 연산을 동시에 수행하는 병렬성을 구현한다.",
+      "asyncio는 단일 스레드 이벤트 루프를 통해 I/O 바운드 작업의 대기 시간을 효율적으로 사용하는 동시성을 구현한다.",
+      "TaskGroup을 사용하면 파이썬의 GIL(Global Interpreter Lock)을 완전히 제거하여 진정한 병렬 처리가 가능하다.",
+      "gather는 멀티프로세싱 기반으로 동작하므로 CPU 바운드 작업에 최적화되어 있다."
+    ],
+    "answer": 1,
+    "explanation": "asyncio는 협력적 멀티태스킹(Cooperative Multitasking) 기반의 단일 스레드 모델입니다. GIL 때문에 CPU 연산을 병렬로 처리할 수 없으며, I/O 대기 시간 동안 다른 태스크로 제어권을 넘기는 '동시성'을 제공합니다.",
+    "tag": "asyncio_concept",
+    "image_prompt": "A single conductor directing multiple musicians who take turns playing, representing a single-threaded event loop."
+  },
+  {
+    "id": "py_096",
+    "difficulty": 3,
+    "question": "asyncio.create_task()로 생성된 태스크가 이벤트 루프에서 가비지 컬렉션(GC)에 의해 예기치 않게 소멸되는 것을 방지하기 위한 가장 권장되는 방법은?",
+    "choices": [
+      "모든 태스크를 전역 변수에 리스트 형태로 저장하여 참조를 유지한다.",
+      "TaskGroup을 사용하여 태스크의 생명주기를 구조적으로 관리한다.",
+      "loop.run_until_complete()를 호출하여 모든 태스크가 끝날 때까지 메인 스레드를 블록한다.",
+      "create_task 대신 loop.call_soon()을 사용하여 큐에 직접 넣는다."
+    ],
+    "answer": 1,
+    "explanation": "파이썬 공식 문서에서는 create_task로 생성된 태스크의 강한 참조(strong reference)를 유지할 것을 권고합니다. TaskGroup은 이러한 생명주기 관리를 자동화하여 구조적 동시성을 보장하므로 가장 권장되는 현대적인 방법입니다.",
+    "tag": "asyncio_lifecycle",
+    "image_prompt": "A safety net catching falling digital blocks, symbolizing memory management and reference keeping in Python."
+  },
+  {
+    "id": "py_097",
+    "difficulty": 3,
+    "question": "asyncio 환경에서 CPU 집약적인(CPU-bound) 작업을 수행해야 할 때, 이벤트 루프의 블로킹을 방지하기 위한 가장 적절한 패턴은?",
+    "choices": [
+      "await asyncio.sleep(0)을 반복적으로 호출하여 제어권을 양보한다.",
+      "asyncio.gather()를 사용하여 CPU 작업을 여러 개로 쪼개어 실행한다.",
+      "loop.run_in_executor()를 사용하여 ProcessPoolExecutor에서 작업을 수행한다.",
+      "TaskGroup 내에서 해당 함수를 async def로 정의하여 호출한다."
+    ],
+    "answer": 2,
+    "explanation": "CPU 바운드 작업은 이벤트 루프를 점유(blocking)하므로, 별도의 프로세스 풀(ProcessPoolExecutor)을 사용하는 run_in_executor를 통해 메인 루프 외부에서 실행해야 합니다.",
+    "tag": "asyncio_pattern",
+    "image_prompt": "A main highway (event loop) with a side exit leading to a heavy machinery factory (process pool)."
+  },
+  {
+    "id": "py_098",
+    "difficulty": 3,
+    "question": "asyncio.wait() 함수에서 return_when=asyncio.FIRST_COMPLETED 옵션을 사용했을 때의 동작으로 옳은 것은?",
+    "choices": [
+      "가장 먼저 완료된 태스크 하나만 반환하고 나머지 모든 태스크는 즉시 취소된다.",
+      "가장 먼저 완료된 태스크를 포함하여 '완료된 집합'과 '미완료 집합'을 튜플로 반환한다.",
+      "모든 태스크가 완료될 때까지 기다린 후, 가장 빨리 끝난 태스크의 결과만 반환한다.",
+      "첫 번째 태스크가 예외를 발생시키면 즉시 모든 대기를 중단하고 Exception을 raise한다."
+    ],
+    "answer": 1,
+    "explanation": "asyncio.wait(..., return_when=FIRST_COMPLETED)는 하나라도 완료되면 즉시 반환하며, 이때 (done, pending) 형태의 튜플을 반환합니다. 중요한 점은 pending에 남은 태스크들이 자동으로 취소되지 않으므로 사용자가 직접 처리해야 한다는 것입니다.",
+    "tag": "asyncio_wait",
+    "image_prompt": "A race track where the first runner crosses the finish line and a snapshot is taken of all runners' positions."
   }
 ]

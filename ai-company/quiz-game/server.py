@@ -33,19 +33,23 @@ def get_genres():
     result = {}
     for key, meta in GENRES.items():
         q = load_questions(key)
-        result[key] = {**meta, 'count': len(q)}
+        counts = {str(d): sum(1 for x in q if x.get('difficulty', 2) == d) for d in [1, 2, 3]}
+        result[key] = {**meta, 'count': len(q), 'by_difficulty': counts}
     return jsonify(result)
 
 @app.route('/api/questions/<genre>')
 def get_questions(genre):
     if genre not in GENRES:
         return jsonify({'error': 'unknown genre'}), 404
-    return jsonify(load_questions(genre))
+    questions = load_questions(genre)
+    difficulty = request.args.get('difficulty', type=int)
+    if difficulty:
+        questions = [q for q in questions if q.get('difficulty', 2) == difficulty]
+    return jsonify(questions)
 
 @app.route('/api/image')
 def get_image():
     prompt = request.args.get('prompt', '')
-    # ComfyUI 연동 예정
     return jsonify({'url': '', 'prompt': prompt, 'status': 'pending'})
 
 if __name__ == '__main__':

@@ -11,7 +11,8 @@
     "answer": 1,
     "explanation": "Ollama는 모델 실행 시 localhost:11434에 OpenAI 호환 REST API를 자동으로 제공합니다. curl http://localhost:11434/api/generate 또는 OpenAI SDK의 base_url만 바꿔서 바로 연동 가능합니다.",
     "tag": "Ollama",
-    "image_prompt": "Ollama local server running on port 11434, localhost API endpoint glowing, home server concept"
+    "image_prompt": "Ollama local server running on port 11434, localhost API endpoint glowing, home server concept",
+    "difficulty": 1
   },
   {
     "id": "llm_002",
@@ -25,7 +26,8 @@
     "answer": 1,
     "explanation": "Q4=4비트 양자화(기본 16비트 대비 메모리 1/4), K=K-means 클러스터링 방식(정확도 향상), M=Medium(속도와 품질 균형). Q8_0은 8비트(더 정확), Q2_K는 2비트(더 가벼움).",
     "tag": "GGUF",
-    "image_prompt": "GGUF quantization levels Q2 Q4 Q8 comparison, bit precision meter, memory vs quality tradeoff"
+    "image_prompt": "GGUF quantization levels Q2 Q4 Q8 comparison, bit precision meter, memory vs quality tradeoff",
+    "difficulty": 1
   },
   {
     "id": "llm_003",
@@ -39,7 +41,8 @@
     "answer": 1,
     "explanation": "context window가 4K면 약 3,000 영어 단어(한국어 약 1,500자)를 한 번에 처리합니다. 128K context는 긴 소설이나 코드베이스 전체를 넣을 수 있습니다. 큰 context는 VRAM을 더 사용합니다.",
     "tag": "LLM 기초",
-    "image_prompt": "context window size visualization with tokens flowing in, large vs small window comparison, blue neon"
+    "image_prompt": "context window size visualization with tokens flowing in, large vs small window comparison, blue neon",
+    "difficulty": 1
   },
   {
     "id": "llm_004",
@@ -53,7 +56,8 @@
     "answer": 1,
     "explanation": "LM Studio는 모델 다운로드·실행·채팅을 GUI로 쉽게 할 수 있어 입문용으로 좋습니다. Ollama는 CLI와 API가 강력해 코드로 연동하거나 서버로 활용할 때 씁니다. 둘 다 무료 오픈소스입니다.",
     "tag": "로컬LLM 도구",
-    "image_prompt": "LM Studio GUI vs Ollama CLI terminal comparison, split screen interface design"
+    "image_prompt": "LM Studio GUI vs Ollama CLI terminal comparison, split screen interface design",
+    "difficulty": 1
   },
   {
     "id": "llm_005",
@@ -67,7 +71,8 @@
     "answer": 1,
     "explanation": "70B 모델은 원본(FP16)이 140GB이지만 Q4로 양자화하면 약 40GB로 줄어듭니다. RTX 5090(32GB VRAM)에서 실행 가능한 크기가 됩니다. 대화 품질은 약간 낮아지지만 실용상 차이가 크지 않습니다.",
     "tag": "양자화",
-    "image_prompt": "model quantization compression from 140GB to 40GB, quality vs size tradeoff bar chart, technical"
+    "image_prompt": "model quantization compression from 140GB to 40GB, quality vs size tradeoff bar chart, technical",
+    "difficulty": 1
   },
   {
     "id": "llm_006",
@@ -81,7 +86,8 @@
     "answer": 1,
     "explanation": "llama.cpp는 Georgi Gerganov가 만든 C++ 추론 엔진으로 PyTorch 없이 LLM을 실행합니다. CUDA, Metal, CPU 모두 지원하며 Ollama·LM Studio가 내부적으로 llama.cpp를 사용합니다. GGUF 포맷의 기원이기도 합니다.",
     "tag": "llama.cpp",
-    "image_prompt": "llama.cpp C++ engine running LLM on bare CPU, lean efficient engine room, technical dark style"
+    "image_prompt": "llama.cpp C++ engine running LLM on bare CPU, lean efficient engine room, technical dark style",
+    "difficulty": 1
   },
   {
     "id": "llm_007",
@@ -95,7 +101,8 @@
     "answer": 1,
     "explanation": "Ollama가 OpenAI 호환 API를 제공하기 때문에 openai.OpenAI(base_url='http://localhost:11434/v1', api_key='ollama')로 클라이언트를 만들면 기존 OpenAI 코드를 그대로 씁니다. api_key는 아무 값이나 넣어도 됩니다.",
     "tag": "Ollama",
-    "image_prompt": "OpenAI SDK connecting to local Ollama server by changing one URL, minimal code change visualization"
+    "image_prompt": "OpenAI SDK connecting to local Ollama server by changing one URL, minimal code change visualization",
+    "difficulty": 1
   },
   {
     "id": "loc_008",
@@ -109,7 +116,8 @@
     "answer": 1,
     "explanation": "SYSTEM 키워드는 AI에게 페르소나를 부여하거나 특정 행동 지침을 내릴 때 사용합니다.\n실무에서는 '너는 유능한 한국어 AI 어시스턴트 미로다'와 같은 설정을 통해 일관된 답변 톤을 유지합니다.\nPARAMETER는 온도(temperature) 등 하이퍼파라미터를 조절할 때 사용합니다.",
     "tag": "Ollama Modelfile",
-    "image_prompt": "A digital blueprint of an AI brain with a 'SYSTEM' label, futuristic interface, cybernetic style."
+    "image_prompt": "A digital blueprint of an AI brain with a 'SYSTEM' label, futuristic interface, cybernetic style.",
+    "difficulty": 1
   },
   {
     "id": "loc_009",
@@ -123,7 +131,8 @@
     "answer": 2,
     "explanation": "NVIDIA GPU의 Tensor Core를 활용하여 추론 속도를 극대화하려면 CUDA 빌드 옵션이 필수적입니다.\nRTX 5090과 같은 고성능 PC에서는 CUDA 설정을 통해 VRAM을 최대한 활용한 빠른 토큰 생성이 가능합니다.\nMetal은 Apple Silicon(M1, M2, M3) 전용 가속 옵션입니다.",
     "tag": "llama.cpp",
-    "image_prompt": "NVIDIA GPU chip with glowing green circuits and 'CUDA' text, high-tech hardware render."
+    "image_prompt": "NVIDIA GPU chip with glowing green circuits and 'CUDA' text, high-tech hardware render.",
+    "difficulty": 1
   },
   {
     "id": "loc_010",
@@ -137,7 +146,8 @@
     "answer": 1,
     "explanation": "LM Studio 서버 모드는 OpenAI의 Chat Completions API 규격을 그대로 따릅니다.\n덕분에 기존에 작성된 OpenAI 연동 라이브러리나 코드를 엔드포인트 주소만 변경하여 로컬 모델에 바로 적용할 수 있습니다.\n이는 개발자가 외부 API 비용 없이 로컬에서 테스트 환경을 구축하는 데 매우 유리합니다.",
     "tag": "LM Studio",
-    "image_prompt": "A bridge connecting a local PC icon and an OpenAI logo, symbolizing API compatibility."
+    "image_prompt": "A bridge connecting a local PC icon and an OpenAI logo, symbolizing API compatibility.",
+    "difficulty": 1
   },
   {
     "id": "loc_011",
@@ -151,7 +161,8 @@
     "answer": 1,
     "explanation": "로컬 서버(LM Studio, Ollama 등)를 사용할 때는 base_url을 'http://localhost:1234/v1' 등으로 변경해야 합니다.\napi_key는 로컬 서버에서 검증하지 않는 경우가 많지만, 라이브러리 필수 입력값이라 임의의 문자열('lm-studio')을 넣어야 작동합니다.\n이 설정을 통해 클라우드 AI에서 로컬 AI로 인프라를 즉시 전환할 수 있습니다.",
     "tag": "OpenAI API",
-    "image_prompt": "Python code snippet on a screen showing 'base_url' being changed to localhost, coding environment."
+    "image_prompt": "Python code snippet on a screen showing 'base_url' being changed to localhost, coding environment.",
+    "difficulty": 1
   },
   {
     "id": "loc_012",
@@ -165,7 +176,8 @@
     "answer": 2,
     "explanation": "Q8_0는 8비트 양자화로 원본 모델에 가까운 높은 정밀도를 유지하지만 메모리 사용량이 많습니다.\nQ4_K_M은 4비트 기반의 최적화된 방식으로, 약간의 성능 손실을 감수하면서 VRAM 효율을 극대화한 실용적인 선택지입니다.\nRTX 5090처럼 VRAM이 넉넉하다면 Q8_0를, 모델 크기가 너무 커서 메모리가 부족하다면 Q4_K_M을 추천합니다.",
     "tag": "GGUF Quantization",
-    "image_prompt": "A scale balancing a 'High Precision' weight (Q8) and a 'Low Memory' weight (Q4), 3D render."
+    "image_prompt": "A scale balancing a 'High Precision' weight (Q8) and a 'Low Memory' weight (Q4), 3D render.",
+    "difficulty": 1
   },
   {
     "id": "loc_013",
@@ -179,7 +191,8 @@
     "answer": 1,
     "explanation": "Q5_K_S는 5비트 양자화 방식으로, Q4의 가벼움과 Q8의 정밀도 사이에서 타협점을 찾은 설정입니다.\n실무적으로 모델의 지능 저하를 최소화하면서 VRAM 효율을 챙기고 싶을 때 선택하는 '스위트 스팟' 옵션 중 하나입니다.\nK-Quants 방식이 적용되어 가중치별로 정밀도를 다르게 부여해 효율을 높였습니다.",
     "tag": "GGUF Quantization",
-    "image_prompt": "A spectrum bar showing precision levels from Q2 to Q8, with a highlight on Q5."
+    "image_prompt": "A spectrum bar showing precision levels from Q2 to Q8, with a highlight on Q5.",
+    "difficulty": 1
   },
   {
     "id": "loc_014",
@@ -193,7 +206,8 @@
     "answer": 2,
     "explanation": "num_ctx는 모델이 한 번에 '주의(Attention)'를 기울일 수 있는 전체 토큰 창의 크기를 결정합니다.\n이 값이 너무 작으면 대화 내용이 길어질 때 이전 내용을 망각하며, 너무 크면 VRAM 사용량이 급격히 증가합니다.\n긴 문서 요약이나 복잡한 코드 분석 작업을 수행할 때는 이 값을 충분히 높여야 합니다.",
     "tag": "Context Window",
-    "image_prompt": "A sliding window moving over a long scroll of text, highlighting the active memory area."
+    "image_prompt": "A sliding window moving over a long scroll of text, highlighting the active memory area.",
+    "difficulty": 1
   },
   {
     "id": "loc_015",
@@ -207,7 +221,8 @@
     "answer": 1,
     "explanation": "vLLM은 PagedAttention 기술을 사용하여 여러 사용자의 요청을 동시에 처리하는 '처리량(Throughput)' 극대화에 최적화된 엔터프라이즈급 엔진입니다.\n반면 Ollama는 Modelfile과 간단한 CLI를 통해 일반 사용자가 로컬에서 모델을 쉽게 실행하고 관리하도록 설계되었습니다.\n서비스 배포 목적이라면 vLLM을, 개인 개발 및 테스트 목적이라면 Ollama가 적합합니다.",
     "tag": "vLLM vs Ollama",
-    "image_prompt": "A comparison chart: a sleek rocket (vLLM) and a friendly Swiss army knife (Ollama)."
+    "image_prompt": "A comparison chart: a sleek rocket (vLLM) and a friendly Swiss army knife (Ollama).",
+    "difficulty": 1
   },
   {
     "id": "loc_016",
@@ -221,7 +236,8 @@
     "answer": 1,
     "explanation": "LLaVA(Large Language-and-Vision Assistant)는 시각 인코더와 LLM을 결합하여 이미지 이해 능력을 갖춘 멀티모달 모델입니다.\n사용자가 이미지를 업로드하고 '이 사진에 무엇이 있니?'라고 물으면 이를 분석해 답변할 수 있습니다.\n최근에는 로컬 환경에서도 LLaVA를 통해 OCR 작업이나 이미지 캡셔닝을 수행하는 사례가 많습니다.",
     "tag": "Multimodal LLM",
-    "image_prompt": "An AI eye scanning a photograph and converting it into descriptive text bubbles."
+    "image_prompt": "An AI eye scanning a photograph and converting it into descriptive text bubbles.",
+    "difficulty": 1
   },
   {
     "id": "loc_017",
@@ -235,7 +251,8 @@
     "answer": 2,
     "explanation": "Gemma 3와 같은 최신 모델들은 설계 단계부터 멀티모달 입력을 처리할 수 있도록 구축되었습니다.\n단순히 외부 플러그인을 붙인 것이 아니라, 다양한 형태의 데이터를 통합적으로 이해하여 더 정교한 추론이 가능합니다.\n이는 복잡한 도표 분석이나 시각적 문맥이 포함된 질의응답에서 압도적인 성능을 보여줍니다.",
     "tag": "Gemma 3",
-    "image_prompt": "A futuristic sphere absorbing text, images, and sound waves simultaneously."
+    "image_prompt": "A futuristic sphere absorbing text, images, and sound waves simultaneously.",
+    "difficulty": 1
   },
   {
     "id": "loc_018",
@@ -249,7 +266,8 @@
     "answer": 1,
     "explanation": "FROM은 Modelfile의 가장 첫 줄에 위치하며, 어떤 기존 모델을 바탕으로 커스텀 설정을 입힐지 결정합니다.\n예를 들어 'FROM llama3'라고 작성하면 Llama 3 모델을 불러온 뒤 그 위에 SYSTEM 프롬프트나 PARAMETER를 추가하게 됩니다.\n이는 마치 Dockerfile에서 베이스 이미지를 지정하는 방식과 매우 유사합니다.",
     "tag": "Ollama Modelfile",
-    "image_prompt": "A foundation stone labeled 'Base Model' with other blocks being built on top of it."
+    "image_prompt": "A foundation stone labeled 'Base Model' with other blocks being built on top of it.",
+    "difficulty": 1
   },
   {
     "id": "loc_019",
@@ -263,7 +281,8 @@
     "answer": 1,
     "explanation": "VRAM 부족 문제는 모델의 크기를 줄이는 것이 가장 확실한 해결책입니다.\nQ8_0(8비트) 모델을 Q4_K_M(4비트)으로 변경하면 메모리 사용량이 거의 절반으로 줄어들어 OOM 에러를 방지할 수 있습니다.\n또한 num_ctx 값을 낮추는 것도 VRAM 확보에 도움이 되지만, 지능 저하가 심하므로 양자화 모델 변경을 우선 권장합니다.",
     "tag": "VRAM Optimization",
-    "image_prompt": "A computer memory bar turning from red (full) to green (available) as a model is compressed."
+    "image_prompt": "A computer memory bar turning from red (full) to green (available) as a model is compressed.",
+    "difficulty": 2
   },
   {
     "id": "llm_020",
@@ -277,7 +296,8 @@
     "answer": 1,
     "explanation": "NVIDIA GPU의 CUDA 코어를 활용하여 추론 속도를 높이려면 GGML_CUDA=ON 플래그를 사용하여 컴파일해야 합니다.",
     "tag": "CUDA",
-    "image_prompt": "A high-tech NVIDIA GPU with glowing green circuits and the text 'CUDA' floating above it, cinematic lighting."
+    "image_prompt": "A high-tech NVIDIA GPU with glowing green circuits and the text 'CUDA' floating above it, cinematic lighting.",
+    "difficulty": 2
   },
   {
     "id": "llm_021",
@@ -291,7 +311,8 @@
     "answer": 2,
     "explanation": "Apple의 Metal API를 사용하여 GPU 가속을 구현하려면 GGML_METAL=ON 플래그가 필요합니다.",
     "tag": "Metal",
-    "image_prompt": "An Apple M2 chip on a motherboard with a sleek silver metallic finish and the 'Metal' logo, minimalist style."
+    "image_prompt": "An Apple M2 chip on a motherboard with a sleek silver metallic finish and the 'Metal' logo, minimalist style.",
+    "difficulty": 2
   },
   {
     "id": "llm_022",
@@ -305,7 +326,8 @@
     "answer": 2,
     "explanation": "별도의 GPU 백엔드 플래그를 지정하지 않으면 llama.cpp는 기본적으로 CPU 기반의 추론 모드로 동작합니다.",
     "tag": "CPU",
-    "image_prompt": "A powerful computer processor (CPU) with blue energy pulses flowing through the pins, technical diagram style."
+    "image_prompt": "A powerful computer processor (CPU) with blue energy pulses flowing through the pins, technical diagram style.",
+    "difficulty": 2
   },
   {
     "id": "llm_023",
@@ -319,7 +341,8 @@
     "answer": 0,
     "explanation": "-t (또는 --threads) 옵션을 통해 모델 추론에 사용할 물리적/논리적 CPU 코어 수를 지정할 수 있습니다.",
     "tag": "threads",
-    "image_prompt": "A visualization of multiple parallel processing lines representing CPU threads, digital abstract art."
+    "image_prompt": "A visualization of multiple parallel processing lines representing CPU threads, digital abstract art.",
+    "difficulty": 2
   },
   {
     "id": "llm_024",
@@ -333,7 +356,8 @@
     "answer": 1,
     "explanation": "-ngl (또는 --n-gpu-layers) 옵션을 사용하여 몇 개의 레이어를 GPU 메모리에 올릴지 결정합니다.",
     "tag": "CUDA",
-    "image_prompt": "Data packets moving from a CPU icon to a GPU icon via a high-speed bridge, 3D render."
+    "image_prompt": "Data packets moving from a CPU icon to a GPU icon via a high-speed bridge, 3D render.",
+    "difficulty": 2
   },
   {
     "id": "llm_025",
@@ -347,7 +371,8 @@
     "answer": 2,
     "explanation": "llama.cpp는 CPU 성능 극대화를 위해 AVX, AVX2, AVX512와 같은 SIMD 명령어 집합을 활용합니다.",
     "tag": "CPU",
-    "image_prompt": "A close-up of a silicon wafer with binary codes and 'AVX' text etched into the surface."
+    "image_prompt": "A close-up of a silicon wafer with binary codes and 'AVX' text etched into the surface.",
+    "difficulty": 2
   },
   {
     "id": "llm_026",
@@ -361,7 +386,8 @@
     "answer": 2,
     "explanation": "GPU 메모리가 부족하면 일부 레이어가 CPU에서 처리되거나 시스템 스왑 메모리를 사용하여 추론 속도가 급격히 느려집니다.",
     "tag": "Metal",
-    "image_prompt": "A warning sign on a computer screen showing 'Memory Full' with a slow-loading progress bar."
+    "image_prompt": "A warning sign on a computer screen showing 'Memory Full' with a slow-loading progress bar.",
+    "difficulty": 2
   },
   {
     "id": "llm_027",
@@ -375,7 +401,8 @@
     "answer": 1,
     "explanation": "하이퍼스레딩을 포함한 논리 코어 전체보다 실제 물리 코어 수에 맞추는 것이 컨텍스트 스위칭 비용을 줄여 더 효율적입니다.",
     "tag": "threads",
-    "image_prompt": "A balance scale comparing 'Physical Cores' and 'Logical Threads', clean infographic style."
+    "image_prompt": "A balance scale comparing 'Physical Cores' and 'Logical Threads', clean infographic style.",
+    "difficulty": 2
   },
   {
     "id": "llm_028",
@@ -389,7 +416,8 @@
     "answer": 1,
     "explanation": "-ngl 0은 GPU로 오프로드할 레이어 수를 0개로 설정하는 것이므로, CUDA 컴파일 여부와 상관없이 CPU만 사용하게 됩니다.",
     "tag": "CUDA",
-    "image_prompt": "A GPU icon turned off (greyed out) and a CPU icon glowing brightly, contrast lighting."
+    "image_prompt": "A GPU icon turned off (greyed out) and a CPU icon glowing brightly, contrast lighting.",
+    "difficulty": 2
   },
   {
     "id": "llm_029",
@@ -403,7 +431,8 @@
     "answer": 1,
     "explanation": "CMake를 사용할 때 -D 옵션을 통해 GGML_CUDA=ON과 같은 정의(Definition)를 전달하여 특정 기능을 활성화합니다.",
     "tag": "컴파일",
-    "image_prompt": "A terminal window showing a CMake command being typed with syntax highlighting, dark mode."
+    "image_prompt": "A terminal window showing a CMake command being typed with syntax highlighting, dark mode.",
+    "difficulty": 2
   },
   {
     "id": "llm_030",
@@ -417,7 +446,8 @@
     "answer": 1,
     "explanation": "FROM 명령어는 기반이 될 모델(예: llama3, mistral)을 지정하며 Modelfile의 가장 첫 줄에 위치해야 합니다.",
     "tag": "FROM",
-    "image_prompt": "A blueprint of a building foundation with the word 'FROM' written on it, digital art style."
+    "image_prompt": "A blueprint of a building foundation with the word 'FROM' written on it, digital art style.",
+    "difficulty": 2
   },
   {
     "id": "llm_031",
@@ -431,7 +461,8 @@
     "answer": 2,
     "explanation": "PARAMETER 명령어를 사용하여 temperature, num_ctx, stop sequence 등 모델의 동작 파라미터를 설정합니다.",
     "tag": "PARAMETER",
-    "image_prompt": "A futuristic control panel with sliders and knobs adjusting digital values, high tech."
+    "image_prompt": "A futuristic control panel with sliders and knobs adjusting digital values, high tech.",
+    "difficulty": 2
   },
   {
     "id": "llm_032",
@@ -445,7 +476,8 @@
     "answer": 1,
     "explanation": "TEMPLATE 명령어를 통해 프롬프트 템플릿을 설정하여 모델이 입력 데이터를 어떻게 해석하고 응답할지 형식을 지정합니다.",
     "tag": "TEMPLATE",
-    "image_prompt": "A digital document template with placeholders and brackets, clean UI design."
+    "image_prompt": "A digital document template with placeholders and brackets, clean UI design.",
+    "difficulty": 2
   },
   {
     "id": "llm_033",
@@ -459,7 +491,8 @@
     "answer": 2,
     "explanation": "SYSTEM 명령어를 사용하여 모델의 정체성, 말투, 제약 사항 등 시스템 프롬프트를 설정합니다.",
     "tag": "SYSTEM",
-    "image_prompt": "A robotic brain being programmed with a set of rules and identity, cybernetic style."
+    "image_prompt": "A robotic brain being programmed with a set of rules and identity, cybernetic style.",
+    "difficulty": 2
   },
   {
     "id": "llm_034",
@@ -473,7 +506,8 @@
     "answer": 1,
     "explanation": "Temperature 값이 높을수록 모델은 더 다양한 토큰을 선택하여 창의적이고 예측 불가능한 응답을 생성합니다.",
     "tag": "PARAMETER",
-    "image_prompt": "A colorful explosion of ideas and sparks coming out of a computer screen."
+    "image_prompt": "A colorful explosion of ideas and sparks coming out of a computer screen.",
+    "difficulty": 2
   },
   {
     "id": "llm_035",
@@ -487,7 +521,8 @@
     "answer": 2,
     "explanation": "FROM 명령어 뒤에 로컬 파일 경로(예: ./my-model.gguf)를 입력하면 해당 파일을 직접 불러와 사용할 수 있습니다.",
     "tag": "FROM",
-    "image_prompt": "A folder icon with an arrow pointing to a large binary file, technical diagram."
+    "image_prompt": "A folder icon with an arrow pointing to a large binary file, technical diagram.",
+    "difficulty": 2
   },
   {
     "id": "llm_036",
@@ -501,7 +536,8 @@
     "answer": 1,
     "explanation": "{{ .Prompt }}는 Ollama 템플릿 엔진에서 사용자의 입력값이 동적으로 삽입되는 플레이스홀더입니다.",
     "tag": "TEMPLATE",
-    "image_prompt": "A puzzle piece fitting into a gap in a sentence, conceptual digital art."
+    "image_prompt": "A puzzle piece fitting into a gap in a sentence, conceptual digital art.",
+    "difficulty": 2
   },
   {
     "id": "llm_037",
@@ -515,7 +551,8 @@
     "answer": 1,
     "explanation": "SYSTEM 프롬프트는 모델에게 페르소나를 부여하여 응답의 톤과 매너, 전문성 수준을 제어합니다.",
     "tag": "SYSTEM",
-    "image_prompt": "A hologram of a professional software engineer standing next to an AI core."
+    "image_prompt": "A hologram of a professional software engineer standing next to an AI core.",
+    "difficulty": 2
   },
   {
     "id": "llm_038",
@@ -529,7 +566,8 @@
     "answer": 1,
     "explanation": "stop 파라미터는 모델이 특정 단어나 기호(예: \n\n)를 생성했을 때 즉시 출력을 중단하도록 설정하는 기능입니다.",
     "tag": "PARAMETER",
-    "image_prompt": "A red stop sign placed in the middle of a stream of binary code."
+    "image_prompt": "A red stop sign placed in the middle of a stream of binary code.",
+    "difficulty": 2
   },
   {
     "id": "llm_039",
@@ -543,7 +581,8 @@
     "answer": 2,
     "explanation": "일반적으로 기반 모델을 정의하는 FROM이 가장 먼저 오며, 이후 파라미터 설정, 시스템 프롬프트, 템플릿 순으로 구성하는 것이 정석입니다.",
     "tag": "Modelfile",
-    "image_prompt": "A vertical stack of layers: Base, Settings, Identity, Format, architectural style."
+    "image_prompt": "A vertical stack of layers: Base, Settings, Identity, Format, architectural style.",
+    "difficulty": 2
   },
   {
     "id": "llm_040",
@@ -557,7 +596,8 @@
     "answer": 1,
     "explanation": "Q2_K는 매우 낮은 비트로 양자화하여 모델 크기를 최소화하고 메모리 사용량을 줄여 속도를 높이지만, 품질 손실이 가장 큽니다.",
     "tag": "GGUF_Q2_K",
-    "image_prompt": "A small, lightweight digital cube representing a compressed AI model, minimalist style, blue neon lines."
+    "image_prompt": "A small, lightweight digital cube representing a compressed AI model, minimalist style, blue neon lines.",
+    "difficulty": 2
   },
   {
     "id": "llm_041",
@@ -571,7 +611,8 @@
     "answer": 1,
     "explanation": "Q4_K_M은 적절한 모델 크기 감소와 최소한의 품질 저하를 제공하여 일반적인 사용자에게 가장 효율적인 선택지로 평가받습니다.",
     "tag": "GGUF_Q4_K_M",
-    "image_prompt": "A balanced scale with a brain on one side and a lightning bolt on the other, symbolizing quality and speed balance."
+    "image_prompt": "A balanced scale with a brain on one side and a lightning bolt on the other, symbolizing quality and speed balance.",
+    "difficulty": 2
   },
   {
     "id": "llm_042",
@@ -585,7 +626,8 @@
     "answer": 2,
     "explanation": "Q8_0는 8비트를 사용하여 양자화 손실을 최소화하므로, 메모리 여유가 있다면 원본 모델과 거의 차이 없는 고품질 결과를 얻을 수 있습니다.",
     "tag": "GGUF_Q8_0",
-    "image_prompt": "A high-definition crystal sphere reflecting complex data patterns, representing high precision."
+    "image_prompt": "A high-definition crystal sphere reflecting complex data patterns, representing high precision.",
+    "difficulty": 2
   },
   {
     "id": "llm_043",
@@ -599,7 +641,8 @@
     "answer": 1,
     "explanation": "양자화 비트 수가 낮을수록(모델 크기가 작을수록) 메모리 대역폭 요구량이 줄어들어 추론 속도가 빨라집니다.",
     "tag": "Performance",
-    "image_prompt": "Three runners on a track: a small fast runner, a medium runner, and a heavy slow runner."
+    "image_prompt": "Three runners on a track: a small fast runner, a medium runner, and a heavy slow runner.",
+    "difficulty": 2
   },
   {
     "id": "llm_044",
@@ -613,7 +656,8 @@
     "answer": 2,
     "explanation": "K-Quant 방식에서 M은 Medium을 의미하며, 일부 레이어에 더 많은 비트를 할당하여 품질과 크기의 균형을 맞춘 설정입니다.",
     "tag": "GGUF_Naming",
-    "image_prompt": "A slider bar set to the middle position between 'Small' and 'Large'."
+    "image_prompt": "A slider bar set to the middle position between 'Small' and 'Large'.",
+    "difficulty": 2
   },
   {
     "id": "llm_045",
@@ -627,7 +671,8 @@
     "answer": 2,
     "explanation": "VRAM이 충분하다면 Q8_0를 사용하여 품질 저하를 최소화하는 것이 실용적인 고품질 선택지입니다.",
     "tag": "Hardware_Optimization",
-    "image_prompt": "A powerful GPU with glowing gold circuits and a crown on top."
+    "image_prompt": "A powerful GPU with glowing gold circuits and a crown on top.",
+    "difficulty": 2
   },
   {
     "id": "llm_046",
@@ -641,7 +686,8 @@
     "answer": 2,
     "explanation": "양자화 비트 수가 낮아지면 모델 크기가 줄어들므로 VRAM 점유율은 오히려 낮아집니다.",
     "tag": "Quantization_Effect",
-    "image_prompt": "A shrinking digital box with a warning sign indicating quality loss."
+    "image_prompt": "A shrinking digital box with a warning sign indicating quality loss.",
+    "difficulty": 2
   },
   {
     "id": "llm_047",
@@ -655,7 +701,8 @@
     "answer": 1,
     "explanation": "너무 낮은 비트로 양자화하면 모델이 학습한 지식을 제대로 복원하지 못해 엉뚱한 대답을 하거나 논리가 깨지는 현상이 심해집니다.",
     "tag": "Quality_Loss",
-    "image_prompt": "A glitchy robot head with fragmented digital pieces floating around."
+    "image_prompt": "A glitchy robot head with fragmented digital pieces floating around.",
+    "difficulty": 2
   },
   {
     "id": "llm_048",
@@ -669,7 +716,8 @@
     "answer": 1,
     "explanation": "K-Quants는 모델의 각 레이어가 품질에 미치는 영향이 다르다는 점을 이용해 중요 부위에는 더 많은 비트를 할당하는 지능적인 방식입니다.",
     "tag": "K_Quants",
-    "image_prompt": "A complex puzzle where some pieces are larger and more detailed than others."
+    "image_prompt": "A complex puzzle where some pieces are larger and more detailed than others.",
+    "difficulty": 2
   },
   {
     "id": "llm_049",
@@ -683,7 +731,8 @@
     "answer": 1,
     "explanation": "비트 수가 높을수록(Q8_0) 품질이 좋고 속도는 상대적으로 느리며, 비트 수가 낮을수록(Q2_K) 품질은 낮지만 속도는 빠릅니다.",
     "tag": "Comparison",
-    "image_prompt": "A gradient arrow moving from a high-quality diamond to a fast-moving silver bullet."
+    "image_prompt": "A gradient arrow moving from a high-quality diamond to a fast-moving silver bullet.",
+    "difficulty": 2
   },
   {
     "id": "llm_050",
@@ -697,7 +746,8 @@
     "answer": 1,
     "explanation": "Open WebUI는 의존성 관리가 복잡하므로 Docker를 통해 컨테이너 형태로 설치하는 것이 가장 빠르고 안정적입니다.",
     "tag": "설치",
-    "image_prompt": "A professional 3D render of a Docker whale logo with glowing blue digital circuits around it, high tech atmosphere."
+    "image_prompt": "A professional 3D render of a Docker whale logo with glowing blue digital circuits around it, high tech atmosphere.",
+    "difficulty": 2
   },
   {
     "id": "llm_051",
@@ -711,7 +761,8 @@
     "answer": 0,
     "explanation": "Open WebUI 설정에서 Ollama 서버의 주소(기본값 http://localhost:11434)를 정확히 입력해야 모델 목록을 불러올 수 있습니다.",
     "tag": "연동",
-    "image_prompt": "A conceptual diagram showing a web interface connecting to a server backend via a glowing digital bridge, futuristic style."
+    "image_prompt": "A conceptual diagram showing a web interface connecting to a server backend via a glowing digital bridge, futuristic style.",
+    "difficulty": 2
   },
   {
     "id": "llm_052",
@@ -725,7 +776,8 @@
     "answer": 2,
     "explanation": "Ollama CLI에서 'ollama pull' 명령어를 사용하여 라이브러리에서 모델 파일을 로컬로 내려받습니다.",
     "tag": "모델 관리",
-    "image_prompt": "A command line interface screen showing a progress bar of a large file being downloaded, cyber punk aesthetic."
+    "image_prompt": "A command line interface screen showing a progress bar of a large file being downloaded, cyber punk aesthetic.",
+    "difficulty": 2
   },
   {
     "id": "llm_053",
@@ -739,7 +791,8 @@
     "answer": 1,
     "explanation": "Open WebUI는 여러 모델을 선택하여 동일한 질문에 대해 각각 어떻게 답변하는지 한 화면에서 비교할 수 있는 기능을 제공합니다.",
     "tag": "기능",
-    "image_prompt": "A split screen showing two different AI chat interfaces side by side, comparing responses, clean UI design."
+    "image_prompt": "A split screen showing two different AI chat interfaces side by side, comparing responses, clean UI design.",
+    "difficulty": 2
   },
   {
     "id": "llm_054",
@@ -753,7 +806,8 @@
     "answer": 0,
     "explanation": "기본적으로 Ollama는 로컬 접속만 허용하므로, 외부 접속을 위해 OLLAMA_HOST 환경 변수를 0.0.0.0으로 설정해야 합니다.",
     "tag": "연동",
-    "image_prompt": "A network map showing a laptop connecting to a powerful server in a data center, glowing connection lines."
+    "image_prompt": "A network map showing a laptop connecting to a powerful server in a data center, glowing connection lines.",
+    "difficulty": 2
   },
   {
     "id": "llm_055",
@@ -767,7 +821,8 @@
     "answer": 1,
     "explanation": "Modelfile을 사용하면 기본 모델에 특정 역할(Persona)이나 지침(System Prompt)을 부여하여 맞춤형 모델을 생성할 수 있습니다.",
     "tag": "모델 관리",
-    "image_prompt": "A digital blueprint of an AI brain being customized with various settings and sliders, technical drawing style."
+    "image_prompt": "A digital blueprint of an AI brain being customized with various settings and sliders, technical drawing style.",
+    "difficulty": 3
   },
   {
     "id": "llm_056",
@@ -781,7 +836,8 @@
     "answer": 1,
     "explanation": "최초 접속 시 첫 번째로 가입하는 사용자가 자동으로 관리자(Admin) 권한을 갖게 되며, 계정 생성이 필수적입니다.",
     "tag": "설치",
-    "image_prompt": "A sleek sign-up page of a modern web application with 'Create Account' button highlighted, soft lighting."
+    "image_prompt": "A sleek sign-up page of a modern web application with 'Create Account' button highlighted, soft lighting.",
+    "difficulty": 3
   },
   {
     "id": "llm_057",
@@ -795,7 +851,8 @@
     "answer": 1,
     "explanation": "양자화는 모델의 파라미터 정밀도(예: FP16 -> INT4)를 낮추어 VRAM 사용량을 줄이고 추론 속도를 높이는 기법입니다.",
     "tag": "모델 관리",
-    "image_prompt": "A visual representation of a large complex cube being compressed into a smaller, efficient cube, abstract 3D art."
+    "image_prompt": "A visual representation of a large complex cube being compressed into a smaller, efficient cube, abstract 3D art.",
+    "difficulty": 3
   },
   {
     "id": "llm_058",
@@ -809,7 +866,8 @@
     "answer": 1,
     "explanation": "RAG는 문서(PDF, TXT 등)를 업로드하여 AI가 해당 문서의 내용을 바탕으로 정확한 답변을 생성하도록 돕는 기술입니다.",
     "tag": "기능",
-    "image_prompt": "A digital library where a robot is picking a specific book to answer a question, futuristic library setting."
+    "image_prompt": "A digital library where a robot is picking a specific book to answer a question, futuristic library setting.",
+    "difficulty": 3
   },
   {
     "id": "llm_059",
@@ -823,7 +881,8 @@
     "answer": 1,
     "explanation": "볼륨 마운트 옵션은 채팅 기록, 사용자 설정 등의 데이터를 영구적으로 저장하여 컨테이너가 재시작되어도 데이터가 사라지지 않게 합니다.",
     "tag": "설치",
-    "image_prompt": "A hard drive icon connected to a floating virtual container by a glowing cable, data synchronization concept."
+    "image_prompt": "A hard drive icon connected to a floating virtual container by a glowing cable, data synchronization concept.",
+    "difficulty": 3
   },
   {
     "id": "llm_060",
@@ -837,7 +896,8 @@
     "answer": 1,
     "explanation": "Tensor Parallelism은 거대한 모델 가중치를 여러 개의 GPU에 나누어 배치함으로써, 단일 GPU 메모리 한계를 극복하고 연산을 병렬로 처리하여 추론 지연 시간을 줄입니다.",
     "tag": "tensor_parallel",
-    "image_prompt": "A conceptual diagram showing a large neural network layer being split across four GPUs with arrows indicating parallel computation."
+    "image_prompt": "A conceptual diagram showing a large neural network layer being split across four GPUs with arrows indicating parallel computation.",
+    "difficulty": 3
   },
   {
     "id": "llm_061",
@@ -851,7 +911,8 @@
     "answer": 2,
     "explanation": "Static Batching은 배치 내 모든 문장이 끝날 때까지 기다려야 하지만, Continuous Batching은 개별 요청이 완료되는 즉시 새로운 요청을 끼워 넣어 GPU 효율성을 극대화합니다.",
     "tag": "continuous_batching",
-    "image_prompt": "A comparison chart showing a static block of requests versus a fluid stream of requests entering and leaving a processing pipeline."
+    "image_prompt": "A comparison chart showing a static block of requests versus a fluid stream of requests entering and leaving a processing pipeline.",
+    "difficulty": 3
   },
   {
     "id": "llm_062",
@@ -865,7 +926,8 @@
     "answer": 1,
     "explanation": "PagedAttention은 OS의 가상 메모리 개념을 도입하여 KV 캐시를 불연속적인 메모리 공간에 할당함으로써, 메모리 단편화를 막고 배치 크기를 크게 늘려 처리량을 향상시킵니다.",
     "tag": "throughput",
-    "image_prompt": "A visualization of memory blocks organized like a page table in an operating system, mapping to KV cache tokens."
+    "image_prompt": "A visualization of memory blocks organized like a page table in an operating system, mapping to KV cache tokens.",
+    "difficulty": 3
   },
   {
     "id": "llm_063",
@@ -879,7 +941,8 @@
     "answer": 2,
     "explanation": "tensor_parallel_size는 모델의 텐서를 몇 개의 GPU에 분할하여 배치할지를 결정하는 설정값입니다. 2로 설정하면 2개의 GPU가 협력하여 하나의 모델을 구동합니다.",
     "tag": "tensor_parallel",
-    "image_prompt": "A single matrix multiplication operation split into two halves, each being processed by a different GPU."
+    "image_prompt": "A single matrix multiplication operation split into two halves, each being processed by a different GPU.",
+    "difficulty": 3
   },
   {
     "id": "llm_064",
@@ -893,7 +956,8 @@
     "answer": 1,
     "explanation": "vLLM은 매 반복(iteration) 단계마다 현재 상태를 확인하고, 완료된 요청은 내보내고 대기 중인 요청을 투입하는 세밀한 스케줄링을 수행합니다.",
     "tag": "continuous_batching",
-    "image_prompt": "A timeline showing tokens being generated step-by-step with new requests joining the queue at each tick."
+    "image_prompt": "A timeline showing tokens being generated step-by-step with new requests joining the queue at each tick.",
+    "difficulty": 3
   },
   {
     "id": "llm_065",
@@ -907,7 +971,8 @@
     "answer": 1,
     "explanation": "처리량은 단위 시간당 처리하는 토큰 수입니다. PagedAttention 등을 통해 메모리 효율을 높여 더 많은 요청을 동시에 처리(Batching)할수록 처리량이 증가합니다.",
     "tag": "throughput",
-    "image_prompt": "A graph showing the increase in tokens per second as the batch size increases on a GPU."
+    "image_prompt": "A graph showing the increase in tokens per second as the batch size increases on a GPU.",
+    "difficulty": 3
   },
   {
     "id": "llm_066",
@@ -921,7 +986,8 @@
     "answer": 1,
     "explanation": "텐서를 나누어 계산하면 각 GPU가 계산한 결과를 합쳐야 하므로, GPU 간 고속 통신(NVLink 등)을 통한 데이터 교환 비용이 발생합니다.",
     "tag": "tensor_parallel",
-    "image_prompt": "Two GPUs connected by a high-speed link with data packets moving back and forth during synchronization."
+    "image_prompt": "Two GPUs connected by a high-speed link with data packets moving back and forth during synchronization.",
+    "difficulty": 3
   },
   {
     "id": "llm_067",
@@ -935,7 +1001,8 @@
     "answer": 2,
     "explanation": "출력 길이가 제각각인 경우, Static Batching은 가장 긴 문장이 끝날 때까지 짧은 문장들이 자원을 점유하며 기다려야 하지만, Continuous Batching은 이를 즉시 해제하여 효율적입니다.",
     "tag": "continuous_batching",
-    "image_prompt": "A bar chart with varying lengths of bars representing different sequence lengths, showing gaps being filled by new requests."
+    "image_prompt": "A bar chart with varying lengths of bars representing different sequence lengths, showing gaps being filled by new requests.",
+    "difficulty": 3
   },
   {
     "id": "llm_068",
@@ -949,7 +1016,8 @@
     "answer": 1,
     "explanation": "Tokens per second(TPS)는 서버가 초당 얼마나 많은 토큰을 생성하여 사용자에게 전달하는지를 나타내는 핵심 처리량 지표입니다.",
     "tag": "throughput",
-    "image_prompt": "A digital counter rapidly increasing numbers next to a stream of text tokens."
+    "image_prompt": "A digital counter rapidly increasing numbers next to a stream of text tokens.",
+    "difficulty": 3
   },
   {
     "id": "llm_069",
@@ -963,7 +1031,8 @@
     "answer": 3,
     "explanation": "vLLM은 병렬 처리와 효율적인 배칭을 지향합니다. Sequential Processing(순차 처리)은 한 번에 하나씩 처리하는 방식으로 vLLM이 해결하고자 하는 저효율 방식입니다.",
     "tag": "throughput",
-    "image_prompt": "A red 'X' mark over a line of people waiting in a single file queue, contrasted with a multi-lane highway."
+    "image_prompt": "A red 'X' mark over a line of people waiting in a single file queue, contrasted with a multi-lane highway.",
+    "difficulty": 3
   },
   {
     "id": "llm_070",
@@ -977,7 +1046,8 @@
     "answer": 1,
     "explanation": "임베딩 모델은 텍스트를 숫자로 이루어진 벡터로 변환하여, 컴퓨터가 단어의 의미적 유사성을 계산하고 관련 문서를 효율적으로 찾을 수 있게 합니다.",
     "tag": "RAG 기초",
-    "image_prompt": "A conceptual diagram showing text transforming into a series of numerical vectors in a 3D space."
+    "image_prompt": "A conceptual diagram showing text transforming into a series of numerical vectors in a 3D space.",
+    "difficulty": 3
   },
   {
     "id": "llm_071",
@@ -991,7 +1061,8 @@
     "answer": 2,
     "explanation": "nomic-embed-text는 Ollama에서 제공하는 대표적인 임베딩 모델로, 넓은 컨텍스트 범위를 지원하며 효율적인 벡터 검색을 가능하게 합니다.",
     "tag": "nomic-embed-text",
-    "image_prompt": "A digital representation of a long document being compressed into a precise vector point."
+    "image_prompt": "A digital representation of a long document being compressed into a precise vector point.",
+    "difficulty": 3
   },
   {
     "id": "llm_072",
@@ -1005,7 +1076,8 @@
     "answer": 1,
     "explanation": "mxbai-embed-large는 최신 임베딩 벤치마크에서 높은 성능을 보이며, 특히 문서 검색의 정확도를 높이는 데 특화되어 있습니다.",
     "tag": "mxbai",
-    "image_prompt": "A magnifying glass focusing on a specific data point among thousands of scattered dots in a vector space."
+    "image_prompt": "A magnifying glass focusing on a specific data point among thousands of scattered dots in a vector space.",
+    "difficulty": 3
   },
   {
     "id": "llm_073",
@@ -1019,7 +1091,8 @@
     "answer": 0,
     "explanation": "LLM은 다음 토큰을 예측하여 문장을 생성하지만, 임베딩 모델은 입력된 텍스트의 의미를 대표하는 고정된 길이의 숫자 배열(벡터)을 출력합니다.",
     "tag": "Ollama 작동원리",
-    "image_prompt": "A split screen showing a chat bubble on one side and a list of floating numbers (vectors) on the other."
+    "image_prompt": "A split screen showing a chat bubble on one side and a list of floating numbers (vectors) on the other.",
+    "difficulty": 3
   },
   {
     "id": "llm_074",
@@ -1033,7 +1106,8 @@
     "answer": 1,
     "explanation": "수많은 문서의 임베딩 벡터를 효율적으로 저장하고, 질문 벡터와 가장 유사한 문서를 빠르게 찾아내기 위해 벡터 DB가 사용됩니다.",
     "tag": "Vector DB",
-    "image_prompt": "A futuristic library where books are stored as glowing geometric shapes in a grid."
+    "image_prompt": "A futuristic library where books are stored as glowing geometric shapes in a grid.",
+    "difficulty": 3
   },
   {
     "id": "llm_075",
@@ -1047,7 +1121,8 @@
     "answer": 1,
     "explanation": "Ollama에서 특정 모델을 다운로드하여 사용 가능하게 하려면 'ollama pull [모델명]' 명령어를 사용합니다.",
     "tag": "Ollama 명령어",
-    "image_prompt": "A command line interface showing the text 'ollama pull nomic-embed-text' with a progress bar."
+    "image_prompt": "A command line interface showing the text 'ollama pull nomic-embed-text' with a progress bar.",
+    "difficulty": 3
   },
   {
     "id": "llm_076",
@@ -1061,7 +1136,8 @@
     "answer": 1,
     "explanation": "차원은 하나의 텍스트가 몇 개의 숫자로 변환되는지를 나타냅니다. 예를 들어 768차원 모델은 텍스트 하나를 768개의 숫자로 표현합니다.",
     "tag": "임베딩 개념",
-    "image_prompt": "A coordinate system with X, Y, Z axes extending into multiple dimensions."
+    "image_prompt": "A coordinate system with X, Y, Z axes extending into multiple dimensions.",
+    "difficulty": 3
   },
   {
     "id": "llm_077",
@@ -1075,7 +1151,8 @@
     "answer": 1,
     "explanation": "mxbai-embed-large는 이름에서 알 수 있듯이 'Large' 모델로서 더 높은 차원의 벡터를 생성하여 보다 세밀한 의미 표현이 가능합니다.",
     "tag": "모델 비교",
-    "image_prompt": "Two different sized spheres representing vector spaces, one larger and more detailed than the other."
+    "image_prompt": "Two different sized spheres representing vector spaces, one larger and more detailed than the other.",
+    "difficulty": 3
   },
   {
     "id": "llm_078",
@@ -1089,7 +1166,8 @@
     "answer": 1,
     "explanation": "질문과 문서를 서로 다른 모델로 임베딩하면 벡터 공간의 기준이 달라져 유사도 계산이 불가능해집니다. 반드시 동일한 모델을 사용해야 합니다.",
     "tag": "RAG 워크플로우",
-    "image_prompt": "Two puzzle pieces fitting perfectly together, labeled 'Query Embedding' and 'Document Embedding'."
+    "image_prompt": "Two puzzle pieces fitting perfectly together, labeled 'Query Embedding' and 'Document Embedding'.",
+    "difficulty": 3
   },
   {
     "id": "llm_079",
@@ -1103,7 +1181,8 @@
     "answer": 1,
     "explanation": "로컬 환경에서 Ollama를 사용하면 민감한 내부 문서가 외부 API 서버로 전송되지 않으므로 데이터 보안을 완벽하게 제어할 수 있습니다.",
     "tag": "로컬 LLM",
-    "image_prompt": "A shield icon protecting a local computer server from external cloud connections."
+    "image_prompt": "A shield icon protecting a local computer server from external cloud connections.",
+    "difficulty": 3
   },
   {
     "id": "llm_080",
@@ -1117,7 +1196,8 @@
     "answer": 1,
     "explanation": "pipeline은 복잡한 NLP 태스크를 단순화하여 토크나이저 호출부터 모델 예측, 결과 해석까지의 전 과정을 한 번에 처리할 수 있게 해주는 고수준 API입니다.",
     "tag": "pipeline",
-    "image_prompt": "A conceptual diagram showing a pipeline flow from raw text to final prediction with icons of a tokenizer and a neural network."
+    "image_prompt": "A conceptual diagram showing a pipeline flow from raw text to final prediction with icons of a tokenizer and a neural network.",
+    "difficulty": 3
   },
   {
     "id": "llm_081",
@@ -1131,7 +1211,8 @@
     "answer": 1,
     "explanation": "AutoModel은 모델 이름이나 경로를 입력하면 해당 모델의 설정 파일을 읽어 적절한 아키텍처(예: BERT, GPT-2 등)의 클래스를 자동으로 생성해줍니다.",
     "tag": "AutoModel",
-    "image_prompt": "A magic box that takes a model name as input and outputs the correct neural network architecture."
+    "image_prompt": "A magic box that takes a model name as input and outputs the correct neural network architecture.",
+    "difficulty": 3
   },
   {
     "id": "llm_082",
@@ -1145,7 +1226,8 @@
     "answer": 2,
     "explanation": "인코딩은 사람이 읽는 텍스트를 토큰 단위로 나누고, 이를 사전에 정의된 정수 ID(Input IDs)로 변환하는 과정입니다.",
     "tag": "tokenizer",
-    "image_prompt": "Text 'Hello World' being broken into small blocks and converted into a sequence of numbers [101, 7592, 2088, 102]."
+    "image_prompt": "Text 'Hello World' being broken into small blocks and converted into a sequence of numbers [101, 7592, 2088, 102].",
+    "difficulty": 3
   },
   {
     "id": "llm_083",
@@ -1159,7 +1241,8 @@
     "answer": 2,
     "explanation": "AutoTokenizer는 텍스트 처리를 위한 설정과 어휘집을 로드하는 것이며, 모델의 가중치 파일은 AutoModel 클래스를 통해 로드합니다.",
     "tag": "tokenizer",
-    "image_prompt": "A download icon showing a vocabulary file and configuration settings being transferred from a cloud server."
+    "image_prompt": "A download icon showing a vocabulary file and configuration settings being transferred from a cloud server.",
+    "difficulty": 3
   },
   {
     "id": "llm_084",
@@ -1173,7 +1256,8 @@
     "answer": 1,
     "explanation": "입력 텍스트는 먼저 토크나이저를 통해 숫자로 변환되고(토크나이징), 모델을 거쳐 예측값(Logits)이 나오며, 마지막으로 이를 사람이 읽을 수 있는 라벨로 변환(후처리)합니다.",
     "tag": "pipeline",
-    "image_prompt": "A linear flowchart: Text -> Tokenizer -> Model -> Label (Positive/Negative)."
+    "image_prompt": "A linear flowchart: Text -> Tokenizer -> Model -> Label (Positive/Negative).",
+    "difficulty": 3
   },
   {
     "id": "llm_085",
@@ -1187,7 +1271,8 @@
     "answer": 2,
     "explanation": "AutoModel은 기본 백본(Backbone)만 제공하지만, AutoModelForSequenceClassification은 그 위에 분류 작업을 위한 출력층(Classification Head)을 추가하여 바로 학습/추론이 가능하게 합니다.",
     "tag": "AutoModel",
-    "image_prompt": "A base neural network block with an additional small 'classification head' layer attached to the top."
+    "image_prompt": "A base neural network block with an additional small 'classification head' layer attached to the top.",
+    "difficulty": 3
   },
   {
     "id": "llm_086",
@@ -1201,7 +1286,8 @@
     "answer": 1,
     "explanation": "attention_mask는 입력 시퀀스에서 실제 데이터(1)와 패딩된 부분(0)을 구분하여, 모델이 불필요한 패딩 토큰에 주의를 기울이지 않도록 합니다.",
     "tag": "tokenizer",
-    "image_prompt": "A sequence of 1s and 0s acting as a filter over a set of tokens."
+    "image_prompt": "A sequence of 1s and 0s acting as a filter over a set of tokens.",
+    "difficulty": 3
   },
   {
     "id": "llm_087",
@@ -1215,7 +1301,8 @@
     "answer": 3,
     "explanation": "'gpu-acceleration'은 태스크가 아니라 하드웨어 설정입니다. pipeline의 첫 번째 인자로는 'text-classification', 'question-answering' 같은 작업 종류를 입력해야 합니다.",
     "tag": "pipeline",
-    "image_prompt": "A list of NLP tasks like a menu, with one item marked as an error."
+    "image_prompt": "A list of NLP tasks like a menu, with one item marked as an error.",
+    "difficulty": 3
   },
   {
     "id": "llm_088",
@@ -1229,7 +1316,8 @@
     "answer": 1,
     "explanation": "먼저 도구(토크나이저, 모델)를 준비하고, 텍스트를 숫자로 바꾼 뒤, 모델에 넣어 결과를 얻고 이를 다시 해석하는 순서로 진행됩니다.",
     "tag": "AutoModel",
-    "image_prompt": "A step-by-step sequence: Load Tools -> Encode Text -> Model Inference -> Decode Result."
+    "image_prompt": "A step-by-step sequence: Load Tools -> Encode Text -> Model Inference -> Decode Result.",
+    "difficulty": 3
   },
   {
     "id": "llm_089",
@@ -1243,6 +1331,7 @@
     "answer": 1,
     "explanation": "Padding은 배치 처리를 위해 짧은 문장에 더미 토큰을 채워 길이를 맞추는 것이며, Truncation은 모델이 수용 가능한 최대 길이보다 긴 문장을 잘라내는 것입니다.",
     "tag": "tokenizer",
-    "image_prompt": "Two images: one showing a short sentence being filled with zeros (padding), another showing a long sentence being cut off (truncation)."
+    "image_prompt": "Two images: one showing a short sentence being filled with zeros (padding), another showing a long sentence being cut off (truncation).",
+    "difficulty": 3
   }
 ]

@@ -143,15 +143,25 @@ def save_questions(genre, questions):
     print(f"  [{genre}] {len(questions)}문제 저장 완료")
 
 def parse_json_from_miro(text):
-    """미로 응답에서 JSON 배열 추출"""
+    """미로 응답에서 JSON 배열 추출 (코드블록 포함 처리)"""
     import re
-    # JSON 배열 패턴 찾기
+    # 코드블록 안에 있으면 추출
+    block = re.search(r'```(?:json)?\s*([\s\S]*?)```', text)
+    if block:
+        text = block.group(1)
+    # JSON 배열 패턴
     match = re.search(r'\[[\s\S]*\]', text)
     if match:
+        raw = match.group()
         try:
-            return json.loads(match.group())
+            return json.loads(raw)
         except json.JSONDecodeError:
-            pass
+            # 불완전한 마지막 객체 제거 후 재시도
+            raw2 = re.sub(r',?\s*\{[^}]*$', '', raw).rstrip(',') + ']'
+            try:
+                return json.loads(raw2)
+            except Exception:
+                pass
     return []
 
 def generate_for_topic(genre, topic_info, target=100):
